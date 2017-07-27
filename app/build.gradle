@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+  defaultConfig {
+    applicationId "youlin.xinhua.com.youlin"
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode rootProject.ext.versionCode
+    versionName rootProject.ext.versionName
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+repositories {
+  flatDir {
+    dirs 'libs'
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  compile rootProject.ext.appcompatv7
+  compile rootProject.ext.constraintlayout
+  compile rootProject.ext.design
+  compile rootProject.ext.supportv4
+  testCompile 'junit:junit:4.12'
+
+  compile rootProject.ext.butterknifts.butterknift
+  annotationProcessor rootProject.ext.butterknifts.butterkniftcompiler
+
+  compile(name: 'recyclerviewhelper', ext: 'aar')
+
+  compile project(':im')
+
+  compile rootProject.ext.appcompatv7
+  compile rootProject.ext.recyclerviewv7
+  compile rootProject.ext.cardviewv7
+  //加载动画 cardviewv7
+  compile 'com.github.ybq:Android-SpinKit:1.1.0'
+  compile 'com.github.bumptech.glide:glide:3.7.0'
+
+}

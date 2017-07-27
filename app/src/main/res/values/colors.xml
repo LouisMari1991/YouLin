@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="white">#FFFFFF</color>
+  <color name="black">#000000</color>
+  <color name="gray">#EEEEEE</color>
+
+  <!--页面背景的颜色-->
+  <color name="colorPageBg">#f2f4f5</color>
+
+  <!--正文文字颜色-->
+  <color name="colorContent">#ff333333</color>
+  <color name="color_blue">#3aaff6</color>
+  <color name="color_blue_select">#FF3396D1</color>
+  <color name="color_blue_click">#FF8ACFFA</color>
+  <color name="color_blue_text">#3aaff6</color>
+  <color name="color_gray_text">#b0c2cf</color>
+  <color name="color_yelow">#f6a73a</color>
+  <color name="color_red">#f63b3b</color>
+  <color name="color_red_text">#f63a3a</color>
+  <color name="color_red_press">#d13333</color>
+  <color name="color_red_disable">#f29696</color>
+  <color name="color_gray_deep">#b0c2cf</color>
+  <color name="color_gray_light">#ebf1f6</color>
+  <color name="color_gray_transparent">#99221712</color>
+  <color name="color_input_bg">#44222222</color>
+  <color name="color_gray_deep1">#FFDBE5EC</color>
+  <color name="color_gray_deep2">#FF90ACBD</color>
+  <color name="cycle_image_bg">#44222222</color>
+  <color name="divider_light_grey">#9e9e9e</color>
+  <color name="black_text">#000</color>
+  <!--友邻-->
+  <color name="touch_effect">#9ccc</color>
+
+
+  <!--按钮颜色-->
+  <color name="btn_blue_enable">#3aaff6</color>
+  <color name="btn_blue_pressed">#3295d1</color>
+  <color name="btn_blue_unenable">#89cffa</color>
+
+  <color name="btn_red_enable">#f63a3a</color>
+  <color name="btn_red_pressed">#d13232</color>
+  <color name="btn_red_unenable">#f29595</color>
+
+  <color name="btn_yellow_enable">#f6a93a</color>
+  <color name="btn_yellow_pressed">#de9734</color>
+  <color name="btn_yellow_unenable">#faca89</color>
+
+  <color name="btn_while_enable">#FFFFFF</color>
+  <color name="btn_while_pressed">#ebf1f6</color>
+  <color name="btn_while_unenable">#f3f7fa</color>
+
+  <color name="partTranslucent">#39000000</color>
+
+  <color name="text_deep_light">#b0c2cf</color>
+  <color name="text_black">#000000</color>
+
+
+  <!-->chat input<-->
+  <color name="aurora_bg_input_default">#f3f3f3</color>
+  <color name="aurora_bg_input_container">#e5e5e5</color>
+  <color name="aurora_bg_edittext_default">#e5e5e5</color>
+  <color name="aurora_bg_edittext_focus">#3f80dc</color>
+  <color name="aurora_cursor_color_default">#8db4eb</color>
+  <color name="aurora_jpush_blue">#3f80dc</color>
+  <color name="aurora_bg_voice_btn_default">#3f80dc</color>
+  <color name="aurora_bg_voice_btn_pressed">#3773cb</color>
+  <color name="aurora_text_color_input">#000000</color>
+  <color name="aurora_hint_color_input">#8b8b8b</color>
+  <color name="aurora_chronometer_text_color">#92A7C5</color>
+
+
+
+</resources>

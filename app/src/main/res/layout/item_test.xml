@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+  <TextView
+      android:id="@+id/header"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#E0E0E0"
+      android:paddingBottom="2dp"
+      android:paddingLeft="10dp"
+      android:paddingTop="2dp"
+      android:textColor="#8a99ac"
+      android:textSize="15sp"
+      android:visibility="visible"
+      />
+
+  <youlin.xinhua.com.youlin.widget.SwipeMenuLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:ios="true"
+      app:leftSwipe="true"
+      app:swipeEnable="true"
+      >
+
+    <LinearLayout
+        android:id="@+id/item_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="vertical"
+        >
+
+
+      <LinearLayout
+
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:gravity="center_vertical"
+          android:orientation="horizontal"
+          >
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_launcher_round"
+            />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="asdfasdf"
+            android:textColor="#000"
+            android:textSize="15sp"
+            />
+
+      </LinearLayout>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"
+          android:background="#ccc"
+          />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_del"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/ic_del"
+        />
+  </youlin.xinhua.com.youlin.widget.SwipeMenuLayout>
+
+
+</LinearLayout>

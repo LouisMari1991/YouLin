@@ -1,0 +1,13 @@
+<resources>
+
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- 设置没有标题 -->
+    <item name="android:windowNoTitle">true</item>
+  </style>
+
+  <style name="MyCheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+    <item name="android:button">@drawable/checkbox_bg_selector</item>
+  </style>
+
+</resources>

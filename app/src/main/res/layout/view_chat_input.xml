@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPageBg"
+    android:orientation="vertical"
+    >
+
+  <LinearLayout
+      android:id="@+id/aurora_ll_input_container"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:layout_marginTop="5dp"
+      android:orientation="horizontal"
+      >
+
+    <android.support.v4.widget.Space
+        android:id="@+id/aurora_input_margin_left"
+        android:layout_width="10dp"
+        android:layout_height="match_parent"
+        />
+
+    <EditText
+        android:id="@+id/aurora_et_chat_input"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/aurora_edittext_bg"
+        android:cursorVisible="true"
+        android:inputType="textMultiLine"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:textColor="@android:color/black"
+        android:textCursorDrawable="@drawable/aurora_edittext_cursor_bg"
+        android:textSize="12sp"
+        />
+
+    <Button
+        android:id="@+id/aurora_menuitem_ib_send"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/selector_blue"
+        android:text="发送"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        />
+
+  </LinearLayout>
+
+  <include
+      layout="@layout/layout_chatinput_menu"
+      android:id="@+id/aurora_ll_menuitem_container"
+      />
+
+
+  <FrameLayout
+      android:id="@+id/aurora_fl_menu_container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      >
+
+    <include
+        layout="@layout/layout_chatinput_recordvoice"
+        android:id="@+id/aurora_rl_recordvoice_container"
+        android:visibility="gone"
+        />
+
+    <youlin.xinhua.com.youlin.widget.photo.SelectPhotoView
+        android:id="@+id/aurora_view_selectphoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+  </FrameLayout>
+
+</LinearLayout>

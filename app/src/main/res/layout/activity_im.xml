@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+      <Button
+          android:id="@+id/group_search"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="群组搜索"
+          />
+
+      <Button
+          android:id="@+id/group_info"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:text="群组详情"
+          />
+
+      <Button
+          android:id="@+id/group_join"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:text="申请加入群组"
+          />
+
+    </LinearLayout>
+
+
+  </ScrollView>
+
+
+</LinearLayout>

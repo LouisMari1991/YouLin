@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    >
+
+  <ImageView
+      android:id="@+id/image_photoselect_photo"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scaleType="centerCrop"
+      android:src="@drawable/aurora_picture_not_found"
+      />
+
+  <!--图片选中阴影-->
+  <ImageView
+      android:id="@+id/image_photoselect_shadow"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentTop="true"
+      android:src="@drawable/aurora_selectphoto_shadow"
+      android:visibility="invisible"
+      />
+
+  <youlin.xinhua.com.youlin.widget.CheckableView
+      android:id="@+id/image_photoselect_checkview"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_alignParentRight="true"
+      android:layout_marginRight="20dp"
+      android:layout_marginTop="20dp"
+      app:checkedDrawable="@drawable/select_pic_check"
+      app:normalDrawable="@drawable/select_pic_normal"
+      />
+
+</RelativeLayout>
+

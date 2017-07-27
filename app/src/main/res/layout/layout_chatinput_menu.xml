@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:background="@color/colorPageBg"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    >
+
+  <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      >
+
+    <FrameLayout
+        android:id="@+id/aurora_framelayout_menuitem_voice"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        >
+
+      <youlin.xinhua.com.youlin.widget.CheckableView
+          android:id="@+id/aurora_menuitem_ib_voice"
+          android:layout_width="24dp"
+          android:layout_height="24dp"
+          android:layout_gravity="center"
+          android:background="@android:color/transparent"
+          android:clickable="false"
+          app:checkedDrawable="@drawable/voice_check"
+          app:normalDrawable="@drawable/voice_normal"
+          />
+    </FrameLayout>
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      >
+
+    <FrameLayout
+        android:id="@+id/item_menu_fl_emoji"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        >
+
+      <youlin.xinhua.com.youlin.widget.CheckableView
+          android:id="@+id/item_menu_view_emiji"
+          android:layout_width="24dp"
+          android:layout_height="24dp"
+          android:layout_gravity="center"
+          android:background="@android:color/transparent"
+          android:clickable="false"
+          app:checkedDrawable="@drawable/emiji_check"
+          app:normalDrawable="@drawable/emoji_normal"
+          />
+    </FrameLayout>
+
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      >
+
+    <FrameLayout
+        android:id="@+id/aurora_framelayout_menuitem_photo"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        >
+
+      <youlin.xinhua.com.youlin.widget.CheckableView
+          android:id="@+id/aurora_menuitem_ib_photo"
+          android:layout_width="24dp"
+          android:layout_height="24dp"
+          android:layout_gravity="center"
+          android:background="@android:color/transparent"
+          android:clickable="false"
+          app:checkedDrawable="@drawable/gra_check"
+          app:normalDrawable="@drawable/gra_normal"
+          />
+
+      <TextView
+          android:id="@+id/aurora_menuitem_tv_send_count"
+          android:layout_width="16dp"
+          android:layout_height="16dp"
+          android:layout_gravity="bottom|right"
+          android:layout_marginBottom="4dp"
+          android:layout_marginRight="4dp"
+          android:background="@drawable/aurora_menuitem_send_count_bg"
+          android:elevation="4dp"
+          android:ems="1"
+          android:gravity="center"
+          android:maxLines="1"
+          android:textColor="@android:color/black"
+          android:textSize="10sp"
+          android:visibility="gone"
+          tools:text="5"
+          tools:visibility="visible"
+          />
+    </FrameLayout>
+
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      >
+
+    <FrameLayout
+        android:id="@+id/aurora_framelayout_menuitem_camera"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        >
+
+      <youlin.xinhua.com.youlin.widget.CheckableView
+          android:id="@+id/aurora_menuitem_ib_camera"
+          android:layout_width="24dp"
+          android:layout_height="24dp"
+          android:layout_gravity="center"
+          android:background="@android:color/transparent"
+          android:clickable="false"
+          app:checkedDrawable="@drawable/cr_check"
+          app:normalDrawable="@drawable/cr_normal"
+          />
+    </FrameLayout>
+
+  </LinearLayout>
+  <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      >
+
+    <FrameLayout
+        android:id="@+id/item_menu_fl_more"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        >
+
+      <youlin.xinhua.com.youlin.widget.CheckableView
+          android:id="@+id/item_menu_view_more"
+          android:layout_width="24dp"
+          android:layout_height="24dp"
+          android:layout_gravity="center"
+          android:background="@android:color/transparent"
+          android:clickable="false"
+          app:checkedDrawable="@drawable/more_check"
+          app:normalDrawable="@drawable/more_normal"
+          />
+    </FrameLayout>
+
+  </LinearLayout>
+
+
+</LinearLayout>

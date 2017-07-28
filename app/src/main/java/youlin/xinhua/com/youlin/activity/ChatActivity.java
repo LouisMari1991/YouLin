@@ -71,22 +71,27 @@ public class ChatActivity extends BaseActivity
     mChatView.setKeyboardChangedListener(this);
     mChatView.setMenuClickListener(new OnMenuClickListener() {
       @Override public boolean onSendTextMessage(CharSequence input) {
+        // 发送文字消息
+
         return false;
       }
 
       @Override public void onSendFiles(List<FileItem> list) {
-
+        // 发送文件
       }
 
       @Override public void switchToMicrophoneMode() {
+        // 录音,打开麦克风权限
 
       }
 
       @Override public void switchToGalleryMode() {
+        // 图片选择,打开sd卡权限
 
       }
 
       @Override public void switchToCameraMode() {
+        // 拍照
         cameraFile = new File(PathUtil.getInstance().getImagePath(),
             EMClient.getInstance().getCurrentUser() + System.currentTimeMillis() + ".jpg");
         //noinspection ResultOfMethodCallIgnored

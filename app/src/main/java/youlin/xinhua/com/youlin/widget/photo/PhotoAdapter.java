@@ -64,6 +64,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
       FrameLayout.LayoutParams layoutParams =
           new FrameLayout.LayoutParams(ChatInputView.sMenuHeight, ChatInputView.sMenuHeight);
       holder.container.setLayoutParams(layoutParams);
+      holder.container.requestLayout();
     }
 
     FileItem item = mMedias.get(position);

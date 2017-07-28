@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/emi_icon_size"
+    android:id="@+id/item_View"
+    android:layout_height="@dimen/emi_icon_size"
+    android:background="@drawable/selector_fl_emoji"
+    android:descendantFocusability="blocksDescendants"
+    >
+
+  <ImageView
+      android:id="@+id/img_emoj"
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:layout_gravity="center"
+      android:scaleType="centerCrop"
+      android:src="@drawable/ee_1"
+      />
+
+</FrameLayout>

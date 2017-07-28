@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="emi_icon_size">50dp</dimen>
+  <dimen name="spacing">10dp</dimen>
+  <dimen name="menu_container_height">240dp</dimen>
+</resources>

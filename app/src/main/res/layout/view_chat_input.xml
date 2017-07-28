@@ -10,7 +10,7 @@
   <LinearLayout
       android:id="@+id/aurora_ll_input_container"
       android:layout_width="match_parent"
-      android:layout_height="30dp"
+      android:layout_height="36dp"
       android:layout_marginTop="5dp"
       android:orientation="horizontal"
       >
@@ -33,7 +33,7 @@
         android:paddingRight="4dp"
         android:textColor="@android:color/black"
         android:textCursorDrawable="@drawable/aurora_edittext_cursor_bg"
-        android:textSize="12sp"
+        android:textSize="16sp"
         />
 
     <Button
@@ -69,12 +69,20 @@
         android:visibility="gone"
         />
 
+    <youlin.xinhua.com.youlin.widget.emoj.SelectEmojView
+        android:id="@+id/aurora_view_selectemoj"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
     <youlin.xinhua.com.youlin.widget.photo.SelectPhotoView
         android:id="@+id/aurora_view_selectphoto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-        tools:visibility="visible"
+        tools:visibility="gone"
         />
   </FrameLayout>
 

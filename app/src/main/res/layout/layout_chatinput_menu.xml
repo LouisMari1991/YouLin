@@ -44,13 +44,13 @@
       >
 
     <FrameLayout
-        android:id="@+id/item_menu_fl_emoji"
+        android:id="@+id/aurora_framelayout_menuitem_emoji"
         android:layout_width="44dp"
         android:layout_height="44dp"
         >
 
       <youlin.xinhua.com.youlin.widget.CheckableView
-          android:id="@+id/item_menu_view_emiji"
+          android:id="@+id/aurora_menuitem_ib_emoji"
           android:layout_width="24dp"
           android:layout_height="24dp"
           android:layout_gravity="center"

@@ -39,6 +39,7 @@ dependencies {
   compile rootProject.ext.butterknifts.butterknift
   annotationProcessor rootProject.ext.butterknifts.butterkniftcompiler
 
+  compile(name: 'imageselect', ext: 'aar')
   compile(name: 'recyclerviewhelper', ext: 'aar')
 
   compile project(':im')

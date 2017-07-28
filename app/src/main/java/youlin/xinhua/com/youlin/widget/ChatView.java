@@ -68,17 +68,9 @@ public class ChatView extends RelativeLayout {
     mRecordVoiceBtn.setVoiceFilePath(path, fileName);
   }
 
-  public void setCameraCaptureFile(String path, String fileName) {
-    mChatInput.setCameraCaptureFile(path, fileName);
-  }
-
   public void setRecordVoiceListener(RecordVoiceListener listener) {
     mRecordVoiceBtn.setRecordVoiceListener(listener);
   }
-
-  //public void setOnCameraCallbackListener(OnCameraCallbackListener listener) {
-  //    mChatInput.setOnCameraCallbackListener(listener);
-  //}
 
   public void setKeyboardChangedListener(OnKeyboardChangedListener listener) {
     mKeyboardListener = listener;

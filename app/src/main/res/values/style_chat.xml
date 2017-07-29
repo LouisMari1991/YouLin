@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="chat_timestamp">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_margin">10dp</item>
+    <item name="android:layout_gravity">center_horizontal</item>
+    <item name="android:textSize">@dimen/text_12</item>
+    <item name="android:textColor">@color/color_gray_text</item>
+  </style>
+
+  <style name="chat_event_msg">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:paddingLeft">5dp</item>
+    <item name="android:paddingRight">5dp</item>
+    <item name="android:minHeight">30dp</item>
+    <item name="android:minWidth">175dp</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textSize">@dimen/text_12</item>
+    <item name="android:gravity">center</item>
+    <item name="android:layout_gravity">center_horizontal</item>
+    <item name="android:background">@drawable/aurora_bg_event_message</item>
+    <item name="android:layout_margin">10dp</item>
+  </style>
+
+  <style name="chat_avatar">
+    <item name="android:src">@drawable/icon_171</item>
+    <item name="android:layout_width">40dp</item>
+    <item name="android:layout_height">40dp</item>
+  </style>
+
+
+</resources>

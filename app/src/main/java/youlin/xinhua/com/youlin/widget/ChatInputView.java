@@ -487,7 +487,7 @@ public class ChatInputView extends LinearLayout
     mPhotoBtn.setChecked(false);
 
     mRecordVoiceRl.setVisibility(VISIBLE);
-    mRecordContentLl.setVisibility(VISIBLE);
+    //mRecordContentLl.setVisibility(VISIBLE);
 
     dismissPhotoLayout();
     dimissEmojLayout();

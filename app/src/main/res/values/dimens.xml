@@ -3,4 +3,98 @@
   <dimen name="emi_icon_size">50dp</dimen>
   <dimen name="spacing">10dp</dimen>
   <dimen name="menu_container_height">240dp</dimen>
+
+  <!-- Default screen margins, per the Android Design guidelines. -->
+  <dimen name="activity_horizontal_margin">16dp</dimen>
+  <dimen name="activity_vertical_margin">16dp</dimen>
+
+  <!--云基一号间距规范 1280*720-->
+  <dimen name="gauge_0">0px</dimen>
+  <dimen name="gauge_1">1px</dimen>
+  <dimen name="gauge_2">2px</dimen>
+  <dimen name="gauge_4">4px</dimen>
+  <dimen name="gauge_5">5px</dimen>
+  <dimen name="gauge_8">8px</dimen>
+  <dimen name="gauge_10">10px</dimen>
+  <dimen name="gauge_12">12px</dimen>
+  <dimen name="gauge_14">14px</dimen>
+  <dimen name="gauge_15">15px</dimen>
+  <dimen name="gauge_16">16px</dimen>
+  <dimen name="gauge_20">20px</dimen>
+  <dimen name="gauge_22">22px</dimen>
+  <dimen name="gauge_24">24px</dimen>
+  <dimen name="gauge_28">28px</dimen>
+  <dimen name="gauge_30">30px</dimen>
+  <dimen name="gauge_32">32px</dimen>
+  <dimen name="gauge_34">34px</dimen>
+  <dimen name="gauge_36">36px</dimen>
+
+  <dimen name="gauge_39">39px</dimen>
+  <dimen name="gauge_40">40px</dimen>
+  <dimen name="gauge_44">44px</dimen>
+  <dimen name="gauge_45">45px</dimen>
+  <dimen name="gauge_48">48px</dimen>
+  <dimen name="gauge_50">50px</dimen>
+  <dimen name="gauge_60">60px</dimen>
+  <dimen name="gauge_68">68px</dimen>
+  <dimen name="gauge_70">70px</dimen>
+  <dimen name="gauge_80">80px</dimen>
+  <dimen name="gauge_88">88px</dimen>
+  <dimen name="gauge_98">98px</dimen>
+
+  <dimen name="gauge_100">100px</dimen>
+  <dimen name="gauge_102">102px</dimen>
+  <dimen name="gauge_109">109px</dimen>
+  <dimen name="gauge_110">110px</dimen>
+  <dimen name="gauge_120">120px</dimen>
+  <dimen name="gauge_128">108px</dimen>
+  <dimen name="gauge_130">130px</dimen>
+  <dimen name="gauge_132">132px</dimen>
+  <dimen name="gauge_140">140px</dimen>
+  <dimen name="gauge_146">146px</dimen>
+  <dimen name="gauge_150">150px</dimen>
+  <dimen name="gauge_160">160px</dimen>
+  <dimen name="gauge_176">176px</dimen>
+  <dimen name="gauge_180">180px</dimen>
+  <dimen name="gauge_190">190px</dimen>
+
+  <dimen name="gauge_200">200px</dimen>
+  <dimen name="gauge_210">210px</dimen>
+  <dimen name="gauge_220">220px</dimen>
+  <dimen name="gauge_225">225px</dimen>
+  <dimen name="gauge_230">230px</dimen>
+  <dimen name="gauge_240">240px</dimen>
+  <dimen name="gauge_250">250px</dimen>
+  <dimen name="gauge_266">266px</dimen>
+  <dimen name="gauge_270">270px</dimen>
+  <dimen name="gauge_288">288px</dimen>
+
+  <dimen name="gauge_320">320px</dimen>
+  <dimen name="gauge_386">386px</dimen>
+  <dimen name="gauge_322">322px</dimen>
+
+
+  <dimen name="gauge_400">400px</dimen>
+  <dimen name="gauge_420">420px</dimen>
+  <dimen name="gauge_450">450px</dimen>
+  <dimen name="gauge_460">460px</dimen>
+  <dimen name="gauge_488">488px</dimen>
+  <dimen name="gauge_560">560px</dimen>
+  <dimen name="gauge_620">620px</dimen>
+  <dimen name="gauge_680">680px</dimen>
+
+
+
+  <!--云基一号字体规范-->
+  <dimen name="text_18">18sp</dimen>
+  <dimen name="text_17">17sp</dimen>
+  <dimen name="text_15">15sp</dimen>
+  <dimen name="text_14">14sp</dimen>
+  <dimen name="text_12">12sp</dimen>
+  <dimen name="text_10">10sp</dimen>
+
+
+  <!--云社-->
+  <dimen name="avatar_size">40dp</dimen>
+
 </resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+  <TextView
+      android:id="@+id/timestamp"
+      android:text="今天 11:20"
+      style="@style/chat_timestamp"
+      />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:layout_marginTop="5dp"
+      >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:minHeight="30dp"
+        android:orientation="horizontal"
+        >
+
+      <ImageView
+          android:id="@+id/msg_status"
+          android:layout_width="20dp"
+          android:layout_height="20dp"
+          android:layout_centerVertical="true"
+          android:layout_gravity="center_vertical"
+          android:layout_marginRight="5dp"
+          android:clickable="true"
+          android:src="@drawable/ease_msg_state_failed_resend"
+          android:visibility="invisible"
+          />
+
+      <TextView
+          android:id="@+id/text_message_content"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/msg_status"
+          android:background="@drawable/shape_btn_blue_normal"
+          android:gravity="center|right"
+          android:minHeight="30dp"
+          android:paddingBottom="5dp"
+          android:paddingLeft="10dp"
+          android:paddingRight="25dp"
+          android:paddingTop="5dp"
+          android:textColor="@color/white"
+          android:textSize="@dimen/text_12"
+          tools:text="阿斯多夫空军阿"
+          />
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        style="@style/chat_avatar"
+        />
+  </RelativeLayout>
+
+
+</LinearLayout>

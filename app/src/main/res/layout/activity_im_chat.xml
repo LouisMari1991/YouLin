@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<youlin.xinhua.com.youlin.widget.ChatView xmlns:android="http://schemas.android.com/apk/res/android"
+<youlin.xinhua.com.youlin.widget.chat.ChatView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/chat_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
 
-  <youlin.xinhua.com.youlin.widget.ChatInputView
+  <youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView
       android:id="@+id/chat_input"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -13,4 +13,4 @@
       />
 
 
-</youlin.xinhua.com.youlin.widget.ChatView>
+</youlin.xinhua.com.youlin.widget.chat.ChatView>

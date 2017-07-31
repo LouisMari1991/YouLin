@@ -1,4 +1,4 @@
-package youlin.xinhua.com.youlin.widget.photo;
+package youlin.xinhua.com.youlin.widget.chat.photo;
 
 import android.Manifest;
 import android.content.ContentResolver;
@@ -35,7 +35,7 @@ public class SelectPhotoView extends FrameLayout implements Handler.Callback {
 
     private RecyclerView mRvPhotos; // Select photo view
     private PhotoAdapter mPhotoAdapter;
-    private ProgressBar mProgressBar;
+    private ProgressBar  mProgressBar;
 
     private List<FileItem> mMedias; // All photo or video files
 

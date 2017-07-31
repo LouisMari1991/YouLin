@@ -23,8 +23,8 @@ import youlin.xinhua.com.youlin.listener.OnMenuClickListener;
 import youlin.xinhua.com.youlin.listener.RecordVoiceListener;
 import youlin.xinhua.com.youlin.model.FileItem;
 import youlin.xinhua.com.youlin.utils.ToastUtils;
-import youlin.xinhua.com.youlin.widget.ChatInputView;
-import youlin.xinhua.com.youlin.widget.ChatView;
+import youlin.xinhua.com.youlin.widget.chat.ChatView;
+import youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView;
 
 /**
  * <pre>

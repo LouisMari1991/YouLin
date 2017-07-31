@@ -24,48 +24,102 @@
   <!-->Chat input style<-->
   <attr name="chat_input" />
   <declare-styleable name="ChatInputView">
-    <attr name="inputMarginLeft" format="dimension|reference" />
-    <attr name="inputMarginRight" format="dimension|reference" />
-    <attr name="inputEditTextBg" format="reference" />
-    <attr name="inputMaxLines" format="integer" />
-    <attr name="inputHint" format="string" />
-    <attr name="inputText" format="string" />
-    <attr name="inputTextSize" format="dimension|reference" />
-    <attr name="inputTextColor" format="color|reference" />
-    <attr name="inputHintColor" format="color|reference" />
-    <attr name="inputCursorDrawable" format="reference" />
-    <attr name="sendBtnBg" format="reference" />
-    <attr name="sendBtnIcon" format="reference" />
-    <attr name="sendCountBg" format="reference" />
-    <attr name="voiceBtnBg" format="reference" />
-    <attr name="voiceBtnIcon" format="reference" />
-    <attr name="cameraBtnBg" format="reference" />
-    <attr name="cameraBtnIcon" format="reference" />
-    <attr name="photoBtnBg" format="reference" />
-    <attr name="photoBtnIcon" format="reference" />
+    <attr format="dimension|reference" name="inputMarginLeft" />
+    <attr format="dimension|reference" name="inputMarginRight" />
+    <attr format="reference" name="inputEditTextBg" />
+    <attr format="integer" name="inputMaxLines" />
+    <attr format="string" name="inputHint" />
+    <attr format="string" name="inputText" />
+    <attr format="dimension|reference" name="inputTextSize" />
+    <attr format="color|reference" name="inputTextColor" />
+    <attr format="color|reference" name="inputHintColor" />
+    <attr format="reference" name="inputCursorDrawable" />
+    <attr format="reference" name="sendBtnBg" />
+    <attr format="reference" name="sendBtnIcon" />
+    <attr format="reference" name="sendCountBg" />
+    <attr format="reference" name="voiceBtnBg" />
+    <attr format="reference" name="voiceBtnIcon" />
+    <attr format="reference" name="cameraBtnBg" />
+    <attr format="reference" name="cameraBtnIcon" />
+    <attr format="reference" name="photoBtnBg" />
+    <attr format="reference" name="photoBtnIcon" />
   </declare-styleable>
 
   <declare-styleable name="RecordVoiceButton">
-    <attr name="voiceBtnText" format="string" />
-    <attr name="tapDownText" format="string" />
-    <attr name="recordVoiceBtnBg" format="reference" />
-    <attr name="mic_1" format="reference" />
-    <attr name="mic_2" format="reference" />
-    <attr name="mic_3" format="reference" />
-    <attr name="mic_4" format="reference" />
-    <attr name="mic_5" format="reference" />
-    <attr name="cancelRecord" format="reference" />
+    <attr format="string" name="voiceBtnText" />
+    <attr format="string" name="tapDownText" />
+    <attr format="reference" name="recordVoiceBtnBg" />
+    <attr format="reference" name="mic_1" />
+    <attr format="reference" name="mic_2" />
+    <attr format="reference" name="mic_3" />
+    <attr format="reference" name="mic_4" />
+    <attr format="reference" name="mic_5" />
+    <attr format="reference" name="cancelRecord" />
   </declare-styleable>
 
   <declare-styleable name="RecordVoiceDialog">
-    <attr name="background" format="reference" />
+    <attr format="reference" name="background" />
   </declare-styleable>
 
   <declare-styleable name="ProgressButton">
-    <attr name="roundColor" format="color"/>
-    <attr name="roundProgressColor" format="color"/>
-    <attr name="roundWidth" format="dimension" />
-    <attr name="max" format="integer" />
+    <attr format="color" name="roundColor" />
+    <attr format="color" name="roundProgressColor" />
+    <attr format="dimension" name="roundWidth" />
+    <attr format="integer" name="max" />
+  </declare-styleable>
+
+  <!-->Message List<-->
+  <attr name="message_list" />
+  <declare-styleable name="MessageList">
+    <attr format="dimension|reference" name="dateTextSize" />
+    <attr format="color|reference" name="dateTextColor" />
+    <attr format="string|reference" name="dateFormat" />
+    <attr format="dimension|reference" name="datePadding" />
+    <attr format="dimension|reference" name="eventTextSize" />
+    <attr format="color|reference" name="eventTextColor" />
+    <attr format="dimension|reference" name="eventPadding" />
+
+    <attr format="dimension|reference" name="avatarWidth" />
+    <attr format="dimension|reference" name="avatarHeight" />
+    <attr format="integer" name="showDisplayName">
+      <enum name="HIDE" value="0" />
+      <enum name="SHOW" value="1" />
+    </attr>
+
+    <attr format="reference" name="receiveBubbleDrawable" />
+    <attr format="color|reference" name="receiveBubbleColor" />
+    <attr format="color|reference" name="receiveBubblePressedColor" />
+    <attr format="color|reference" name="receiveBubbleSelectedColor" />
+    <attr format="dimension|reference" name="receiveBubblePaddingLeft" />
+    <attr format="dimension|reference" name="receiveBubblePaddingTop" />
+    <attr format="dimension|reference" name="receiveBubblePaddingRight" />
+    <attr format="dimension|reference" name="receiveBubblePaddingBottom" />
+    <attr format="color|reference" name="receiveTextColor" />
+    <attr format="dimension|reference" name="receiveTextSize" />
+
+    <attr format="reference" name="sendBubbleDrawable" />
+    <attr format="color|reference" name="sendBubbleColor" />
+    <attr format="color|reference" name="sendBubblePressedColor" />
+    <attr format="color|reference" name="sendBubbleSelectedColor" />
+    <attr format="dimension|reference" name="sendBubblePaddingLeft" />
+    <attr format="dimension|reference" name="sendBubblePaddingTop" />
+    <attr format="dimension|reference" name="sendBubblePaddingRight" />
+    <attr format="dimension|reference" name="sendBubblePaddingBottom" />
+    <attr format="color|reference" name="sendTextColor" />
+    <attr format="dimension|reference" name="sendTextSize" />
+    <attr format="float|reference" name="bubbleMaxWidth" />
+    <attr format="reference" name="sendingProgressDrawable" />
+    <attr format="reference" name="sendingIndeterminateDrawable" />
+
+    <attr format="reference" name="sendVoiceDrawable" />
+    <attr format="reference" name="receiveVoiceDrawable" />
+    <attr format="reference" name="playSendVoiceAnim" />
+    <attr format="reference" name="playReceiveVoiceAnim" />
+
+    <attr format="reference" name="sendPhotoMsgBg" />
+    <attr format="reference" name="receivePhotoMsgBg" />
+
+    <attr format="dimension|reference" name="videomessage_radius" />
   </declare-styleable>
 
 </resources>

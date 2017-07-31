@@ -1,4 +1,4 @@
-package youlin.xinhua.com.youlin.widget.record;
+package youlin.xinhua.com.youlin.widget.chat.record;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -16,13 +16,13 @@ import youlin.xinhua.com.youlin.R;
 public class RecordControllerView extends View {
 
     private final static String TAG = "RecordControllerView";
-    private int mWidth;
-    private Path mPath;
-    private Paint mPaint;
-    private int mRecordBtnLeft;
-    private int mRecordBtnRight;
-    private int mRecordBtnTop;
-    private int mRecordBtnBottom;
+    private int               mWidth;
+    private Path              mPath;
+    private Paint             mPaint;
+    private int               mRecordBtnLeft;
+    private int               mRecordBtnRight;
+    private int               mRecordBtnTop;
+    private int               mRecordBtnBottom;
     private RecordVoiceButton mRecordVoiceBtn;
     private final int MAX_RADIUS = 90;
 

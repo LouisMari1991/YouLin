@@ -1,4 +1,4 @@
-package youlin.xinhua.com.youlin.widget.emoj;
+package youlin.xinhua.com.youlin.widget.chat.emoj;
 
 import android.content.Context;
 import android.support.annotation.AttrRes;

@@ -4,11 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    tools:background="@color/colorPageBg"
     >
 
   <TextView
       android:id="@+id/timestamp"
-      android:text="今天 11:20"
+      tools:text="今天 11:20"
       style="@style/chat_timestamp"
       />
 
@@ -20,33 +21,56 @@
       >
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginRight="95dp"
         android:layout_marginTop="20dp"
         android:minHeight="30dp"
         android:orientation="horizontal"
         >
 
-      <TextView
-          android:id="@+id/text_message_content"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
+      <RelativeLayout
+          android:id="@+id/bubble"
+          android:layout_width="75dp"
+          android:layout_height="match_parent"
           android:background="@drawable/shape_chat_while"
-          android:gravity="center|left"
-          android:minHeight="30dp"
-          android:paddingBottom="5dp"
-          android:paddingLeft="25dp"
-          android:paddingRight="10dp"
-          android:paddingTop="5dp"
-          android:textColor="@color/black_text"
+          >
+
+        <ImageView
+            android:id="@+id/iv_voice"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ease_chatfrom_voice_playing"
+            />
+      </RelativeLayout>
+
+      <TextView
+          android:id="@+id/tv_length"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_marginLeft="5dp"
+          android:layout_toEndOf="@+id/bubble"
+          android:layout_toRightOf="@+id/bubble"
+          android:textColor="@color/color_gray_text"
           android:textSize="@dimen/text_12"
-          tools:text="asdasdasdasdasdasd"
+          tools:text="5s"
           />
 
-    </LinearLayout>
+      <ProgressBar
+          android:id="@+id/progress_bar"
+          android:layout_width="16dp"
+          android:layout_height="16dp"
+          android:layout_centerVertical="true"
+          android:layout_marginLeft="5dp"
+          android:layout_toRightOf="@id/tv_length"
+          android:visibility="invisible"
+          tools:visibility="visible"
+          />
+
+    </RelativeLayout>
 
 
     <ImageView

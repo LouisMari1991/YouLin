@@ -1,4 +1,4 @@
-package youlin.xinhua.com.youlin.widget;
+package youlin.xinhua.com.youlin.widget.chat.chatinput;
 
 import android.Manifest;
 import android.app.Activity;
@@ -35,11 +35,12 @@ import youlin.xinhua.com.youlin.listener.OnClickEditTextListener;
 import youlin.xinhua.com.youlin.listener.OnFileSelectedListener;
 import youlin.xinhua.com.youlin.listener.OnMenuClickListener;
 import youlin.xinhua.com.youlin.utils.LogUtils;
-import youlin.xinhua.com.youlin.widget.emoj.SelectEmojView;
-import youlin.xinhua.com.youlin.widget.photo.SelectPhotoView;
-import youlin.xinhua.com.youlin.widget.record.ProgressButton;
-import youlin.xinhua.com.youlin.widget.record.RecordControllerView;
-import youlin.xinhua.com.youlin.widget.record.RecordVoiceButton;
+import youlin.xinhua.com.youlin.widget.CheckableView;
+import youlin.xinhua.com.youlin.widget.chat.emoj.SelectEmojView;
+import youlin.xinhua.com.youlin.widget.chat.photo.SelectPhotoView;
+import youlin.xinhua.com.youlin.widget.chat.record.ProgressButton;
+import youlin.xinhua.com.youlin.widget.chat.record.RecordControllerView;
+import youlin.xinhua.com.youlin.widget.chat.record.RecordVoiceButton;
 
 public class ChatInputView extends LinearLayout
     implements View.OnClickListener, TextWatcher, RecordControllerView.OnRecordActionListener,

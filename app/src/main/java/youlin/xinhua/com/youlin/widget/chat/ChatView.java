@@ -1,4 +1,4 @@
-package youlin.xinhua.com.youlin.widget;
+package youlin.xinhua.com.youlin.widget.chat;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,11 +8,12 @@ import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.listener.OnClickEditTextListener;
 import youlin.xinhua.com.youlin.listener.OnMenuClickListener;
 import youlin.xinhua.com.youlin.listener.RecordVoiceListener;
-import youlin.xinhua.com.youlin.widget.record.RecordVoiceButton;
+import youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView;
+import youlin.xinhua.com.youlin.widget.chat.record.RecordVoiceButton;
 
-import static youlin.xinhua.com.youlin.widget.ChatInputView.KEYBOARD_STATE_HIDE;
-import static youlin.xinhua.com.youlin.widget.ChatInputView.KEYBOARD_STATE_INIT;
-import static youlin.xinhua.com.youlin.widget.ChatInputView.KEYBOARD_STATE_SHOW;
+import static youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView.KEYBOARD_STATE_HIDE;
+import static youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView.KEYBOARD_STATE_INIT;
+import static youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView.KEYBOARD_STATE_SHOW;
 
 public class ChatView extends RelativeLayout {
 

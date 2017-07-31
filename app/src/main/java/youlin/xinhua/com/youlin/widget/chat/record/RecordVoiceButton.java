@@ -1,4 +1,4 @@
-package youlin.xinhua.com.youlin.widget.record;
+package youlin.xinhua.com.youlin.widget.chat.record;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;

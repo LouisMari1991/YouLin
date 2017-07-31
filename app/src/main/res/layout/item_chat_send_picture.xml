@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    tools:background="@color/colorPageBg"
     >
 
   <TextView
       android:id="@+id/timestamp"
-      android:text="今天 11:20"
+      tools:text="今天 11:20"
       style="@style/chat_timestamp"
       />
 
@@ -21,15 +23,33 @@
 
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_marginLeft="70dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
-        android:minHeight="30dp"
         android:orientation="horizontal"
         >
+
+
+      <RelativeLayout
+          android:id="@+id/bubble"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          >
+
+        <youlin.xinhua.com.youlin.widget.ShapeImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/aurora_picture_not_found"
+            android:maxHeight="200dp"
+            android:maxWidth="200dp"
+            app:videomessage_radius="8dp"
+            />
+      </RelativeLayout>
 
       <ImageView
           android:id="@+id/msg_status"
@@ -37,9 +57,23 @@
           android:layout_height="20dp"
           android:layout_centerVertical="true"
           android:layout_marginRight="5dp"
+          android:layout_toLeftOf="@id/bubble"
           android:clickable="true"
           android:src="@drawable/ease_msg_state_failed_resend"
           android:visibility="gone"
+          />
+
+
+      <TextView
+          android:id="@+id/percentage"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_marginRight="5dp"
+          android:layout_toLeftOf="@id/bubble"
+          android:textColor="@color/color_gray_text"
+          android:textSize="@dimen/text_12"
+          tools:text="50%"
           />
 
       <ProgressBar
@@ -47,35 +81,14 @@
           android:layout_width="16dp"
           android:layout_height="16dp"
           android:layout_centerVertical="true"
-          android:visibility="visible"
+          android:layout_marginRight="5dp"
+          android:layout_toLeftOf="@id/percentage"
+          android:visibility="invisible"
+          tools:visibility="visible"
           />
 
-      <RelativeLayout
-          android:id="@+id/bubble"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentRight="true"
-          android:layout_marginLeft="25dp"
-          android:background="@drawable/shape_btn_blue_normal"
-          >
-        <TextView
-            android:id="@+id/text_message_content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center|right"
-            android:minHeight="30dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="25dp"
-            android:paddingTop="5dp"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_12"
-            tools:text="阿斯多夫空军阿"
-            />
-      </RelativeLayout>
-
-
     </RelativeLayout>
+
 
     <ImageView
         android:id="@+id/avatar"
@@ -84,6 +97,4 @@
         style="@style/chat_avatar"
         />
   </RelativeLayout>
-
-
 </LinearLayout>

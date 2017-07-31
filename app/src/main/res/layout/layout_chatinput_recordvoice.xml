@@ -47,7 +47,7 @@
       tools:visibility="visible"
       >
 
-    <youlin.xinhua.com.youlin.widget.record.ProgressButton
+    <youlin.xinhua.com.youlin.widget.chat.record.ProgressButton
         android:id="@+id/aurora_pb_recordvoice_play_audio"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -103,14 +103,14 @@
         android:layout_marginTop="16dp"
         >
 
-      <youlin.xinhua.com.youlin.widget.record.RecordVoiceButton
+      <youlin.xinhua.com.youlin.widget.chat.record.RecordVoiceButton
           android:id="@+id/aurora_rvb_recordvoice_record"
           android:layout_width="70dp"
           android:layout_height="70dp"
           android:layout_gravity="center"
           android:background="@drawable/aurora_recordvoice_record_mic_pres"
           />
-      <youlin.xinhua.com.youlin.widget.record.RecordControllerView
+      <youlin.xinhua.com.youlin.widget.chat.record.RecordControllerView
           android:id="@+id/aurora_rcv_recordvoice_controller"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"

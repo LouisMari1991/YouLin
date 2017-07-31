@@ -1,4 +1,4 @@
-package youlin.xinhua.com.youlin.widget.photo;
+package youlin.xinhua.com.youlin.widget.chat.photo;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -16,8 +16,8 @@ import java.util.List;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.listener.OnFileSelectedListener;
 import youlin.xinhua.com.youlin.model.FileItem;
-import youlin.xinhua.com.youlin.widget.ChatInputView;
 import youlin.xinhua.com.youlin.widget.CheckableView;
+import youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;

@@ -25,6 +25,7 @@ import youlin.xinhua.com.youlin.BuildConfig;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.activity.MainActivity;
 import youlin.xinhua.com.youlin.bean.UserInfo;
+import youlin.xinhua.com.youlin.constant.ChatRowAttr;
 import youlin.xinhua.com.youlin.constant.EaseConstant;
 import youlin.xinhua.com.youlin.utils.LogUtils;
 import youlin.xinhua.com.youlin.utils.SPUtils;
@@ -584,6 +585,27 @@ public class IMPlatform {
         String reason) {
 
       ToastUtils.showToast("接收到群组加入邀请");
+
+      EMMessage emMessage = EMMessage.createReceiveMessage(EMMessage.Type.TXT);
+
+      emMessage.setAttribute(ChatRowAttr.KEY_GROUP_INVITE, true);
+      emMessage.setAttribute(ChatRowAttr.KEY_GROUP_ID, groupId);
+      emMessage.setAttribute(ChatRowAttr.KEY_GROUP_NAME, groupName);
+      emMessage.setAttribute(ChatRowAttr.KEY_GROUP_REASON_AVATAR, reason);
+
+      emMessage.setMsgId(UUID.randomUUID().toString());
+      emMessage.setChatType(EMMessage.ChatType.Chat);
+      emMessage.setFrom(inviter);
+      emMessage.setTo(EMClient.getInstance().getCurrentUser());
+      emMessage.addBody(new EMTextMessageBody(reason));
+      emMessage.setStatus(EMMessage.Status.SUCCESS);
+
+      // save accept message
+      EMClient.getInstance().chatManager().saveMessage(emMessage);
+
+      // notify the accept message
+      getNotifier().vibrateAndPlayTone(emMessage);
+      broadcastManager.sendBroadcast(new Intent(EaseConstant.ACTION_GROUP_CHANAGED));
 
       //InviteMsgDao.get().deleteMessage(groupId);
       //

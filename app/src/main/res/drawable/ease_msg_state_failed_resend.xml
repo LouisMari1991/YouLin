@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-  <item android:drawable="@drawable/ease_msg_state_fail_resend_pressed" android:state_pressed="true" />
-  <item android:drawable="@drawable/ease_msg_state_fail_resend_pressed" android:state_selected="true" />
-  <item android:drawable="@drawable/ease_msg_state_fail_resend" />
+  <item android:drawable="@drawable/aurora_send_msg_error" android:state_pressed="true" />
+  <item android:drawable="@drawable/aurora_send_msg_error" android:state_selected="true" />
+  <item android:drawable="@drawable/aurora_send_msg_error" />
 </selector>

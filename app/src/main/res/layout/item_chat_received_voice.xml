@@ -42,7 +42,6 @@
             android:layout_width="16dp"
             android:layout_height="16dp"
             android:layout_centerInParent="true"
-            android:background="@drawable/ease_chatfrom_voice_playing"
             />
       </RelativeLayout>
 

@@ -3,7 +3,28 @@
     android:id="@+id/chat_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPageBg"
+    android:fitsSystemWindows="true"
     >
+
+  <include
+      layout="@layout/layout_common_toolbar"
+      android:id="@+id/title_bar"
+      />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_above="@+id/chat_input"
+      android:layout_below="@id/title_bar"
+      >
+
+    <youlin.xinhua.com.youlin.widget.chat.list.EaseChatMessageList
+        android:id="@+id/message_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+  </RelativeLayout>
 
   <youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView
       android:id="@+id/chat_input"

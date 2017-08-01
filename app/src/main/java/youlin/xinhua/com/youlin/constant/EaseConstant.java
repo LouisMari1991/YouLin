@@ -37,6 +37,25 @@ public interface EaseConstant {
   String MESSAGE_ATTR_VALUE_AT_MSG_ALL = "ALL";
 
   /**
+   * event类型事件: 群成员加入,群成员离开, 成为好友关系
+   */
+  String MESSAGE_ATTR_EVENT_MESSAGE = "Event";
+
+  /**
+   * 群组邀请消息,本地生成此消息 {@see youlin.xinhua.com.youlin.im.IMPlatform#MyGroupChangeListener}
+   */
+  String MESSAGE_ATTR_GROUP_INVITE = "Group_Invite";
+
+  /**
+   * GROUP_NAME
+   */
+  String MESSAGE_ATTR_VALUE_GROUP_NAME = "Group_Name";
+
+  String MESSAGE_ATTR_VALUE_GROUP_ID = "Group_ID";
+
+  String MESSAGE_ATTR_VALUE_GROUP_REASON_AVATAR = "Group_Reason_Avatar";
+
+  /**
    * 单聊
    */
   int CHATTYPE_SINGLE   = 1;

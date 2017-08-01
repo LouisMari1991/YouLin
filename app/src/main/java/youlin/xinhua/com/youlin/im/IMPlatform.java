@@ -25,7 +25,6 @@ import youlin.xinhua.com.youlin.BuildConfig;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.activity.MainActivity;
 import youlin.xinhua.com.youlin.bean.UserInfo;
-import youlin.xinhua.com.youlin.constant.ChatRowAttr;
 import youlin.xinhua.com.youlin.constant.EaseConstant;
 import youlin.xinhua.com.youlin.utils.LogUtils;
 import youlin.xinhua.com.youlin.utils.SPUtils;
@@ -588,10 +587,10 @@ public class IMPlatform {
 
       EMMessage emMessage = EMMessage.createReceiveMessage(EMMessage.Type.TXT);
 
-      emMessage.setAttribute(ChatRowAttr.KEY_GROUP_INVITE, true);
-      emMessage.setAttribute(ChatRowAttr.KEY_GROUP_ID, groupId);
-      emMessage.setAttribute(ChatRowAttr.KEY_GROUP_NAME, groupName);
-      emMessage.setAttribute(ChatRowAttr.KEY_GROUP_REASON_AVATAR, reason);
+      emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_GROUP_INVITE, true);
+      emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_VALUE_GROUP_ID, groupId);
+      emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_VALUE_GROUP_NAME, groupName);
+      emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_VALUE_GROUP_REASON_AVATAR, reason);
 
       emMessage.setMsgId(UUID.randomUUID().toString());
       emMessage.setChatType(EMMessage.ChatType.Chat);
@@ -857,7 +856,8 @@ public class IMPlatform {
      */
     @Override public void onMemberJoined(String groupId, String member) {
       LogUtils.d("onMemberJoined");
-      //showToast("群组加入新成员通知 : " + member);
+      showToast("群组加入新成员通知 : " + member);
+
     }
 
     /**

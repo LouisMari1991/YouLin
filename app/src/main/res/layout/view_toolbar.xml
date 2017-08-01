@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+  <FrameLayout
+      android:id="@+id/toolbar_back_content"
+      android:layout_width="100dp"
+      android:layout_height="match_parent"
+      android:layout_alignParentLeft="true"
+      >
+    <ImageView
+        android:id="@+id/toolbar_img_back"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/gauge_32"
+        android:src="@mipmap/ic_arrows_back_blue"
+        />
+  </FrameLayout>
+
+
+  <TextView
+      android:id="@+id/toolbar_text_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:textColor="@color/black"
+      android:textSize="@dimen/text_18"
+      />
+
+
+  <FrameLayout
+      android:id="@+id/right_container"
+      android:layout_width="100dp"
+      android:layout_height="match_parent"
+      android:layout_alignParentRight="true"
+      >
+
+    <TextView
+        android:id="@+id/toolbar_text_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginRight="16dp"
+        android:text="确认"
+        android:textColor="@color/color_blue_text"
+        android:textSize="@dimen/text_17"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/toolbar_image_right"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginRight="16dp"
+        android:visibility="gone"
+        />
+  </FrameLayout>
+
+
+</RelativeLayout>

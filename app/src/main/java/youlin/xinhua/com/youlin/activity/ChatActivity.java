@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -16,9 +17,9 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.util.PathUtil;
 import java.io.File;
 import java.util.List;
-import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.constant.CacheConsts;
+import youlin.xinhua.com.youlin.constant.EaseConstant;
 import youlin.xinhua.com.youlin.listener.OnMenuClickListener;
 import youlin.xinhua.com.youlin.listener.RecordVoiceListener;
 import youlin.xinhua.com.youlin.model.FileItem;
@@ -35,7 +36,7 @@ import youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView;
  * </pre>
  */
 
-public class ChatActivity extends BaseActivity
+public class ChatActivity extends BaseChatActivity
     implements View.OnTouchListener, ChatView.OnKeyboardChangedListener {
 
   public static void lunch(Context context) {
@@ -52,41 +53,60 @@ public class ChatActivity extends BaseActivity
   private InputMethodManager mImm;
   private Window             mWindow;
 
-  @Override protected int attachLayoutRes() {
-    return R.layout.activity_im_chat;
-  }
-
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
     initChatInput();
+  }
+
+  @Override void initViews() {
+    super.initViews();
+    mChatView.initModule();
+    messageList = mChatView.getMessageListView();
+    messageList.init(toChatUsername, chatType);
+    listView = messageList.getListView();
+
+    swipeRefreshLayout = messageList.getSwipeRefreshLayout();
+
+    if (chatType != EaseConstant.CHATTYPE_CHATROOM) {
+      onConversationInit();
+      onMessageListInit();
+    }
+    setRefreshLayoutListener();
   }
 
   private void initChatInput() {
     mImm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
     mWindow = getWindow();
 
-    mChatView.initModule();
     mChatView.setOnTouchListener(this);
     mChatView.setKeyboardChangedListener(this);
     mChatView.setMenuClickListener(new OnMenuClickListener() {
       @Override public boolean onSendTextMessage(CharSequence input) {
-        // 发送文字消息
 
-        return false;
+        if (TextUtils.isEmpty(input)) {
+          return false;
+        }
+
+        // 发送文字消息
+        sendTextMessage(input.toString());
+        return true;
       }
 
       @Override public void onSendFiles(List<FileItem> list) {
         // 发送文件
+        for (int i = 0; list != null && i < list.size(); i++) {
+          FileItem item = list.get(i);
+          sendImageMessage(item.getFilePath());
+        }
       }
 
       @Override public void switchToMicrophoneMode() {
-        // 录音,打开麦克风权限
+        // 录音, 记得申请打开麦克风权限
 
       }
 
       @Override public void switchToGalleryMode() {
-        // 图片选择,打开sd卡权限
+        // 图片选择,记得申请读取sd卡权限
 
       }
 
@@ -111,6 +131,7 @@ public class ChatActivity extends BaseActivity
       @Override public void onFinishRecord(File voiceFile, int duration) {
         // 结束录音
         ToastUtils.showToast(" 结束录音 , voiceFile : " + voiceFile + ", 录音时间 : " + duration);
+        sendVoiceMessage(voiceFile.getPath(), duration);
       }
 
       @Override public void onCancelRecord() {
@@ -190,7 +211,7 @@ public class ChatActivity extends BaseActivity
         if (cameraFile != null && cameraFile.exists()) {
           ToastUtils.showToast("获取照片成功 , path : " + cameraFile.getPath());
         }
-        //sendImageMessage(cameraFile.getAbsolutePath());
+        sendImageMessage(cameraFile.getAbsolutePath());
       }
     }
   }

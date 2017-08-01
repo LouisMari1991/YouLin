@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMTextMessageBody;
 import youlin.xinhua.com.youlin.R;
-import youlin.xinhua.com.youlin.constant.ChatRowAttr;
+import youlin.xinhua.com.youlin.constant.EaseConstant;
 import youlin.xinhua.com.youlin.utils.ImageLoader;
 import youlin.xinhua.com.youlin.utils.ToastUtils;
 
@@ -47,9 +47,9 @@ public class GroupInviteChatRow extends EaseChatRow {
 
     ToastUtils.showToast(txtBody.getMessage());
 
-    groupId = message.getStringAttribute(ChatRowAttr.KEY_GROUP_ID, "");
-    groupName = message.getStringAttribute(ChatRowAttr.KEY_GROUP_ID, "");
-    groupUrl = message.getStringAttribute(ChatRowAttr.KEY_GROUP_ID, "");
+    groupId = message.getStringAttribute(EaseConstant.MESSAGE_ATTR_VALUE_GROUP_ID, "");
+    groupName = message.getStringAttribute(EaseConstant.MESSAGE_ATTR_VALUE_GROUP_NAME, "");
+    groupUrl = message.getStringAttribute(EaseConstant.MESSAGE_ATTR_VALUE_GROUP_REASON_AVATAR, "");
 
     ImageLoader.displayChatRowPicture(groupUrl, groupAvatar);
   }

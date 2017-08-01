@@ -9,6 +9,7 @@ import youlin.xinhua.com.youlin.listener.OnClickEditTextListener;
 import youlin.xinhua.com.youlin.listener.OnMenuClickListener;
 import youlin.xinhua.com.youlin.listener.RecordVoiceListener;
 import youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView;
+import youlin.xinhua.com.youlin.widget.chat.list.EaseChatMessageList;
 import youlin.xinhua.com.youlin.widget.chat.record.RecordVoiceButton;
 
 import static youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView.KEYBOARD_STATE_HIDE;
@@ -17,10 +18,10 @@ import static youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView.KEYBO
 
 public class ChatView extends RelativeLayout {
 
-  //private MessageList mMsgList;
-  private ChatInputView     mChatInput;
-  private LinearLayout      mMenuLl;
-  private RecordVoiceButton mRecordVoiceBtn;
+  private EaseChatMessageList mMsgList;
+  private ChatInputView       mChatInput;
+  private LinearLayout        mMenuLl;
+  private RecordVoiceButton   mRecordVoiceBtn;
 
   private boolean mHasInit;
   private boolean mHasKeyboard;
@@ -49,21 +50,12 @@ public class ChatView extends RelativeLayout {
     mChatInput.setMenuContainerHeight(
         getContext().getResources().getDimensionPixelSize(R.dimen.menu_container_height));
 
-    //mMsgList = (MessageList) findViewById(R.id.msg_list);
-    //mMsgList.setHasFixedSize(true);
+    mMsgList = (EaseChatMessageList) findViewById(R.id.message_list);
   }
 
   public void setMenuClickListener(OnMenuClickListener listener) {
     mChatInput.setMenuClickListener(listener);
   }
-
-  //public void setAdapter(MsgListAdapter adapter) {
-  //    mMsgList.setAdapter(adapter);
-  //}
-
-  //public void setLayoutManager(RecyclerView.LayoutManager layoutManager) {
-  //    mMsgList.setLayoutManager(layoutManager);
-  //}
 
   public void setRecordVoiceFile(String path, String fileName) {
     mRecordVoiceBtn.setVoiceFilePath(path, fileName);
@@ -77,9 +69,9 @@ public class ChatView extends RelativeLayout {
     mKeyboardListener = listener;
   }
 
-  //public void setOnTouchListener(OnTouchListener listener) {
-  //    mMsgList.setOnTouchListener(listener);
-  //}
+  public void setOnTouchListener(OnTouchListener listener) {
+    mMsgList.getListView().setOnTouchListener(listener);
+  }
 
   public void setOnTouchEditTextListener(OnClickEditTextListener listener) {
     mChatInput.setOnClickEditTextListener(listener);
@@ -129,9 +121,9 @@ public class ChatView extends RelativeLayout {
     return mChatInput;
   }
 
-  //public MessageList getMessageListView() {
-  //    return mMsgList;
-  //}
+  public EaseChatMessageList getMessageListView() {
+    return mMsgList;
+  }
 
   public void setMenuHeight(int height) {
     mChatInput.setMenuContainerHeight(height);

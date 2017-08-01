@@ -46,9 +46,9 @@ public class EaseChatRowVoice extends EaseChatRowFile {
         && EaseChatRowVoicePlayClickListener.isPlaying) {
       AnimationDrawable voiceAnimation;
       if (message.direct() == EMMessage.Direct.RECEIVE) {
-        //voiceImageView.setImageResource(R.anim.voice_from_icon);
+        voiceImageView.setImageResource(R.drawable.voice_from_icon);
       } else {
-        //voiceImageView.setImageResource(R.anim.voice_to_icon);
+        voiceImageView.setImageResource(R.drawable.voice_to_icon);
       }
       voiceAnimation = (AnimationDrawable) voiceImageView.getDrawable();
       voiceAnimation.start();

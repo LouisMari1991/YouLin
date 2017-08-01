@@ -23,4 +23,7 @@
   <string name="record_video_failed">录音失败</string>
   <!-- chat input end -->
 
+  <!--chat row text-->
+  <string name="row_group_invite">邀请你加入群聊%s</string>
+
 </resources>

@@ -583,7 +583,12 @@ public class IMPlatform {
     @Override public void onInvitationReceived(String groupId, String groupName, String inviter,
         String reason) {
 
-      ToastUtils.showToast("接收到群组加入邀请");
+      ToastUtils.showToast("接收到群组加入邀请 , groupId : "
+          + groupId
+          + " , groupName : "
+          + groupName
+          + " , inviter : "
+          + inviter);
 
       EMMessage emMessage = EMMessage.createReceiveMessage(EMMessage.Type.TXT);
 
@@ -857,7 +862,6 @@ public class IMPlatform {
     @Override public void onMemberJoined(String groupId, String member) {
       LogUtils.d("onMemberJoined");
       showToast("群组加入新成员通知 : " + member);
-
     }
 
     /**

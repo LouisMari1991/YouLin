@@ -8,6 +8,7 @@ import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.utils.LogUtils;
 
 public class MainActivity extends BaseActivity {
 
@@ -45,7 +46,7 @@ public class MainActivity extends BaseActivity {
     super.onCreate(savedInstanceState);
     EMClient.getInstance().login("123456", "123456", new EMCallBack() {//回调
       @Override public void onSuccess() {
-        //LogUtils.i("登录聊天服务器成功！");
+        LogUtils.i("登录聊天服务器成功！");
         // ** manually load all local groups and conversation
         EMClient.getInstance().groupManager().loadAllGroups();
         EMClient.getInstance().chatManager().loadAllConversations();
@@ -56,7 +57,7 @@ public class MainActivity extends BaseActivity {
       }
 
       @Override public void onError(int code, String message) {
-        //LogUtils.i("登录聊天服务器失败！, code : " + code + " , msg : " + message);
+        LogUtils.i("登录聊天服务器失败！, code : " + code + " , msg : " + message);
       }
     });
   }

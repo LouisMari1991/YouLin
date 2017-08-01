@@ -41,10 +41,11 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/aurora_picture_not_found"
-            app:videomessage_radius="8dp"
+            app:videomessage_radius="5dp"
             />
 
 
@@ -64,12 +65,12 @@
               android:singleLine="true"
               android:text="邀请你加入群聊"
               android:textColor="@color/black_text"
-              android:textSize="@dimen/text_14"
+              android:textSize="@dimen/text_15"
               />
 
           <Space
               android:layout_width="match_parent"
-              android:layout_height="1dp"
+              android:layout_height="4dp"
               />
 
           <TextView

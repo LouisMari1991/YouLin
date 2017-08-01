@@ -5,11 +5,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.hyphenate.chat.EMMessage;
-import com.hyphenate.chat.EMTextMessageBody;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.constant.EaseConstant;
 import youlin.xinhua.com.youlin.utils.ImageLoader;
-import youlin.xinhua.com.youlin.utils.ToastUtils;
+import youlin.xinhua.com.youlin.utils.LogUtils;
 
 /**
  * <pre>
@@ -34,23 +33,24 @@ public class GroupInviteChatRow extends EaseChatRow {
   }
 
   @Override protected void onInflateView() {
-    inflater.inflate(R.layout.item_chat_received_group_invite, this, false);
+    inflater.inflate(R.layout.item_chat_received_group_invite, this);
   }
 
   @Override protected void onFindViewById() {
     inviteContent = (TextView) findViewById(R.id.text_invite_content);
     groupAvatar = (ImageView) findViewById(R.id.image);
+    LogUtils.i(" onFindViewById , groupAvatar : " + groupAvatar);
   }
 
   @Override protected void onSetUpView() {
-    EMTextMessageBody txtBody = (EMTextMessageBody) message.getBody();
-
-    ToastUtils.showToast(txtBody.getMessage());
+    //EMTextMessageBody txtBody = (EMTextMessageBody) message.getBody();
 
     groupId = message.getStringAttribute(EaseConstant.MESSAGE_ATTR_VALUE_GROUP_ID, "");
     groupName = message.getStringAttribute(EaseConstant.MESSAGE_ATTR_VALUE_GROUP_NAME, "");
     groupUrl = message.getStringAttribute(EaseConstant.MESSAGE_ATTR_VALUE_GROUP_REASON_AVATAR, "");
 
+    LogUtils.i(" onSetUpView , groupUrl : " + groupUrl + " , groupAvatar : " + groupAvatar);
+    inviteContent.setText(getResources().getString(R.string.row_group_invite, groupName));
     ImageLoader.displayChatRowPicture(groupUrl, groupAvatar);
   }
 
@@ -59,6 +59,6 @@ public class GroupInviteChatRow extends EaseChatRow {
   }
 
   @Override protected void onBubbleClick() {
-    ToastUtils.showToast("群组邀请点击事件, groupName : " + groupName);
+
   }
 }

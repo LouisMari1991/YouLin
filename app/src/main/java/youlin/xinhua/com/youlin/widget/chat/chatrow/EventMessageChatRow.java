@@ -29,7 +29,7 @@ public class EventMessageChatRow extends EaseChatRow {
   }
 
   @Override protected void onInflateView() {
-    inflater.inflate(R.layout.item_chat_event_message, this, false);
+    inflater.inflate(R.layout.item_chat_event_message, this);
   }
 
   @Override protected void onFindViewById() {

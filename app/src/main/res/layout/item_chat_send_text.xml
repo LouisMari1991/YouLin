@@ -20,8 +20,8 @@
       >
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginLeft="70dp"
@@ -36,10 +36,12 @@
           android:layout_width="20dp"
           android:layout_height="20dp"
           android:layout_centerVertical="true"
+          android:layout_gravity="center_vertical"
           android:layout_marginRight="5dp"
+          android:layout_toLeftOf="@+id/bubble"
           android:clickable="true"
           android:src="@drawable/ease_msg_state_failed_resend"
-          android:visibility="gone"
+          android:visibility="visible"
           />
 
       <ProgressBar
@@ -47,7 +49,10 @@
           android:layout_width="16dp"
           android:layout_height="16dp"
           android:layout_centerVertical="true"
-          android:visibility="visible"
+          android:layout_gravity="center_vertical"
+          android:layout_marginRight="5dp"
+          android:layout_toLeftOf="@+id/bubble"
+          android:visibility="gone"
           />
 
       <RelativeLayout
@@ -55,27 +60,26 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_alignParentRight="true"
-          android:layout_marginLeft="25dp"
           android:background="@drawable/shape_btn_blue_normal"
           >
         <TextView
             android:id="@+id/text_message_content"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center|right"
+            android:gravity="center|left"
             android:minHeight="30dp"
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
             android:paddingRight="25dp"
             android:paddingTop="5dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_12"
-            tools:text="阿斯多夫空军阿"
+            android:textSize="@dimen/text_14"
+            tools:text="阿斯多asdfasdfsdf你好jkjasdjfklasdjfklasjdflkjasdlfknsadnvkjsdnvkjsdnvnskdjvnskajdnvskjdnvksjdnvsjkdvnksjvnksajdnvksadnvksajdnvkjsadnvkjsadnvksjdnvksjadnvasdf"
             />
       </RelativeLayout>
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/avatar"

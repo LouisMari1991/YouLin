@@ -70,6 +70,7 @@ public interface EaseConstant {
 
   String EXTRA_CHAT_TYPE = "chatType";
   String EXTRA_USER_ID   = "userId";
+  String EXTRA_IMG_URL = "imageUrl";
 
   String NEW_FRIENDS_USERNAME       = "item_new_friends";
   String GROUP_USERNAME             = "item_groups";

@@ -8,7 +8,7 @@ import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMTextMessageBody;
 import youlin.xinhua.com.im.utils.EaseSmileUtils;
 import youlin.xinhua.com.youlin.R;
-import youlin.xinhua.com.youlin.utils.ToastUtils;
+import youlin.xinhua.com.youlin.utils.LogUtils;
 
 /**
  * <pre>
@@ -36,20 +36,23 @@ public class EventMessageChatRow extends EaseChatRow {
     textEventMessage = (TextView) findViewById(R.id.text_event);
   }
 
-  @Override protected void onUpdateView() {
+  @Override protected void onSetUpView() {
     EMTextMessageBody txtBody = (EMTextMessageBody) message.getBody();
-    ToastUtils.showToast(txtBody.getMessage());
+
+    LogUtils.i(" EventMessageChatRow , msg : " + txtBody.getMessage());
 
     Spannable span = EaseSmileUtils.getSmiledText(context, txtBody.getMessage());
     // 设置内容
     textEventMessage.setText(span, TextView.BufferType.SPANNABLE);
   }
 
-  @Override protected void onSetUpView() {
+  @Override protected void onUpdateView() {
     adapter.notifyDataSetChanged();
   }
 
+
+
   @Override protected void onBubbleClick() {
-    ToastUtils.showToast(" EventMessage Click !");
+
   }
 }

@@ -26,6 +26,7 @@ import com.hyphenate.chat.EMMessage;
 import youlin.xinhua.com.youlin.constant.EaseConstant;
 import youlin.xinhua.com.youlin.im.EaseCommonUtils;
 import youlin.xinhua.com.youlin.listener.MessageListItemClickListener;
+import youlin.xinhua.com.youlin.utils.LogUtils;
 import youlin.xinhua.com.youlin.widget.chat.chatrow.EaseChatRow;
 import youlin.xinhua.com.youlin.widget.chat.chatrow.EaseChatRowFile;
 import youlin.xinhua.com.youlin.widget.chat.chatrow.EaseChatRowImage;
@@ -218,6 +219,10 @@ public class EaseMessageAdapter extends BaseAdapter {
         //} else {
         //  chatRow = new EaseChatRowText(context, message, position, this);
         //}
+        LogUtils.i(" createChatRow , text Attr : " + message.getBooleanAttribute(
+            EaseConstant.MESSAGE_ATTR_GROUP_INVITE, false));
+        LogUtils.i(" createChatRow , text Attr : " + message.getBooleanAttribute(
+            EaseConstant.MESSAGE_ATTR_EVENT_MESSAGE, false));
         if (message.getBooleanAttribute(EaseConstant.MESSAGE_ATTR_GROUP_INVITE, false)) {
           // 群组邀请消息
           chatRow = new GroupInviteChatRow(context, message, position, this);

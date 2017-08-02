@@ -583,12 +583,23 @@ public class IMPlatform {
     @Override public void onInvitationReceived(String groupId, String groupName, String inviter,
         String reason) {
 
-      ToastUtils.showToast("接收到群组加入邀请 , groupId : "
+      //ToastUtils.showToast("接收到群组加入邀请 , groupId : "
+      //    + groupId
+      //    + " , groupName : "
+      //    + groupName
+      //    + " , inviter : "
+      //    + inviter
+      //    + " , reason : "
+      //    + reason);
+
+      LogUtils.i("接收到群组加入邀请 , groupId : "
           + groupId
           + " , groupName : "
           + groupName
           + " , inviter : "
-          + inviter);
+          + inviter
+          + " , reason : "
+          + reason);
 
       EMMessage emMessage = EMMessage.createReceiveMessage(EMMessage.Type.TXT);
 
@@ -635,6 +646,9 @@ public class IMPlatform {
      */
     @Override public void onInvitationAccepted(String groupId, String invitee, String reason) {
 
+      ToastUtils.showToast(
+          "群组邀请被同意 , groupId :" + groupId + " , invitee : " + invitee + " , reason : " + reason);
+
       //InviteMsgDao.get().deleteMessage(groupId);
       //
       ////user accept your invitation
@@ -671,6 +685,9 @@ public class IMPlatform {
      * @param reason 理由
      */
     @Override public void onInvitationDeclined(String groupId, String invitee, String reason) {
+
+      ToastUtils.showToast(
+          "群聊邀请拒绝 , groupId :" + groupId + " , invitee : " + invitee + " , reason : " + reason);
 
       //InviteMsgDao.get().deleteMessage(groupId);
       //
@@ -715,6 +732,7 @@ public class IMPlatform {
      * @param groupName 群组的名称
      */
     @Override public void onGroupDestroyed(String groupId, String groupName) {
+
       // group is dismissed,
       broadcastManager.sendBroadcast(new Intent(EaseConstant.ACTION_GROUP_CHANAGED));
     }
@@ -862,6 +880,21 @@ public class IMPlatform {
     @Override public void onMemberJoined(String groupId, String member) {
       LogUtils.d("onMemberJoined");
       showToast("群组加入新成员通知 : " + member);
+
+      String body = mContext.getResources().getString(R.string.row_group_member_joined, member);
+
+      // EventMessage
+      EMMessage emMessage = EMMessage.createReceiveMessage(EMMessage.Type.TXT);
+      emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_EVENT_MESSAGE, true);
+      emMessage.setChatType(EMMessage.ChatType.GroupChat);
+      emMessage.setTo(EMClient.getInstance().getCurrentUser());
+      emMessage.setStatus(EMMessage.Status.SUCCESS);
+      emMessage.setFrom(groupId);
+      emMessage.setMsgId(UUID.randomUUID().toString());
+      emMessage.addBody(new EMTextMessageBody(body));
+
+      // save accept message
+      EMClient.getInstance().chatManager().saveMessage(emMessage);
     }
 
     /**

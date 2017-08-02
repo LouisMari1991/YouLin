@@ -50,7 +50,7 @@ public class EaseChatRowText extends EaseChatRow {
           break;
         case SUCCESS:
           progressBar.setVisibility(View.GONE);
-          statusView.setVisibility(View.GONE);
+          statusView.setVisibility(View.INVISIBLE);
           break;
         case FAIL:
           progressBar.setVisibility(View.GONE);

@@ -39,6 +39,14 @@
           android:text="申请加入群组"
           />
 
+      <Button
+          android:id="@+id/member_join"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:text="群成员加入消息"
+          />
+
     </LinearLayout>
 
 

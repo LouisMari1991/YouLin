@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
 import youlin.xinhua.com.youlin.R;
-import youlin.xinhua.com.youlin.utils.LogUtils;
 
 /**
  * <pre>
@@ -59,18 +58,6 @@ public class SelectEmojView extends RelativeLayout {
     mGridView.setFastScrollEnabled(false);
     //mEmojAdapter = new EmojAdapter(getContext());
     mGridView.setAdapter(mEmojAdapter);
-    LogUtils.i(" setUpGridView 0");
-    //mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-    //  @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-    //    LogUtils.i(" onItemClick , position : " + position);
-    //    EaseEmojicon item = emojAdapter.getItem(position);
-    //    if (mEmojMenuClickListener != null) {
-    //      mEmojMenuClickListener.onExpressionClick(
-    //          EaseSmileUtils.getSmiledText(view.getContext(), item.getEmojiText()));
-    //    }
-    //  }
-    //});
-    LogUtils.i(" setUpGridView 1");
     mGridView.setNumColumns(calculateSpanCount());
   }
 

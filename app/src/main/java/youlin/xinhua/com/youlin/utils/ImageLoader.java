@@ -110,12 +110,21 @@ public class ImageLoader {
    * @param imageView
    */
   public static void displayChatRowPicture(String picUrl, ImageView imageView) {
+    //Glide.with(imageView.getContext())
+    //    .load(picUrl)
+    //    .placeholder(R.drawable.aurora_picture_not_found)
+    //    .error(R.drawable.aurora_picture_not_found)
+    //    .dontAnimate()
+    //    .into(imageView);
+
+    // You can use other image load libraries.
     Glide.with(imageView.getContext())
         .load(picUrl)
+        .fitCenter()
         .placeholder(R.drawable.aurora_picture_not_found)
-        .error(R.drawable.aurora_picture_not_found)
-        .dontAnimate()
+        .override(400, Target.SIZE_ORIGINAL)
         .into(imageView);
+
   }
 
   public static void loadFit(Context context, String url, ImageView imageView, int defaultResId) {

@@ -8,12 +8,16 @@ import android.view.View;
 import butterknife.OnClick;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMGroup;
+import com.hyphenate.chat.EMMessage;
+import com.hyphenate.chat.EMTextMessageBody;
 import com.hyphenate.exceptions.HyphenateException;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.constant.EaseConstant;
 import youlin.xinhua.com.youlin.utils.LogUtils;
 
 /**
@@ -43,7 +47,8 @@ public class ImActivity extends BaseActivity {
 
   ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
 
-  @OnClick({ R.id.group_search, R.id.group_info, R.id.group_join }) public void onclick(View view) {
+  @OnClick({ R.id.group_search, R.id.group_info, R.id.group_join, R.id.member_join })
+  public void onclick(View view) {
     switch (view.getId()) {
       case R.id.group_search: {
         searchGroup();
@@ -57,14 +62,37 @@ public class ImActivity extends BaseActivity {
         joinGroup();
       }
       break;
+      case R.id.member_join: {
+        memberJoined();
+      }
+      break;
     }
+  }
+
+  private void memberJoined() {
+
+    String body = getResources().getString(R.string.row_group_member_joined, "hm01");
+
+    // EventMessage
+    EMMessage emMessage = EMMessage.createReceiveMessage(EMMessage.Type.TXT);
+    emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_EVENT_MESSAGE, true);
+    emMessage.setChatType(EMMessage.ChatType.Chat);
+    emMessage.setTo(EMClient.getInstance().getCurrentUser());
+    emMessage.setStatus(EMMessage.Status.SUCCESS);
+    emMessage.setFrom("hm01");
+    emMessage.setMsgId(UUID.randomUUID().toString());
+
+    emMessage.addBody(new EMTextMessageBody(body));
+
+    // save accept message
+    EMClient.getInstance().chatManager().saveMessage(emMessage);
   }
 
   /**
    * 申请加群
    */
   private void joinGroup() {
-    new Thread(){
+    new Thread() {
       @Override public void run() {
         try {
           EMClient.getInstance().groupManager().applyJoinToGroup("22079993872385", "让我来玩玩");

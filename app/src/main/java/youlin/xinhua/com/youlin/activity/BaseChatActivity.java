@@ -153,7 +153,7 @@ public class BaseChatActivity extends BaseActivity {
   private void setListItemClickListener() {
     messageList.setItemClickListener(new MessageListItemClickListener() {
       @Override public void onResendClick(EMMessage message) {
-
+        resendMessage(message);
       }
 
       @Override public boolean onBubbleClick(EMMessage message) {
@@ -162,7 +162,7 @@ public class BaseChatActivity extends BaseActivity {
       }
 
       @Override public void onBubbleLongClick(EMMessage message) {
-        resendMessage(message);
+
       }
 
       @Override public void onUserAvatarClick(String username) {

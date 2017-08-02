@@ -1,21 +1,17 @@
 package youlin.xinhua.com.youlin.widget.chat.chatrow;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMFileMessageBody;
 import com.hyphenate.chat.EMImageMessageBody;
 import com.hyphenate.chat.EMMessage;
-import com.hyphenate.chat.EMMessage.ChatType;
-import java.io.File;
 import youlin.xinhua.com.youlin.R;
-import youlin.xinhua.com.youlin.utils.FileUtil;
+import youlin.xinhua.com.youlin.activity.ImageDetailActivity;
 import youlin.xinhua.com.youlin.utils.ImageLoader;
+import youlin.xinhua.com.youlin.utils.LogUtils;
 
 public class EaseChatRowImage extends EaseChatRowFile {
 
@@ -39,6 +35,9 @@ public class EaseChatRowImage extends EaseChatRowFile {
 
   @Override protected void onSetUpView() {
     imgBody = (EMImageMessageBody) message.getBody();
+
+    LogUtils.i(" 图片消息, localpath : " + imgBody.getLocalUrl());
+
     // received messages
     if (message.direct() == EMMessage.Direct.RECEIVE) { // 接收图片消息
       if (imgBody.thumbnailDownloadStatus() == EMFileMessageBody.EMDownloadStatus.DOWNLOADING
@@ -49,19 +48,18 @@ public class EaseChatRowImage extends EaseChatRowFile {
         progressBar.setVisibility(View.GONE);
         percentageView.setVisibility(View.GONE);
         //imageView.setImageResource(R.drawable.ease_default_image);
-        String thumbPath = imgBody.thumbnailLocalPath();
-        if (!new File(thumbPath).exists()) {
-          // to make it compatible with thumbnail received in previous version
-          thumbPath = FileUtil.getThumbnailImagePath(imgBody.getLocalUrl());
-        }
-        showImageView(thumbPath, imgBody.getLocalUrl());
+        //String thumbPath = imgBody.thumbnailLocalPath();
+        //if (!new File(thumbPath).exists()) {
+        //  // to make it compatible with thumbnail received in previous version
+        //  thumbPath = FileUtil.getThumbnailImagePath(imgBody.getLocalUrl());
+        //}
+        showImageView();
       }
       return;
     }
-
-    String filePath = imgBody.getLocalUrl();
-    String thumbPath = FileUtil.getThumbnailImagePath(imgBody.getLocalUrl());
-    showImageView(thumbPath, filePath);
+    //String filePath = imgBody.getLocalUrl();
+    //String thumbPath = FileUtil.getThumbnailImagePath(imgBody.getLocalUrl());
+    showImageView();
     handleSendMessage();
   }
 
@@ -74,51 +72,54 @@ public class EaseChatRowImage extends EaseChatRowFile {
         || imgBody.thumbnailDownloadStatus() == EMFileMessageBody.EMDownloadStatus.PENDING) {
       //thumbnail image downloading
       return;
-    } else if (imgBody.thumbnailDownloadStatus() == EMFileMessageBody.EMDownloadStatus.FAILED) {
+    }
+    ImageDetailActivity.launch(getContext(), imgBody.getRemoteUrl());
+    /* else if (imgBody.thumbnailDownloadStatus() == EMFileMessageBody.EMDownloadStatus.FAILED) {
       progressBar.setVisibility(View.VISIBLE);
       percentageView.setVisibility(View.VISIBLE);
       // retry download with click event of user
       EMClient.getInstance().chatManager().downloadThumbnail(message);
-    }
+    }*/
 
     //Intent intent = new Intent(context, EaseShowBigImageActivity.class);
-    Intent intent = null;
-    File file = new File(imgBody.getLocalUrl());
-    if (file.exists()) {
-      Uri uri = Uri.fromFile(file);
-      intent.putExtra("uri", uri);
-    } else {
+    //Intent intent = null;
+    //File file = new File(imgBody.getLocalUrl());
+    //if (file.exists()) {
+    //  Uri uri = Uri.fromFile(file);
+    //  intent.putExtra("uri", uri);
+    //} else {
       // The local full size pic does not exist yet.
       // ShowBigImage needs to download it from the server
       // first
-      String msgId = message.getMsgId();
-      intent.putExtra("messageId", msgId);
-      intent.putExtra("localUrl", imgBody.getLocalUrl());
-    }
-    if (message != null
-        && message.direct() == EMMessage.Direct.RECEIVE
-        && !message.isAcked()
-        && message.getChatType() == ChatType.Chat) {
-      try {
-        EMClient.getInstance().chatManager().ackMessageRead(message.getFrom(), message.getMsgId());
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-    }
-    context.startActivity(intent);
+    //  String msgId = message.getMsgId();
+    //  intent.putExtra("messageId", msgId);
+    //  intent.putExtra("localUrl", imgBody.getLocalUrl());
+    //}
+    //if (message != null
+    //    && message.direct() == EMMessage.Direct.RECEIVE
+    //    && !message.isAcked()
+    //    && message.getChatType() == ChatType.Chat) {
+    //  try {
+    //    EMClient.getInstance().chatManager().ackMessageRead(message.getFrom(), message.getMsgId());
+    //  } catch (Exception e) {
+    //    e.printStackTrace();
+    //  }
+    //}
+    //context.startActivity(intent);
   }
 
-  public void showImageView(final String thumbernailPath, final String localFullSizePath) {
-    String filePath;
-    if (new File(localFullSizePath).exists()) {
-      filePath = localFullSizePath;
-    } else if (new File(thumbernailPath).exists()) {
-      filePath = thumbernailPath;
-    } else  {
-      filePath = FileUtil.getThumbnailImagePath(imgBody.getLocalUrl());
-    }
-    ImageLoader.displayChatRowPicture(filePath, imageView);
+  public void showImageView() {
+    //String filePath;
+    //if (new File(localFullSizePath).exists()) {
+    //  filePath = localFullSizePath;
+    //} else if (new File(thumbernailPath).exists()) {
+    //  filePath = thumbernailPath;
+    //} else  {
+    //  filePath = FileUtil.getThumbnailImagePath(imgBody.getLocalUrl());
+    //}
+    ImageLoader.displayChatRowPicture(imgBody.getRemoteUrl(), imageView);
   }
+
 
   /**
    * load image into image view

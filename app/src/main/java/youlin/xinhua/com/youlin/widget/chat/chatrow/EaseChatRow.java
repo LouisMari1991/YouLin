@@ -114,6 +114,9 @@ public abstract class EaseChatRow extends LinearLayout {
       //EaseUserUtils.setUserAvatar(context, EMClient.getInstance().getCurrentUser(), userAvatarView);
 
     } else {
+      if (usernickView != null) {
+        usernickView.setText("云基壹号");
+      }
       //EaseUserUtils.setUserAvatar(context, message.getFrom(), userAvatarView);
       //EaseUserUtils.setUserNick(message.getFrom(), usernickView);
     }

@@ -1,9 +1,14 @@
 package youlin.xinhua.com.youlin.widget.chat;
 
 import android.content.Context;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.animation.FastOutLinearInInterpolator;
 import android.util.AttributeSet;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.listener.OnClickEditTextListener;
 import youlin.xinhua.com.youlin.listener.OnMenuClickListener;
@@ -22,6 +27,11 @@ public class ChatView extends RelativeLayout {
   private ChatInputView       mChatInput;
   private LinearLayout        mMenuLl;
   private RecordVoiceButton   mRecordVoiceBtn;
+
+  private View     addContactsContainer;
+  private TextView textAddContacts;
+  private Button   btnAddContacts;
+  private View     cancelContacts;
 
   private boolean mHasInit;
   private boolean mHasKeyboard;
@@ -51,6 +61,33 @@ public class ChatView extends RelativeLayout {
         getContext().getResources().getDimensionPixelSize(R.dimen.menu_container_height));
 
     mMsgList = (EaseChatMessageList) findViewById(R.id.message_list);
+
+    initAddContactContainer();
+  }
+
+  private void initAddContactContainer() {
+    addContactsContainer = findViewById(R.id.rl_add_contacts);
+    textAddContacts = (TextView) findViewById(R.id.text_add_contacts);
+    btnAddContacts = (Button) findViewById(R.id.btn_add_contacts);
+    cancelContacts = findViewById(R.id.img_cancel);
+    cancelContacts.setOnClickListener(new OnClickListener() {
+      @Override public void onClick(View v) {
+        ViewCompat.animate(addContactsContainer)
+            .alpha(0)
+            .setInterpolator(new FastOutLinearInInterpolator())
+            .setDuration(200)
+            .start();
+      }
+    });
+  }
+
+  public void showAddContactContainer(String fromUserName) {
+    addContactsContainer.setVisibility(View.VISIBLE);
+    getResources().getString(R.string.tip_add_contacts, fromUserName);
+  }
+
+  public void setAddContactsBtnListener(OnClickListener listener) {
+    btnAddContacts.setOnClickListener(listener);
   }
 
   public void setMenuClickListener(OnMenuClickListener listener) {

@@ -13,7 +13,6 @@ import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.im.EaseCommonUtils;
 import youlin.xinhua.com.youlin.listener.MessageListItemClickListener;
 
-
 public class EaseChatMessageList extends RelativeLayout {
 
   protected static final String TAG = "EaseChatMessageList";
@@ -107,6 +106,7 @@ public class EaseChatMessageList extends RelativeLayout {
    */
   public void setItemClickListener(MessageListItemClickListener listener) {
     if (messageAdapter != null) {
+
       messageAdapter.setItemClickListener(listener);
     }
   }

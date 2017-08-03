@@ -18,7 +18,6 @@
       android:layout_height="match_parent"
       android:layout_above="@+id/chat_input"
       android:layout_below="@id/title_bar"
-
       >
 
     <youlin.xinhua.com.youlin.widget.chat.list.EaseChatMessageList
@@ -28,10 +27,13 @@
         />
 
     <RelativeLayout
+        android:id="@+id/rl_add_contacts"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:alpha="0.8"
         android:background="@color/color_blue"
+        android:visibility="gone"
+        tools:visibility="visible"
         >
 
       <ImageView
@@ -45,32 +47,42 @@
           />
 
       <TextView
+          android:id="@+id/text_add_contacts"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_centerVertical="true"
           android:layout_gravity="center"
           android:layout_marginLeft="8dp"
+          android:layout_marginRight="10dp"
+          android:layout_toLeftOf="@+id/btn_add_contacts"
           android:layout_toRightOf="@id/img_worry"
           android:textColor="@color/white"
           android:textSize="@dimen/text_15"
-          android:text="您和云基一号暂不是好友"
+          tools:text="您和云基一号暂不是好友"
           />
 
-      <ImageView
+      <FrameLayout
           android:id="@+id/img_cancel"
-          android:layout_width="16dp"
-          android:layout_height="16dp"
+          android:layout_width="26dp"
+          android:layout_height="match_parent"
           android:layout_alignParentRight="true"
-          android:layout_centerVertical="true"
-          android:layout_marginRight="10dp"
-          android:src="@drawable/ic_while_cancel"
-          />
+          >
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_while_cancel"
+            />
+
+      </FrameLayout>
 
       <Button
+          android:id="@+id/btn_add_contacts"
           android:layout_width="55dp"
           android:layout_height="28dp"
           android:layout_centerVertical="true"
-          android:layout_marginRight="15dp"
+          android:layout_marginRight="20dp"
           android:layout_toLeftOf="@id/img_cancel"
           android:background="@drawable/shape_bg_add_constact"
           android:text="+ 好友"

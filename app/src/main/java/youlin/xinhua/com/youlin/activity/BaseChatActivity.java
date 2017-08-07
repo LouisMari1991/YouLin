@@ -352,8 +352,6 @@ public class BaseChatActivity extends BaseActivity {
           messageList.refreshSelectLast();
           IMPlatform.get().getNotifier().vibrateAndPlayTone(message);
           conversation.markMessageAsRead(message.getMsgId());
-        } else {
-          IMPlatform.get().getNotifier().onNewMsg(message);
         }
       }
     }
@@ -363,7 +361,9 @@ public class BaseChatActivity extends BaseActivity {
     }
 
     @Override public void onMessageChanged(EMMessage emMessage, Object o) {
-
+      if(isMessageListInited) {
+        messageList.refresh();
+      }
     }
   }
 

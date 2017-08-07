@@ -8,10 +8,42 @@
     android:fitsSystemWindows="true"
     >
 
-  <include
+  <!--<include
       layout="@layout/layout_common_toolbar"
       android:id="@+id/title_bar"
-      />
+      />-->
+
+  <android.support.v7.widget.Toolbar
+      android:id="@+id/title_bar"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:background="@color/white"
+      tools:ignore="UnusedAttribute"
+      >
+
+    <FrameLayout
+        android:id="@+id/toolbar_back_content"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical|start"
+        >
+      <ImageView
+          android:id="@+id/toolbar_img_back"
+          android:layout_width="18dp"
+          android:layout_height="18dp"
+          android:layout_gravity="center_vertical"
+          android:layout_marginLeft="@dimen/gauge_32"
+          android:src="@mipmap/ic_arrows_back_blue"
+          />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+
+  </android.support.v7.widget.Toolbar>
 
   <RelativeLayout
       android:layout_width="match_parent"

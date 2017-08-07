@@ -23,6 +23,7 @@ import youlin.xinhua.com.youlin.constant.EaseConstant;
 import youlin.xinhua.com.youlin.listener.OnMenuClickListener;
 import youlin.xinhua.com.youlin.listener.RecordVoiceListener;
 import youlin.xinhua.com.youlin.model.FileItem;
+import youlin.xinhua.com.youlin.utils.LogUtils;
 import youlin.xinhua.com.youlin.utils.ToastUtils;
 import youlin.xinhua.com.youlin.widget.chat.ChatView;
 import youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView;
@@ -206,12 +207,13 @@ public class ChatActivity extends BaseChatActivity
 
   @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
+    LogUtils.i("onActivityResult : requestCode : " + requestCode + ", resultCode :  " + resultCode);
     if (resultCode == RESULT_OK) {
       if (requestCode == REQUEST_CODE_CAMERA) { // capture new image
         if (cameraFile != null && cameraFile.exists()) {
           ToastUtils.showToast("获取照片成功 , path : " + cameraFile.getPath());
+          sendImageMessage(cameraFile.getAbsolutePath());
         }
-        sendImageMessage(cameraFile.getAbsolutePath());
       }
     }
   }

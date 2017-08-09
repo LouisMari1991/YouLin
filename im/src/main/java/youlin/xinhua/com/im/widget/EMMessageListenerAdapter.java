@@ -30,6 +30,10 @@ public class EMMessageListenerAdapter implements EMMessageListener {
 
   }
 
+  @Override public void onMessageRecalled(List<EMMessage> list) {
+
+  }
+
   @Override public void onMessageChanged(EMMessage emMessage, Object o) {
 
   }

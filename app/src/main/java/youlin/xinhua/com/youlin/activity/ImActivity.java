@@ -9,6 +9,7 @@ import butterknife.OnClick;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMGroup;
 import com.hyphenate.chat.EMGroupManager;
+import com.hyphenate.chat.EMGroupOptions;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMTextMessageBody;
 import com.hyphenate.exceptions.HyphenateException;
@@ -85,7 +86,7 @@ public class ImActivity extends BaseActivity {
       @Override public void run() {
         String groupName = "createNewGroup," + UUID.randomUUID().toString().substring(0, 5);
         String[] members = { "18664569168", "18664569167" };
-        EMGroupManager.EMGroupOptions option = new EMGroupManager.EMGroupOptions();
+        EMGroupOptions option = new EMGroupOptions();
         option.maxUsers = 2000; // 可以设置群组最大用户数(默认200)
         option.inviteNeedConfirm = true; // 表示邀请对方进群是否需要对方同意，默认是需要用户同意才能加群的。
         option.extField = "adasdadasd"; // 创建群时可以为群组设定扩展字段，方便个性化订制。目前作为群头像

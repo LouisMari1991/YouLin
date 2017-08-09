@@ -250,6 +250,10 @@ public class IMPlatform {
       @Override public void onMessageDelivered(List<EMMessage> message) {
       }
 
+      @Override public void onMessageRecalled(List<EMMessage> list) {
+
+      }
+
       /**
        * 接受消息发生改变的通知，包括消息ID的改变。消息是改变后的消息。
        * @param message 发生改变的消息
@@ -541,6 +545,10 @@ public class IMPlatform {
       @Override public void onMessageDelivered(List<EMMessage> messages) {
       }
 
+      @Override public void onMessageRecalled(List<EMMessage> list) {
+
+      }
+
       @Override public void onMessageChanged(EMMessage message, Object change) {
 
       }
@@ -583,14 +591,14 @@ public class IMPlatform {
     @Override public void onInvitationReceived(String groupId, String groupName, String inviter,
         String reason) {
 
-      //ToastUtils.showToast("接收到群组加入邀请 , groupId : "
-      //    + groupId
-      //    + " , groupName : "
-      //    + groupName
-      //    + " , inviter : "
-      //    + inviter
-      //    + " , reason : "
-      //    + reason);
+      ToastUtils.showToast("接收到群组加入邀请 , groupId : "
+          + groupId
+          + " , groupName : "
+          + groupName
+          + " , inviter : "
+          + inviter
+          + " , reason : "
+          + reason);
 
       LogUtils.i("接收到群组加入邀请 , groupId : "
           + groupId

@@ -47,6 +47,11 @@ public interface EaseConstant {
   String MESSAGE_ATTR_GROUP_INVITE = "Group_Invite";
 
   /**
+   * 是否会议群
+   */
+  String MESSAGE_ATTR_IS_MEETING_GTOUP = "Is_Meeting_Group";
+
+  /**
    * GROUP_NAME
    */
   String MESSAGE_ATTR_VALUE_GROUP_NAME = "Group_Name";
@@ -54,6 +59,10 @@ public interface EaseConstant {
   String MESSAGE_ATTR_VALUE_GROUP_ID = "Group_ID";
 
   String MESSAGE_ATTR_VALUE_GROUP_REASON_AVATAR = "Group_Reason_Avatar";
+
+  String MESSAGE_ATTR_VALUE_MEETING_TITLE = "Meeting_title";
+
+  String MESSAGE_ATTR_VALUE_MEETING_CONTENT = "Meeting_content";
 
   /**
    * 单聊

@@ -612,6 +612,14 @@ public class IMPlatform {
       EMMessage emMessage = EMMessage.createReceiveMessage(EMMessage.Type.TXT);
 
       emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_GROUP_INVITE, true);
+
+      // 会议群邀请
+      emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_IS_MEETING_GTOUP, true);
+
+      emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_VALUE_MEETING_TITLE,
+          "我正在申请成立八方小区业主委员会，需要5名业主联名申请");
+      emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_VALUE_MEETING_CONTENT, "申请成立业委会");
+
       emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_VALUE_GROUP_ID, groupId);
       emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_VALUE_GROUP_NAME, groupName);
       emMessage.setAttribute(EaseConstant.MESSAGE_ATTR_VALUE_GROUP_REASON_AVATAR, reason);

@@ -38,7 +38,7 @@ public class BaseChatActivity extends BaseActivity {
   EaseChatMessageList messageList;
 
   int    chatType       = EaseConstant.CHATTYPE_SINGLE;
-  String toChatUsername = "hm01";
+  String toChatUsername = "18664569168";
   boolean isMessageListInited;
 
   EMConversation conversation;

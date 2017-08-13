@@ -86,6 +86,8 @@
 
 
   <!--云基一号字体规范-->
+  <dimen name="text_24">24sp</dimen>
+  <dimen name="text_20">20sp</dimen>
   <dimen name="text_18">18sp</dimen>
   <dimen name="text_17">17sp</dimen>
   <dimen name="text_15">15sp</dimen>

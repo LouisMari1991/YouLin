@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPageBg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    >
+
+
+  <include layout="@layout/layout_common_toolbar"/>
+
+  <Space
+      android:layout_width="match_parent"
+      android:layout_height="10dp"
+      />
+
+  <youlin.xinhua.com.youlin.widget.DrawingView
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:background="@color/white"
+      android:layout_weight="1"
+      />
+
+  <Button
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:layout_marginBottom="30dp"
+      android:layout_marginLeft="15dp"
+      android:layout_marginRight="15dp"
+      android:layout_marginTop="30dp"
+      android:background="@drawable/selector_blue"
+      android:text="确认"
+      android:textColor="@color/white"
+      android:textSize="@dimen/text_15"
+      />
+
+
+</LinearLayout>

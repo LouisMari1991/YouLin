@@ -12,7 +12,7 @@ import youlin.xinhua.com.youlin.utils.LogUtils;
 
 public class MainActivity extends BaseActivity {
 
-  @OnClick({ R.id.btn_color, R.id.btn_im, R.id.contact, R.id.contact_pick, R.id.chat })
+  @OnClick({ R.id.btn_color, R.id.btn_im, R.id.contact, R.id.contact_pick, R.id.chat, R.id.btn_signature })
   public void click(View view) {
     switch (view.getId()) {
       case R.id.btn_color: {
@@ -33,6 +33,10 @@ public class MainActivity extends BaseActivity {
       break;
       case R.id.chat: {
         ChatActivity.lunch(this);
+      }
+      break;
+      case R.id.btn_signature: { // 手写签名
+        SignatureActivity.launch(this);
       }
       break;
     }

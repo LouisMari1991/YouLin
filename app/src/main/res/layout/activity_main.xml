@@ -18,11 +18,18 @@
       />
 
   <Button
+      android:id="@+id/btn_signature"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="手写签名"
+      />
+
+  <Button
       android:id="@+id/btn_im"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
-      android:text="环信SDK"
+      android:text="环信SDK api测试"
       />
 
   <Button
@@ -31,6 +38,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="contact"
+      android:visibility="gone"
       />
 
 

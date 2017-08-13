@@ -12,31 +12,35 @@
       android:theme="@style/AppTheme">
     <activity android:name=".activity.MainActivity">
       <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
+        <action android:name="android.intent.action.MAIN"/>
 
-        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
     <activity
         android:name=".activity.BtnActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
     <activity
         android:name=".activity.ImActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
     <activity
         android:name=".activity.ContactListActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
     <activity
         android:name=".activity.ContactsPickActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
     <activity
         android:name=".activity.ChatActivity"
         android:launchMode="singleTask"
         android:screenOrientation="portrait"
-        android:windowSoftInputMode="adjustResize" />
+        android:windowSoftInputMode="adjustResize"/>
     <activity
         android:name=".activity.ImageDetailActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
+
+    <activity
+        android:name=".activity.SignatureActivity"
+        android:screenOrientation="landscape"/>
 
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>
 

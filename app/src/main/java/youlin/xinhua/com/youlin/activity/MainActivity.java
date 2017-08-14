@@ -12,8 +12,10 @@ import youlin.xinhua.com.youlin.utils.LogUtils;
 
 public class MainActivity extends BaseActivity {
 
-  @OnClick({ R.id.btn_color, R.id.btn_im, R.id.contact, R.id.contact_pick, R.id.chat, R.id.btn_signature })
-  public void click(View view) {
+  @OnClick({
+      R.id.btn_color, R.id.btn_im, R.id.contact, R.id.contact_pick, R.id.chat, R.id.btn_signature,
+      R.id.btn_picker
+  }) public void click(View view) {
     switch (view.getId()) {
       case R.id.btn_color: {
         BtnActivity.lunch(this);
@@ -39,6 +41,9 @@ public class MainActivity extends BaseActivity {
         SignatureActivity.launch(this);
       }
       break;
+      case R.id.btn_picker: {// 选择器
+        PickActivity.launch(this);
+      }
     }
   }
 

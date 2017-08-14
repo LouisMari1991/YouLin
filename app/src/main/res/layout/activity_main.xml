@@ -8,6 +8,13 @@
     tools:context="youlin.xinhua.com.youlin.activity.MainActivity"
     >
 
+  <Button
+      android:id="@+id/btn_picker"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="选择器"
+      />
+
 
   <Button
       android:id="@+id/btn_color"
@@ -21,6 +28,7 @@
       android:id="@+id/btn_signature"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
       android:text="手写签名"
       />
 

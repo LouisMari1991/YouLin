@@ -71,9 +71,9 @@ public class DrawingView extends View {
 
     int width = bitmap.getWidth();
     int height = bitmap.getHeight();
-    float newWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 600,
+    float newWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 300,
         getResources().getDisplayMetrics());
-    float newHeight = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 100,
+    float newHeight = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50,
         getResources().getDisplayMetrics());
 
     // 计算缩放比例

@@ -2,12 +2,16 @@ package youlin.xinhua.com.youlin.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import butterknife.BindView;
 import butterknife.OnClick;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.widget.SwitchButton;
 
 /**
  * <pre>
@@ -29,10 +33,17 @@ public class BtnActivity extends BaseActivity {
     return R.layout.activity_btn;
   }
 
-  @BindView(R.id.yellow)
-  Button yel;
-  @BindView(R.id.blue)
-  Button blue;
+  @BindView(R.id.yellow)        Button       yel;
+  @BindView(R.id.blue)          Button       blue;
+  @BindView(R.id.switch_button) SwitchButton mSwitchButton;
+
+  @Override public void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 51, getResources().getDisplayMetrics());
+    int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 31, getResources().getDisplayMetrics());
+    //mSwitchButton.setThumbSize(width, height);
+
+  }
 
   @OnClick({ R.id.blue, R.id.yellow }) public void onClick(View view) {
     switch (view.getId()) {

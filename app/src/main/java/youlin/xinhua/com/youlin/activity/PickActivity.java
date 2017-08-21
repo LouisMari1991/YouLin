@@ -50,9 +50,6 @@ public class PickActivity extends BaseActivity {
 
   private void showSingleOption() {
     String[] strArray = { "100%", "90%", "80%", "70%", "60%", "50%" };
-    //CustomSinglePicker customSinglePicker = new CustomSinglePicker(this, strArray);
-    //customSinglePicker.setTitleText("签到人数比例");
-    //customSinglePicker.show();
     OptionPicker optionPicker = new OptionPicker(this, strArray);
     optionPicker.setDividerRatio(WheelView.DividerConfig.FILL);
     optionPicker.setOffset(2);

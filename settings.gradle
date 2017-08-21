@@ -1,1 +1,1 @@
-include ':app', ':im'
+include ':app', ':im', ':flowlayout-lib'

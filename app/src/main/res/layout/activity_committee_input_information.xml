@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPageBg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    >
+
+  <include layout="@layout/layout_common_toolbar" />
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/white"
+          android:orientation="vertical"
+
+          >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/colorPageBg"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            >
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="总面积"
+              android:textColor="@color/black"
+              android:textSize="@dimen/text_15"
+              />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            android:background="@color/color_gray_light"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            >
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="总户数"
+              android:textColor="@color/black"
+              android:textSize="@dimen/text_15"
+              />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            android:background="@color/color_gray_light"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            >
+
+          <TextView
+              android:id="@+id/textView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="签到人数比例"
+              android:textColor="@color/black"
+              android:textSize="@dimen/text_15"
+              />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            android:background="@color/color_gray_light"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            >
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="自荐时间"
+              android:textColor="@color/black"
+              android:textSize="@dimen/text_15"
+              />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            android:background="@color/color_gray_light"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            >
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="投票时间"
+              android:textColor="@color/black"
+              android:textSize="@dimen/text_15"
+              />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            android:background="@color/color_gray_light"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+      </LinearLayout>
+
+      <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/white"
+          android:paddingBottom="35dp"
+          android:paddingTop="10dp"
+          >
+        <youlin.xinhua.com.flowlayout.TagFlowLayout
+            android:id="@+id/flow_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            app:max_select="-1"
+            />
+      </FrameLayout>
+
+      <Button
+          android:id="@+id/btn_confirm"
+          android:layout_width="match_parent"
+          android:layout_height="44dp"
+          android:layout_marginBottom="20dp"
+          android:layout_marginLeft="15dp"
+          android:layout_marginRight="15dp"
+          android:layout_marginTop="20dp"
+          android:background="@drawable/selector_blue"
+          android:text="确认发起群聊"
+          style="?android:attr/borderlessButtonStyle"
+          android:textColor="@color/white"
+          android:textSize="@dimen/text_15"
+          />
+
+
+    </LinearLayout>
+
+  </ScrollView>
+
+
+</LinearLayout>

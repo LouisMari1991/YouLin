@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+  <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="5dp"
+      android:clipToPadding="true"
+      >
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/fl"
+        android:background="@drawable/shape_zhiwei"
+        android:gravity="center_vertical"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:textColor="@color/color_blue"
+        android:textSize="@dimen/text_15"
+        />
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-26dp"
+        android:layout_marginLeft="-26dp"
+        android:layout_toRightOf="@id/text"
+        android:paddingLeft="20dp"
+        android:paddingBottom="20dp"
+        >
+      <Button
+          android:id="@+id/text_cancel"
+          android:layout_width="10dp"
+          android:layout_height="10dp"
+          android:background="@drawable/ic_black_cancel"
+          android:textColor="@color/white"
+          android:textSize="@dimen/text_7"
+          />
+
+    </FrameLayout>
+
+
+  </RelativeLayout>
+
+
+</FrameLayout>

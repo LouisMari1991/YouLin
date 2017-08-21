@@ -94,6 +94,8 @@
   <dimen name="text_14">14sp</dimen>
   <dimen name="text_12">12sp</dimen>
   <dimen name="text_10">10sp</dimen>
+  <dimen name="text_7">7sp</dimen>
+  <dimen name="text_5">5sp</dimen>
 
 
   <!--云社-->

@@ -8,13 +8,14 @@ import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.activity.yeweihui.InputInformationActivity;
 import youlin.xinhua.com.youlin.utils.LogUtils;
 
 public class MainActivity extends BaseActivity {
 
   @OnClick({
       R.id.btn_color, R.id.btn_im, R.id.contact, R.id.contact_pick, R.id.chat, R.id.btn_signature,
-      R.id.btn_picker
+      R.id.btn_picker, R.id.btn_input_information
   }) public void click(View view) {
     switch (view.getId()) {
       case R.id.btn_color: {
@@ -44,6 +45,13 @@ public class MainActivity extends BaseActivity {
       case R.id.btn_picker: {// 选择器
         PickActivity.launch(this);
       }
+      break;
+      case R.id.btn_input_information: {// 填写资料
+        InputInformationActivity.launch(this);
+      }
+      break;
+      default:
+        throw new UnsupportedOperationException(" id : " + view.getId());
     }
   }
 

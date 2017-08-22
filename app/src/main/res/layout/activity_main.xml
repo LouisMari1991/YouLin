@@ -33,6 +33,7 @@
       />
 
   <Button
+      android:visibility="gone"
       android:id="@+id/btn_im"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -73,6 +74,14 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="填写资料"
+      />
+
+  <Button
+      android:id="@+id/btn_perfect_information"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="完善信息"
       />
 
 

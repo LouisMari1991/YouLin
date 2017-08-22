@@ -171,6 +171,7 @@
                 android:text="达到比例自动进入自荐环节"
                 android:textColor="@color/text_deep_light"
                 android:textSize="@dimen/text_15"
+                android:minWidth="100dp"
                 />
 
             <ImageView

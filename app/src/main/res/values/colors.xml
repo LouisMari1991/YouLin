@@ -57,7 +57,7 @@
 
   <!-->chat input<-->
   <color name="aurora_bg_input_default">#f3f3f3</color>
-  <color name="aurora_bg_input_container">#e5e5e5</color>
+  <color name="aurora_bg_input_container">#e5e5</color>
   <color name="aurora_bg_edittext_default">#e5e5e5</color>
   <color name="aurora_bg_edittext_focus">#3f80dc</color>
   <color name="aurora_cursor_color_default">#8db4eb</color>

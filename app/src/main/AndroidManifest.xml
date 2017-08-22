@@ -55,6 +55,11 @@
         android:name=".activity.yeweihui.InputInformationActivity"
         android:screenOrientation="portrait" />
 
+    <!--完善信息-->
+    <activity
+        android:name=".activity.yeweihui.PerfectInformationActivity"
+        android:screenOrientation="portrait" />
+
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>
 
   </application>

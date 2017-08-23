@@ -20,8 +20,9 @@
       android:id="@+id/btn_color"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
       android:text="btn_color"
-      android:visibility="gone"
+      android:visibility="visible"
       />
 
   <Button
@@ -33,12 +34,12 @@
       />
 
   <Button
-      android:visibility="gone"
       android:id="@+id/btn_im"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="环信SDK api测试"
+      android:visibility="gone"
       />
 
   <Button

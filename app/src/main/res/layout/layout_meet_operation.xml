@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:elevation="1dp"
+    >
+
+
+  <Button
+      android:id="@+id/btn_sign"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:background="@drawable/bg_blue_round"
+      android:text="签到"
+      android:textColor="@color/white"
+      android:visibility="visible"
+      />
+
+  <LinearLayout
+      android:id="@+id/ll_container"
+      android:layout_width="110dp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="15dp"
+      android:orientation="vertical"
+      android:visibility="gone"
+      >
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_meet_head"
+        android:gravity="center"
+        android:text="候选人自荐"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_12"
+        />
+    <TextView
+        android:id="@+id/text_content"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_meet_time_bg"
+        android:gravity="center"
+        android:text="6天 17:54:40"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_12"
+        android:visibility="visible"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_vote_container"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_meet_vote_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:orientation="vertical"
+          >
+
+        <TextView
+            android:text="同意票"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_10"
+            />
+
+        <TextView
+            android:id="@+id/text_agree_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/color_yel_text"
+            android:textSize="@dimen/text_12"
+            />
+
+
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:orientation="vertical"
+          >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="否决票"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_10"
+            />
+        <TextView
+            android:id="@+id/text_veto_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/color_yel_text"
+            android:textSize="@dimen/text_12"
+            />
+      </LinearLayout>
+    </LinearLayout>
+  </LinearLayout>
+</FrameLayout>

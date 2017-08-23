@@ -29,5 +29,7 @@
   <string name="row_group_member_joined">%s加入此群</string>
 
   <!--业委会-->
+  <string name="tick_count">总票数: %s</string>
+  <string name="sign_count">已签到%s人</string>
 
 </resources>

@@ -25,6 +25,7 @@ import youlin.xinhua.com.youlin.listener.RecordVoiceListener;
 import youlin.xinhua.com.youlin.model.FileItem;
 import youlin.xinhua.com.youlin.utils.LogUtils;
 import youlin.xinhua.com.youlin.utils.ToastUtils;
+import youlin.xinhua.com.youlin.widget.MeetOperationView;
 import youlin.xinhua.com.youlin.widget.chat.ChatView;
 import youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView;
 
@@ -138,6 +139,17 @@ public class ChatActivity extends BaseChatActivity
       @Override public void onCancelRecord() {
         // 取消了录音的回调,已经删除了文件
 
+      }
+    });
+    mChatView.showBtnMeetFile();
+    mChatView.setBtnMeetFileOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View v) {
+        LogUtils.i("查看公示文件");
+      }
+    });
+    mChatView.setMeetOperationViewOnClickListener(new MeetOperationView.MeetOperationViewOnClickListener() {
+      @Override public void onClick(View view) {
+        LogUtils.i("MeetOperationViewOnClickListener");
       }
     });
   }

@@ -13,6 +13,7 @@ import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.listener.OnClickEditTextListener;
 import youlin.xinhua.com.youlin.listener.OnMenuClickListener;
 import youlin.xinhua.com.youlin.listener.RecordVoiceListener;
+import youlin.xinhua.com.youlin.widget.MeetOperationView;
 import youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView;
 import youlin.xinhua.com.youlin.widget.chat.list.EaseChatMessageList;
 import youlin.xinhua.com.youlin.widget.chat.record.RecordVoiceButton;
@@ -32,6 +33,9 @@ public class ChatView extends RelativeLayout {
   private TextView textAddContacts;
   private Button   btnAddContacts;
   private View     cancelContacts;
+
+  private Button            btnMeetFile;// 公示文件
+  private MeetOperationView mMeetOperationView;// 会议群右下角layout
 
   private boolean mHasInit;
   private boolean mHasKeyboard;
@@ -63,6 +67,32 @@ public class ChatView extends RelativeLayout {
     mMsgList = (EaseChatMessageList) findViewById(R.id.message_list);
 
     initAddContactContainer();
+    initBtnMeetView();
+  }
+
+  /**
+   * 初始化会议群View
+   */
+  private void initBtnMeetView() {
+    btnMeetFile = (Button) findViewById(R.id.btn_meet_file);
+    mMeetOperationView = (MeetOperationView) findViewById(R.id.meet_operation_view);
+  }
+
+  public void showMeetView() {
+    btnMeetFile.setVisibility(View.VISIBLE);
+    mMeetOperationView.setVisibility(VISIBLE);
+  }
+
+  public void setMeetOperationViewOnClickListener(MeetOperationView.MeetOperationViewOnClickListener l) {
+    mMeetOperationView.setMeetOperationViewOnClickListener(l);
+  }
+
+  public void setBtnMeetFileOnClickListener(OnClickListener l) {
+    btnMeetFile.setOnClickListener(l);
+  }
+
+  public void showBtnMeetFile() {
+    ViewCompat.animate(btnMeetFile).translationX(0).setDuration(2000).start();
   }
 
   private void initAddContactContainer() {

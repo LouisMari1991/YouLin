@@ -65,7 +65,7 @@
         android:alpha="0.8"
         android:background="@color/color_blue"
         android:visibility="gone"
-        tools:visibility="visible"
+        tools:visibility="gone"
         >
 
       <ImageView
@@ -121,12 +121,34 @@
           android:textColor="@color/white"
           android:textSize="@dimen/text_12"
           />
-
-
     </RelativeLayout>
 
 
+    <Button
+        android:id="@+id/btn_meet_file"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_meet_file"
+        android:text="查看公示文件"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_12"
+        />
+
   </RelativeLayout>
+
+  <!--<include layout="@layout/layout_meet_operation" />-->
+
+  <youlin.xinhua.com.youlin.widget.MeetOperationView
+      android:id="@+id/meet_operation_view"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_above="@+id/chat_input"
+      android:layout_alignParentRight="true"
+      android:layout_marginBottom="15dp"
+      android:layout_marginRight="10dp"
+      />
 
   <youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView
       android:id="@+id/chat_input"

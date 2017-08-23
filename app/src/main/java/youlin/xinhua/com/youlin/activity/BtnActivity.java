@@ -3,6 +3,7 @@ package youlin.xinhua.com.youlin.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.util.TypedValue;
 import android.view.View;
@@ -11,6 +12,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.utils.LogUtils;
 import youlin.xinhua.com.youlin.widget.SwitchButton;
 
 /**
@@ -39,8 +41,10 @@ public class BtnActivity extends BaseActivity {
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 51, getResources().getDisplayMetrics());
-    int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 31, getResources().getDisplayMetrics());
+    int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 51,
+        getResources().getDisplayMetrics());
+    int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 31,
+        getResources().getDisplayMetrics());
     //mSwitchButton.setThumbSize(width, height);
 
   }
@@ -48,6 +52,7 @@ public class BtnActivity extends BaseActivity {
   @OnClick({ R.id.blue, R.id.yellow }) public void onClick(View view) {
     switch (view.getId()) {
       case R.id.blue:
+        countDownTimer();
         if (yel.isEnabled()) {
           yel.setEnabled(false);
         } else {
@@ -62,5 +67,18 @@ public class BtnActivity extends BaseActivity {
         }
         break;
     }
+  }
+
+  void countDownTimer() {
+    CountDownTimer countDownTimer = new CountDownTimer(60000, 1000) {
+      @Override public void onTick(long millisUntilFinished) {
+        LogUtils.i(millisUntilFinished);
+      }
+
+      @Override public void onFinish() {
+        LogUtils.i("finish");
+      }
+    };
+    countDownTimer.start();
   }
 }

@@ -94,6 +94,7 @@ public class BaseChatActivity extends BaseActivity {
 
       }
     }
+
   }
 
 

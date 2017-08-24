@@ -53,9 +53,8 @@ public class BaseChatActivity extends BaseActivity {
   boolean haveMoreData = true;
   int     pagesize     = 20;
 
-  GroupListener   mGroupListener;
+  GroupListener mGroupListener;
   MessageListener mMessageListener = new MessageListener();
-
 
   @Override protected int attachLayoutRes() {
     return R.layout.activity_im_chat;
@@ -94,10 +93,7 @@ public class BaseChatActivity extends BaseActivity {
 
       }
     }
-
   }
-
-
 
   @Override protected void onResume() {
     super.onResume();
@@ -174,26 +170,25 @@ public class BaseChatActivity extends BaseActivity {
 
       }
     });
+
   }
 
   protected void setRefreshLayoutListener() {
     swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
 
-      @Override
-      public void onRefresh() {
+      @Override public void onRefresh() {
         new Handler().postDelayed(new Runnable() {
 
-          @Override
-          public void run() {
+          @Override public void run() {
             if (listView.getFirstVisiblePosition() == 0 && !isloading && haveMoreData) {
               List<EMMessage> messages;
               try {
                 if (chatType == EaseConstant.CHATTYPE_SINGLE) {
-                  messages = conversation.loadMoreMsgFromDB(messageList.getItem(0).getMsgId(),
-                      pagesize);
+                  messages =
+                      conversation.loadMoreMsgFromDB(messageList.getItem(0).getMsgId(), pagesize);
                 } else {
-                  messages = conversation.loadMoreMsgFromDB(messageList.getItem(0).getMsgId(),
-                      pagesize);
+                  messages =
+                      conversation.loadMoreMsgFromDB(messageList.getItem(0).getMsgId(), pagesize);
                 }
               } catch (Exception e1) {
                 swipeRefreshLayout.setRefreshing(false);
@@ -207,12 +202,10 @@ public class BaseChatActivity extends BaseActivity {
               } else {
                 haveMoreData = false;
               }
-
               isloading = false;
-
             } else {
-              Toast.makeText(BaseChatActivity.this, getResources().getString(R.string.no_more_messages),
-                  Toast.LENGTH_SHORT).show();
+              Toast.makeText(BaseChatActivity.this,
+                  getResources().getString(R.string.no_more_messages), Toast.LENGTH_SHORT).show();
             }
             swipeRefreshLayout.setRefreshing(false);
           }
@@ -362,7 +355,7 @@ public class BaseChatActivity extends BaseActivity {
     }
 
     @Override public void onMessageChanged(EMMessage emMessage, Object o) {
-      if(isMessageListInited) {
+      if (isMessageListInited) {
         messageList.refresh();
       }
     }

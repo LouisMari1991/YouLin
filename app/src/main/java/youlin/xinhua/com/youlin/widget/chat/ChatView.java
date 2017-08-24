@@ -78,21 +78,57 @@ public class ChatView extends RelativeLayout {
     mMeetOperationView = (MeetOperationView) findViewById(R.id.meet_operation_view);
   }
 
+  /**
+   * 设置会议群右下角View,并且有会议正在进行
+   */
   public void showMeetView() {
     btnMeetFile.setVisibility(View.VISIBLE);
     mMeetOperationView.setVisibility(VISIBLE);
   }
 
-  public void setMeetOperationViewOnClickListener(MeetOperationView.MeetOperationViewOnClickListener l) {
+  /**
+   * 开始倒计时统计
+   */
+  public void startCountDownTimer(int index, long time) {
+    mMeetOperationView.startTimerCountDown(index, time);
+  }
+
+  /**
+   * 签到人数 or 换届选择总票总数
+   *
+   * @param type 0: 签到状态 -> 已签到%s人 1: 投票结果公示 -> 总票数: %s, 2,3: 投票中, 投票公示: 同意票 %s, 否决票 %s
+   */
+  public void setMeetOperationViewContentText(int type, String... params) {
+    mMeetOperationView.setContentText(type, params);
+  }
+
+  /**
+   * listview 滑动监听, 设置透明度
+   */
+  public void changMeetOperationViewState(int state) {
+    if (mMeetOperationView.getVisibility() == View.GONE) {
+      return;
+    }
+    if (state == 0) { // 停止滑动
+      ViewCompat.animate(mMeetOperationView).alpha(1.0f).setDuration(500).start();
+    } else { //正在滑动
+      ViewCompat.animate(mMeetOperationView).alpha(0.1f).setDuration(500).start();
+    }
+  }
+
+  /**
+   * 　右下角layout点击事件
+   */
+  public void setMeetOperationViewOnClickListener(
+      MeetOperationView.MeetOperationViewOnClickListener l) {
     mMeetOperationView.setMeetOperationViewOnClickListener(l);
   }
 
+  /**
+   * 查看群聊文件
+   */
   public void setBtnMeetFileOnClickListener(OnClickListener l) {
     btnMeetFile.setOnClickListener(l);
-  }
-
-  public void showBtnMeetFile() {
-    ViewCompat.animate(btnMeetFile).translationX(0).setDuration(2000).start();
   }
 
   private void initAddContactContainer() {

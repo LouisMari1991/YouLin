@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AbsListView;
 import butterknife.BindView;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.util.PathUtil;
@@ -54,6 +55,8 @@ public class ChatActivity extends BaseChatActivity
 
   private InputMethodManager mImm;
   private Window             mWindow;
+
+  private boolean isMeetGroup = true;
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -141,17 +144,32 @@ public class ChatActivity extends BaseChatActivity
 
       }
     });
-    mChatView.showBtnMeetFile();
     mChatView.setBtnMeetFileOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
         LogUtils.i("查看公示文件");
       }
     });
-    mChatView.setMeetOperationViewOnClickListener(new MeetOperationView.MeetOperationViewOnClickListener() {
-      @Override public void onClick(View view) {
-        LogUtils.i("MeetOperationViewOnClickListener");
+    mChatView.setMeetOperationViewOnClickListener(
+        new MeetOperationView.MeetOperationViewOnClickListener() {
+          @Override public void onClick(View view) {
+            LogUtils.i("MeetOperationViewOnClickListener");
+          }
+        });
+    mChatView.startCountDownTimer(0, System.currentTimeMillis());
+    messageList.getListView().setOnScrollListener(new AbsListView.OnScrollListener() {
+      @Override public void onScrollStateChanged(AbsListView view, int scrollState) {
+        if (!isMeetGroup) {
+          return;
+        }
+        mChatView.changMeetOperationViewState(scrollState);
+      }
+
+      @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
+          int totalItemCount) {
+
       }
     });
+    //mChatView.setMeetOperationViewContentText(3, "152", "200");
   }
 
   @Override public boolean onTouch(View view, MotionEvent event) {

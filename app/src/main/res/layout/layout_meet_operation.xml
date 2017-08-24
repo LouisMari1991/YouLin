@@ -9,13 +9,15 @@
 
 
   <Button
+      android:layout_margin="1dp"
       android:id="@+id/btn_sign"
       android:layout_width="50dp"
       android:layout_height="50dp"
       android:background="@drawable/bg_blue_round"
       android:text="签到"
       android:textColor="@color/white"
-      android:visibility="visible"
+      android:visibility="gone"
+      tools:visibility="visible"
       />
 
   <LinearLayout
@@ -68,9 +70,9 @@
           >
 
         <TextView
-            android:text="同意票"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="同意票"
             android:textColor="@color/white"
             android:textSize="@dimen/text_10"
             />

@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/shape_white_circular"
     android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     >
 
   <LinearLayout
@@ -12,6 +13,7 @@
       android:layout_height="wrap_content"
       android:orientation="vertical"
       android:visibility="visible"
+      tools:visibility="gone"
       >
     <Button
         android:id="@+id/btn_0"
@@ -101,6 +103,7 @@
       android:layout_height="wrap_content"
       android:orientation="vertical"
       android:visibility="gone"
+      tools:visibility="visible"
       >
 
     <TextView

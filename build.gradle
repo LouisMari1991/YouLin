@@ -22,7 +22,6 @@ allprojects {
 task clean(type: Delete) {
   delete rootProject.buildDir
 }
-
 def supportVersion = "25.3.1"
 def leakCanaryVersion = "1.5"
 def ijkplayerVersion = "0.8.0"
@@ -31,7 +30,6 @@ def transitionseverywhereVersion = "1.7.0"
 def videocacheVersion = "2.7.0"
 
 ext {
-
   buildToolsVersion = "25.0.2"
   compileSdkVersion = 25
   minSdkVersion = 16
@@ -46,6 +44,66 @@ ext {
   design = "com.android.support:design:${supportVersion}"
   constraintlayout = "com.android.support.constraint:constraint-layout:1.0.2"
 
+
+  ijkplayer_java = "tv.danmaku.ijk.media:ijkplayer-java:${ijkplayerVersion}"
+  ijkplayer_exo = "tv.danmaku.ijk.media:ijkplayer-exo:${ijkplayerVersion}"
+  transitionseverywhere = "com.andkulikov:transitionseverywhere:${transitionseverywhereVersion}"
+  DanmakuFlameMaster = "com.github.ctiao:DanmakuFlameMaster:${DanmakuFlameMasterVersion}"
+  videocache = "com.danikula:videocache:${videocacheVersion}"
+  /* launcher 消息提醒 20170705 */
+  libShortcutBadger = "me.leolin:ShortcutBadger:1.1.17@aar"
+
+  autoLayout = "com.zhy:autolayout:1.4.5"
   butterknifts = [butterknift        : "com.jakewharton:butterknife:8.2.1",
                   butterkniftcompiler: "com.jakewharton:butterknife-compiler:8.2.1"]
+
+
+  adSlider = "com.daimajia.slider:library:1.1.5"
+  recycleViewAnimators = "jp.wasabeef:recyclerview-animators:2.2.3"
+  daggers = [dagger        : "com.google.dagger:dagger:2.6",
+             daggercompiler: "com.google.dagger:dagger-compiler:2.6",
+             provided      : "org.glassfish:javax.annotation:10.0-b28"]
+
+  greendaos = [greendao        : "org.greenrobot:greendao:3.2.0",
+               greendaogeneraor: "org.greenrobot:greendao-generator:3.2.0"]
+
+  rx = [rxjava             : "io.reactivex:rxjava:1.1.9",
+        rxandroid          : "io.reactivex:rxandroid:1.2.1",
+        rxbinding          : "com.jakewharton.rxbinding:rxbinding:0.4.0",
+        rxlifecycle        : "com.trello:rxlifecycle:1.0",
+        rxlifecyclecompents: "com.trello:rxlifecycle-components:1.0",
+        rxPermissions      : "com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar"]
+
+  retrofit2 = [retrofit     : "com.squareup.retrofit2:retrofit:2.1.0",
+               convertergson: "com.squareup.retrofit2:converter-gson:2.1.0",
+               adapterrxjava: "com.squareup.retrofit2:adapter-rxjava:2.1.0"]
+
+  okhttp3 = [urlconnection: "com.squareup.okhttp3:okhttp-urlconnection:3.3.0"]
+
+  flyco = [tabLayout: "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar",
+           dialog   : "com.flyco.dialog:FlycoDialog_Lib:1.3.2@aar",
+           labelview: "com.flyco.labelview:FlycoLabelView_Lib:1.0.2@aar"]
+
+  viewDependencies = [ijkplayer_armv7a: "tv.danmaku.ijk.media:ijkplayer-armv7a:${ijkplayerVersion}",
+                      ijkplayer_armv5 : "tv.danmaku.ijk.media:ijkplayer-armv5:${ijkplayerVersion}",
+                      ijkplayer_arm64 : "tv.danmaku.ijk.media:ijkplayer-arm64:${ijkplayerVersion}",
+                      ijkplayer_x86_64: "tv.danmaku.ijk.media:ijkplayer-x86_64:${ijkplayerVersion}",
+                      ijkplayer_x86   : "tv.danmaku.ijk.media:ijkplayer-x86:${ijkplayerVersion}",
+                      ndkbitmap_armv7a: "com.github.ctiao:ndkbitmap-armv7a:${DanmakuFlameMasterVersion}",
+                      ndkbitmap_armv5 : "com.github.ctiao:ndkbitmap-armv5:${DanmakuFlameMasterVersion}",
+                      ndkbitmap_x86   : "com.github.ctiao:ndkbitmap-x86:${DanmakuFlameMasterVersion}"]
+  dataDependencies = [leakcanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}"]
+
+  debugDependencies =
+      [leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}"]
+  releaseDependencies =
+      [leakCanary: "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}"]
+  testDependencies =
+      [leakCanary: "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}"]
+
+  bugly = [crashreport_upgrade: 'com.tencent.bugly:crashreport_upgrade:latest.release',
+           tinker_support     : 'com.tencent.bugly:tinker-support:latest.release']
+
+  JPush = [libJPush: "cn.jiguang.sdk:jpush:3.0.8",
+           libJCore: "cn.jiguang.sdk:jcore:1.1.6"]
 }

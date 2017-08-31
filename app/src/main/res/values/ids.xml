@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <item name="statusbarutil_fake_status_bar_view" type="id" />
+  <item name="statusbarutil_translucent_view" type="id" />
+
+  <!--空状态-->
+  <item name="empty_layout" type="id" />
+  <!--下拉刷新-->
+  <item name="swipe_refresh" type="id" />
+
+</resources>
+
+

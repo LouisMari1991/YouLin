@@ -16,7 +16,7 @@ public class MainActivity extends BaseActivity {
 
   @OnClick({
       R.id.btn_color, R.id.btn_im, R.id.contact, R.id.contact_pick, R.id.chat, R.id.btn_signature,
-      R.id.btn_picker, R.id.btn_input_information,R.id.btn_perfect_information
+      R.id.btn_picker, R.id.btn_input_information, R.id.btn_perfect_information, R.id.btn_empty
   }) public void click(View view) {
     switch (view.getId()) {
       case R.id.btn_color: {
@@ -51,8 +51,12 @@ public class MainActivity extends BaseActivity {
         InputInformationActivity.launch(this);
       }
       break;
-      case R.id.btn_perfect_information:{ // 完善信息
+      case R.id.btn_perfect_information: { // 完善信息
         PerfectInformationActivity.launch(this);
+      }
+      break;
+      case R.id.btn_empty: {
+        EmptyLayoutActivity.launch(this);
       }
       break;
       default:

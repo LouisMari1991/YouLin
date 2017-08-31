@@ -40,4 +40,10 @@
     <item name="android:background">@color/color_gray_light</item>
   </style>
 
+  <!--popWindoes位移动画-->
+  <style name="popAnimtion">
+    <item name="android:windowEnterAnimation">@anim/pop_enter</item>
+    <item name="android:windowExitAnimation">@anim/pop_exit</item>
+  </style>
+
 </resources>

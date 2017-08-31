@@ -60,6 +60,11 @@
         android:name=".activity.yeweihui.PerfectInformationActivity"
         android:screenOrientation="portrait" />
 
+    <!--空状态-->
+    <activity
+        android:name=".activity.EmptyLayoutActivity"
+        android:screenOrientation="portrait" />
+
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>
 
   </application>

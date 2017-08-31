@@ -147,5 +147,11 @@
      <attr name="kswAutoAdjustTextPosition" format="boolean"/>
    </declare-styleable>
 
+  <!--加载空界面-->
+  <declare-styleable name="EmptyLayout">
+    <attr format="color" name="background_color" />
+    <attr format="reference" name="no_data_drawable" />
+    <attr format="string" name="no_data_str" />
+  </declare-styleable>
 
 </resources>

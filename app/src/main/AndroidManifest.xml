@@ -19,6 +19,7 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    
     <activity
         android:name=".activity.BtnActivity"
         android:screenOrientation="portrait" />
@@ -65,7 +66,13 @@
         android:name=".activity.EmptyLayoutActivity"
         android:screenOrientation="portrait" />
 
+    <!--分享-->
+    <activity
+        android:name=".activity.share.SharePopActivity"
+        android:screenOrientation="portrait" />
+
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>
+    <activity android:name=".activity.TabLayoutActivity" />
 
   </application>
 

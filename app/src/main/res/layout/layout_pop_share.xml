@@ -8,13 +8,152 @@
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:orientation="vertical"
+      android:background="@color/white"
+      android:orientation="horizontal"
       >
 
+    <LinearLayout
+        android:id="@+id/ll_qq"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        >
 
+      <ImageView
+          android:layout_width="32dp"
+          android:layout_height="32dp"
+          android:layout_gravity="center_horizontal"
+          android:src="@drawable/umeng_socialize_qq"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="QQ"
+          android:textColor="@color/black_text"
+          android:textSize="@dimen/text_12"
+          />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_qzone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        >
+
+      <ImageView
+          android:layout_width="32dp"
+          android:layout_height="32dp"
+          android:layout_gravity="center_horizontal"
+          android:src="@drawable/umeng_socialize_qzone"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="QQ空间"
+          android:textColor="@color/black_text"
+          android:textSize="@dimen/text_12"
+          />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_wechat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        >
+
+      <ImageView
+          android:layout_width="32dp"
+          android:layout_height="32dp"
+          android:layout_gravity="center_horizontal"
+          android:src="@drawable/umeng_socialize_wechat"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="微信好友"
+          android:textColor="@color/black_text"
+          android:textSize="@dimen/text_12"
+          />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_wxcircle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        >
+
+      <ImageView
+          android:layout_width="32dp"
+          android:layout_height="32dp"
+          android:layout_gravity="center_horizontal"
+          android:src="@drawable/umeng_socialize_wxcircle"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="朋友圈"
+          android:textColor="@color/black_text"
+          android:textSize="@dimen/text_12"
+          />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_sina"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        >
+
+      <ImageView
+          android:layout_width="32dp"
+          android:layout_height="32dp"
+          android:layout_gravity="center_horizontal"
+          android:src="@drawable/umeng_socialize_sina"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="微博"
+          android:textColor="@color/black_text"
+          android:textSize="@dimen/text_12"
+          />
+    </LinearLayout>
 
 
   </LinearLayout>
+  <Button
+      android:id="@+id/btn_cancel"
+      android:layout_width="match_parent"
+      android:layout_height="44dp"
+      android:background="#FFEAEAEA"
+      android:text="@string/cancel"
+      android:textColor="@color/black_text"
+      android:textSize="@dimen/text_15"
+      />
 
 
 </LinearLayout>

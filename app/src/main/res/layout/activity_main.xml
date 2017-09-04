@@ -100,6 +100,15 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="SharePop"
+      android:visibility="gone"
+      />
+
+  <Button
+      android:id="@+id/btn_vote_detail"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="投票详情"
       />
 
 

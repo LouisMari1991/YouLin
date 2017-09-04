@@ -9,6 +9,7 @@ import com.hyphenate.chat.EMClient;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.activity.share.SharePopActivity;
+import youlin.xinhua.com.youlin.activity.shequyaowen.vote.VoteDetailActivity;
 import youlin.xinhua.com.youlin.activity.yeweihui.InputInformationActivity;
 import youlin.xinhua.com.youlin.activity.yeweihui.PerfectInformationActivity;
 import youlin.xinhua.com.youlin.utils.LogUtils;
@@ -18,7 +19,7 @@ public class MainActivity extends BaseActivity {
   @OnClick({
       R.id.btn_color, R.id.btn_im, R.id.contact, R.id.contact_pick, R.id.chat, R.id.btn_signature,
       R.id.btn_picker, R.id.btn_input_information, R.id.btn_perfect_information, R.id.btn_empty,
-      R.id.btn_share_pop
+      R.id.btn_share_pop, R.id.btn_vote_detail
   }) public void click(View view) {
     switch (view.getId()) {
       case R.id.btn_color: {
@@ -63,6 +64,10 @@ public class MainActivity extends BaseActivity {
       break;
       case R.id.btn_share_pop: {
         SharePopActivity.launch(this);
+      }
+      break;
+      case R.id.btn_vote_detail: {
+        VoteDetailActivity.launch(this);
       }
       break;
       default:

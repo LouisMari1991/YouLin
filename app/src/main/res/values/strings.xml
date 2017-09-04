@@ -36,4 +36,7 @@
   <string name="tip_no_data">暂无内容</string>
   <string name="tip_net_error">网络错误,点击重试</string>
 
+  <!--投票-->
+  <string name="str_vote">投票</string>
+
 </resources>

@@ -17,7 +17,7 @@ import youlin.xinhua.com.youlin.utils.ToastUtils;
  * </pre>
  */
 
-public class VoteNormalItem extends LinearLayout {
+public class VoteItemNormal extends LinearLayout {
 
   @OnClick({ R.id.text_vote, R.id.item_container }) public void click(View v) {
     switch (v.getId()) {
@@ -29,10 +29,12 @@ public class VoteNormalItem extends LinearLayout {
         ToastUtils.show("详情");
       }
       break;
+      default:
+        break;
     }
   }
 
-  public VoteNormalItem(Context context) {
+  public VoteItemNormal(Context context) {
     super(context);
     init();
   }

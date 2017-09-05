@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_container"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:layout_marginBottom="1dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/selector_subtle"
+    android:gravity="center_vertical"
+    >
+
+
+  <TextView
+      android:id="@+id/text_index"
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:layout_marginLeft="10dp"
+      android:background="@drawable/shape_page_bg_oval"
+      android:gravity="center"
+      android:text="1"
+      android:textColor="@color/text_deep_light"
+      android:textSize="@dimen/text_12"
+      />
+
+  <ImageView
+      android:id="@+id/img_avatar"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_marginLeft="10dp"
+      android:src="@drawable/ic_default_avatar"
+      />
+
+  <TextView
+      android:id="@+id/text_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="10dp"
+      android:text="杨安陪"
+      android:textColor="@color/black_text"
+      android:textSize="@dimen/text_12"
+      />
+
+  <TextView
+      android:id="@+id/text_count"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="10dp"
+      android:text="0票"
+      android:textColor="@color/text_deep_light"
+      android:textSize="@dimen/text_12"
+      />
+
+  <Space
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      />
+
+  <TextView
+      android:id="@+id/btn_vote"
+      android:layout_width="55dp"
+      android:layout_height="25dp"
+      android:layout_marginRight="15dp"
+      android:background="@drawable/shape_blue_fillet_15"
+      android:gravity="center"
+      android:text="投票"
+      android:textColor="@color/color_blue_text"
+      android:textSize="@dimen/text_12"
+      />
+
+
+</LinearLayout>

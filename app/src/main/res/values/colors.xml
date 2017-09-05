@@ -5,7 +5,8 @@
   <color name="gray">#EEEEEE</color>
 
   <!--页面背景的颜色-->
-  <color name="colorPageBg">#f2f4f5</color>
+  <color name="colorPageBg">#ebf1f6</color>
+  <color name="colorTransparent">#00000000</color>
 
   <!--正文文字颜色-->
   <color name="colorContent">#ff333333</color>

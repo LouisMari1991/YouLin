@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import butterknife.OnClick;
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.activity.share.SharePopActivity;
@@ -13,7 +11,6 @@ import youlin.xinhua.com.youlin.activity.shequyaowen.vote.VoteDetailActivity;
 import youlin.xinhua.com.youlin.activity.shequyaowen.vote.VoteDetailActivityTest;
 import youlin.xinhua.com.youlin.activity.yeweihui.InputInformationActivity;
 import youlin.xinhua.com.youlin.activity.yeweihui.PerfectInformationActivity;
-import youlin.xinhua.com.youlin.utils.LogUtils;
 
 public class MainActivity extends BaseActivity {
 
@@ -86,21 +83,21 @@ public class MainActivity extends BaseActivity {
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    EMClient.getInstance().login("123456", "123456", new EMCallBack() {//回调
-      @Override public void onSuccess() {
-        LogUtils.i("登录聊天服务器成功！");
-        // ** manually load all local groups and conversation
-        EMClient.getInstance().groupManager().loadAllGroups();
-        EMClient.getInstance().chatManager().loadAllConversations();
-      }
-
-      @Override public void onProgress(int progress, String status) {
-
-      }
-
-      @Override public void onError(int code, String message) {
-        LogUtils.i("登录聊天服务器失败！, code : " + code + " , msg : " + message);
-      }
-    });
+    //EMClient.getInstance().login("123456", "123456", new EMCallBack() {//回调
+    //  @Override public void onSuccess() {
+    //    LogUtils.i("登录聊天服务器成功！");
+    //    // ** manually load all local groups and conversation
+    //    EMClient.getInstance().groupManager().loadAllGroups();
+    //    EMClient.getInstance().chatManager().loadAllConversations();
+    //  }
+    //
+    //  @Override public void onProgress(int progress, String status) {
+    //
+    //  }
+    //
+    //  @Override public void onError(int code, String message) {
+    //    LogUtils.i("登录聊天服务器失败！, code : " + code + " , msg : " + message);
+    //  }
+    //});
   }
 }

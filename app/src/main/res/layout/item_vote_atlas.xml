@@ -16,6 +16,7 @@
       >
 
     <FrameLayout
+        android:id="@+id/fl_container_0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
@@ -58,7 +59,8 @@
           />
     </FrameLayout>
 
-    <TextView
+    <Button
+        android:id="@+id/btn_vote_0"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:background="@drawable/bg_vote_atlas_button"
@@ -83,6 +85,7 @@
       >
 
     <FrameLayout
+        android:id="@+id/fl_container_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
@@ -128,6 +131,7 @@
     </FrameLayout>
 
     <Button
+        android:id="@+id/btn_vote_1"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:background="@drawable/bg_vote_atlas_button"

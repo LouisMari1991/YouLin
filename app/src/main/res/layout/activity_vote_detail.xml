@@ -5,7 +5,7 @@
     android:orientation="vertical"
     >
 
-  <!--<include layout="@layout/layout_common_toolbar" />-->
+  <include layout="@layout/layout_common_toolbar" />
 
   <android.support.v4.widget.NestedScrollView
       android:layout_width="match_parent"
@@ -145,19 +145,11 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginBottom="10dp"
-          ></FrameLayout>
-
-      <android.support.v7.widget.RecyclerView
-          android:id="@+id/rv_list"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
           />
-
 
     </LinearLayout>
 
 
   </android.support.v4.widget.NestedScrollView>
-
 
 </LinearLayout>

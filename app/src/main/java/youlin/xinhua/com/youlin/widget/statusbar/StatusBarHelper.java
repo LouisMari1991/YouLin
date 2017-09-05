@@ -25,6 +25,61 @@ public class StatusBarHelper {
   private static final int FAKE_TRANSLUCENT_VIEW_ID = R.id.statusbarutil_translucent_view;
   private static final int TAG_KEY_HAVE_SET_OFFSET  = -123;
 
+  public static void setTranslucentImageHeader(Activity activity, int alpha, View needOffsetView) {
+    setFullScreen(activity);
+    //获取windowphone下的decorView
+    ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
+    int count = decorView.getChildCount();
+    //判断是否已经添加了statusBarView
+    if (count > 0 && decorView.getChildAt(count - 1) instanceof StatusBarView) {
+      decorView.getChildAt(count - 1).setBackgroundColor(Color.argb(alpha, 0, 0, 0));
+    } else {
+      //新建一个和状态栏高宽的view
+      StatusBarView statusView = createTranslucentStatusBarView(activity, alpha, 0);
+      decorView.addView(statusView);
+    }
+
+    if (needOffsetView != null) {
+      ViewGroup.MarginLayoutParams layoutParams =
+          (ViewGroup.MarginLayoutParams) needOffsetView.getLayoutParams();
+      layoutParams.setMargins(0, getStatusBarHeight(activity), 0, 0);
+    }
+  }
+
+  /**
+   * 创建半透明矩形 View
+   *
+   * @param alpha 透明值
+   * @return 半透明 View
+   */
+  private static StatusBarView createTranslucentStatusBarView(Activity activity, int alpha,
+      int type) {
+    // 绘制一个和状态栏一样高的矩形
+    StatusBarView statusBarView = new StatusBarView(activity);
+    LinearLayout.LayoutParams params =
+        new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+            getStatusBarHeight(activity));
+    statusBarView.setLayoutParams(params);
+    statusBarView.setBackgroundColor(Color.argb(alpha, 0, 0, 0));
+    return statusBarView;
+  }
+
+  public static void setFullScreen(Activity activity) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      Window window = activity.getWindow();
+      window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+          | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+      window.getDecorView()
+          .setSystemUiVisibility(
+              View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+      window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+      window.setStatusBarColor(Color.TRANSPARENT);
+    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+      // 设置透明状态栏,这样才能让 ContentView 向上
+      activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+    }
+  }
+
   /**
    * 设置状态栏颜色
    *
@@ -50,7 +105,6 @@ public class StatusBarHelper {
       activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
       activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
       activity.getWindow().setStatusBarColor(calculateStatusColor(color, statusBarAlpha));
-
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
       activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
       ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
@@ -683,7 +737,6 @@ public class StatusBarHelper {
    * 设置状态栏黑色字体图标，
    * 适配4.4以上版本MIUIV、Flyme和6.0以上版本其他Android
    *
-   * @param activity
    * @return 1:MIUUI 2:Flyme 3:android6.0
    */
   public static int statusBarLightMode(Activity activity) {
@@ -695,8 +748,8 @@ public class StatusBarHelper {
         result = 2;
       } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
         activity.getWindow().getDecorView().
-            setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         result = 3;
       }
     }
@@ -707,8 +760,7 @@ public class StatusBarHelper {
    * 已知系统类型时，设置状态栏黑色字体图标。
    * 适配4.4以上版本MIUIV、Flyme和6.0以上版本其他Android
    *
-   * @param activity
-   * @param type     1:MIUUI 2:Flyme 3:android6.0
+   * @param type 1:MIUUI 2:Flyme 3:android6.0
    */
   public static void statusBarLightMode(Activity activity, int type) {
     if (type == 1) {
@@ -716,9 +768,11 @@ public class StatusBarHelper {
     } else if (type == 2) {
       FlymeSetStatusBarLightMode(activity.getWindow(), true);
     } else if (type == 3) {
-      activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+      activity.getWindow()
+          .getDecorView()
+          .setSystemUiVisibility(
+              View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     }
-
   }
 
   /**
@@ -732,16 +786,14 @@ public class StatusBarHelper {
     } else if (type == 3) {
       activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
     }
-
   }
-
 
   /**
    * 设置状态栏图标为深色和魅族特定的文字风格
    * 可以用来判断是否为Flyme用户
    *
    * @param window 需要设置的窗口
-   * @param dark   是否把状态栏字体及图标颜色设置为深色
+   * @param dark 是否把状态栏字体及图标颜色设置为深色
    * @return boolean 成功执行返回true
    */
   private static boolean FlymeSetStatusBarLightMode(Window window, boolean dark) {
@@ -749,10 +801,9 @@ public class StatusBarHelper {
     if (window != null) {
       try {
         WindowManager.LayoutParams lp = window.getAttributes();
-        Field darkFlag = WindowManager.LayoutParams.class
-            .getDeclaredField("MEIZU_FLAG_DARK_STATUS_BAR_ICON");
-        Field meizuFlags = WindowManager.LayoutParams.class
-            .getDeclaredField("meizuFlags");
+        Field darkFlag =
+            WindowManager.LayoutParams.class.getDeclaredField("MEIZU_FLAG_DARK_STATUS_BAR_ICON");
+        Field meizuFlags = WindowManager.LayoutParams.class.getDeclaredField("meizuFlags");
         darkFlag.setAccessible(true);
         meizuFlags.setAccessible(true);
         int bit = darkFlag.getInt(null);
@@ -776,7 +827,7 @@ public class StatusBarHelper {
    * 设置状态栏字体图标为深色，需要MIUIV6以上
    *
    * @param window 需要设置的窗口
-   * @param dark   是否把状态栏字体及图标颜色设置为深色
+   * @param dark 是否把状态栏字体及图标颜色设置为深色
    * @return boolean 成功执行返回true
    */
   private static boolean MIUISetStatusBarLightMode(Window window, boolean dark) {
@@ -801,5 +852,4 @@ public class StatusBarHelper {
     }
     return result;
   }
-
 }

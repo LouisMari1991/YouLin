@@ -71,6 +71,11 @@
         android:name=".activity.share.SharePopActivity"
         android:screenOrientation="portrait" />
 
+    <!--投票详情Test-->
+    <activity
+        android:name=".activity.shequyaowen.vote.VoteDetailActivityTest"
+        android:screenOrientation="portrait" />
+
     <!--投票详情-->
     <activity
         android:name=".activity.shequyaowen.vote.VoteDetailActivity"

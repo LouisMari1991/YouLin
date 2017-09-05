@@ -13,6 +13,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="选择器"
+      android:visibility="gone"
       />
 
 
@@ -22,7 +23,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="btn_color"
-      android:visibility="visible"
+      android:visibility="gone"
       />
 
   <Button
@@ -31,6 +32,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="手写签名"
+      android:visibility="gone"
       />
 
   <Button
@@ -67,6 +69,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="聊天"
+      android:visibility="gone"
       />
 
   <Button
@@ -75,6 +78,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="填写资料"
+      android:visibility="gone"
       />
 
   <Button
@@ -83,6 +87,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="完善信息"
+      android:visibility="gone"
       />
 
   <Button
@@ -101,6 +106,14 @@
       android:layout_marginTop="10dp"
       android:text="SharePop"
       android:visibility="gone"
+      />
+
+  <Button
+      android:id="@+id/btn_vote_detail_test"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="投票详情Test"
       />
 
   <Button

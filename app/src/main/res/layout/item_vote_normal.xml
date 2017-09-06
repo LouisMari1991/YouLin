@@ -40,7 +40,7 @@
         android:paddingLeft="50dp"
         android:paddingTop="15dp"
         android:text="@string/str_vote"
-        android:textColor="@color/color_blue_text"
+        android:textColor="@drawable/selector_blue_text"
         android:textSize="@dimen/text_12"
         />
   </LinearLayout>

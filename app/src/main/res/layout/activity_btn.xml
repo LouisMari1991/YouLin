@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPageBg"
     android:orientation="vertical"
     android:padding="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
 
@@ -13,6 +14,8 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:background="@drawable/selector_yellow"
+      android:text="嘿嘿额"
+      android:textColor="@drawable/selector_blue_text"
       />
   <Button
       android:id="@+id/blue"
@@ -20,6 +23,8 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:background="@drawable/selector_blue"
+      android:text="你好测试"
+      android:textColor="@drawable/selector_blue_text"
       />
 
   <youlin.xinhua.com.youlin.widget.SwitchButton
@@ -37,5 +42,35 @@
       app:kswThumbMarginTop="-2.5dp"
       />
 
+
+  <TextView
+      android:id="@+id/text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@drawable/shape_blue_fillet_15"
+      android:padding="10dp"
+      android:text="文字是否可用"
+      android:textColor="@drawable/selector_blue_text"
+      android:textSize="18sp"
+      />
+
+
+  <Button
+      android:id="@+id/btn_vote"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:background="@drawable/bg_vote_atlas_button"
+      android:text="投票"
+      android:textColor="@drawable/selector_blue_text"
+      />
+
+  <Button
+      android:id="@+id/btn_switch"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:text="切换"
+      />
 
 </LinearLayout>

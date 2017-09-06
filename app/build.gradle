@@ -51,6 +51,9 @@ dependencies {
   compile rootProject.ext.appcompatv7
   compile rootProject.ext.recyclerviewv7
   compile rootProject.ext.cardviewv7
+
+  compile rootProject.ext.retrofit2.convertergson
+
   //加载动画 cardviewv7
   compile 'com.github.ybq:Android-SpinKit:1.1.0'
   compile 'com.github.bumptech.glide:glide:3.7.0'

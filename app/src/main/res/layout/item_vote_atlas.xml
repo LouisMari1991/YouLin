@@ -9,6 +9,7 @@
     >
 
   <LinearLayout
+      android:id="@+id/ll_item_0"
       android:layout_width="0dp"
       android:layout_height="match_parent"
       android:layout_weight="1"
@@ -28,6 +29,7 @@
           >
 
         <TextView
+            android:id="@+id/text_title_0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|left"
@@ -38,6 +40,7 @@
             />
 
         <TextView
+            android:id="@+id/text_num_0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
@@ -50,6 +53,7 @@
       </FrameLayout>
 
       <ImageView
+          android:id="@+id/img_cover_0"
           android:layout_width="match_parent"
           android:layout_height="100dp"
           android:layout_marginLeft="15dp"
@@ -66,7 +70,7 @@
         android:background="@drawable/bg_vote_atlas_button"
         android:gravity="center"
         android:text="@string/str_vote"
-        android:textColor="@color/color_blue_text"
+        android:textColor="@drawable/selector_blue_text"
         android:textSize="@dimen/text_12"
         />
 
@@ -78,6 +82,7 @@
       />
 
   <LinearLayout
+      android:id="@+id/ll_item_1"
       android:layout_width="0dp"
       android:layout_height="match_parent"
       android:layout_weight="1"
@@ -98,6 +103,7 @@
 
 
         <TextView
+            android:id="@+id/text_title_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|left"
@@ -108,6 +114,7 @@
             />
 
         <TextView
+            android:id="@+id/text_num_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
@@ -120,6 +127,7 @@
       </FrameLayout>
 
       <ImageView
+          android:id="@+id/img_cover_1"
           android:layout_width="match_parent"
           android:layout_height="100dp"
           android:layout_marginLeft="15dp"
@@ -137,7 +145,7 @@
         android:background="@drawable/bg_vote_atlas_button"
         android:gravity="center"
         android:text="@string/str_vote"
-        android:textColor="@color/color_blue_text"
+        android:textColor="@drawable/selector_blue_text"
         android:textSize="@dimen/text_12"
         />
 

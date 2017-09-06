@@ -13,7 +13,6 @@ import butterknife.BindView;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.widget.statusbar.StatusBarHelper;
-import youlin.xinhua.com.youlin.widget.vote.VoteItemCharacter;
 
 /**
  * <pre>
@@ -40,6 +39,7 @@ public class VoteDetailActivity extends BaseActivity {
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     StatusBarHelper.setColor(this, ContextCompat.getColor(this, R.color.white), 0);
+    StatusBarHelper.setColor(this, ContextCompat.getColor(this, R.color.white));
 
     LinearLayout ll = new LinearLayout(this);
     ll.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
@@ -49,9 +49,9 @@ public class VoteDetailActivity extends BaseActivity {
     for (int i = 0; i < 10; i++) {
       //VoteAtlasItem item = new VoteAtlasItem(this);
       //View item = inflater.inflate(R.layout.item_vote_character, ll, false);
-      VoteItemCharacter item = new VoteItemCharacter(this);
-      //VoteItemNormal item = new VoteItemNormal(this);
-      ll.addView(item);
+      //VoteItemCharacter item = new VoteItemCharacter(this);
+      //VoteItemNormal item = new VoteItemNormal(this, null);
+      //ll.addView(item);
     }
     mFLContainer.addView(ll);
   }

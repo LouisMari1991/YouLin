@@ -65,7 +65,7 @@
       android:background="@drawable/shape_blue_fillet_15"
       android:gravity="center"
       android:text="投票"
-      android:textColor="@color/color_blue_text"
+      android:textColor="@drawable/selector_blue_text"
       android:textSize="@dimen/text_12"
       />
 

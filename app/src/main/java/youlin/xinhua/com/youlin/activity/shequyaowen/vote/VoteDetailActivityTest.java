@@ -89,7 +89,6 @@ public class VoteDetailActivityTest extends BaseActivity {
       @Override public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         float p = progress / 100f;
         int pWidth = (int) (p * measureWidth);
-
         LogUtils.i(measureWidth + " , " + progress + " , " + pWidth);
         LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mViewProgress.getLayoutParams();
         lp.width = Math.max(pWidth, minWidth);

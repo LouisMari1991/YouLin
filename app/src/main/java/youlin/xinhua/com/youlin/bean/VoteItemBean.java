@@ -27,7 +27,7 @@ public class VoteItemBean {
   private String         auth; // 投票权限
   private String         carryState; //0:未开始；1:进行中；2:已结束;
   private String         picUrl;
-  private int            answerTotal;
+  private int            answersTotal;
   private List<Question> questionList; //问题列表
   private int            isAnswer; // 是否回答问题， 0:未回答,1:已回答
   private int            voteType;// 投票类型
@@ -106,12 +106,12 @@ public class VoteItemBean {
     this.picUrl = picUrl;
   }
 
-  public int getAnswerTotal() {
-    return answerTotal;
+  public int getAnswersTotal() {
+    return answersTotal;
   }
 
-  public void setAnswerTotal(int answerTotal) {
-    this.answerTotal = answerTotal;
+  public void setAnswersTotal(int answersTotal) {
+    this.answersTotal = answersTotal;
   }
 
   public List<Question> getQuestionList() {
@@ -184,7 +184,7 @@ public class VoteItemBean {
         + picUrl
         + '\''
         + ", answerTotal="
-        + answerTotal
+        + answersTotal
         + ", questionList="
         + questionList
         + ", isAnswer="

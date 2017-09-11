@@ -34,7 +34,7 @@ public class VoteView extends LinearLayout {
   }
 
   public VoteView(Context context, @Nullable AttributeSet attrs) {
-    super(context, attrs, 0);
+    this(context, attrs, 0);
   }
 
   public VoteView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -43,20 +43,59 @@ public class VoteView extends LinearLayout {
   }
 
   private void init() {
-    setOrientation(VERTICAL);
+    setOrientation(LinearLayout.VERTICAL);
   }
 
   public void setVoteItemBean(VoteItemBean voteItemBean) {
     mVoteItemBean = voteItemBean;
-    initData();
-  }
-
-  private void initData() {
-    mVoteState = Integer.valueOf(mVoteItemBean.getCarryState());
-    mVoteType = mVoteItemBean.getVoteType();
-    mQuestion = mVoteItemBean.getQuestionList().get(0);
+    mVoteState = Integer.valueOf(voteItemBean.getCarryState());
+    mVoteType = voteItemBean.getVoteType();
+    mQuestion = voteItemBean.getQuestionList().get(0);
     mOptionList = mQuestion.getOptionList();
     initView();
+  }
+
+  public void updateVoteItemBean(VoteItemBean voteItemBean) {
+    mVoteItemBean = voteItemBean;
+    mVoteState = Integer.valueOf(voteItemBean.getCarryState());
+    mVoteType = voteItemBean.getVoteType();
+    mQuestion = voteItemBean.getQuestionList().get(0);
+    mOptionList = mQuestion.getOptionList();
+    updateView();
+  }
+
+  private void updateView() {
+    int childCount = getChildCount();
+    int startIndex = 0;
+    int size = mOptionList.size();
+    int extra = size % 2;
+    for (int i = 0; i < childCount; i++) {
+      AbsVoteItem item = (AbsVoteItem) getChildAt(i);
+      if (item instanceof VoteItemNormal) {
+        ((VoteItemNormal) item).notifyDataChanged(mOptionList.get(i), mVoteState,
+            mVoteItemBean.getAnswersTotal());
+      } else if (item instanceof VoteItemCharacter) { // 人物
+        ((VoteItemCharacter) item).notifyDataChanged(mOptionList.get(i), mVoteState, i + 1);
+      } else if (item instanceof VoteItemAtlas) { // 图集
+
+        if (extra == 0) {
+          VoteItemBean.Question.Option[] options =
+              getItemBeanArray(mOptionList.get(startIndex), mOptionList.get(startIndex + 1));
+          startIndex += 2;
+          ((VoteItemAtlas) item).notifyDataChanged(mVoteState, options);
+        } else {
+          if (startIndex == size - 1) {
+            VoteItemBean.Question.Option[] options = getItemBeanArray(mOptionList.get(startIndex));
+            ((VoteItemAtlas) item).notifyDataChanged(mVoteState, options);
+          } else {
+            VoteItemBean.Question.Option[] options =
+                getItemBeanArray(mOptionList.get(startIndex), mOptionList.get(startIndex + 1));
+            startIndex += 2;
+            ((VoteItemAtlas) item).notifyDataChanged(mVoteState, options);
+          }
+        }
+      }
+    }
   }
 
   private void initView() {
@@ -78,22 +117,24 @@ public class VoteView extends LinearLayout {
       VoteItemBean.Question.Option option = mOptionList.get(i);
       AbsVoteItem item = null;
       if (mVoteType == 1) {
-        item = new VoteItemNormal(getContext(), option, mVoteState, mVoteItemBean.getAnswerTotal());
+        item =
+            new VoteItemNormal(getContext(), option, mVoteState, mVoteItemBean.getAnswersTotal());
       } else if (mVoteType == 2) {
         item = new VoteItemCharacter(getContext(), option, mVoteState, i + 1);
       }
       item.setOnItemClickListener(new AbsVoteItem.OnItemClickListener() {
         @Override public void onItemClick(VoteItemBean.Question.Option option) {
           // 详情
+          ToastUtils.showToast("initNormal , onItemClick");
           if (mOnVoteViewClickListener != null) {
-            ToastUtils.showToast("initNormal , onItemClick");
+
           }
         }
 
         @Override public void onVoteClick(VoteItemBean.Question.Option option) {
           // 投票
+          ToastUtils.showToast("initNormal , onVoteClick");
           if (mOnVoteViewClickListener != null) {
-            ToastUtils.showToast("initNormal , onVoteClick");
           }
         }
       });
@@ -107,34 +148,52 @@ public class VoteView extends LinearLayout {
     int extra = size % 2;
     int startIndex = 0;
     for (int i = 0; i < even; i++) {
-      addView(getVoteItemAtlas(getContext(), mVoteState, mOptionList.get(startIndex),
-          mOptionList.get(startIndex + 1)));
+      VoteItemAtlas item = new VoteItemAtlas(getContext(), mVoteState,
+          getItemBeanArray(mOptionList.get(startIndex), mOptionList.get(startIndex + 1)));
       startIndex += 2;
+      item.setOnItemClickListener(new AbsVoteItem.OnItemClickListener() {
+        @Override public void onItemClick(VoteItemBean.Question.Option option) {
+          // 详情
+          ToastUtils.showToast("getVoteItemAtlas , onItemClick");
+          if (mOnVoteViewClickListener != null) {
+          }
+        }
+
+        @Override public void onVoteClick(VoteItemBean.Question.Option option) {
+          // 投票
+          ToastUtils.showToast("getVoteItemAtlas , onVoteClick");
+          if (mOnVoteViewClickListener != null) {
+          }
+        }
+      });
+      addView(item);
     }
     if (extra != 0) {
-      addView(getVoteItemAtlas(getContext(), mVoteState, mOptionList.get(mOptionList.size() - 1)));
+      VoteItemAtlas item = new VoteItemAtlas(getContext(), mVoteState,
+          getItemBeanArray(mOptionList.get(mOptionList.size() - 1)));
+      item.setOnItemClickListener(new AbsVoteItem.OnItemClickListener() {
+        @Override public void onItemClick(VoteItemBean.Question.Option option) {
+          // 详情
+          ToastUtils.showToast("getVoteItemAtlas , onItemClick");
+          if (mOnVoteViewClickListener != null) {
+
+          }
+        }
+
+        @Override public void onVoteClick(VoteItemBean.Question.Option option) {
+          // 投票
+          ToastUtils.showToast("getVoteItemAtlas , onVoteClick");
+          if (mOnVoteViewClickListener != null) {
+
+          }
+        }
+      });
+      addView(item);
     }
   }
 
-  private AbsVoteItem getVoteItemAtlas(Context context, int state,
-      VoteItemBean.Question.Option... options) {
-    AbsVoteItem item = new VoteItemAtlas(context, state, options);
-    item.setOnItemClickListener(new AbsVoteItem.OnItemClickListener() {
-      @Override public void onItemClick(VoteItemBean.Question.Option option) {
-        // 详情
-        if (mOnVoteViewClickListener != null) {
-          ToastUtils.showToast("getVoteItemAtlas , onItemClick");
-        }
-      }
-
-      @Override public void onVoteClick(VoteItemBean.Question.Option option) {
-        // 投票
-        if (mOnVoteViewClickListener != null) {
-          ToastUtils.showToast("getVoteItemAtlas , onVoteClick");
-        }
-      }
-    });
-    return item;
+  private VoteItemBean.Question.Option[] getItemBeanArray(VoteItemBean.Question.Option... optins) {
+    return optins;
   }
 
   public void setOnVoteViewClickListener(OnVoteViewClickListener onVoteViewClickListener) {
@@ -142,8 +201,8 @@ public class VoteView extends LinearLayout {
   }
 
   public interface OnVoteViewClickListener {
-    void onItemClick();
+    void onItemClick(VoteItemBean.Question.Option option);
 
-    void onVoteClick();
+    void onVoteClick(VoteItemBean.Question.Option option);
   }
 }

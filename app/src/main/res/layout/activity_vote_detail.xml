@@ -68,12 +68,13 @@
             android:textSize="@dimen/text_15"
             />
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:text="前天"
-            android:textColor="@color/color_gray_text"
-            android:textSize="@dimen/text_10"
+            android:text="[单选]"
+            android:textColor="#f63a3a"
+            android:textSize="@dimen/text_12"
             />
       </LinearLayout>
 
@@ -94,6 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+
             >
           <TextView
               android:layout_width="wrap_content"
@@ -114,11 +116,19 @@
               />
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/color_gray_light"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
+
             >
           <TextView
               android:layout_width="wrap_content"
@@ -140,8 +150,8 @@
 
       </LinearLayout>
 
-      <FrameLayout
-          android:id="@+id/fl_container"
+      <youlin.xinhua.com.youlin.widget.vote.VoteView
+          android:id="@+id/vote_view"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginBottom="10dp"

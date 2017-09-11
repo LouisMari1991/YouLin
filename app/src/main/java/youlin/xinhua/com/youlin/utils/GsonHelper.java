@@ -38,6 +38,7 @@ public class GsonHelper {
       entity = sGson.fromJson(jsonData.toString(), entityClass);
     } catch (JsonSyntaxException e) {
       e.printStackTrace();
+      LogUtils.i(e.toString());
     }
     return entity;
   }

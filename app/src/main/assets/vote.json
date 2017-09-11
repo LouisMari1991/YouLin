@@ -1,0 +1,91 @@
+{
+  "data": {
+    "answerTotal": "",
+    "answersTotal": 0,
+    "auth": "",
+    "carryState": 1,
+    "content": "super man",
+    "createId": "bef792c127cf465887a253013c15c4e0",
+    "createName": "罗红",
+    "createTime": "2017-09-06 15:18:30",
+    "endTime": "2017-09-28 14:22:54",
+    "firstPic": "http://192.168.1.50/committee/000002/20170906/20170906151825866985.png",
+    "lastUuid": "150467031497654",
+    "orderBy": "",
+    "organization": "000002",
+    "organizations": "",
+    "pages": 1,
+    "questionList": [
+      {
+        "createTime": "2017-09-06 15:18:30",
+        "investigateId": "150468231042644",
+        "optionList": [
+          {
+            "createTime": "2017-09-06 15:18:30",
+            "hasPicNote": 2,
+            "investigateId": "150468231042644",
+            "optionContent": "李晨",
+            "optionOrderNum": 1,
+            "optionTotal": 0,
+            "picNote": "",
+            "picSite": "",
+            "questionId": "150468231043333",
+            "status": 1,
+            "updateTime": "2017-09-06 15:18:30",
+            "uuid": "150468231044150"
+          },
+          {
+            "createTime": "2017-09-06 15:18:30",
+            "hasPicNote": 2,
+            "investigateId": "150468231042644",
+            "optionContent": "小槐槐",
+            "optionOrderNum": 1,
+            "optionTotal": 0,
+            "picNote": "",
+            "picSite": "",
+            "questionId": "150468231043333",
+            "status": 1,
+            "updateTime": "2017-09-06 15:18:30",
+            "uuid": "150468231044851"
+          },
+          {
+            "createTime": "2017-09-06 15:18:30",
+            "hasPicNote": 2,
+            "investigateId": "150468231042644",
+            "optionContent": "其他",
+            "optionOrderNum": 1,
+            "optionTotal": 0,
+            "picNote": "",
+            "picSite": "",
+            "questionId": "150468231043333",
+            "status": 1,
+            "updateTime": "2017-09-06 15:18:30",
+            "uuid": "150468231045507"
+          }
+        ],
+        "quesOrderNum": "",
+        "questionName": "",
+        "questionType": 0,
+        "status": 1,
+        "updateTime": "",
+        "uuid": "150468231043333"
+      }
+    ],
+    "resultList": [],
+    "secence": "",
+    "startTime": "2017-09-04 14:23:05",
+    "status": 1,
+    "title": "最强的人",
+    "total": 1,
+    "type": 1,
+    "updateId": "402887475dca743f015dcb3fbfc6000a",
+    "updateTime": "2017-09-06 15:18:30",
+    "uuid": "150468231042644",
+    "voteType": 2,
+    "weight": 0
+  },
+  "msg": "",
+  "pages": 1,
+  "status": 200,
+  "total": 1
+}

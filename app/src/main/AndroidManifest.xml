@@ -81,6 +81,11 @@
         android:name=".activity.shequyaowen.vote.VoteDetailActivity"
         android:screenOrientation="portrait" />
 
+    <!--dialog-->
+    <activity
+        android:name=".activity.DialogTestActivity"
+        android:screenOrientation="portrait" />
+
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>
     <activity android:name=".activity.TabLayoutActivity" />
 

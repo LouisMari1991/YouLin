@@ -28,7 +28,6 @@ public abstract class AbsVoteItem extends LinearLayout {
     mVoteState = state;
     inflate(context, getLayoutId(), this);
     ButterKnife.bind(this);
-    initView();
   }
 
   protected abstract int getLayoutId();

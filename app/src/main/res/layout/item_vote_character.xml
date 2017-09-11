@@ -21,6 +21,16 @@
       android:text="1"
       android:textColor="@color/text_deep_light"
       android:textSize="@dimen/text_12"
+      android:visibility="visible"
+      />
+
+  <ImageView
+      android:id="@+id/img_index"
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:layout_marginLeft="10dp"
+      android:src="@drawable/club_no1"
+      android:visibility="gone"
       />
 
   <ImageView

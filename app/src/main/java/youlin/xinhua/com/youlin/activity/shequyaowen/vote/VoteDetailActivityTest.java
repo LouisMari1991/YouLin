@@ -83,6 +83,7 @@ public class VoteDetailActivityTest extends BaseActivity {
           int oldTop, int oldRight, int oldBottom) {
         v.removeOnLayoutChangeListener(this);
         measureWidth = v.getMeasuredWidth();
+        LogUtils.i("measureWidth : " + measureWidth);
       }
     });
     mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

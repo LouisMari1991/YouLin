@@ -6,6 +6,7 @@ import android.view.View;
 import butterknife.OnClick;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.widget.dialog.LoadingProgressDialog;
 import youlin.xinhua.com.youlin.widget.dialog.TipDialog;
 
 /**
@@ -28,13 +29,19 @@ public class DialogTestActivity extends BaseActivity {
     return R.layout.activity_dialog_test;
   }
 
-  @OnClick({ R.id.btn_tip_dialog }) public void click(View view) {
+  @OnClick({ R.id.btn_tip_dialog, R.id.btn_loading_dialog }) public void click(View view) {
     switch (view.getId()) {
       case R.id.btn_tip_dialog:
         TipDialog tipDialog = new TipDialog(this);
         tipDialog.setTitleText("哈哈");
         tipDialog.setContentText("加载中").showCancelButton(false);
         tipDialog.show();
+        break;
+      case R.id.btn_loading_dialog:
+        //LoadingDialog loadingDialog = new LoadingDialog(this);
+        //loadingDialog.show();
+        LoadingProgressDialog dialog = new LoadingProgressDialog(this);
+        dialog.show();
         break;
       default:
         break;

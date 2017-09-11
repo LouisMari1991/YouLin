@@ -4,6 +4,7 @@
   <string name="font_fontFamily_medium">sans-serif</string>
 
   <!-- chat input start -->
+  <string name="loading_progress_bar">数据加载中</string>
   <string name="sure">确定</string>
   <string name="send">发送</string>
   <string name="record_voice_hint">按住说话</string>

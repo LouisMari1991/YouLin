@@ -32,7 +32,7 @@
   <color name="black_text">#000</color>
   <!--友邻-->
   <color name="touch_effect">#9ccc</color>
-
+  <color name="a">#00BD9C</color>
 
   <!--按钮颜色-->
   <color name="btn_blue_enable">#3aaff6</color>

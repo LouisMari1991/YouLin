@@ -96,7 +96,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="空状态"
-      android:visibility="gone"
+      android:visibility="visible"
       />
 
   <Button

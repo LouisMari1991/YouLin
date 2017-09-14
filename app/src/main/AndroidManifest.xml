@@ -86,6 +86,11 @@
         android:name=".activity.DialogTestActivity"
         android:screenOrientation="portrait" />
 
+    <!--Banner-->
+    <activity
+        android:name=".activity.BannerActivity"
+        android:screenOrientation="portrait" />
+
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>
     <activity android:name=".activity.TabLayoutActivity" />
 

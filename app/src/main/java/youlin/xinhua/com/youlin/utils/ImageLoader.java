@@ -3,6 +3,7 @@ package youlin.xinhua.com.youlin.utils;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.annotation.DrawableRes;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
@@ -101,6 +102,16 @@ public class ImageLoader {
         .placeholder(getYunXunDefaultPic(imageSize))
         .error(getYunXunDefaultPic(imageSize))
         .crossFade(1500)
+        .into(imageView);
+  }
+
+  public static void displayFadeImage(String imageUrl, ImageView imageView,
+      @DrawableRes int defaultDrawable) {
+    Glide.with(imageView.getContext())
+        .load(imageUrl)
+        .placeholder(defaultDrawable)
+        .error(defaultDrawable)
+        .crossFade(500)
         .into(imageView);
   }
 

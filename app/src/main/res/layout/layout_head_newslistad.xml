@@ -16,7 +16,7 @@
   <youlin.xinhua.com.youlin.widget.CarouselView
       android:id="@+id/slider_ads"
       android:layout_width="match_parent"
-      android:layout_height="200dp"
+      android:layout_height="wrap_content"
       android:background="@color/color_gray_light"
       android:clipChildren="false"
       />

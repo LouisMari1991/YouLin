@@ -10,14 +10,15 @@ import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.lang.reflect.Field;
 import java.util.List;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.bean.TuiJianBean;
 import youlin.xinhua.com.youlin.utils.ImageLoader;
+import youlin.xinhua.com.youlin.utils.MeasureUtils;
 import youlin.xinhua.com.youlin.widget.animation.FixedSpeedScroller;
 import youlin.xinhua.com.youlin.widget.animation.ScaleInTransformer;
 
@@ -25,12 +26,13 @@ import youlin.xinhua.com.youlin.widget.animation.ScaleInTransformer;
  * Created by Leo on 2017/7/12.
  */
 
-public class CarouselView extends FrameLayout {
+public class CarouselView extends LinearLayout implements ViewPager.OnPageChangeListener {
 
   private List<TuiJianBean.Banner> mImageList;
   private innerViewPager           mViewPager;
   private ImageAdapter             mAdapter;
   private Handler                  mHandler;
+  private BannerCircleIndicator    bannerCircleIndicator;
 
   private boolean mAutoScroll     = true;
   private int     mScrollInterval = 3000; //自动轮播间隔3秒
@@ -45,6 +47,7 @@ public class CarouselView extends FrameLayout {
 
   public CarouselView(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
+    setOrientation(VERTICAL);
   }
 
   public void setImageList(List<TuiJianBean.Banner> imageList) {
@@ -53,8 +56,8 @@ public class CarouselView extends FrameLayout {
       mViewPager = new innerViewPager(getContext());
       mViewPager.setClipToPadding(false);
 
-      MarginLayoutParams lp = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-          ViewGroup.LayoutParams.MATCH_PARENT);
+      MarginLayoutParams lp =
+          new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, MeasureUtils.dp2px(180));
 
       int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30,
           getResources().getDisplayMetrics());
@@ -80,6 +83,19 @@ public class CarouselView extends FrameLayout {
       mHandler = new Handler(Looper.getMainLooper());
     } else {
       mAdapter.notifyDataSetChanged();
+    }
+    mViewPager.removeOnPageChangeListener(this);
+    mViewPager.addOnPageChangeListener(this);
+    if (bannerCircleIndicator == null) {
+      bannerCircleIndicator = new BannerCircleIndicator(getContext());
+      ViewGroup.LayoutParams lp =
+          new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, MeasureUtils.dp2px(27));
+      bannerCircleIndicator.setLayoutParams(lp);
+      bannerCircleIndicator.createIndicators(imageList.size());
+      bannerCircleIndicator.setCurrentPosition(0);
+      addView(bannerCircleIndicator);
+    } else {
+      bannerCircleIndicator.createIndicators(imageList.size());
     }
     if (mAutoScroll) {
       openAutoScroll();
@@ -122,6 +138,20 @@ public class CarouselView extends FrameLayout {
       autoScroll();
     }
   };
+
+  @Override
+  public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+  }
+
+  @Override public void onPageSelected(int position) {
+    final int i = position % mImageList.size();
+    bannerCircleIndicator.setCurrentPosition(i);
+  }
+
+  @Override public void onPageScrollStateChanged(int state) {
+
+  }
 
   private class ImageAdapter extends PagerAdapter {
 

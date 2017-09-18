@@ -21,14 +21,14 @@ import youlin.xinhua.com.youlin.utils.MeasureUtils;
 public class BannerCircleIndicator extends LinearLayout {
 
   private final static int DEFAULT_INDICATOR_WIDTH  = 7;
-  private final static int DEFAULT_INDICATOR_MARGIN = 5;
+  private final static int DEFAULT_INDICATOR_MARGIN = 3;
 
   private int mIndicatorMargin = -1;
   private int mIndicatorWidth  = -1;
   private int mIndicatorHeight = -1;
 
-  private int mIndicatorBackgroundResId           = R.drawable.shape_blue_circular;
-  private int mIndicatorUnselectedBackgroundResId = R.drawable.shape_gray_radius;
+  private int mIndicatorBackgroundResId           = R.drawable.shape_banner_circleindicator_check;
+  private int mIndicatorUnselectedBackgroundResId = R.drawable.shape_banner_circleindicator_uncheck;
   private int mCurrentPosition                    = 0;
 
   public BannerCircleIndicator(Context context) {
@@ -64,9 +64,17 @@ public class BannerCircleIndicator extends LinearLayout {
   public void setCurrentPosition(int position) {
 
     View currentIndicator = getChildAt(mCurrentPosition);
+    LayoutParams lp1 = (LayoutParams) currentIndicator.getLayoutParams();
+    lp1.width = MeasureUtils.dp2px(DEFAULT_INDICATOR_WIDTH);
+    lp1.height = MeasureUtils.dp2px(DEFAULT_INDICATOR_WIDTH);
+    currentIndicator.setLayoutParams(lp1);
     currentIndicator.setBackgroundResource(mIndicatorUnselectedBackgroundResId);
 
     View selectedIndicator = getChildAt(position);
+    LayoutParams lp2 = (LayoutParams) selectedIndicator.getLayoutParams();
+    lp2.width = MeasureUtils.dp2px(14);
+    lp2.height = MeasureUtils.dp2px(7);
+    selectedIndicator.setLayoutParams(lp2);
     selectedIndicator.setBackgroundResource(mIndicatorBackgroundResId);
 
     mCurrentPosition = position;

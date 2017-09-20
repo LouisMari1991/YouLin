@@ -1,4 +1,4 @@
-package youlin.xinhua.com.youlin.activity.shequyaowen.toupiao;
+package youlin.xinhua.com.youlin.activity.shequyaowen.huodong;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

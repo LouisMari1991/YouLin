@@ -123,35 +123,41 @@
   </declare-styleable>
 
 
-   <declare-styleable name="SwitchButton">
-     <attr name="kswThumbDrawable" format="reference"/>
-     <attr name="kswThumbColor" format="color|reference"/>
-     <attr name="kswThumbMargin" format="dimension|reference"/>
-     <attr name="kswThumbMarginTop" format="dimension|reference"/>
-     <attr name="kswThumbMarginBottom" format="dimension|reference"/>
-     <attr name="kswThumbMarginLeft" format="dimension|reference"/>
-     <attr name="kswThumbMarginRight" format="dimension|reference"/>
-     <attr name="kswThumbWidth" format="dimension|reference"/>
-     <attr name="kswThumbHeight" format="dimension|reference"/>
-     <attr name="kswThumbRadius" format="dimension|reference"/>
-     <attr name="kswBackRadius" format="dimension|reference"/>
-     <attr name="kswBackDrawable" format="reference"/>
-     <attr name="kswBackColor" format="color|reference"/>
-     <attr name="kswFadeBack" format="boolean"/>
-     <attr name="kswBackMeasureRatio" format="float"/>
-     <attr name="kswAnimationDuration" format="integer"/>
-     <attr name="kswTintColor" format="color|reference"/>
-     <attr name="kswTextOn" format="string"/>
-     <attr name="kswTextOff" format="string"/>
-     <attr name="kswTextMarginH" format="dimension"/>
-     <attr name="kswAutoAdjustTextPosition" format="boolean"/>
-   </declare-styleable>
+  <declare-styleable name="SwitchButton">
+    <attr format="reference" name="kswThumbDrawable" />
+    <attr format="color|reference" name="kswThumbColor" />
+    <attr format="dimension|reference" name="kswThumbMargin" />
+    <attr format="dimension|reference" name="kswThumbMarginTop" />
+    <attr format="dimension|reference" name="kswThumbMarginBottom" />
+    <attr format="dimension|reference" name="kswThumbMarginLeft" />
+    <attr format="dimension|reference" name="kswThumbMarginRight" />
+    <attr format="dimension|reference" name="kswThumbWidth" />
+    <attr format="dimension|reference" name="kswThumbHeight" />
+    <attr format="dimension|reference" name="kswThumbRadius" />
+    <attr format="dimension|reference" name="kswBackRadius" />
+    <attr format="reference" name="kswBackDrawable" />
+    <attr format="color|reference" name="kswBackColor" />
+    <attr format="boolean" name="kswFadeBack" />
+    <attr format="float" name="kswBackMeasureRatio" />
+    <attr format="integer" name="kswAnimationDuration" />
+    <attr format="color|reference" name="kswTintColor" />
+    <attr format="string" name="kswTextOn" />
+    <attr format="string" name="kswTextOff" />
+    <attr format="dimension" name="kswTextMarginH" />
+    <attr format="boolean" name="kswAutoAdjustTextPosition" />
+  </declare-styleable>
 
   <!--加载空界面-->
   <declare-styleable name="EmptyLayout">
     <attr format="color" name="background_color" />
     <attr format="reference" name="no_data_drawable" />
     <attr format="string" name="no_data_str" />
+  </declare-styleable>
+
+  <declare-styleable name="PreviewBorderView">
+    <attr format="string" name="tipText" />
+    <attr format="color|reference" name="tipTextColor" />
+    <attr format="dimension" name="tipTextSize" />
   </declare-styleable>
 
 </resources>

@@ -1,11 +1,13 @@
 package youlin.xinhua.com.youlin.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import butterknife.OnClick;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.activity.camera.CameraActivity;
 import youlin.xinhua.com.youlin.activity.share.SharePopActivity;
 import youlin.xinhua.com.youlin.activity.shequyaowen.vote.VoteDetailActivity;
 import youlin.xinhua.com.youlin.activity.shequyaowen.vote.VoteDetailActivityTest;
@@ -18,7 +20,7 @@ public class MainActivity extends BaseActivity {
       R.id.btn_color, R.id.btn_im, R.id.contact, R.id.contact_pick, R.id.chat, R.id.btn_signature,
       R.id.btn_picker, R.id.btn_input_information, R.id.btn_perfect_information, R.id.btn_empty,
       R.id.btn_share_pop, R.id.btn_vote_detail_test, R.id.btn_vote_detail, R.id.btn_dialog,
-      R.id.btn_banner
+      R.id.btn_banner, R.id.btn_camera
   }) public void click(View view) {
     switch (view.getId()) {
       case R.id.btn_color: {
@@ -79,6 +81,11 @@ public class MainActivity extends BaseActivity {
       break;
       case R.id.btn_banner: {
         BannerActivity.launch(this);
+      }
+      break;
+      case R.id.btn_camera: {
+        Intent intent = new Intent(this, CameraActivity.class);
+        startActivityForResult(intent, 100);
       }
       break;
       default:

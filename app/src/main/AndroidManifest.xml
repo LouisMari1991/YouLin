@@ -91,6 +91,11 @@
         android:name=".activity.BannerActivity"
         android:screenOrientation="portrait" />
 
+    <!--相机-->
+    <activity
+        android:name=".activity.camera.CameraActivity"
+        android:screenOrientation="landscape" />
+
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>
     <activity android:name=".activity.TabLayoutActivity" />
 

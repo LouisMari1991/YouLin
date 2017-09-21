@@ -18,6 +18,7 @@ import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.utils.LogUtils;
 import youlin.xinhua.com.youlin.utils.MeasureUtils;
+import youlin.xinhua.com.youlin.widget.dialog.TipDialog;
 
 /**
  * <pre>
@@ -41,6 +42,8 @@ public class VoteDetailActivityTest extends BaseActivity {
 
   ValueAnimator mValueAnimator;
 
+  TipDialog mTipDialog;
+
   public static void launch(Context context) {
     Intent intent = new Intent(context, VoteDetailActivityTest.class);
     context.startActivity(intent);
@@ -51,6 +54,49 @@ public class VoteDetailActivityTest extends BaseActivity {
   }
 
   @OnClick(R.id.btn_animator) public void click() {
+
+    if (mTipDialog != null) {
+      mTipDialog.cancel();
+    }
+    mTipDialog = new TipDialog(this, TipDialog.TIP_TYPE, true);
+    mTipDialog.setTitleText("投票未开始")
+        .setConfirmText("确定")
+        .setConfirmClickListener(new TipDialog.OnSweetClickListener() {
+          @Override public void onClick(TipDialog tipDialog) {
+            //ToastUtils.show("aaa");
+            tipDialog.changeAlertType(TipDialog.NORMAL_TYPE);
+            tipDialog.setTitleText("你好")
+                .setContentText("哈哈哈")
+                .setCancelText("ixix1")
+                .setConfirmClickListener(new TipDialog.OnSweetClickListener() {
+                  @Override public void onClick(TipDialog tipDialog) {
+                    tipDialog.changeAlertType(TipDialog.PROGRESS_TYPE);
+                  }
+                });
+          }
+        })
+        .show();
+
+    //mTipDialog.changeAlertType(TipDialog.NORMAL_TYPE);
+    //mTipDialog.setTitleText("投票确认")
+    //    .setContentText("没人仅有一次投票机会,确认将无法修改")
+    //    .setConfirmText("投票")
+    //    .setCancelText("取消")
+    //    .setConfirmClickListener(new TipDialog.OnSweetClickListener() {
+    //      @Override public void onClick(TipDialog tipDialog) {
+    //        tipDialog.changeAlertType(TipDialog.PROGRESS_TYPE);
+    //        tipDialog.setContentText("提交中");
+    //      }
+    //    })
+    //    .setCancelClickListener(new TipDialog.OnSweetClickListener() {
+    //      @Override public void onClick(TipDialog tipDialog) {
+    //        tipDialog.dismiss();
+    //      }
+    //    })
+    //    .show();
+  }
+
+  private void showAnim() {
     mButton.setClickable(false);
     mValueAnimator = ValueAnimator.ofInt(0, 100);
     mValueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {

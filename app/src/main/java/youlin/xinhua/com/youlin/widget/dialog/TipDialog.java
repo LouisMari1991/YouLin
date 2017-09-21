@@ -2,74 +2,64 @@ package youlin.xinhua.com.youlin.widget.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.IntDef;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.Transformation;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 import com.xinhua.dialoglib.OptAnimationLoader;
 import com.xinhua.dialoglib.ProgressHelper;
-import com.xinhua.dialoglib.SuccessTickView;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.util.List;
 import youlin.xinhua.com.youlin.R;
 
 public class TipDialog extends Dialog implements View.OnClickListener {
-  private View                 mDialogView;
-  private AnimationSet         mModalInAnim;
-  private AnimationSet         mModalOutAnim;
-  private Animation            mOverlayOutAnim;
-  private Animation            mErrorInAnim;
-  private AnimationSet         mErrorXInAnim;
-  private AnimationSet         mSuccessLayoutAnimSet;
-  private Animation            mSuccessBowAnim;
-  private TextView             mTitleTextView;
-  private TextView             mContentTextView;
-  private String               mTitleText;
-  private String               mContentText;
-  private boolean              mShowCancel;
-  private boolean              mShowContent;
-  private boolean              mShowTitle;
-  private String               mCancelText;
-  private String               mConfirmText;
-  private int                  mAlertType;
-  private FrameLayout          mErrorFrame;
-  private FrameLayout          mSuccessFrame;
-  private FrameLayout          mProgressFrame;
-  private SuccessTickView      mSuccessTick;
-  private ImageView            mErrorX;
-  private View                 mSuccessLeftMask;
-  private View                 mSuccessRightMask;
-  private Drawable             mCustomImgDrawable;
-  private ImageView            mCustomImage;
-  private Button               mConfirmButton;
-  private Button               mCancelButton;
-  private ProgressHelper       mProgressHelper;
-  private FrameLayout mWarningFrame;
+
+  public static final int NORMAL_TYPE   = 0;
+  public static final int PROGRESS_TYPE = 5;
+  public static final int TIP_TYPE      = 1;
+
+  private AnimationSet mModalInAnim;
+  private AnimationSet mModalOutAnim;
+  private Animation    mOverlayOutAnim;
+
+  private String mTitleText;
+  private String mContentText;
+  private String mTipText;
+
+  private View         mDialogView;
+  private TextView     mTitleTextView;
+  private TextView     mContentTextView;
+  private FrameLayout  mProgressFrame;
+  private LinearLayout mNormalContainer;
+  private TextView     mTipTextView;
+
+  private int    mAlertType;
+  private String mCancelText;
+  private String mConfirmText;
+  private Button mConfirmButton;
+  private Button mCancelButton;
+
   private OnSweetClickListener mCancelClickListener;
   private OnSweetClickListener mConfirmClickListener;
-  private boolean              mCloseFromCancel;
 
-  public static final int NORMAL_TYPE       = 0;
-  public static final int ERROR_TYPE        = 1;
-  public static final int SUCCESS_TYPE      = 2;
-  public static final int WARNING_TYPE      = 3;
-  public static final int CUSTOM_IMAGE_TYPE = 4;
-  public static final int PROGRESS_TYPE     = 5;
+  private ProgressHelper mProgressHelper;
+
+  private boolean mShowCancel;
+  private boolean mCloseFromCancel;
+  private boolean mShowContent;
+  private boolean mShowTitle;
+  private boolean mShowTip;
 
   @Retention(RetentionPolicy.SOURCE) @IntDef({
-      NORMAL_TYPE, PROGRESS_TYPE
+      NORMAL_TYPE, PROGRESS_TYPE, TIP_TYPE
   }) public @interface AlertType {
 
   }
@@ -84,32 +74,19 @@ public class TipDialog extends Dialog implements View.OnClickListener {
 
   public TipDialog(Context context, @AlertType int alertType) {
     super(context, R.style.alert_dialog);
+    init(context, alertType);
+  }
+
+  public TipDialog(Context context, @AlertType int alertType, boolean fullScreen) {
+    super(context, R.style.full_screen_dialog);
+    init(context, alertType);
+  }
+
+  private void init(Context context, @AlertType int alertType) {
     setCancelable(true);
     setCanceledOnTouchOutside(false);
     mProgressHelper = new ProgressHelper(context);
     mAlertType = alertType;
-    mErrorInAnim =
-        OptAnimationLoader.loadAnimation(getContext(), com.xinhua.dialoglib.R.anim.error_frame_in);
-    mErrorXInAnim = (AnimationSet) OptAnimationLoader.loadAnimation(getContext(),
-        com.xinhua.dialoglib.R.anim.error_x_in);
-    // 2.3.x system don't support alpha-animation on layer-list drawable
-    //remove it from animation set
-    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.GINGERBREAD_MR1) {
-      List<Animation> childAnims = mErrorXInAnim.getAnimations();
-      int idx = 0;
-      for (; idx < childAnims.size(); idx++) {
-        if (childAnims.get(idx) instanceof AlphaAnimation) {
-          break;
-        }
-      }
-      if (idx < childAnims.size()) {
-        childAnims.remove(idx);
-      }
-    }
-    mSuccessBowAnim = OptAnimationLoader.loadAnimation(getContext(),
-        com.xinhua.dialoglib.R.anim.success_bow_roate);
-    mSuccessLayoutAnimSet = (AnimationSet) OptAnimationLoader.loadAnimation(getContext(),
-        com.xinhua.dialoglib.R.anim.success_mask_layout);
     mModalInAnim = (AnimationSet) OptAnimationLoader.loadAnimation(getContext(),
         com.xinhua.dialoglib.R.anim.modal_in);
     mModalOutAnim = (AnimationSet) OptAnimationLoader.loadAnimation(getContext(),
@@ -152,18 +129,11 @@ public class TipDialog extends Dialog implements View.OnClickListener {
     setContentView(R.layout.dialog_tip);
 
     mDialogView = getWindow().getDecorView().findViewById(android.R.id.content);
+    mNormalContainer = (LinearLayout) findViewById(R.id.normal_container);
+    mTipTextView = (TextView) findViewById(R.id.text_tip);
     mTitleTextView = (TextView) findViewById(R.id.title_text);
     mContentTextView = (TextView) findViewById(R.id.content_text);
-    mErrorFrame = (FrameLayout) findViewById(com.xinhua.dialoglib.R.id.error_frame);
-    mErrorX = (ImageView) mErrorFrame.findViewById(com.xinhua.dialoglib.R.id.error_x);
-    mSuccessFrame = (FrameLayout) findViewById(com.xinhua.dialoglib.R.id.success_frame);
     mProgressFrame = (FrameLayout) findViewById(com.xinhua.dialoglib.R.id.progress_dialog);
-    mSuccessTick =
-        (SuccessTickView) mSuccessFrame.findViewById(com.xinhua.dialoglib.R.id.success_tick);
-    mSuccessLeftMask = mSuccessFrame.findViewById(com.xinhua.dialoglib.R.id.mask_left);
-    mSuccessRightMask = mSuccessFrame.findViewById(com.xinhua.dialoglib.R.id.mask_right);
-    mCustomImage = (ImageView) findViewById(com.xinhua.dialoglib.R.id.custom_image);
-    mWarningFrame = (FrameLayout) findViewById(com.xinhua.dialoglib.R.id.warning_frame);
     mConfirmButton = (Button) findViewById(com.xinhua.dialoglib.R.id.confirm_button);
     mCancelButton = (Button) findViewById(com.xinhua.dialoglib.R.id.cancel_button);
     mProgressHelper.setProgressWheel(
@@ -179,29 +149,12 @@ public class TipDialog extends Dialog implements View.OnClickListener {
   }
 
   private void restore() {
-    mCustomImage.setVisibility(View.GONE);
-    mErrorFrame.setVisibility(View.GONE);
-    mSuccessFrame.setVisibility(View.GONE);
-    mWarningFrame.setVisibility(View.GONE);
     mProgressFrame.setVisibility(View.GONE);
     mConfirmButton.setVisibility(View.VISIBLE);
-
-    //mConfirmButton.setBackgroundResource(com.xinhua.dialoglib.R.drawable.blue_button_background);
-    mErrorFrame.clearAnimation();
-    mErrorX.clearAnimation();
-    mSuccessTick.clearAnimation();
-    mSuccessLeftMask.clearAnimation();
-    mSuccessRightMask.clearAnimation();
   }
 
   private void playAnimation() {
-    if (mAlertType == ERROR_TYPE) {
-      mErrorFrame.startAnimation(mErrorInAnim);
-      mErrorX.startAnimation(mErrorXInAnim);
-    } else if (mAlertType == SUCCESS_TYPE) {
-      mSuccessTick.startTickAnim();
-      mSuccessRightMask.startAnimation(mSuccessBowAnim);
-    }
+
   }
 
   private void changeAlertType(int alertType, boolean fromCreate) {
@@ -213,26 +166,27 @@ public class TipDialog extends Dialog implements View.OnClickListener {
         restore();
       }
       switch (mAlertType) {
-        case ERROR_TYPE:
-          mErrorFrame.setVisibility(View.VISIBLE);
-          break;
-        case SUCCESS_TYPE:
-          mSuccessFrame.setVisibility(View.VISIBLE);
-          // initial rotate layout of success mask
-          mSuccessLeftMask.startAnimation(mSuccessLayoutAnimSet.getAnimations().get(0));
-          mSuccessRightMask.startAnimation(mSuccessLayoutAnimSet.getAnimations().get(1));
-          break;
-        case WARNING_TYPE:
-          mConfirmButton.setBackgroundResource(
-              com.xinhua.dialoglib.R.drawable.red_button_background);
-          mWarningFrame.setVisibility(View.VISIBLE);
-          break;
-        case CUSTOM_IMAGE_TYPE:
-          setCustomImage(mCustomImgDrawable);
-          break;
         case PROGRESS_TYPE:
           mProgressFrame.setVisibility(View.VISIBLE);
+          mTitleTextView.setVisibility(View.GONE);
           mConfirmButton.setVisibility(View.GONE);
+          mCancelButton.setVisibility(View.GONE);
+          break;
+        case TIP_TYPE:
+          mTipTextView.setVisibility(View.VISIBLE);
+          mConfirmButton.setVisibility(View.VISIBLE);
+          mProgressFrame.setVisibility(View.GONE);
+          mNormalContainer.setVisibility(View.GONE);
+          mCancelButton.setVisibility(View.GONE);
+          break;
+        case NORMAL_TYPE:
+          mNormalContainer.setVisibility(View.VISIBLE);
+          mTitleTextView.setVisibility(View.VISIBLE);
+          mConfirmButton.setVisibility(View.VISIBLE);
+          mContentTextView.setVisibility(View.VISIBLE);
+          mCancelButton.setVisibility(View.VISIBLE);
+          mProgressFrame.setVisibility(View.GONE);
+          mTipTextView.setVisibility(View.GONE);
           break;
       }
       if (!fromCreate) {
@@ -249,6 +203,15 @@ public class TipDialog extends Dialog implements View.OnClickListener {
     changeAlertType(alertType, false);
   }
 
+  public TipDialog setTipText(String text) {
+    mTipText = text;
+    if (mTipTextView != null && mTipText != null) {
+      showTipText(true);
+      mTipTextView.setText(mTipText);
+    }
+    return this;
+  }
+
   public String getTitleText() {
     return mTitleText;
   }
@@ -260,19 +223,6 @@ public class TipDialog extends Dialog implements View.OnClickListener {
       mTitleTextView.setText(mTitleText);
     }
     return this;
-  }
-
-  public TipDialog setCustomImage(Drawable drawable) {
-    mCustomImgDrawable = drawable;
-    if (mCustomImage != null && mCustomImgDrawable != null) {
-      mCustomImage.setVisibility(View.VISIBLE);
-      mCustomImage.setImageDrawable(mCustomImgDrawable);
-    }
-    return this;
-  }
-
-  public TipDialog setCustomImage(int resourceId) {
-    return setCustomImage(getContext().getResources().getDrawable(resourceId));
   }
 
   public String getContentText() {
@@ -302,6 +252,14 @@ public class TipDialog extends Dialog implements View.OnClickListener {
 
   public boolean isShowContentText() {
     return mShowContent;
+  }
+
+  public TipDialog showTipText(boolean isShow) {
+    mShowTip = isShow;
+    if (mTipTextView != null) {
+      mTipTextView.setVisibility(mShowTip ? View.VISIBLE : View.GONE);
+    }
+    return this;
   }
 
   public TipDialog showTitleText(boolean isShow) {

@@ -140,13 +140,22 @@
       android:text="Banner"
       />
 
-
   <Button
       android:id="@+id/btn_camera"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="拍照"
+      android:visibility="gone"
       />
+
+  <Button
+      android:id="@+id/btn_huodong"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="活动详情"
+      />
+
 
 </LinearLayout>

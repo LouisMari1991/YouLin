@@ -8,25 +8,28 @@
   <LinearLayout
       android:id="@+id/articl_comment"
       android:layout_width="match_parent"
-      android:layout_height="44dp"
+      android:layout_height="wrap_content"
       android:layout_alignParentBottom="true"
       android:background="@color/white"
       android:gravity="center_vertical"
       >
-    <TextView
+    <EditText
         android:id="@+id/et_comment"
         android:layout_width="0dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
         android:layout_weight="1"
         android:background="@drawable/shape_input_bg"
-        android:clickable="true"
-        android:drawableLeft="@drawable/ic_pen"
-        android:focusableInTouchMode="false"
         android:gravity="center_vertical"
-        android:paddingLeft="10dp"
-        android:text="写评论..."
-        android:textColor="@color/color_gray_deep"
+        android:minHeight="30dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/color_gray_deep"
+        android:textCursorDrawable="@drawable/aurora_edittext_cursor_bg"
+        android:textSize="16sp"
         />
     <youlin.xinhua.com.youlin.widget.CheckableView
         android:id="@+id/iv_collet"
@@ -43,6 +46,19 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="20dp"
         android:src="@drawable/ic_share"
+        />
+
+    <Button
+        android:id="@+id/aurora_menuitem_ib_send"
+        android:layout_width="48dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/selector_blue"
+        android:text="发送"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="gone"
         />
   </LinearLayout>
 

@@ -15,6 +15,7 @@ package youlin.xinhua.com.im.utils;
 
 import android.content.Context;
 import android.net.Uri;
+import android.support.annotation.DrawableRes;
 import android.text.Spannable;
 import android.text.Spannable.Factory;
 import android.text.style.ImageSpan;
@@ -87,6 +88,7 @@ public class EaseSmileUtils {
 
   /**
    * add text and icon to the map
+   *
    * @param emojiText-- text of emoji
    * @param icon -- resource id or local path
    */
@@ -96,9 +98,6 @@ public class EaseSmileUtils {
 
   /**
    * replace existing spannable with smiles
-   * @param context
-   * @param spannable
-   * @return
    */
   public static boolean addSmiles(Context context, Spannable spannable) {
     boolean hasChanges = false;
@@ -133,6 +132,18 @@ public class EaseSmileUtils {
     }
 
     return hasChanges;
+  }
+
+  public static Spannable getSiiledText(Context context, CharSequence text, String rexgString,
+      @DrawableRes int resId) {
+    Spannable spannable = spannableFactory.newSpannable(text);
+    Pattern pattern = Pattern.compile(rexgString);
+    Matcher matcher = pattern.matcher(text);
+    while (matcher.find()) {
+      spannable.setSpan(new ImageSpan(context, resId), matcher.start(), matcher.end(),
+          Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+    }
+    return spannable;
   }
 
   public static Spannable getSmiledText(Context context, CharSequence text) {

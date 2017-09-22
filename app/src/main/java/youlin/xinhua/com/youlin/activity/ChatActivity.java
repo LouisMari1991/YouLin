@@ -213,7 +213,6 @@ public class ChatActivity extends BaseChatActivity
         }
         if (chatInputView.getMenuState() == View.INVISIBLE || (!chatInputView.getSoftInputState()
             && chatInputView.getMenuState() == View.GONE)) {
-
           mWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
               | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
           try {

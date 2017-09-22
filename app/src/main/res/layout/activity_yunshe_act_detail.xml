@@ -11,7 +11,8 @@
       />
 
 
-  <RelativeLayout
+  <youlin.xinhua.com.youlin.widget.ResizeLayout
+      android:id="@+id/resize_layout"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       >
@@ -308,35 +309,26 @@
 
     <Button
         android:id="@+id/btn_sure"
-        android:layout_width="@dimen/gauge_102"
-        android:layout_height="@dimen/gauge_102"
+        android:layout_width="@dimen/gauge_104"
+        android:layout_height="@dimen/gauge_104"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="51dp"
+        android:layout_marginBottom="@dimen/gauge_120"
         android:layout_marginRight="15dp"
         android:background="@drawable/shape_blue_circular"
         android:text="报名"
         android:textColor="@color/white"
-        tools:visibility="gone"
+        tools:visibility="visible"
         />
 
-    <LinearLayout
+    <youlin.xinhua.com.youlin.widget.CommentLayout
+        android:id="@+id/comment_layout"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#000000"
-        android:orientation="horizontal"
-        >
+        />
 
-      <EditText
-          android:layout_width="match_parent"
-          android:layout_height="30dp"
-          android:layout_gravity="center_vertical"
-          android:background="@drawable/shape_input_bg"
-          />
-    </LinearLayout>
-
-  </RelativeLayout>
+  </youlin.xinhua.com.youlin.widget.ResizeLayout>
 
 
 </LinearLayout>

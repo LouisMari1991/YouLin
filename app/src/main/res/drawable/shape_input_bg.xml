@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-<corners android:radius="@dimen/gauge_10"/>
-    <solid android:color="@color/color_gray_light"/>
+  <corners android:radius="@dimen/gauge_10" />
+  <solid android:color="@color/color_gray_light" />
 </shape>
+
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item android:state_focused="true">
+    <shape>
+      <solid android:color="@color/color_gray_light" />
+      <corners android:radius="5dp" />
+      <stroke android:color="@color/aurora_bg_edittext_focus" android:width="1dp" />
+    </shape>
+  </item>
+  <item>
+    <shape>
+      <solid android:color="@color/color_gray_light" />
+      <corners android:radius="5dp" />
+      <stroke android:color="@color/aurora_bg_edittext_default" android:width="0dp" />
+
+    </shape>
+  </item>
+
+</selector>-->

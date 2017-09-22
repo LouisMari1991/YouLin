@@ -24,11 +24,12 @@
     <EditText
         android:id="@+id/aurora_et_chat_input"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="@drawable/aurora_edittext_bg"
         android:cursorVisible="true"
         android:inputType="textMultiLine"
+        android:minHeight="@dimen/gauge_60"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:textColor="@android:color/black"

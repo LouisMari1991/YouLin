@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/gauge_20"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/gauge_88"
+      android:gravity="center_vertical"
+      >
+
+    <View
+        android:layout_width="@dimen/gauge_4"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_veri_blue"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="评论列表"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/text_15"
+        />
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/gauge_20"
+      android:layout_marginTop="@dimen/gauge_20"
+      android:orientation="vertical"
+      >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+      <ImageView
+          android:layout_width="@dimen/gauge_50"
+          android:layout_height="@dimen/gauge_50"
+          android:layout_marginLeft="@dimen/gauge_20"
+          android:layout_marginRight="@dimen/gauge_20"
+          tools:src="@drawable/ic_default_avatar"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/color_blue_text"
+          android:textSize="@dimen/text_12"
+          tools:text="马化腾"
+          />
+
+      <View
+          android:layout_width="2dp"
+          android:layout_height="2dp"
+          android:layout_marginLeft="@dimen/gauge_10"
+          android:layout_marginRight="@dimen/gauge_10"
+          android:background="@drawable/shape_gray_deep_oval"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/text_deep_light"
+          android:textSize="@dimen/text_12"
+          tools:text="07.06 7:05"
+          />
+
+      <Space
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          />
+
+      <youlin.xinhua.com.youlin.widget.CheckableView
+          android:layout_width="@dimen/gauge_24"
+          android:layout_height="@dimen/gauge_24"
+          android:layout_marginRight="@dimen/gauge_10"
+          app:checkedDrawable="@drawable/icon_lick"
+          app:normalDrawable="@drawable/icon_unlick"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="@dimen/gauge_20"
+          android:textColor="@color/text_deep_light"
+          android:textSize="@dimen/text_12"
+          tools:text="0"
+          />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/gauge_90"
+        android:layout_marginRight="@dimen/gauge_20"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/text_13"
+        tools:text="帮帮浪啊,果然名ssssssssssssssdasdasdasdasdasdasdasdasdasd捕续传"
+        />
+  </LinearLayout>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1px"
+      android:layout_marginLeft="@dimen/gauge_20"
+      android:layout_marginRight="@dimen/gauge_20"
+      android:background="@color/text_deep_light"
+      />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/gauge_20"
+      android:layout_marginTop="@dimen/gauge_20"
+      android:orientation="vertical"
+      >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+      <ImageView
+          android:layout_width="@dimen/gauge_50"
+          android:layout_height="@dimen/gauge_50"
+          android:layout_marginLeft="@dimen/gauge_20"
+          android:layout_marginRight="@dimen/gauge_20"
+          tools:src="@drawable/ic_default_avatar"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/color_blue_text"
+          android:textSize="@dimen/text_12"
+          tools:text="马化腾"
+          />
+
+      <View
+          android:layout_width="2dp"
+          android:layout_height="2dp"
+          android:layout_marginLeft="@dimen/gauge_10"
+          android:layout_marginRight="@dimen/gauge_10"
+          android:background="@drawable/shape_gray_deep_oval"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/text_deep_light"
+          android:textSize="@dimen/text_12"
+          tools:text="07.06 7:05"
+          />
+
+      <Space
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          />
+
+      <youlin.xinhua.com.youlin.widget.CheckableView
+          android:layout_width="@dimen/gauge_24"
+          android:layout_height="@dimen/gauge_24"
+          android:layout_marginRight="@dimen/gauge_10"
+          app:checkedDrawable="@drawable/icon_lick"
+          app:normalDrawable="@drawable/icon_unlick"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="@dimen/gauge_20"
+          android:textColor="@color/text_deep_light"
+          android:textSize="@dimen/text_12"
+          tools:text="0"
+          />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/gauge_90"
+        android:layout_marginRight="@dimen/gauge_20"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/text_13"
+        tools:text="帮帮浪啊,果然名ssssssssssssssdasdasdasdasdasdasdasdasdasd捕续传"
+        />
+  </LinearLayout>
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1px"
+      android:layout_marginLeft="@dimen/gauge_20"
+      android:layout_marginRight="@dimen/gauge_20"
+      android:background="@color/text_deep_light"
+      />
+
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/gauge_88"
+      >
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        >
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="查看更多评论"
+          android:textColor="@color/color_blue_text"
+          android:textSize="@dimen/text_13"
+          />
+      <ImageView
+          android:layout_width="@dimen/gauge_20"
+          android:layout_height="@dimen/gauge_20"
+          android:layout_marginLeft="@dimen/gauge_4"
+          android:src="@drawable/icon_comment_more"
+          />
+    </LinearLayout>
+  </RelativeLayout>
+
+
+</LinearLayout>

@@ -5,330 +5,349 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
+
+
   <include
       layout="@layout/layout_common_toolbar"
       android:id="@+id/title_bar"
       />
 
-
-  <youlin.xinhua.com.youlin.widget.ResizeLayout
-      android:id="@+id/resize_layout"
+  <FrameLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       >
-    <android.support.v4.widget.NestedScrollView
+
+
+    <youlin.xinhua.com.youlin.widget.ResizeLayout
+        android:id="@+id/resize_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/gauge_88"
-        android:background="@color/colorPageBg"
         >
-      <LinearLayout
+      <android.support.v4.widget.NestedScrollView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginBottom="@dimen/gauge_88"
+          android:background="@color/colorPageBg"
+          >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPageBg"
+            android:orientation="vertical"
+            >
+
+          <FrameLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              >
+
+            <ImageView
+                android:id="@+id/img_cover"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:id="@+id/text_state"
+                android:layout_width="125dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/shape_translucent_fillet_15"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_15"
+                android:visibility="gone"
+                />
+          </FrameLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp"
+              android:layout_marginTop="-25dp"
+              android:background="@color/white"
+              android:orientation="vertical"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              >
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="15dp"
+                android:text="民宿名称投票"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/text_15"
+                />
+            <TextView
+                android:id="@+id/text_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="[单选]"
+                android:textColor="#f63a3a"
+                android:textSize="@dimen/text_12"
+                />
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="@dimen/gauge_30"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp"
+              android:layout_marginTop="@dimen/gauge_20"
+              android:background="@color/white"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/gauge_30"
+              android:paddingRight="@dimen/gauge_30"
+              >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                >
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginRight="@dimen/gauge_20"
+                  android:text="报名时间: "
+                  android:textColor="@color/color_blue_text"
+                  android:textSize="@dimen/text_12"
+                  />
+
+              <TextView
+                  android:id="@+id/text_sign_time"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="@color/black_text"
+                  android:textSize="@dimen/text_12"
+                  tools:text="asdsadsadasd"
+                  />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                >
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginRight="@dimen/gauge_20"
+                  android:text="进行时间: "
+                  android:textColor="@color/color_blue_text"
+                  android:textSize="@dimen/text_12"
+                  />
+
+              <TextView
+                  android:id="@+id/text_start_time"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="@color/black_text"
+                  android:textSize="@dimen/text_12"
+                  tools:text="asdsadsadasd"
+                  />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                >
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginRight="@dimen/gauge_20"
+                  android:text="活动地址: "
+                  android:textColor="@color/color_blue_text"
+                  android:textSize="@dimen/text_12"
+                  />
+
+              <TextView
+                  android:id="@+id/text_location"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:textColor="@color/color_yelow"
+                  android:textSize="@dimen/text_12"
+                  tools:text="asdsadsadasd"
+                  />
+
+              <ImageView
+                  android:layout_width="@dimen/gauge_28"
+                  android:layout_height="@dimen/gauge_28"
+                  android:src="@mipmap/ic_arrows_into_blue"
+                  />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                >
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginRight="@dimen/gauge_20"
+                  android:text="报名人数: "
+                  android:textColor="@color/color_blue_text"
+                  android:textSize="@dimen/text_12"
+                  />
+
+              <TextView
+                  android:id="@+id/text_number_of"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="@color/black_text"
+                  android:textSize="@dimen/text_12"
+                  tools:text="asdsadsadasd"
+                  />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                >
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginRight="@dimen/gauge_20"
+                  android:text="活动费用: "
+                  android:textColor="@color/color_blue_text"
+                  android:textSize="@dimen/text_12"
+                  />
+
+              <TextView
+                  android:id="@+id/text_cost"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="@color/black_text"
+                  android:textSize="@dimen/text_12"
+                  tools:text="asdsadsadasd"
+                  />
+
+            </LinearLayout>
+
+          </LinearLayout>
+
+          <youlin.xinhua.com.youlin.widget.html.HtmlTextView
+              android:id="@+id/text_html"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="@dimen/gauge_20"
+              android:paddingLeft="@dimen/gauge_20"
+              android:paddingRight="@dimen/gauge_20"
+              android:textSize="15sp"
+              />
+
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="@dimen/gauge_20"
+              android:background="@color/white"
+              android:orientation="vertical"
+              >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/gauge_50"
+                android:layout_marginLeft="@dimen/gauge_20"
+                android:layout_marginRight="@dimen/gauge_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="@color/black_text"
+                  android:textSize="@dimen/text_15"
+                  tools:text="已报名(18)"
+                  />
+
+              <Space
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  />
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="查看更多报名"
+                  android:textColor="@color/color_blue_text"
+                  android:textSize="@dimen/text_15"
+                  />
+
+              <ImageView
+                  android:layout_width="@dimen/gauge_28"
+                  android:layout_height="@dimen/gauge_28"
+                  android:src="@mipmap/ic_arrows_into_blue"
+                  />
+            </LinearLayout>
+
+            <youlin.xinhua.com.youlin.widget.AvatarNameContainer
+                android:id="@+id/avatar_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/gauge_20"
+                android:layout_marginLeft="@dimen/gauge_20"
+                android:layout_marginRight="@dimen/gauge_20"
+                android:layout_marginTop="@dimen/gauge_20"
+                />
+          </LinearLayout>
+
+
+          <include layout="@layout/layout_comment_face" />
+
+        </LinearLayout>
+
+      </android.support.v4.widget.NestedScrollView>
+
+      <Button
+          android:id="@+id/btn_sure"
+          android:layout_width="@dimen/gauge_104"
+          android:layout_height="@dimen/gauge_104"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentRight="true"
+          android:layout_marginBottom="@dimen/gauge_120"
+          android:layout_marginRight="15dp"
+          android:background="@drawable/shape_blue_circular"
+          android:text="报名"
+          android:textColor="@color/white"
+          tools:visibility="visible"
+          />
+
+      <youlin.xinhua.com.youlin.widget.CommentLayout
+          android:id="@+id/comment_layout"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:background="@color/colorPageBg"
-          android:orientation="vertical"
-          >
+          android:layout_alignParentBottom="true"
+          />
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+    </youlin.xinhua.com.youlin.widget.ResizeLayout>
 
-          <ImageView
-              android:id="@+id/img_cover"
-              android:layout_width="match_parent"
-              android:layout_height="200dp"
-              android:scaleType="fitXY"
-              />
-
-          <TextView
-              android:id="@+id/text_state"
-              android:layout_width="125dp"
-              android:layout_height="30dp"
-              android:layout_gravity="center"
-              android:background="@drawable/shape_translucent_fillet_15"
-              android:gravity="center"
-              android:textColor="@color/white"
-              android:textSize="@dimen/text_15"
-              android:visibility="gone"
-              />
-        </FrameLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="-25dp"
-            android:background="@color/white"
-            android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            >
-
-          <TextView
-              android:id="@+id/text_title"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginBottom="25dp"
-              android:layout_marginTop="15dp"
-              android:text="民宿名称投票"
-              android:textColor="@color/black_text"
-              android:textSize="@dimen/text_15"
-              />
-          <TextView
-              android:id="@+id/text_type"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginBottom="15dp"
-              android:text="[单选]"
-              android:textColor="#f63a3a"
-              android:textSize="@dimen/text_12"
-              />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/gauge_30"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="@dimen/gauge_20"
-            android:background="@color/white"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/gauge_30"
-            android:paddingRight="@dimen/gauge_30"
-            >
-
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="30dp"
-              android:gravity="center_vertical"
-              >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/gauge_20"
-                android:text="报名时间: "
-                android:textColor="@color/color_blue_text"
-                android:textSize="@dimen/text_12"
-                />
-
-            <TextView
-                android:id="@+id/text_sign_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black_text"
-                android:textSize="@dimen/text_12"
-                tools:text="asdsadsadasd"
-                />
-
-          </LinearLayout>
-
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="30dp"
-              android:gravity="center_vertical"
-              >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/gauge_20"
-                android:text="进行时间: "
-                android:textColor="@color/color_blue_text"
-                android:textSize="@dimen/text_12"
-                />
-
-            <TextView
-                android:id="@+id/text_start_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black_text"
-                android:textSize="@dimen/text_12"
-                tools:text="asdsadsadasd"
-                />
-
-          </LinearLayout>
-
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="30dp"
-              android:gravity="center_vertical"
-              >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/gauge_20"
-                android:text="活动地址: "
-                android:textColor="@color/color_blue_text"
-                android:textSize="@dimen/text_12"
-                />
-
-            <TextView
-                android:id="@+id/text_location"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/color_yelow"
-                android:textSize="@dimen/text_12"
-                tools:text="asdsadsadasd"
-                />
-
-            <ImageView
-                android:layout_width="@dimen/gauge_28"
-                android:layout_height="@dimen/gauge_28"
-                android:src="@mipmap/ic_arrows_into_blue"
-                />
-
-          </LinearLayout>
-
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="30dp"
-              android:gravity="center_vertical"
-              >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/gauge_20"
-                android:text="报名人数: "
-                android:textColor="@color/color_blue_text"
-                android:textSize="@dimen/text_12"
-                />
-
-            <TextView
-                android:id="@+id/text_number_of"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black_text"
-                android:textSize="@dimen/text_12"
-                tools:text="asdsadsadasd"
-                />
-
-          </LinearLayout>
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="30dp"
-              android:gravity="center_vertical"
-              >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/gauge_20"
-                android:text="活动费用: "
-                android:textColor="@color/color_blue_text"
-                android:textSize="@dimen/text_12"
-                />
-
-            <TextView
-                android:id="@+id/text_cost"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black_text"
-                android:textSize="@dimen/text_12"
-                tools:text="asdsadsadasd"
-                />
-
-          </LinearLayout>
-
-        </LinearLayout>
-
-        <youlin.xinhua.com.youlin.widget.html.HtmlTextView
-            android:id="@+id/text_html"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lineSpacingExtra="5dp"
-            android:paddingLeft="@dimen/gauge_20"
-            android:paddingRight="@dimen/gauge_20"
-            android:textSize="15sp"
-            />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="vertical"
-            >
-
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="25dp"
-              android:layout_marginLeft="@dimen/gauge_20"
-              android:layout_marginRight="@dimen/gauge_20"
-              android:gravity="center_vertical"
-              android:orientation="horizontal"
-              >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black_text"
-                android:textSize="@dimen/text_12"
-                tools:text="已报名(18)"
-                />
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="查看更多报名"
-                android:textColor="@color/color_blue_text"
-                android:textSize="@dimen/text_12"
-                />
-
-            <ImageView
-                android:layout_width="@dimen/gauge_28"
-                android:layout_height="@dimen/gauge_28"
-                android:src="@mipmap/ic_arrows_into_blue"
-                />
-          </LinearLayout>
-
-          <!--<youlin.xinhua.com.youlin.widget.AvatarNameContainer
-              android:layout_width="match_parent"
-              android:layout_height=""
-              ></youlin.xinhua.com.youlin.widget.AvatarNameContainer>
--->
-
-        </LinearLayout>
-
-
-      </LinearLayout>
-
-    </android.support.v4.widget.NestedScrollView>
-
-    <Button
-        android:id="@+id/btn_sure"
-        android:layout_width="@dimen/gauge_104"
-        android:layout_height="@dimen/gauge_104"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="@dimen/gauge_120"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/shape_blue_circular"
-        android:text="报名"
-        android:textColor="@color/white"
-        tools:visibility="visible"
+    <include
+        layout="@layout/layout_common_empty"
+        android:visibility="gone"
         />
 
-    <youlin.xinhua.com.youlin.widget.CommentLayout
-        android:id="@+id/comment_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        />
-
-  </youlin.xinhua.com.youlin.widget.ResizeLayout>
-
+  </FrameLayout>
 
 </LinearLayout>

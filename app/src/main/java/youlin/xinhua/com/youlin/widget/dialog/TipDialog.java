@@ -19,6 +19,7 @@ import com.xinhua.dialoglib.ProgressHelper;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.utils.LogUtils;
 
 public class TipDialog extends Dialog implements View.OnClickListener {
 
@@ -145,6 +146,7 @@ public class TipDialog extends Dialog implements View.OnClickListener {
     setContentText(mContentText);
     setCancelText(mCancelText);
     setConfirmText(mConfirmText);
+    setTipText(mTipText);
     changeAlertType(mAlertType, true);
   }
 
@@ -205,6 +207,7 @@ public class TipDialog extends Dialog implements View.OnClickListener {
 
   public TipDialog setTipText(String text) {
     mTipText = text;
+    LogUtils.i("setTipText , mTipTextView : " + mTipTextView + " , text : " + text);
     if (mTipTextView != null && mTipText != null) {
       showTipText(true);
       mTipTextView.setText(mTipText);

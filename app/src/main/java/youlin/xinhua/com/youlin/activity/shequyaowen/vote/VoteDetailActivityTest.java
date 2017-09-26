@@ -59,23 +59,24 @@ public class VoteDetailActivityTest extends BaseActivity {
       mTipDialog.cancel();
     }
     mTipDialog = new TipDialog(this, TipDialog.TIP_TYPE, true);
-    mTipDialog.setTitleText("投票未开始")
-        .setConfirmText("确定")
-        .setConfirmClickListener(new TipDialog.OnSweetClickListener() {
-          @Override public void onClick(TipDialog tipDialog) {
-            //ToastUtils.show("aaa");
-            tipDialog.changeAlertType(TipDialog.NORMAL_TYPE);
-            tipDialog.setTitleText("你好")
-                .setContentText("哈哈哈")
-                .setCancelText("ixix1")
-                .setConfirmClickListener(new TipDialog.OnSweetClickListener() {
-                  @Override public void onClick(TipDialog tipDialog) {
-                    tipDialog.changeAlertType(TipDialog.PROGRESS_TYPE);
-                  }
-                });
-          }
-        })
-        .show();
+    mTipDialog.setTipText("你好").show();
+    //mTipDialog.setTitleText("投票未开始")
+    //    .setConfirmText("确定")
+    //    .setConfirmClickListener(new TipDialog.OnSweetClickListener() {
+    //      @Override public void onClick(TipDialog tipDialog) {
+    //        //ToastUtils.show("aaa");
+    //        tipDialog.changeAlertType(TipDialog.NORMAL_TYPE);
+    //        tipDialog.setTitleText("你好")
+    //            .setContentText("哈哈哈")
+    //            .setCancelText("ixix1")
+    //            .setConfirmClickListener(new TipDialog.OnSweetClickListener() {
+    //              @Override public void onClick(TipDialog tipDialog) {
+    //                tipDialog.changeAlertType(TipDialog.PROGRESS_TYPE);
+    //              }
+    //            });
+    //      }
+    //    })
+    //    .show();
 
     //mTipDialog.changeAlertType(TipDialog.NORMAL_TYPE);
     //mTipDialog.setTitleText("投票确认")

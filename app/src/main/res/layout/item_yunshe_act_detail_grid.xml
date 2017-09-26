@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/gauge_10"
+    android:layout_marginRight="@dimen/gauge_10"
     android:orientation="vertical"
     >
 
@@ -15,12 +17,13 @@
 
   <youlin.xinhua.com.youlin.widget.CenterTextView
       android:id="@+id/text_view"
-      android:layout_width="wrap_content"
+      android:layout_width="@dimen/gauge_60"
       android:layout_height="wrap_content"
       android:layout_gravity="center_horizontal"
-      android:ellipsize="start"
+      android:ellipsize="end"
+      android:ems="4"
       android:gravity="center"
-      android:maxLines="1"
+      android:maxLines="2"
       android:textColor="@color/black_text"
       android:textSize="@dimen/text_10"
       />

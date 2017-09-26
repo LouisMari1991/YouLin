@@ -46,6 +46,7 @@
   <dimen name="gauge_75">38dp</dimen>
   <dimen name="gauge_80">40dp</dimen>
   <dimen name="gauge_88">44dp</dimen>
+  <dimen name="gauge_90">45dp</dimen>
   <dimen name="gauge_98">49dp</dimen>
 
   <dimen name="gauge_100">50dp</dimen>

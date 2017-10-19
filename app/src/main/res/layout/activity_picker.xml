@@ -13,5 +13,21 @@
       android:text="单项选择"
       />
 
+  <Button
+      android:id="@+id/year_picker"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/gauge_20"
+      android:text="年月日选择"
+      />
+
+  <Button
+      android:id="@+id/link_picker"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/gauge_20"
+      android:text="联动选择"
+      />
+
 
 </LinearLayout>

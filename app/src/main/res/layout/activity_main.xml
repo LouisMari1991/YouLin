@@ -13,7 +13,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="选择器"
-      android:visibility="gone"
+      android:visibility="visible"
       />
 
 
@@ -23,7 +23,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="btn_color"
-      android:visibility="visible"
+      android:visibility="gone"
       />
 
   <Button
@@ -96,7 +96,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="空状态"
-      android:visibility="visible"
+      android:visibility="gone"
       />
 
   <Button
@@ -114,6 +114,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="投票详情Test"
+      android:visibility="gone"
       />
 
   <Button
@@ -122,6 +123,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="投票详情"
+      android:visibility="gone"
       />
 
   <Button
@@ -130,6 +132,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="Dialog"
+      android:visibility="gone"
       />
 
   <Button
@@ -138,6 +141,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="Banner"
+      android:visibility="gone"
       />
 
   <Button
@@ -155,6 +159,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="活动详情"
+      android:visibility="gone"
       />
 
 

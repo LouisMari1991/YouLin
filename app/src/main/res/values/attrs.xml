@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+  <!--侧滑删除属性-->
   <declare-styleable name="SwipeMenuLayout">
     <attr format="boolean" name="swipeEnable" />
     <attr format="boolean" name="ios" />
     <attr format="boolean" name="leftSwipe" />
+    <attr format="dimension" name="slide_right_margin" />
   </declare-styleable>
 
   <!--

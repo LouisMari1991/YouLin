@@ -51,4 +51,11 @@
     <item name="android:indeterminateTintMode">src_atop</item>
   </style>
 
+  <style name="YunXunListItem_Title">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textSize">@dimen/text_15</item>
+    <item name="android:textColor">@color/black_text</item>
+  </style>
+
 </resources>

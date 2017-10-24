@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.support.v4.app.ActivityCompat;
 import cn.qqtheme.framework.picker.DatePicker;
 import cn.qqtheme.framework.widget.WheelView;
+import java.util.Calendar;
 import youlin.xinhua.com.youlin.R;
 
 /**
@@ -38,5 +39,18 @@ public class CommentDatePicker extends DatePicker {
     setTextSize(30);
     setDividerColor(ActivityCompat.getColor(getContext(), R.color.color_gray_light));
     setTopLineColor(ActivityCompat.getColor(getContext(), R.color.color_gray_light));
+  }
+
+  public void setRangeStartForCurTime() {
+    Calendar calendar = Calendar.getInstance();
+    setRangeStart(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+        calendar.get(Calendar.DAY_OF_MONTH));
+  }
+
+  public void setRangeEndForYear(int year) {
+    Calendar calendar = Calendar.getInstance();
+    calendar.add(Calendar.YEAR, year);
+    setRangeEnd(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+        calendar.get(Calendar.DAY_OF_MONTH));
   }
 }

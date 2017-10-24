@@ -102,6 +102,12 @@
         android:screenOrientation="portrait"
         android:windowSoftInputMode="adjustResize" />
 
+    <!--候选人自荐、候选人推荐-->
+    <activity
+        android:name=".activity.yeweihui.AddCandidateInfoActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustResize" />
+
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>
     <activity android:name=".activity.TabLayoutActivity" />
 

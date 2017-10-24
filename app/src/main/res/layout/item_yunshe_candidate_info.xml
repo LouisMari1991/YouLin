@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<youlin.xinhua.com.youlin.widget.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:ios="true"
+    app:leftSwipe="true"
+    app:swipeEnable="true"
+    >
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/gauge_150"
+      android:background="@drawable/selector_subtle"
+      android:orientation="vertical"
+      >
+
+    <TextView
+        android:id="@+id/text_company_name"
+        android:layout_width="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/gauge_20"
+        android:layout_marginTop="@dimen/gauge_20"
+        android:textColor="@color/black_text"
+        android:textSize="@dimen/text_15"
+        android:text="湖南筑基文化传媒公司(产品经理)"
+        />
+
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/gauge_20"
+        android:layout_marginTop="@dimen/gauge_10"
+        android:textColor="@color/text_deep_light"
+        android:textSize="@dimen/text_15"
+        android:text="2016-02-30至2017-03-14"
+        />
+
+  </LinearLayout>
+
+
+  <FrameLayout
+      android:layout_width="@dimen/gauge_150"
+      android:layout_height="@dimen/gauge_150"
+      android:background="@color/white"
+      >
+
+    <ImageView
+        android:layout_width="@dimen/gauge_48"
+        android:layout_height="@dimen/gauge_48"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_edit"
+        />
+  </FrameLayout>
+
+  <FrameLayout
+      android:layout_width="@dimen/gauge_150"
+      android:layout_height="@dimen/gauge_150"
+      android:background="@color/color_red"
+      >
+
+    <ImageView
+        android:layout_width="@dimen/gauge_48"
+        android:layout_height="@dimen/gauge_48"
+        android:layout_gravity="center"
+        android:src="@drawable/aurora_recordvoice_cancel_record"
+        />
+  </FrameLayout>
+
+
+</youlin.xinhua.com.youlin.widget.SwipeMenuLayout>

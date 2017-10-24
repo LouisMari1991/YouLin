@@ -162,5 +162,14 @@
       android:visibility="gone"
       />
 
+  <Button
+      android:id="@+id/btn_add_candidate_info"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="自荐、推荐"
+      android:visibility="visible"
+      />
+
 
 </LinearLayout>

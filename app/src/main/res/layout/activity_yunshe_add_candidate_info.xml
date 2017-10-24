@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPageBg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    >
+
+
+  <include layout="@layout/layout_common_toolbar" />
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_88"
+            android:layout_marginTop="@dimen/gauge_20"
+            android:background="@drawable/selector_subtle"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/gauge_20"
+            android:paddingRight="@dimen/gauge_20"
+            >
+
+          <TextView
+              android:text="申请职位"
+              style="@style/YunXunListItem_Title"
+              />
+
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              />
+
+          <TextView
+              android:id="@+id/text_job"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/text_deep_light"
+              android:textSize="@dimen/text_15"
+              tools:text="业委会主任"
+              />
+
+          <ImageView
+              android:layout_width="@dimen/gauge_32"
+              android:layout_height="@dimen/gauge_32"
+              android:src="@drawable/ic_right_arror"
+              />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_88"
+            android:background="@drawable/selector_subtle"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/gauge_20"
+            android:paddingRight="@dimen/gauge_20"
+            >
+
+          <TextView
+              android:text="籍贯"
+              style="@style/YunXunListItem_Title"
+              />
+
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              />
+
+          <TextView
+              android:id="@+id/text_origin"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/text_deep_light"
+              android:textSize="@dimen/text_15"
+              tools:text="湖南"
+              />
+
+          <ImageView
+              android:layout_width="@dimen/gauge_32"
+              android:layout_height="@dimen/gauge_32"
+              android:src="@drawable/ic_right_arror"
+              />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_88"
+            android:background="@drawable/selector_subtle"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/gauge_20"
+            android:paddingRight="@dimen/gauge_20"
+            >
+
+          <TextView
+              android:text="政治面貌"
+              style="@style/YunXunListItem_Title"
+              />
+
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              />
+
+          <TextView
+              android:id="@+id/text_politics"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/text_deep_light"
+              android:textSize="@dimen/text_15"
+              tools:text="请选择政治面貌"
+              />
+
+          <ImageView
+              android:layout_width="@dimen/gauge_32"
+              android:layout_height="@dimen/gauge_32"
+              android:src="@drawable/ic_right_arror"
+              />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_88"
+            android:background="@drawable/selector_subtle"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/gauge_20"
+            android:paddingRight="@dimen/gauge_20"
+            >
+
+          <TextView
+              android:text="民族"
+              style="@style/YunXunListItem_Title"
+              />
+
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              />
+
+          <TextView
+              android:id="@+id/text_nation"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/text_deep_light"
+              android:textSize="@dimen/text_15"
+              tools:text="汉族"
+              />
+
+          <ImageView
+              android:layout_width="@dimen/gauge_32"
+              android:layout_height="@dimen/gauge_32"
+              android:src="@drawable/ic_right_arror"
+              />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_88"
+            android:background="@drawable/selector_subtle"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/gauge_20"
+            android:paddingRight="@dimen/gauge_20"
+            >
+
+          <TextView
+              android:text="出身地"
+              style="@style/YunXunListItem_Title"
+              />
+
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              />
+
+          <TextView
+              android:id="@+id/text_political"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/text_deep_light"
+              android:textSize="@dimen/text_15"
+              tools:text="党员"
+              />
+
+          <ImageView
+              android:layout_width="@dimen/gauge_32"
+              android:layout_height="@dimen/gauge_32"
+              android:src="@drawable/ic_right_arror"
+              />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_88"
+            android:background="@drawable/selector_subtle"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/gauge_20"
+            android:paddingRight="@dimen/gauge_20"
+            >
+
+          <TextView
+              android:text="学历"
+              style="@style/YunXunListItem_Title"
+              />
+
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              />
+
+          <TextView
+              android:id="@+id/text_education"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/text_deep_light"
+              android:textSize="@dimen/text_15"
+              tools:text="本科"
+              />
+
+          <ImageView
+              android:layout_width="@dimen/gauge_32"
+              android:layout_height="@dimen/gauge_32"
+              android:src="@drawable/ic_right_arror"
+              />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_88"
+            android:background="@drawable/selector_subtle"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/gauge_20"
+            android:paddingRight="@dimen/gauge_20"
+            >
+
+          <TextView
+              android:text="参加工作时间"
+              style="@style/YunXunListItem_Title"
+              />
+
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              />
+
+          <TextView
+              android:id="@+id/text_hours"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="请选择参加工作时间"
+              android:textColor="@color/text_deep_light"
+              android:textSize="@dimen/text_15"
+              />
+
+          <ImageView
+              android:layout_width="@dimen/gauge_32"
+              android:layout_height="@dimen/gauge_32"
+              android:src="@drawable/ic_right_arror"
+              />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_88"
+            android:background="@drawable/selector_subtle"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/gauge_20"
+            android:paddingRight="@dimen/gauge_20"
+            >
+
+          <TextView
+              android:text="联系方式"
+              style="@style/YunXunListItem_Title"
+              />
+
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              />
+
+          <TextView
+              android:id="@+id/text_phone"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/text_deep_light"
+              android:textSize="@dimen/text_15"
+              tools:text="党员"
+              />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_88"
+            android:background="@drawable/selector_subtle"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/gauge_20"
+            android:paddingRight="@dimen/gauge_20"
+            >
+
+          <TextView
+              android:text="物业缴纳情况"
+              style="@style/YunXunListItem_Title"
+              />
+
+          <Space
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              />
+
+          <TextView
+              android:id="@+id/text_property"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="请选择物业缴纳情况"
+              android:textColor="@color/text_deep_light"
+              android:textSize="@dimen/text_15"
+              />
+
+          <ImageView
+              android:layout_width="@dimen/gauge_32"
+              android:layout_height="@dimen/gauge_32"
+              android:src="@drawable/ic_right_arror"
+              />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_88"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/gauge_20"
+            android:text="工作单位及职务"
+            android:textColor="@color/text_deep_light"
+            android:textSize="@dimen/text_15"
+            />
+
+        <!-- <include layout="@layout/item_yunshe_candidate_info" />-->
+
+
+        <youlin.xinhua.com.youlin.widget.yunshe.ownercommittee.CandidateInfoContainer
+            android:id="@+id/candidate_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_88"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/gauge_20"
+            android:text="服务宣言"
+            android:textColor="@color/text_deep_light"
+            android:textSize="@dimen/text_15"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_400"
+            android:background="@color/white"
+            android:gravity="top|left"
+            android:hint="请输入服务宣言"
+            android:padding="@dimen/gauge_20"
+            android:textColor="@color/text_black"
+            android:textColorHint="@color/text_deep_light"
+            android:textSize="@dimen/text_15"
+            />
+        <Button
+            android:id="@+id/btn_sure"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/gauge_88"
+            android:layout_marginBottom="@dimen/gauge_40"
+            android:layout_marginLeft="@dimen/gauge_30"
+            android:layout_marginRight="@dimen/gauge_30"
+            android:layout_marginTop="@dimen/gauge_40"
+            android:background="@drawable/selector_blue"
+            android:text="确认"
+            android:textColor="@color/white"
+            style="?android:attr/borderlessButtonStyle"
+            />
+      </LinearLayout>
+    </FrameLayout>
+  </ScrollView>
+
+
+</LinearLayout>

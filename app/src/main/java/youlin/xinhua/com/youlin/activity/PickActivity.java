@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import butterknife.OnClick;
 import cn.qqtheme.framework.picker.DatePicker;
+import cn.qqtheme.framework.picker.DateTimePicker;
 import cn.qqtheme.framework.picker.OptionPicker;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
@@ -67,7 +68,9 @@ public class PickActivity extends BaseActivity {
     //picker.setDividerColor(ActivityCompat.getColor(this, R.color.color_gray_light));
     //picker.setTopLineColor(ActivityCompat.getColor(this, R.color.color_gray_light));
 
-    final CommentDatePicker picker = new CommentDatePicker(this);
+    final CommentDatePicker picker = new CommentDatePicker(this, DateTimePicker.YEAR_MONTH);
+    picker.setRangeStartForCurTime();
+    picker.setRangeEndForYear(20);
 
     picker.setOnDatePickListener(new DatePicker.OnYearMonthDayPickListener() {
       @Override public void onDatePicked(String year, String month, String day) {
@@ -87,18 +90,11 @@ public class PickActivity extends BaseActivity {
         picker.setTitleText(picker.getSelectedYear() + "-" + picker.getSelectedMonth() + "-" + day);
       }
     });
-    picker.show();
+
   }
 
   private void showSingleOption() {
     String[] strArray = { "100%", "90%", "80%", "70%", "60%", "50%" };
-    //OptionPicker optionPicker = new OptionPicker(this, strArray);
-    //optionPicker.setDividerRatio(WheelView.DividerConfig.FILL);
-    //optionPicker.setOffset(2);
-    //optionPicker.setTextColor(getResources().getColor(R.color.black_text));
-    //optionPicker.setTextSize(18);
-    //optionPicker.setDividerColor(ActivityCompat.getColor(this, R.color.color_gray_light));
-    //optionPicker.setTopLineColor(ActivityCompat.getColor(this, R.color.color_gray_light));
     CommentOptionPicker commentOptionPicker = new CommentOptionPicker(this, strArray);
     commentOptionPicker.setOnOptionPickListener(new OptionPicker.OnOptionPickListener() {
       @Override public void onOptionPicked(int index, String item) {

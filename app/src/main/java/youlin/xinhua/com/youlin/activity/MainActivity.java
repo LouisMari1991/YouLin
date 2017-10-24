@@ -12,6 +12,7 @@ import youlin.xinhua.com.youlin.activity.share.SharePopActivity;
 import youlin.xinhua.com.youlin.activity.shequyaowen.huodong.ActDetailActivity;
 import youlin.xinhua.com.youlin.activity.shequyaowen.vote.VoteDetailActivity;
 import youlin.xinhua.com.youlin.activity.shequyaowen.vote.VoteDetailActivityTest;
+import youlin.xinhua.com.youlin.activity.yeweihui.AddCandidateInfoActivity;
 import youlin.xinhua.com.youlin.activity.yeweihui.InputInformationActivity;
 import youlin.xinhua.com.youlin.activity.yeweihui.PerfectInformationActivity;
 
@@ -21,7 +22,7 @@ public class MainActivity extends BaseActivity {
       R.id.btn_color, R.id.btn_im, R.id.contact, R.id.contact_pick, R.id.chat, R.id.btn_signature,
       R.id.btn_picker, R.id.btn_input_information, R.id.btn_perfect_information, R.id.btn_empty,
       R.id.btn_share_pop, R.id.btn_vote_detail_test, R.id.btn_vote_detail, R.id.btn_dialog,
-      R.id.btn_banner, R.id.btn_camera, R.id.btn_huodong
+      R.id.btn_banner, R.id.btn_camera, R.id.btn_huodong, R.id.btn_add_candidate_info
   }) public void click(View view) {
     switch (view.getId()) {
       case R.id.btn_color: {
@@ -91,6 +92,10 @@ public class MainActivity extends BaseActivity {
       break;
       case R.id.btn_huodong: {
         ActDetailActivity.launch(this);
+      }
+      break;
+      case R.id.btn_add_candidate_info: {
+        AddCandidateInfoActivity.launch(this);
       }
       break;
       default:

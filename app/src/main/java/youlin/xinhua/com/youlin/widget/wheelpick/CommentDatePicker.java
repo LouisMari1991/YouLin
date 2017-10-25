@@ -41,12 +41,45 @@ public class CommentDatePicker extends DatePicker {
     setTopLineColor(ActivityCompat.getColor(getContext(), R.color.color_gray_light));
   }
 
+  /**
+   * 设置默认选中时间为当前事件
+   */
+  public void setDefaultForCurTime() {
+    Calendar calendar = Calendar.getInstance();
+    setSelectedItem(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH));
+  }
+
+  /**
+   * 设置范围：开始的时间为当前时间
+   */
   public void setRangeStartForCurTime() {
     Calendar calendar = Calendar.getInstance();
     setRangeStart(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
         calendar.get(Calendar.DAY_OF_MONTH));
   }
 
+  /**
+   * 设置范围：结束的时间为当前时间
+   */
+  public void setRangeEndForCurTime() {
+    Calendar calendar = Calendar.getInstance();
+    setRangeEnd(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+        calendar.get(Calendar.DAY_OF_MONTH));
+  }
+
+  /**
+   * 开始的事件
+   */
+  public void setRangeStartForYear(int year) {
+    Calendar calendar = Calendar.getInstance();
+    calendar.add(Calendar.YEAR, -year);
+    setRangeStart(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+        calendar.get(Calendar.DAY_OF_MONTH));
+  }
+
+  /**
+   * 设置范围：结束的时间
+   */
   public void setRangeEndForYear(int year) {
     Calendar calendar = Calendar.getInstance();
     calendar.add(Calendar.YEAR, year);

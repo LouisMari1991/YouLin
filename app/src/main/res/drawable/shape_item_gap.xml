@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+  <!--底层使用白色填充色-->
+  <item>
+    <shape>
+      <solid android:color="@color/white" />
+    </shape>
+  </item>
+
+  <!--上面一层距离左右,类似MarginLeft,MarginRight,填充色为灰色-->
+  <item
+      android:left="@dimen/gauge_20"
+      android:right="@dimen/gauge_20">
+    <shape>
+      <solid android:color="@color/color_gray_light" />
+    </shape>
+  </item>
+
+</layer-list>

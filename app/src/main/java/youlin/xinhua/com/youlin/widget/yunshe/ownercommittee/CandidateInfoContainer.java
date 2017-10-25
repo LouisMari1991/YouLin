@@ -4,8 +4,10 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.util.AttributeSet;
+import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -27,7 +29,13 @@ import youlin.xinhua.com.youlin.utils.MeasureUtils;
 
 public class CandidateInfoContainer extends LinearLayout {
 
+  int idIndex = 0;
+
+  LayoutInflater inflater;
+
   CandidateInfoContainerClickListener mCandidateInfoContainerClickListener;
+
+  SparseArray<View> mViewSparseArray = new SparseArray<>();
 
   public CandidateInfoContainer(Context context) {
     this(context, null);
@@ -39,6 +47,8 @@ public class CandidateInfoContainer extends LinearLayout {
 
   public CandidateInfoContainer(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
+
+    inflater = LayoutInflater.from(context);
 
     setOrientation(VERTICAL);
 
@@ -93,6 +103,31 @@ public class CandidateInfoContainer extends LinearLayout {
         }
       }
     });
+  }
+
+  public void addWork() {
+    final View view = inflater.inflate(R.layout.item_yunshe_candidate_info, null);
+    view.setId(idIndex);
+    mViewSparseArray.append(idIndex, view);
+    idIndex++;
+    View edit = view.findViewById(R.id.fl_edit);
+    View delete = view.findViewById(R.id.fl_delete);
+    edit.setOnClickListener(new OnClickListener() {
+      @Override public void onClick(View v) {
+        if (mCandidateInfoContainerClickListener != null) {
+          mCandidateInfoContainerClickListener.onEditButtonClick();
+        }
+      }
+    });
+    delete.setOnClickListener(new OnClickListener() {
+      @Override public void onClick(View v) {
+        removeView(view);
+        if (mCandidateInfoContainerClickListener != null) {
+          mCandidateInfoContainerClickListener.onDeleteButtonClick();
+        }
+      }
+    });
+    addView(view, 0);
   }
 
   public void setCandidateInfoContainerClickListener(

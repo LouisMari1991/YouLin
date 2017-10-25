@@ -52,9 +52,9 @@
               android:id="@+id/text_job"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:text="请选择职位"
               android:textColor="@color/text_deep_light"
               android:textSize="@dimen/text_15"
-              tools:text="业委会主任"
               />
 
           <ImageView
@@ -67,6 +67,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/gauge_1"
+            android:background="@drawable/shape_item_gap"
             />
 
         <LinearLayout
@@ -93,9 +94,9 @@
               android:id="@+id/text_origin"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:text="请选择籍贯"
               android:textColor="@color/text_deep_light"
               android:textSize="@dimen/text_15"
-              tools:text="湖南"
               />
 
           <ImageView
@@ -108,6 +109,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/gauge_1"
+            android:background="@drawable/shape_item_gap"
             />
 
 
@@ -137,7 +139,7 @@
               android:layout_height="wrap_content"
               android:textColor="@color/text_deep_light"
               android:textSize="@dimen/text_15"
-              tools:text="请选择政治面貌"
+              android:text="请选择政治面貌"
               />
 
           <ImageView
@@ -150,6 +152,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/gauge_1"
+            android:background="@drawable/shape_item_gap"
             />
 
         <LinearLayout
@@ -176,9 +179,9 @@
               android:id="@+id/text_nation"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:text="请选择民族"
               android:textColor="@color/text_deep_light"
               android:textSize="@dimen/text_15"
-              tools:text="汉族"
               />
 
           <ImageView
@@ -191,6 +194,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/gauge_1"
+            android:background="@drawable/shape_item_gap"
             />
 
         <LinearLayout
@@ -217,9 +221,9 @@
               android:id="@+id/text_political"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:text="请选择出生地"
               android:textColor="@color/text_deep_light"
               android:textSize="@dimen/text_15"
-              tools:text="党员"
               />
 
           <ImageView
@@ -232,6 +236,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/gauge_1"
+            android:background="@drawable/shape_item_gap"
             />
 
         <LinearLayout
@@ -258,9 +263,9 @@
               android:id="@+id/text_education"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:text="请选择学历"
               android:textColor="@color/text_deep_light"
               android:textSize="@dimen/text_15"
-              tools:text="本科"
               />
 
           <ImageView
@@ -273,6 +278,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/gauge_1"
+            android:background="@drawable/shape_item_gap"
             />
 
         <LinearLayout
@@ -314,6 +320,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/gauge_1"
+            android:background="@drawable/shape_item_gap"
             />
 
         <LinearLayout
@@ -336,13 +343,16 @@
               android:layout_weight="1"
               />
 
-          <TextView
-              android:id="@+id/text_phone"
+          <EditText
+              android:id="@+id/et_phone"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:background="@null"
+              android:gravity="right"
+              android:hint="请输入电话号码"
               android:textColor="@color/text_deep_light"
+              android:textColorHint="@color/text_deep_light"
               android:textSize="@dimen/text_15"
-              tools:text="党员"
               />
 
         </LinearLayout>
@@ -350,6 +360,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/gauge_1"
+            android:background="@drawable/shape_item_gap"
             />
 
         <LinearLayout

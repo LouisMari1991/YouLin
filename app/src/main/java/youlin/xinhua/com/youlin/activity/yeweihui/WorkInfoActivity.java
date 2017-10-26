@@ -56,8 +56,6 @@ public class WorkInfoActivity extends BaseActivity {
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    Intent intent = new Intent();
-
   }
 
   void showDatePicker(final int type) {

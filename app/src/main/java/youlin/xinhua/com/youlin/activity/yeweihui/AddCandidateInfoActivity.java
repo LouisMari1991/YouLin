@@ -8,9 +8,19 @@ import android.view.View;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.qqtheme.framework.entity.City;
+import cn.qqtheme.framework.entity.County;
+import cn.qqtheme.framework.entity.Province;
+import cn.qqtheme.framework.picker.AddressPicker;
+import cn.qqtheme.framework.picker.DatePicker;
+import cn.qqtheme.framework.picker.DateTimePicker;
+import cn.qqtheme.framework.picker.OptionPicker;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.utils.ToastUtils;
+import youlin.xinhua.com.youlin.widget.wheelpick.CommentAddressPicker;
+import youlin.xinhua.com.youlin.widget.wheelpick.CommentDatePicker;
+import youlin.xinhua.com.youlin.widget.wheelpick.CommentOptionPicker;
 import youlin.xinhua.com.youlin.widget.yunshe.ownercommittee.CandidateInfoContainer;
 
 /**
@@ -47,39 +57,79 @@ public class AddCandidateInfoActivity extends BaseActivity {
     switch (view.getId()) {
       case R.id.text_job: {
         // 职位
+
       }
       break;
       case R.id.text_origin: {
         // 籍贯
+        showCityPicker(text_origin);
       }
       break;
       case R.id.text_politics: {
         // 政治面貌
+        showOptionPicker(text_politics, getResources().getStringArray(R.array.political_visage));
       }
       break;
       case R.id.text_nation: {
         // 民族
+        showOptionPicker(text_nation, getResources().getStringArray(R.array.nation));
       }
       break;
       case R.id.text_political: {
         // 出生地
+        showCityPicker(text_political);
       }
       break;
       case R.id.text_education: {
         // 学历
+        showOptionPicker(text_education, getResources().getStringArray(R.array.education));
       }
       break;
       case R.id.text_hours: {
         // 参加工作时间
+        showDatePicker();
       }
       break;
       case R.id.text_property: {
         // 物业缴纳情况
+        showOptionPicker(text_property, getResources().getStringArray(R.array.payment_status));
       }
       break;
       default:
         break;
     }
+  }
+
+  private void showOptionPicker(final TextView textView, String[] strArray) {
+    CommentOptionPicker picker = new CommentOptionPicker(this, strArray);
+    picker.setOnOptionPickListener(new OptionPicker.OnOptionPickListener() {
+      @Override public void onOptionPicked(int index, String item) {
+        textView.setText(item);
+      }
+    });
+    picker.show();
+  }
+
+  private void showCityPicker(final TextView textView) {
+    CommentAddressPicker addressPicker = new CommentAddressPicker(this);
+    addressPicker.setOnAddressPickListener(new AddressPicker.OnAddressPickListener() {
+      @Override public void onAddressPicked(Province province, City city, County county) {
+        textView.setText(province.getName() + '-' + city.getName());
+      }
+    });
+    addressPicker.show();
+  }
+
+  private void showDatePicker() {
+    CommentDatePicker picker = new CommentDatePicker(this, DateTimePicker.YEAR_MONTH);
+    picker.setRangeStartForYear(50);
+    picker.setRangeEndForCurTime();
+    picker.setOnDatePickListener(new DatePicker.OnYearMonthPickListener() {
+      @Override public void onDatePicked(String year, String month) {
+        text_hours.setText(year + '-' + month);
+      }
+    });
+    picker.show();
   }
 
   @Override protected int attachLayoutRes() {
@@ -102,9 +152,5 @@ public class AddCandidateInfoActivity extends BaseActivity {
             WorkInfoActivity.launch(AddCandidateInfoActivity.this);
           }
         });
-    mCandidateInfoContainer.addWork();
-    mCandidateInfoContainer.addWork();
-    mCandidateInfoContainer.addWork();
-    mCandidateInfoContainer.addWork();
   }
 }

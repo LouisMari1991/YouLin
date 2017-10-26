@@ -51,7 +51,8 @@ dependencies {
   compile rootProject.ext.appcompatv7
   compile rootProject.ext.recyclerviewv7
   compile rootProject.ext.cardviewv7
-
+  compile rootProject.ext.rx.rxjava
+  compile rootProject.ext.rx.rxandroid
   compile rootProject.ext.retrofit2.convertergson
 
   //加载动画 cardviewv7

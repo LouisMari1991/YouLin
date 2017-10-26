@@ -22,6 +22,14 @@
       />
 
   <Button
+      android:id="@+id/area_picker"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/gauge_20"
+      android:text="省市选择"
+      />
+
+  <Button
       android:id="@+id/link_picker"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

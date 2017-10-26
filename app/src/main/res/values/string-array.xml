@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <string-array name="payment_status">
+    <item>已缴纳</item>
+    <item>未缴纳</item>
+  </string-array>
+
+  <string-array name="political_visage">
+    <item>党员</item>
+    <item>团员</item>
+    <item>群众</item>
+  </string-array>
+
+  <string-array name="nation">
+    <item>汉族</item>
+    <item>壮族</item>
+    <item>回族</item>
+    <item>满族</item>
+    <item>维吾尔族</item>
+    <item>苗族</item>
+    <item>彝族</item>
+    <item>土家族</item>
+    <item>藏族</item>
+    <item>蒙古族</item>
+    <item>侗族</item>
+    <item>布依族</item>
+    <item>瑶族</item>
+    <item>白族</item>
+    <item>朝鲜族</item>
+    <item>哈尼族</item>
+    <item>黎族</item>
+    <item>哈萨克族</item>
+    <item>傣族</item>
+    <item>畲族</item>
+    <item>傈僳族</item>
+    <item>东乡族</item>
+    <item>仡佬族</item>
+    <item>拉祜族</item>
+    <item>佤族</item>
+    <item>水族</item>
+    <item>纳西族</item>
+    <item>羌族</item>
+    <item>土族</item>
+    <item>仫佬族</item>
+    <item>锡伯族</item>
+    <item>柯尔克孜族</item>
+    <item>景颇族</item>
+    <item>达斡尔族</item>
+    <item>撒拉族</item>
+    <item>布朗族</item>
+    <item>毛南族</item>
+    <item>塔吉克族</item>
+    <item>普米族</item>
+    <item>阿昌族</item>
+    <item>怒族</item>
+    <item>鄂温克族</item>
+    <item>京族</item>
+    <item>基诺族</item>
+    <item>德昂族</item>
+    <item>保安族</item>
+    <item>俄罗斯族</item>
+    <item>裕固族</item>
+    <item>乌孜别克族</item>
+    <item>门巴族</item>
+    <item>鄂伦春族</item>
+    <item>独龙族</item>
+    <item>赫哲族</item>
+    <item>高山族</item>
+    <item>珞巴族</item>
+    <item>塔塔尔族</item>
+    <item>外国人</item>
+  </string-array>
+
+  <string-array name="education">
+    <item>小学/初中</item>
+    <item>中专/高中</item>
+    <item>专科/本科</item>
+    <item>硕士研究生</item>
+    <item>博士研究生</item>
+  </string-array>
+
+
+</resources>

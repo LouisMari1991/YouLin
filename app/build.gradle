@@ -17,6 +17,7 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+  buildToolsVersion '26.0.2'
 }
 
 repositories {
@@ -45,6 +46,7 @@ dependencies {
 
   compile project(':im')
   compile project(':flowlayout-lib')
+  compile project(':xunfeiyuyin')
 
   compile rootProject.ext.flyco.tabLayout
   compile rootProject.ext.flyco.dialog

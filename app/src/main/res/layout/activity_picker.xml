@@ -37,5 +37,22 @@
       android:text="联动选择"
       />
 
+  <TextView
+      android:id="@+id/text_content"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/gauge_20"
+      android:text="联动选择"
+      android:textSize="@dimen/text_17"
+      />
+
+  <Button
+      android:id="@+id/btn_changed"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/gauge_20"
+      android:text="修改内容"
+      />
+
 
 </LinearLayout>

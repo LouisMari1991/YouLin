@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.TextView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import cn.qqtheme.framework.entity.City;
 import cn.qqtheme.framework.entity.County;
@@ -23,6 +25,7 @@ import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.utils.AssetsHelper;
 import youlin.xinhua.com.youlin.utils.GsonHelper;
 import youlin.xinhua.com.youlin.utils.LogUtils;
+import youlin.xinhua.com.youlin.utils.StringUtils;
 import youlin.xinhua.com.youlin.utils.ToastUtils;
 import youlin.xinhua.com.youlin.widget.wheelpick.CommentAddressPicker;
 import youlin.xinhua.com.youlin.widget.wheelpick.CommentOptionPicker;
@@ -45,6 +48,8 @@ public class PickActivity extends BaseActivity {
     context.startActivity(intent);
   }
 
+  @BindView(R.id.text_content) TextView textContent;
+
   @Override protected int attachLayoutRes() {
     return R.layout.activity_picker;
   }
@@ -53,7 +58,7 @@ public class PickActivity extends BaseActivity {
     super.onCreate(savedInstanceState);
   }
 
-  @OnClick({ R.id.single_picker, R.id.year_picker, R.id.area_picker })
+  @OnClick({ R.id.single_picker, R.id.year_picker, R.id.area_picker, R.id.btn_changed })
   public void onClick(View view) {
     switch (view.getId()) {
       case R.id.single_picker:
@@ -65,6 +70,10 @@ public class PickActivity extends BaseActivity {
         break;
       case R.id.area_picker:
         showArea();
+        break;
+      case R.id.btn_changed:
+        textContent.setText(
+            StringUtils.getLightText(this, "欠费100元", "100", R.color.black_text, R.color.red_btn_bg_color, true));
         break;
       default:
         throw new UnsupportedOperationException(String.valueOf(view.getId()));
@@ -138,7 +147,7 @@ public class PickActivity extends BaseActivity {
     CommentAddressPicker picker = new CommentAddressPicker(this);
     picker.setOnAddressPickListener(new AddressPicker.OnAddressPickListener() {
       @Override public void onAddressPicked(Province province, City city, County county) {
-        ToastUtils.show(province.getName() + " , " + city.getName() );
+        ToastUtils.show(province.getName() + " , " + city.getName());
       }
     });
     picker.show();

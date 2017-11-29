@@ -40,6 +40,7 @@
   <dimen name="gauge_50">25dp</dimen>
   <dimen name="gauge_52">26dp</dimen>
   <dimen name="gauge_60">30dp</dimen>
+  <dimen name="gauge_64">32dp</dimen>
   <dimen name="gauge_68">34dp</dimen>
   <dimen name="gauge_70">35dp</dimen>
   <dimen name="gauge_72">36dp</dimen>

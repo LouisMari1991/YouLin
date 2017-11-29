@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:elevation="@dimen/gauge_5"
+    android:orientation="vertical"
+    >
+
+  <RelativeLayout
+      android:id="@+id/rl_xiaoxi"
+      android:layout_width="95dp"
+      android:layout_height="40dp"
+      >
+
+    <TextView
+        android:id="@+id/text_xiaoxi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="消息通知"
+        android:textColor="#b0c2cf"
+        android:textSize="15sp"
+        />
+
+    <View
+        android:id="@+id/view_tip"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:layout_alignTop="@id/text_xiaoxi"
+        android:layout_marginLeft="-3dp"
+        android:layout_toRightOf="@id/text_xiaoxi"
+        android:background="@drawable/shape_rectangle_red_15"
+        />
+
+  </RelativeLayout>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="0.5dp"
+      android:layout_marginLeft="16dp"
+      android:layout_marginRight="16dp"
+      android:background="#ebf1f6"
+      />
+
+  <RelativeLayout
+      android:id="@+id/rl_jubao"
+      android:layout_width="95dp"
+      android:layout_height="40dp"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="举报"
+        android:textColor="#b0c2cf"
+        android:textSize="15sp"
+        />
+
+
+  </RelativeLayout>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="0.5dp"
+      android:layout_marginLeft="16dp"
+      android:layout_marginRight="16dp"
+      android:background="#ebf1f6"
+      />
+
+  <RelativeLayout
+      android:id="@+id/rl_tuichu"
+      android:layout_width="95dp"
+      android:layout_height="40dp"
+      android:visibility="gone"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="退出组织"
+        android:textColor="#b0c2cf"
+        android:textSize="15sp"
+        />
+  </RelativeLayout>
+
+</LinearLayout>

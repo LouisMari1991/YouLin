@@ -14,108 +14,114 @@
       tools:replace="android:icon">
     <activity android:name=".activity.MainActivity">
       <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
+        <action android:name="android.intent.action.MAIN"/>
 
-        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
 
     <activity
         android:name=".activity.BtnActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
     <activity
         android:name=".activity.ImActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
     <activity
         android:name=".activity.ContactListActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
     <activity
         android:name=".activity.ContactsPickActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
     <activity
         android:name=".activity.ChatActivity"
         android:launchMode="singleTask"
         android:screenOrientation="portrait"
-        android:windowSoftInputMode="adjustResize" />
+        android:windowSoftInputMode="adjustResize"/>
     <activity
         android:name=".activity.ImageDetailActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
 
     <!--选择器-->
     <activity
         android:name=".activity.PickActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
 
     <!--手写签名-->
     <activity
         android:name=".activity.SignatureActivity"
-        android:screenOrientation="landscape" />
+        android:screenOrientation="landscape"/>
 
     <!--填写资料-->
     <activity
         android:name=".activity.yeweihui.InputInformationActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
 
     <!--完善信息-->
     <activity
         android:name=".activity.yeweihui.PerfectInformationActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
 
     <!--空状态-->
     <activity
         android:name=".activity.EmptyLayoutActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
 
     <!--分享-->
     <activity
         android:name=".activity.share.SharePopActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
 
     <!--投票详情Test-->
     <activity
         android:name=".activity.shequyaowen.vote.VoteDetailActivityTest"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
 
     <!--投票详情-->
     <activity
         android:name=".activity.shequyaowen.vote.VoteDetailActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
 
     <!--dialog-->
     <activity
         android:name=".activity.DialogTestActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
 
     <!--Banner-->
     <activity
         android:name=".activity.BannerActivity"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"/>
 
     <!--相机-->
     <activity
         android:name=".activity.camera.CameraActivity"
-        android:screenOrientation="landscape" />
+        android:screenOrientation="landscape"/>
 
     <!--活动-->
     <activity
         android:name=".activity.shequyaowen.huodong.ActDetailActivity"
         android:screenOrientation="portrait"
-        android:windowSoftInputMode="adjustResize" />
+        android:windowSoftInputMode="adjustResize"/>
 
     <!--候选人自荐、候选人推荐-->
     <activity
         android:name=".activity.yeweihui.AddCandidateInfoActivity"
-        android:windowSoftInputMode="stateAlwaysHidden"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateAlwaysHidden"/>
 
     <!--增加工作履历-->
     <activity
         android:name=".activity.yeweihui.WorkInfoActivity"
         android:screenOrientation="portrait"
-         />
+        />
+
+    <!--MessageToolbar-->
+    <activity
+        android:name=".activity.MessageToolbarActivity"
+        android:screenOrientation="portrait"
+        />
 
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>
-    <activity android:name=".activity.TabLayoutActivity" />
+    <activity android:name=".activity.TabLayoutActivity"/>
 
   </application>
 

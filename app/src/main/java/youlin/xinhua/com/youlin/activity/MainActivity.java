@@ -22,7 +22,8 @@ public class MainActivity extends BaseActivity {
       R.id.btn_color, R.id.btn_im, R.id.contact, R.id.contact_pick, R.id.chat, R.id.btn_signature,
       R.id.btn_picker, R.id.btn_input_information, R.id.btn_perfect_information, R.id.btn_empty,
       R.id.btn_share_pop, R.id.btn_vote_detail_test, R.id.btn_vote_detail, R.id.btn_dialog,
-      R.id.btn_banner, R.id.btn_camera, R.id.btn_huodong, R.id.btn_add_candidate_info
+      R.id.btn_banner, R.id.btn_camera, R.id.btn_huodong, R.id.btn_add_candidate_info,
+      R.id.btn_message_toolbar
   }) public void click(View view) {
     switch (view.getId()) {
       case R.id.btn_color: {
@@ -96,6 +97,10 @@ public class MainActivity extends BaseActivity {
       break;
       case R.id.btn_add_candidate_info: {
         AddCandidateInfoActivity.launch(this);
+      }
+      break;
+      case R.id.btn_message_toolbar: {
+        MessageToolbarActivity.start(this);
       }
       break;
       default:

@@ -47,6 +47,7 @@ dependencies {
   compile project(':flowlayout-lib')
 
   compile rootProject.ext.flyco.tabLayout
+  compile rootProject.ext.flyco.dialog
 
   compile rootProject.ext.appcompatv7
   compile rootProject.ext.recyclerviewv7

@@ -25,12 +25,12 @@ import youlin.xinhua.com.youlin.R;
 
 public class CommonToolbar extends RelativeLayout {
 
-  @BindView(R.id.toolbar_text_title)   TextView  mTextTitle;
-  @BindView(R.id.toolbar_text_right)   TextView  mTextRight;
-  @BindView(R.id.toolbar_img_back)     ImageView mImgBack;
-  @BindView(R.id.toolbar_back_content) View      mView;
-  @BindView(R.id.toolbar_image_right)  ImageView mImageViewRight;
-  @BindView(R.id.right_container)      View      rightContainer; // 右边点击事件View
+  @BindView(R.id.toolbar_text_title) TextView mTextTitle;
+  @BindView(R.id.toolbar_text_right) TextView mTextRight;
+  @BindView(R.id.toolbar_img_back) ImageView mImgBack;
+  @BindView(R.id.toolbar_back_content) View mView;
+  @BindView(R.id.toolbar_image_right) ImageView mImageViewRight;
+  @BindView(R.id.right_container) View rightContainer; // 右边点击事件View
 
   public void isShowTitle(boolean b) {
     mTextTitle.setVisibility(b ? View.VISIBLE : View.GONE);

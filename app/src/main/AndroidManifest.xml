@@ -118,6 +118,10 @@
     <activity
         android:name=".activity.MessageToolbarActivity"
         android:screenOrientation="portrait"
+        />  <!--MessageToolbar-->
+    <activity
+        android:name=".activity.WaterDropStyleActivity"
+        android:screenOrientation="portrait"
         />
 
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>

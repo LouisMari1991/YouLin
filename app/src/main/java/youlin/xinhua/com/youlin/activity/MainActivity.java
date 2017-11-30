@@ -100,7 +100,8 @@ public class MainActivity extends BaseActivity {
       }
       break;
       case R.id.btn_message_toolbar: {
-        MessageToolbarActivity.start(this);
+        //MessageToolbarActivity.start(this);
+        WaterDropStyleActivity.start(this);
       }
       break;
       default:

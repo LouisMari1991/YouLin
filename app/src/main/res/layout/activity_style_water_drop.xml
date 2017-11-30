@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+  <android.support.v7.widget.Toolbar
+      android:id="@+id/toolbar"
+      app:navigationIcon="?attr/homeAsUpIndicator"
+      app:title="苹果"
+      style="@style/AppTheme.Toolbar"
+      />
+
+  <com.scwang.smartrefresh.layout.SmartRefreshLayout
+      android:id="@+id/refreshLayout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:srlAccentColor="@android:color/white"
+      app:srlEnableLoadmore="false"
+      app:srlHeaderMaxDragRate="2"
+      app:srlPrimaryColor="@android:color/darker_gray"
+      >
+    <!--srlHeaderMaxDragRate=2.5时候WaterDropHeader的下拉效果最好-->
+    <youlin.xinhua.com.youlin.widget.pull_refresh.WaterDropHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        tools:listitem="@android:layout/simple_list_item_2"
+        />
+  </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>
+

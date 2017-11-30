@@ -69,4 +69,7 @@ dependencies {
     exclude group: 'com.android.support'
   }
 
+  compile rootProject.ext.BaseRecyclerViewAdapterHelper
+  compile rootProject.ext.SmartRefreshLayout
+
 }

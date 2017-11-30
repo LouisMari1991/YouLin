@@ -108,4 +108,9 @@ ext {
 
   JPush = [libJPush: "cn.jiguang.sdk:jpush:3.0.8",
            libJCore: "cn.jiguang.sdk:jcore:1.1.6"]
+
+  /*新增的第三方库*/
+  BaseRecyclerViewAdapterHelper = "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30"
+  SmartRefreshLayout = "com.scwang.smartrefresh:SmartRefreshLayout:1.0.3"
+  glide_transformations = 'jp.wasabeef:glide-transformations:2.0.1'
 }

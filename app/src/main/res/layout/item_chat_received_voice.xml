@@ -54,7 +54,7 @@
           android:layout_toEndOf="@+id/bubble"
           android:layout_toRightOf="@+id/bubble"
           android:textColor="@color/color_gray_text"
-          android:textSize="@dimen/text_12"
+          android:textSize="@dimen/sp_12"
           tools:text="5s"
           />
 
@@ -86,7 +86,7 @@
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/avatar"
         android:textColor="@color/color_gray_text"
-        android:textSize="@dimen/text_10"
+        android:textSize="@dimen/sp_10"
         tools:text="新华云播"
         />
 

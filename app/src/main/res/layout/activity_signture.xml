@@ -34,7 +34,7 @@
       android:background="@drawable/selector_blue"
       android:text="确认"
       android:textColor="@color/white"
-      android:textSize="@dimen/text_15"
+      android:textSize="@dimen/sp_15"
       style="?android:attr/borderlessButtonStyle"
       />
 

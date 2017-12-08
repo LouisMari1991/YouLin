@@ -114,6 +114,11 @@
         android:screenOrientation="portrait"
         />
 
+    <!--glide 模糊背景-->
+    <activity
+        android:name=".activity.GlideTransformationActivity"
+        android:screenOrientation="portrait"/>
+
     <!--MessageToolbar-->
     <activity
         android:name=".activity.MessageToolbarActivity"

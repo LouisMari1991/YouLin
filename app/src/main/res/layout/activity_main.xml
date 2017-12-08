@@ -180,5 +180,14 @@
       android:visibility="visible"
       />
 
+  <Button
+      android:id="@+id/btn_mohu"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="高斯模糊"
+      android:visibility="visible"
+      />
+
 
 </LinearLayout>

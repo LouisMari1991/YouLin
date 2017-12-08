@@ -18,7 +18,7 @@
   </style>
 
   <style name="item_left_text">
-    <item name="android:textSize">@dimen/text_15</item>
+    <item name="android:textSize">@dimen/sp_15</item>
     <item name="android:textColor">@color/black_text</item>
     <item name="android:layout_centerVertical">true</item>
     <item name="android:layout_width">wrap_content</item>
@@ -54,7 +54,7 @@
   <style name="YunXunListItem_Title">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
-    <item name="android:textSize">@dimen/text_15</item>
+    <item name="android:textSize">@dimen/sp_15</item>
     <item name="android:textColor">@color/black_text</item>
   </style>
 

@@ -24,7 +24,7 @@
         android:background="@null"
         android:text="党支书记"
         android:textColor="@color/color_blue_text"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/sp_15"
         />
 
     <View
@@ -42,7 +42,7 @@
         android:background="@null"
         android:text="委员"
         android:textColor="@color/color_blue_text"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/sp_15"
         />
     <View
         android:layout_width="match_parent"
@@ -58,7 +58,7 @@
         android:background="@null"
         android:text="业委会主任"
         android:textColor="@color/color_blue_text"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/sp_15"
         />
 
     <View
@@ -75,7 +75,7 @@
         android:background="@null"
         android:text="业委会副主任"
         android:textColor="@color/color_blue_text"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/sp_15"
         />
 
     <View
@@ -92,7 +92,7 @@
         android:background="@null"
         android:text="自定义"
         android:textColor="@color/color_blue_text"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/sp_15"
         />
 
   </LinearLayout>
@@ -112,7 +112,7 @@
         android:gravity="center"
         android:text="自定义岗位"
         android:textColor="@color/black_text"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/sp_15"
         />
 
 
@@ -128,7 +128,7 @@
         android:paddingRight="10dp"
         android:textColor="@color/black_text"
         android:textColorHint="@color/text_deep_light"
-        android:textSize="@dimen/text_12"
+        android:textSize="@dimen/sp_12"
         />
 
     <Button
@@ -139,7 +139,7 @@
         android:background="@null"
         android:text="保存"
         android:textColor="@color/color_blue_text"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/sp_15"
         />
 
   </LinearLayout>

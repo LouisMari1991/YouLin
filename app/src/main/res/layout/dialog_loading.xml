@@ -24,7 +24,7 @@
       android:layout_height="wrap_content"
       android:textColor="@color/white"
       android:text="内容加载中."
-      android:textSize="@dimen/text_18"
+      android:textSize="@dimen/sp_18"
       />
 
 

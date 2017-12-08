@@ -54,7 +54,7 @@
               android:layout_height="wrap_content"
               android:text="请选择职位"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <ImageView
@@ -96,7 +96,7 @@
               android:layout_height="wrap_content"
               android:text="请选择籍贯"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <ImageView
@@ -138,7 +138,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               android:text="请选择政治面貌"
               />
 
@@ -181,7 +181,7 @@
               android:layout_height="wrap_content"
               android:text="请选择民族"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <ImageView
@@ -223,7 +223,7 @@
               android:layout_height="wrap_content"
               android:text="请选择出生地"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <ImageView
@@ -265,7 +265,7 @@
               android:layout_height="wrap_content"
               android:text="请选择学历"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <ImageView
@@ -307,7 +307,7 @@
               android:layout_height="wrap_content"
               android:text="请选择参加工作时间"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <ImageView
@@ -352,7 +352,7 @@
               android:hint="请输入电话号码"
               android:textColor="@color/text_deep_light"
               android:textColorHint="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
         </LinearLayout>
@@ -389,7 +389,7 @@
               android:layout_height="wrap_content"
               android:text="请选择物业缴纳情况"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <ImageView
@@ -407,7 +407,7 @@
             android:paddingLeft="@dimen/gauge_20"
             android:text="工作单位及职务"
             android:textColor="@color/text_deep_light"
-            android:textSize="@dimen/text_15"
+            android:textSize="@dimen/sp_15"
             />
 
         <!-- <include layout="@layout/item_yunshe_candidate_info" />-->
@@ -426,7 +426,7 @@
             android:paddingLeft="@dimen/gauge_20"
             android:text="服务宣言"
             android:textColor="@color/text_deep_light"
-            android:textSize="@dimen/text_15"
+            android:textSize="@dimen/sp_15"
             />
 
         <EditText
@@ -438,7 +438,7 @@
             android:padding="@dimen/gauge_20"
             android:textColor="@color/text_black"
             android:textColorHint="@color/text_deep_light"
-            android:textSize="@dimen/text_15"
+            android:textSize="@dimen/sp_15"
             />
         <Button
             android:id="@+id/btn_sure"

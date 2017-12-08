@@ -43,7 +43,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/gauge_20"
       android:text="联动选择"
-      android:textSize="@dimen/text_17"
+      android:textSize="@dimen/sp_17"
       />
 
   <Button

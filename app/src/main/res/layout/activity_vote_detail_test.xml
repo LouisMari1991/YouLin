@@ -33,7 +33,7 @@
           android:layout_height="wrap_content"
           android:text="树 . 熊"
           android:textColor="@color/black_text"
-          android:textSize="@dimen/text_12"
+          android:textSize="@dimen/sp_12"
           />
 
       <Space
@@ -52,7 +52,7 @@
           android:paddingTop="15dp"
           android:text="@string/str_vote"
           android:textColor="@color/color_blue_text"
-          android:textSize="@dimen/text_12"
+          android:textSize="@dimen/sp_12"
           />
 
     </LinearLayout>
@@ -95,7 +95,7 @@
           android:layout_marginRight="5dp"
           android:text="0人"
           android:textColor="@color/text_deep_light"
-          android:textSize="@dimen/text_10"
+          android:textSize="@dimen/sp_10"
           />
 
     </RelativeLayout>

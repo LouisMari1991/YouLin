@@ -78,7 +78,7 @@
               android:minWidth="150dp"
               android:textColor="@color/text_deep_light"
               android:textColorHint="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
         </RelativeLayout>
 
@@ -100,7 +100,7 @@
               android:minWidth="150dp"
               android:textColor="@color/text_deep_light"
               android:textColorHint="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
         </RelativeLayout>
 
@@ -121,7 +121,7 @@
               android:minWidth="150dp"
               android:textColor="@color/text_deep_light"
               android:textColorHint="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
         </RelativeLayout>
 
@@ -143,7 +143,7 @@
               android:minWidth="150dp"
               android:textColor="@color/text_deep_light"
               android:textColorHint="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
         </RelativeLayout>
 
@@ -162,7 +162,7 @@
               android:layout_centerVertical="true"
               android:text="平米"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <EditText
@@ -176,7 +176,7 @@
               android:minWidth="120dp"
               android:textColor="@color/text_deep_light"
               android:textColorHint="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
 
@@ -197,7 +197,7 @@
               android:layout_centerVertical="true"
               android:text="人"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <EditText
@@ -211,7 +211,7 @@
               android:minWidth="120dp"
               android:textColor="@color/text_deep_light"
               android:textColorHint="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
 
@@ -236,7 +236,7 @@
               android:minWidth="120dp"
               android:textColor="@color/text_deep_light"
               android:textColorHint="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
 
@@ -256,7 +256,7 @@
           android:background="@drawable/selector_blue"
           android:text="去签名"
           android:textColor="@color/white"
-          android:textSize="@dimen/text_15"
+          android:textSize="@dimen/sp_15"
           style="?android:attr/borderlessButtonStyle"
           />
     </LinearLayout>

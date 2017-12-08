@@ -71,5 +71,7 @@ dependencies {
 
   compile rootProject.ext.BaseRecyclerViewAdapterHelper
   compile rootProject.ext.SmartRefreshLayout
+  compile rootProject.ext.glide_transformations
 
+  compile 'org.jetbrains:annotations-java5:15.0'
 }

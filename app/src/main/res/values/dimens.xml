@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <dimen name="emi_icon_size">50dp</dimen>
-  <dimen name="spacing">10dp</dimen>
-  <dimen name="menu_container_height">240dp</dimen>
-
   <!-- Default screen margins, per the Android Design guidelines. -->
   <dimen name="activity_horizontal_margin">16dp</dimen>
   <dimen name="activity_vertical_margin">16dp</dimen>
 
+  <dimen name="emi_icon_size">50dp</dimen>
+  <dimen name="spacing">10dp</dimen>
+  <dimen name="menu_container_height">240dp</dimen>
 
   <!--云基一号间距规范 1280*720-->
-  <dimen name="gauge_0">0dp</dimen>
-  <dimen name="gauge_1">1dp</dimen>
+  <dimen name="dp_0">0dp</dimen>
+  <dimen name="dp_1">0.5dp</dimen>
+  <dimen name="gauge_1">0.5dp</dimen>
   <dimen name="gauge_2">1dp</dimen>
   <dimen name="gauge_3">2dp</dimen>
   <dimen name="gauge_4">2dp</dimen>
@@ -40,7 +40,6 @@
   <dimen name="gauge_50">25dp</dimen>
   <dimen name="gauge_52">26dp</dimen>
   <dimen name="gauge_60">30dp</dimen>
-  <dimen name="gauge_64">32dp</dimen>
   <dimen name="gauge_68">34dp</dimen>
   <dimen name="gauge_70">35dp</dimen>
   <dimen name="gauge_72">36dp</dimen>
@@ -63,6 +62,7 @@
   <dimen name="gauge_140">70dp</dimen>
   <dimen name="gauge_146">73dp</dimen>
   <dimen name="gauge_150">75dp</dimen>
+  <dimen name="gauge_152">76dp</dimen>
   <dimen name="gauge_160">80dp</dimen>
   <dimen name="gauge_176">88dp</dimen>
   <dimen name="gauge_180">90dp</dimen>
@@ -80,9 +80,12 @@
   <dimen name="gauge_282">141dp</dimen>
   <dimen name="gauge_288">144dp</dimen>
 
+  <dimen name="gauge_300">150dp</dimen>
   <dimen name="gauge_320">160dp</dimen>
   <dimen name="gauge_322">161dp</dimen>
+  <dimen name="gauge_350">175dp</dimen>
   <dimen name="gauge_360">180dp</dimen>
+  <dimen name="gauge_370">185dp</dimen>
   <dimen name="gauge_386">183dp</dimen>
 
 
@@ -92,8 +95,10 @@
   <dimen name="gauge_460">230dp</dimen>
   <dimen name="gauge_470">435dp</dimen>
   <dimen name="gauge_488">244dp</dimen>
+  <dimen name="gauge_500">250dp</dimen>
   <dimen name="gauge_512">256dp</dimen>
   <dimen name="gauge_560">280dp</dimen>
+  <dimen name="gauge_600">300dp</dimen>
   <dimen name="gauge_620">310dp</dimen>
   <dimen name="gauge_680">340dp</dimen>
   <dimen name="gauge_720">360dp</dimen>
@@ -101,9 +106,23 @@
 
 
   <!--云基一号字体规范-->
+  <dimen name="sp_7">7sp</dimen>
+  <dimen name="sp_17">17sp</dimen>
+  <dimen name="sp_18">18sp</dimen>
+  <dimen name="sp_16">16sp</dimen>
+  <dimen name="sp_15">15sp</dimen>
+  <dimen name="sp_14">14sp</dimen>
+  <dimen name="sp_12">12sp</dimen>
+  <dimen name="sp_13">13sp</dimen>
+  <dimen name="sp_10">10sp</dimen>
+  <dimen name="sp_20">20sp</dimen>
+  <dimen name="sp_21">21sp</dimen>
+  <dimen name="sp_24">24sp</dimen>
+  <dimen name="sp_30">30sp</dimen>
+
   <dimen name="text_7">7sp</dimen>
-  <dimen name="text_18">18sp</dimen>
   <dimen name="text_17">17sp</dimen>
+  <dimen name="text_18">18sp</dimen>
   <dimen name="text_16">16sp</dimen>
   <dimen name="text_15">15sp</dimen>
   <dimen name="text_14">14sp</dimen>

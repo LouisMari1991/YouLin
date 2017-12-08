@@ -41,7 +41,7 @@
             android:gravity="center"
             android:text="投票未开始"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_15"
+            android:textSize="@dimen/sp_15"
             />
       </FrameLayout>
 
@@ -65,7 +65,7 @@
             android:layout_marginTop="15dp"
             android:text="民宿名称投票"
             android:textColor="@color/black_text"
-            android:textSize="@dimen/text_15"
+            android:textSize="@dimen/sp_15"
             />
         <TextView
             android:id="@+id/textView2"
@@ -74,7 +74,7 @@
             android:layout_marginBottom="15dp"
             android:text="[单选]"
             android:textColor="#f63a3a"
-            android:textSize="@dimen/text_12"
+            android:textSize="@dimen/sp_12"
             />
       </LinearLayout>
 
@@ -102,7 +102,7 @@
               android:layout_height="wrap_content"
               android:text="@string/start_time"
               android:textColor="@color/color_blue_text"
-              android:textSize="@dimen/text_12"
+              android:textSize="@dimen/sp_12"
               />
 
           <TextView
@@ -112,7 +112,7 @@
               android:layout_marginLeft="10dp"
               android:text="3月0日0点"
               android:textColor="@color/black_text"
-              android:textSize="@dimen/text_12"
+              android:textSize="@dimen/sp_12"
               />
         </LinearLayout>
 
@@ -135,7 +135,7 @@
               android:layout_height="wrap_content"
               android:text="@string/end_time"
               android:textColor="@color/color_blue_text"
-              android:textSize="@dimen/text_12"
+              android:textSize="@dimen/sp_12"
               />
           <TextView
               android:id="@+id/text_end_time"
@@ -144,7 +144,7 @@
               android:layout_marginLeft="10dp"
               android:text="3月9日0点"
               android:textColor="@color/black_text"
-              android:textSize="@dimen/text_12"
+              android:textSize="@dimen/sp_12"
               />
         </LinearLayout>
 

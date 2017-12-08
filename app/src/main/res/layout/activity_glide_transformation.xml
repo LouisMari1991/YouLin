@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    >
+
+  <include layout="@layout/layout_common_toolbar"/>
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/gauge_350"
+      android:background="@android:color/transparent"
+      >
+
+    <ImageView
+        android:id="@+id/img_profile_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_yongyi_profile"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+      <ImageView
+          android:id="@+id/img_avatar"
+          android:layout_width="@dimen/gauge_80"
+          android:layout_height="@dimen/gauge_80"
+          android:layout_marginTop="@dimen/gauge_60"
+          />
+      <TextView
+          android:id="@+id/text_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/gauge_20"
+          android:textColor="@color/white"
+          android:textSize="@dimen/sp_15"
+          tools:text="硬撑助学计划"
+          />
+      <TextView
+          android:id="@+id/text_create_time"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/gauge_20"
+          android:textColor="@color/white"
+          android:textSize="@dimen/sp_12"
+          tools:text="硬撑助学计划"
+          />
+
+      <LinearLayout
+          android:id="@+id/ll_label_container"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/gauge_30"
+          android:orientation="horizontal"
+          />
+    </LinearLayout>
+  </FrameLayout>
+
+  <ImageView
+      android:id="@+id/img_profile_bg_1"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/gauge_500"
+      android:layout_marginTop="@dimen/gauge_20"
+      android:scaleType="fitXY"
+      />
+
+</LinearLayout>

@@ -65,7 +65,7 @@
               android:singleLine="true"
               android:text="邀请你加入群聊"
               android:textColor="@color/black_text"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <Space
@@ -80,7 +80,7 @@
               android:layout_marginRight="10dp"
               android:maxLines="2"
               android:textColor="@color/color_gray_text"
-              android:textSize="@dimen/text_10"
+              android:textSize="@dimen/sp_10"
               tools:text="'云基壹号'邀请你加入群聊云基壹号业务讨论群"
               />
 
@@ -99,7 +99,7 @@
           android:layout_toEndOf="@+id/bubble"
           android:layout_toRightOf="@+id/bubble"
           android:textColor="@color/color_gray_text"
-          android:textSize="@dimen/text_12"
+          android:textSize="@dimen/sp_12"
           android:visibility="gone"
           tools:text="50%"
           />
@@ -132,7 +132,7 @@
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/avatar"
         android:textColor="@color/color_gray_text"
-        android:textSize="@dimen/text_10"
+        android:textSize="@dimen/sp_10"
         tools:text="新华云播"
         />
   </RelativeLayout>

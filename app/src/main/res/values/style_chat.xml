@@ -6,7 +6,7 @@
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_margin">10dp</item>
     <item name="android:layout_gravity">center_horizontal</item>
-    <item name="android:textSize">@dimen/text_12</item>
+    <item name="android:textSize">@dimen/sp_12</item>
     <item name="android:textColor">@color/color_gray_text</item>
   </style>
 
@@ -18,7 +18,7 @@
     <item name="android:minHeight">30dp</item>
     <item name="android:minWidth">175dp</item>
     <item name="android:textColor">#999999</item>
-    <item name="android:textSize">@dimen/text_12</item>
+    <item name="android:textSize">@dimen/sp_12</item>
     <item name="android:gravity">center</item>
     <item name="android:layout_gravity">center_horizontal</item>
     <item name="android:background">@drawable/aurora_bg_event_message</item>

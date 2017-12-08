@@ -23,7 +23,7 @@ public class MainActivity extends BaseActivity {
       R.id.btn_picker, R.id.btn_input_information, R.id.btn_perfect_information, R.id.btn_empty,
       R.id.btn_share_pop, R.id.btn_vote_detail_test, R.id.btn_vote_detail, R.id.btn_dialog,
       R.id.btn_banner, R.id.btn_camera, R.id.btn_huodong, R.id.btn_add_candidate_info,
-      R.id.btn_message_toolbar
+      R.id.btn_message_toolbar, R.id.btn_mohu
   }) public void click(View view) {
     switch (view.getId()) {
       case R.id.btn_color: {
@@ -102,6 +102,10 @@ public class MainActivity extends BaseActivity {
       case R.id.btn_message_toolbar: {
         //MessageToolbarActivity.start(this);
         WaterDropStyleActivity.start(this);
+      }
+      break;
+      case R.id.btn_mohu: {
+        GlideTransformationActivity.start(this);
       }
       break;
       default:

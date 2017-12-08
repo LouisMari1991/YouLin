@@ -15,7 +15,7 @@
       android:gravity="center"
       android:text="输入房间号"
       android:textColor="@color/black_text"
-      android:textSize="@dimen/text_15"
+      android:textSize="@dimen/sp_15"
       />
 
   <LinearLayout
@@ -110,7 +110,7 @@
       android:background="@null"
       android:text="@string/sure"
       android:textColor="@color/color_blue"
-      android:textSize="@dimen/text_15"
+      android:textSize="@dimen/sp_15"
 
       />
 

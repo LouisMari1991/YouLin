@@ -43,7 +43,7 @@
         android:minWidth="150dp"
         android:textColor="@color/text_deep_light"
         android:textColorHint="@color/text_deep_light"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/sp_15"
         />
 
 
@@ -84,7 +84,7 @@
         android:minWidth="150dp"
         android:textColor="@color/text_deep_light"
         android:textColorHint="@color/text_deep_light"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/sp_15"
         />
 
   </LinearLayout>
@@ -120,7 +120,7 @@
         android:layout_height="wrap_content"
         android:text="请选择"
         android:textColor="@color/text_deep_light"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/sp_15"
         />
 
     <TextView
@@ -131,7 +131,7 @@
         android:layout_marginLeft="@dimen/gauge_10"
         android:text="至"
         android:textColor="@color/black_text"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/sp_15"
         />
 
     <TextView
@@ -140,7 +140,7 @@
         android:layout_height="wrap_content"
         android:text="请选择"
         android:textColor="@color/text_deep_light"
-        android:textSize="@dimen/text_15"
+        android:textSize="@dimen/sp_15"
         />
   </LinearLayout>
 

@@ -51,7 +51,7 @@
               android:inputType="number"
               android:text="总面积"
               android:textColor="@color/black"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
           <TextView
               android:id="@+id/text_0"
@@ -61,7 +61,7 @@
               android:layout_centerVertical="true"
               android:text="平米"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <EditText
@@ -75,7 +75,7 @@
               android:minWidth="100dp"
               android:textColor="@color/text_deep_light"
               android:textColorHint="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
         </RelativeLayout>
 
@@ -100,7 +100,7 @@
               android:layout_centerVertical="true"
               android:text="总户数"
               android:textColor="@color/black"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <TextView
@@ -111,7 +111,7 @@
               android:layout_centerVertical="true"
               android:text="户"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <EditText
@@ -125,7 +125,7 @@
               android:minWidth="100dp"
               android:textColor="@color/text_deep_light"
               android:textColorHint="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
 
@@ -153,7 +153,7 @@
               android:layout_centerVertical="true"
               android:text="签到人数比例"
               android:textColor="@color/black"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <LinearLayout
@@ -170,7 +170,7 @@
                 android:layout_height="wrap_content"
                 android:text="达到比例自动进入自荐环节"
                 android:textColor="@color/text_deep_light"
-                android:textSize="@dimen/text_15"
+                android:textSize="@dimen/sp_15"
                 android:minWidth="100dp"
                 />
 
@@ -207,7 +207,7 @@
               android:layout_centerVertical="true"
               android:text="自荐时间"
               android:textColor="@color/black"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <TextView
@@ -218,7 +218,7 @@
               android:layout_centerVertical="true"
               android:text="天"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <EditText
@@ -232,7 +232,7 @@
               android:minWidth="100dp"
               android:textColor="@color/text_deep_light"
               android:textColorHint="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
         </RelativeLayout>
@@ -258,7 +258,7 @@
               android:layout_centerVertical="true"
               android:text="投票时间"
               android:textColor="@color/black"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
           <TextView
               android:id="@+id/text_3"
@@ -268,7 +268,7 @@
               android:layout_centerVertical="true"
               android:text="天"
               android:textColor="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
           <EditText
@@ -282,7 +282,7 @@
               android:minWidth="100dp"
               android:textColor="@color/text_deep_light"
               android:textColorHint="@color/text_deep_light"
-              android:textSize="@dimen/text_15"
+              android:textSize="@dimen/sp_15"
               />
 
         </RelativeLayout>
@@ -324,7 +324,7 @@
           android:background="@drawable/selector_blue"
           android:text="确认发起群聊"
           android:textColor="@color/white"
-          android:textSize="@dimen/text_15"
+          android:textSize="@dimen/sp_15"
           style="?android:attr/borderlessButtonStyle"
           />
 

@@ -128,6 +128,10 @@
         android:name=".activity.WaterDropStyleActivity"
         android:screenOrientation="portrait"
         />
+    <!--手机联系人列表-->
+    <activity
+        android:name=".activity.phonecontacts.PhoneContactsListActivity"
+        android:screenOrientation="portrait"/>
 
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>
     <activity android:name=".activity.TabLayoutActivity"/>

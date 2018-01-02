@@ -105,7 +105,7 @@ public class WaterDropHeader extends ViewGroup implements RefreshHeader {
     //final int heightWaterDrop = mWaterDropView.getMeasuredHeight();
     //final int leftWaterDrop = measuredWidth / 2 - widthWaterDrop / 2;
     //final int topWaterDrop = 0;
-    //mWaterDropView.layout(leftWaterDrop, topWaterDrop, leftWaterDrop + widthWaterDrop,
+    //mWaterDropView.item_rv(leftWaterDrop, topWaterDrop, leftWaterDrop + widthWaterDrop,
     //    topWaterDrop + heightWaterDrop);
     //
     //final int widthImage = mImageView.getMeasuredWidth();
@@ -247,12 +247,12 @@ public class WaterDropHeader extends ViewGroup implements RefreshHeader {
     //    }
     //});
     //animator.start();//开始回弹
-    //layout.getLayout().postDelayed(new Runnable() {
+    //item_rv.getLayout().postDelayed(new Runnable() {
     //  @Override public void run() {
     //    mProgressDegree = (mProgressDegree + 30) % 360;
     //    invalidate();
     //    if (mState == RefreshState.Refreshing || mState == RefreshState.RefreshReleased) {
-    //      layout.getLayout().postDelayed(this, 100);
+    //      item_rv.getLayout().postDelayed(this, 100);
     //    }
     //  }
     //}, 100);

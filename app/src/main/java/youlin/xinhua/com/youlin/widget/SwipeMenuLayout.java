@@ -255,7 +255,7 @@ public class SwipeMenuLayout extends ViewGroup {
    * @see android.widget.LinearLayout# 同名方法
    */
   private void forceUniformHeight(int count, int widthMeasureSpec) {
-    // Pretend that the linear layout has an exact size. This is the measured height of
+    // Pretend that the linear item_rv has an exact size. This is the measured height of
     // ourselves. The measured height should be the max height of the children, changed
     // to accommodate the heightMeasureSpec from the parent
     int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredHeight(),

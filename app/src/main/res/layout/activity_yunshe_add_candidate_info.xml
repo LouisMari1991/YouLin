@@ -410,7 +410,7 @@
             android:textSize="@dimen/sp_15"
             />
 
-        <!-- <include layout="@layout/item_yunshe_candidate_info" />-->
+        <!-- <inclitem_rvyouitem_rvyout/item_yunshe_candidate_info" />-->
 
 
         <youlin.xinhua.com.youlin.widget.yunshe.ownercommittee.CandidateInfoContainer

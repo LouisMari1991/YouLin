@@ -29,7 +29,7 @@ public class CustomSinglePicker extends OptionPicker {
   TextView headLeftText;
 
   //@Nullable @Override protected View makeHeaderView() {
-    //View view = LayoutInflater.from(activity).inflate(R.layout.picker_header, null);
+    //View view = LayoutInflater.from(activity).inflate(R.item_rv.picker_header, null);
     //headLeftText = (TextView) view.findViewById(R.id.text_head_left);
     //headLeftText.setText(titleText);
     //view.findViewById(R.id.text_head_right).setOnClickListener(new View.OnClickListener() {

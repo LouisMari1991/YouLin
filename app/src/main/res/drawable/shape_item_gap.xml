@@ -5,7 +5,8 @@
   <!--底层使用白色填充色-->
   <item>
     <shape>
-      <solid android:color="@color/white" />
+      <solid android:color="@color/white"/>
+      <size android:height="@dimen/gauge_1"/>
     </shape>
   </item>
 
@@ -14,7 +15,8 @@
       android:left="@dimen/gauge_20"
       android:right="@dimen/gauge_20">
     <shape>
-      <solid android:color="@color/color_gray_light" />
+      <solid android:color="@android:color/black"/>
+      <size android:height="@dimen/gauge_1"/>
     </shape>
   </item>
 

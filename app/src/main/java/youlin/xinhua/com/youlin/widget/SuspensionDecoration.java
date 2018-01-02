@@ -188,12 +188,12 @@ public class SuspensionDecoration extends RecyclerView.ItemDecoration {
   //*//*
   //        //必须经过 测量 和 布局，View才能被正常的显示出来
   //        button.measure(View.MeasureSpec.makeMeasureSpec(9999,View.MeasureSpec.UNSPECIFIED),View.MeasureSpec.makeMeasureSpec(9999,View.MeasureSpec.UNSPECIFIED));
-  //        button.layout(parent.getPaddingLeft(),parent.getPaddingTop(),
+  //        button.item_rv(parent.getPaddingLeft(),parent.getPaddingTop(),
   //                parent.getPaddingLeft()+button.getMeasuredWidth(),parent.getPaddingTop()+button.getMeasuredHeight());
   //        button.draw(c);*/
   //
   //        //inflate一个复杂布局 并draw出来
-  ///*        View toDrawView = mInflater.inflate(R.layout.header_complex, parent, false);
+  ///*        View toDrawView = mInflater.inflate(R.item_rv.header_complex, parent, false);
   //        int toDrawWidthSpec;//用于测量的widthMeasureSpec
   //        int toDrawHeightSpec;//用于测量的heightMeasureSpec
   //        //拿到复杂布局的LayoutParams，如果为空，就new一个。
@@ -221,9 +221,9 @@ public class SuspensionDecoration extends RecyclerView.ItemDecoration {
   //        } else {
   //            toDrawHeightSpec = View.MeasureSpec.makeMeasureSpec(lp.width, View.MeasureSpec.EXACTLY);
   //        }
-  //        //依次调用 measure,layout,draw方法，将复杂头部显示在屏幕上。
+  //        //依次调用 measure,item_rv,draw方法，将复杂头部显示在屏幕上。
   //        toDrawView.measure(toDrawWidthSpec, toDrawHeightSpec);
-  //        toDrawView.layout(parent.getPaddingLeft(), parent.getPaddingTop(),
+  //        toDrawView.item_rv(parent.getPaddingLeft(), parent.getPaddingTop(),
   //                parent.getPaddingLeft() + toDrawView.getMeasuredWidth(), parent.getPaddingTop() + toDrawView.getMeasuredHeight());
   //        toDrawView.draw(c);*/
   //

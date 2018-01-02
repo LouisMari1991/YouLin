@@ -132,6 +132,9 @@
     <activity
         android:name=".activity.phonecontacts.PhoneContactsListActivity"
         android:screenOrientation="portrait"/>
+    <activity
+        android:name=".activity.recycler_view.RecyclerViewActivity"
+        android:screenOrientation="portrait"/>
 
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>
     <activity android:name=".activity.TabLayoutActivity"/>

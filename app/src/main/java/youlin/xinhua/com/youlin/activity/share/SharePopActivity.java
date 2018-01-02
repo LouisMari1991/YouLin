@@ -33,7 +33,7 @@ public class SharePopActivity extends BaseActivity {
 
   @OnClick(R.id.btn_share_pop) public void click() {
     new ShareUtils2().shareWeb(this, mButton);
-    //PopUtil.createPopupWind(this, mButton, R.layout.layout_pop_share,
+    //PopUtil.createPopupWind(this, mButton, R.item_rv.layout_pop_share,
     //    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.BOTTOM,
     //    new PopUtil.PopInitListener() {
     //      @Override public void popInit(BaseViewHolder holder, PopupWindow popupWindow) {

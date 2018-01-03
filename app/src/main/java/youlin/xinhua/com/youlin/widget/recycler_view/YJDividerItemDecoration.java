@@ -9,6 +9,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.utils.MeasureUtils;
 
 /**
  * <pre>
@@ -19,16 +20,16 @@ import youlin.xinhua.com.youlin.R;
  *   version: 1.0
  * </pre>
  */
-public class DividerItemDecoration extends RecyclerView.ItemDecoration {
+public class YJDividerItemDecoration extends RecyclerView.ItemDecoration {
 
   Drawable drawable;
   boolean hasHeadGap;
 
-  public DividerItemDecoration(Context context) {
+  public YJDividerItemDecoration(Context context) {
     this(context, false);
   }
 
-  public DividerItemDecoration(Context context, boolean hasHeadGap) {
+  public YJDividerItemDecoration(Context context, boolean hasHeadGap) {
     drawable = ContextCompat.getDrawable(context, R.drawable.shape_item_gap);
     this.hasHeadGap = hasHeadGap;
   }
@@ -55,15 +56,13 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
    */
   @Override public void getItemOffsets(Rect outRect, View view, RecyclerView parent,
       RecyclerView.State state) {
-
     if (hasHeadGap) {
       int viewLayoutPosition =
           ((RecyclerView.LayoutParams) view.getLayoutParams()).getViewLayoutPosition();
-
       if (viewLayoutPosition == 0) {
-
+        outRect.set(0, MeasureUtils.dp2px(10), 0, drawable.getIntrinsicHeight());
       } else {
-
+        outRect.set(0, 0, 0, drawable.getIntrinsicHeight());
       }
     } else {
       outRect.set(0, 0, 0, drawable.getIntrinsicHeight());

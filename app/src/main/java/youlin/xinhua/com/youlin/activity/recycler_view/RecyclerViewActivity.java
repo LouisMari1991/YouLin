@@ -10,7 +10,7 @@ import butterknife.BindView;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.adapter.RvAdapter;
-import youlin.xinhua.com.youlin.widget.recycler_view.DividerItemDecoration;
+import youlin.xinhua.com.youlin.widget.recycler_view.YJDividerItemDecoration;
 
 /**
  * <pre>
@@ -36,10 +36,9 @@ public class RecyclerViewActivity extends BaseActivity {
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
     RvAdapter adapter = new RvAdapter();
     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-    recyclerView.addItemDecoration(new DividerItemDecoration(this));
+    recyclerView.addItemDecoration(new YJDividerItemDecoration(this, true));
     recyclerView.setLayoutManager(linearLayoutManager);
     recyclerView.setAdapter(adapter);
   }

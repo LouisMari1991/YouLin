@@ -32,10 +32,12 @@ def transitionseverywhereVersion = "1.7.0"
 def videocacheVersion = "2.7.0"
 
 ext {
+
   buildToolsVersion = "25.0.2"
   compileSdkVersion = 25
   minSdkVersion = 16
   targetSdkVersion = 25
+
   versionCode = 12
   versionName = "1.2"
   multidexVersion = "1.0.1"

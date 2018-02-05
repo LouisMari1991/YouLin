@@ -10,6 +10,13 @@ android {
     versionCode rootProject.ext.versionCode
     versionName rootProject.ext.versionName
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    ndk {
+      //选择要添加的对应cpu类型的.so库。
+      abiFilters 'armeabi'
+    }
+
+    resConfigs "zh"
   }
   buildTypes {
     release {
@@ -40,13 +47,14 @@ dependencies {
   compile rootProject.ext.butterknifts.butterknift
   annotationProcessor rootProject.ext.butterknifts.butterkniftcompiler
 
-  compile(name: 'imageselect', ext: 'aar')
-  compile(name: 'recyclerviewhelper', ext: 'aar')
-  compile(name: 'dialoglib', ext: 'aar')
+//  compile(name: 'imageselect', ext: 'aar')
+//  compile(name: 'recyclerviewhelper', ext: 'aar')
+//  compile(name: 'dialoglib', ext: 'aar')
 
   compile project(':im')
-  compile project(':flowlayout-lib')
-  compile project(':xunfeiyuyin')
+//  compile project(':flowlayout-lib')
+//  compile project(':xunfeiyuyin')
+  compile project(':tim')
 
   compile rootProject.ext.flyco.tabLayout
   compile rootProject.ext.flyco.dialog
@@ -62,7 +70,7 @@ dependencies {
   compile 'com.github.ybq:Android-SpinKit:1.1.0'
   compile 'com.github.bumptech.glide:glide:3.7.0'
 
-//  compile 'com.alibaba:fastjson:1.1.55.android'
+  //  compile 'com.alibaba:fastjson:1.1.55.android'
   compile 'com.pnikosis:materialish-progress:1.0'
 
   compile('cn.qqtheme.framework:WheelPicker:latest.release') {

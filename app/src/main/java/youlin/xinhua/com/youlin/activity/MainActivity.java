@@ -1,21 +1,16 @@
 package youlin.xinhua.com.youlin.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import butterknife.OnClick;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
-import youlin.xinhua.com.youlin.activity.camera.CameraActivity;
-import youlin.xinhua.com.youlin.activity.recycler_view.RecyclerViewActivity;
 import youlin.xinhua.com.youlin.activity.share.SharePopActivity;
 import youlin.xinhua.com.youlin.activity.shequyaowen.huodong.ActDetailActivity;
 import youlin.xinhua.com.youlin.activity.shequyaowen.vote.VoteDetailActivity;
-import youlin.xinhua.com.youlin.activity.shequyaowen.vote.VoteDetailActivityTest;
+import youlin.xinhua.com.youlin.activity.tim.TIMActivity;
 import youlin.xinhua.com.youlin.activity.yeweihui.AddCandidateInfoActivity;
-import youlin.xinhua.com.youlin.activity.yeweihui.InputInformationActivity;
-import youlin.xinhua.com.youlin.activity.yeweihui.PerfectInformationActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -24,7 +19,7 @@ public class MainActivity extends BaseActivity {
       R.id.btn_picker, R.id.btn_input_information, R.id.btn_perfect_information, R.id.btn_empty,
       R.id.btn_share_pop, R.id.btn_vote_detail_test, R.id.btn_vote_detail, R.id.btn_dialog,
       R.id.btn_banner, R.id.btn_camera, R.id.btn_huodong, R.id.btn_add_candidate_info,
-      R.id.btn_message_toolbar, R.id.btn_mohu, R.id.btn_rv
+      R.id.btn_message_toolbar, R.id.btn_mohu, R.id.btn_rv, R.id.btn_tim
   }) public void click(View view) {
     switch (view.getId()) {
       case R.id.btn_color: {
@@ -47,22 +42,6 @@ public class MainActivity extends BaseActivity {
         ChatActivity.lunch(this);
       }
       break;
-      case R.id.btn_signature: { // 手写签名
-        SignatureActivity.launch(this);
-      }
-      break;
-      case R.id.btn_picker: {// 选择器
-        PickActivity.launch(this);
-      }
-      break;
-      case R.id.btn_input_information: {// 填写资料
-        InputInformationActivity.launch(this);
-      }
-      break;
-      case R.id.btn_perfect_information: { // 完善信息
-        PerfectInformationActivity.launch(this);
-      }
-      break;
       case R.id.btn_empty: {
         EmptyLayoutActivity.launch(this);
       }
@@ -71,25 +50,8 @@ public class MainActivity extends BaseActivity {
         SharePopActivity.launch(this);
       }
       break;
-      case R.id.btn_vote_detail_test: {
-        VoteDetailActivityTest.launch(this);
-      }
-      break;
       case R.id.btn_vote_detail: {
         VoteDetailActivity.launch(this);
-      }
-      break;
-      case R.id.btn_dialog: {
-        DialogTestActivity.launch(this);
-      }
-      break;
-      case R.id.btn_banner: {
-        BannerActivity.launch(this);
-      }
-      break;
-      case R.id.btn_camera: {
-        Intent intent = new Intent(this, CameraActivity.class);
-        startActivityForResult(intent, 100);
       }
       break;
       case R.id.btn_huodong: {
@@ -100,19 +62,14 @@ public class MainActivity extends BaseActivity {
         AddCandidateInfoActivity.launch(this);
       }
       break;
-      case R.id.btn_message_toolbar: {
-        //MessageToolbarActivity.start(this);
-        WaterDropStyleActivity.start(this);
-      }
-      break;
       case R.id.btn_mohu: {
         GlideTransformationActivity.start(this);
       }
       break;
-      case R.id.btn_rv: {
-        RecyclerViewActivity.start(this);
+      case R.id.btn_tim: {
+        TIMActivity.start(view.getContext());
+        break;
       }
-      break;
       default:
         throw new UnsupportedOperationException(" id : " + view.getId());
     }
@@ -124,6 +81,17 @@ public class MainActivity extends BaseActivity {
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
+    //TIMManager.getInstance().login("18163972621", TIMConsts.USER_SIGN_181, new TIMCallBack() {
+    //  @Override public void onError(int i, String s) {
+    //    LogUtils.i("登录聊天服务器失败！ i ： " + i + " s : " + s);
+    //  }
+    //
+    //  @Override public void onSuccess() {
+    //    LogUtils.i("登录聊天服务器成功！");
+    //  }
+    //});
+
     //EMClient.getInstance().login("123456", "123456", new EMCallBack() {//回调
     //  @Override public void onSuccess() {
     //    LogUtils.i("登录聊天服务器成功！");

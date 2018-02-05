@@ -6,7 +6,6 @@
     android:layout_width="280dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="@drawable/dialog_background"
     android:gravity="center"
     android:orientation="vertical"
     >
@@ -45,7 +44,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:singleLine="true"
-        android:text="@string/dialog_default_title"
         android:textColor="@color/black_text"
         android:textSize="18sp"
         android:visibility="gone"

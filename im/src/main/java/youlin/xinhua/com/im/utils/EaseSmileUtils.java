@@ -15,7 +15,6 @@ package youlin.xinhua.com.im.utils;
 
 import android.content.Context;
 import android.net.Uri;
-import android.support.annotation.DrawableRes;
 import android.text.Spannable;
 import android.text.Spannable.Factory;
 import android.text.style.ImageSpan;
@@ -32,15 +31,15 @@ public class EaseSmileUtils {
 
   public static final String DELETE_KEY = "em_delete_delete_expression";
 
-  public static final String ee_1  = "[):]";
-  public static final String ee_2  = "[:D]";
-  public static final String ee_3  = "[;)]";
-  public static final String ee_4  = "[:-o]";
-  public static final String ee_5  = "[:p]";
-  public static final String ee_6  = "[(H)]";
-  public static final String ee_7  = "[:@]";
-  public static final String ee_8  = "[:s]";
-  public static final String ee_9  = "[:$]";
+  public static final String ee_1 = "[):]";
+  public static final String ee_2 = "[:D]";
+  public static final String ee_3 = "[;)]";
+  public static final String ee_4 = "[:-o]";
+  public static final String ee_5 = "[:p]";
+  public static final String ee_6 = "[(H)]";
+  public static final String ee_7 = "[:@]";
+  public static final String ee_8 = "[:s]";
+  public static final String ee_9 = "[:$]";
   public static final String ee_10 = "[:(]";
   public static final String ee_11 = "[:'(]";
   public static final String ee_12 = "[:|]";
@@ -135,7 +134,7 @@ public class EaseSmileUtils {
   }
 
   public static Spannable getSiiledText(Context context, CharSequence text, String rexgString,
-      @DrawableRes int resId) {
+      int resId) {
     Spannable spannable = spannableFactory.newSpannable(text);
     Pattern pattern = Pattern.compile(rexgString);
     Matcher matcher = pattern.matcher(text);

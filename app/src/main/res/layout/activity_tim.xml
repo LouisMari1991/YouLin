@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+
+  <Button
+      android:id="@+id/btn_login"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="登陆"
+      android:visibility="visible"
+      />
+
+  <Button
+      android:id="@+id/btn_add_contacts"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="加好友"
+      android:visibility="visible"
+      />
+
+  <Button
+      android:id="@+id/btn_group_add"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="创建群"
+      android:visibility="visible"
+      />
+
+  <Button
+      android:id="@+id/btn_group_intevier"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="邀请加群"
+      android:visibility="visible"
+      />
+
+
+  <Button
+      android:id="@+id/btn_send_msg"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="发送消息"
+      android:visibility="visible"
+      />
+
+</LinearLayout>

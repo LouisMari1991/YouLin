@@ -139,6 +139,11 @@
     <activity android:name="com.xinhua.imageselect.ImageSelectActivity"></activity>
     <activity android:name=".activity.TabLayoutActivity"/>
 
+    <!--腾讯-->
+    <activity
+        android:name=".activity.tim.TIMActivity"
+        android:screenOrientation="portrait"/>
+
   </application>
 
 </manifest>

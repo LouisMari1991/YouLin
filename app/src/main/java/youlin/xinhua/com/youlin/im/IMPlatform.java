@@ -112,7 +112,7 @@ public class IMPlatform {
     registerMessageListener();
     setCallOptions();
     // Offline call push, 通话离线推送
-    EMClient.getInstance().callManager().getCallOptions().setIsSendPushIfOffline(true);
+    //EMClient.getInstance().callManager().getCallOptions().setIsSendPushIfOffline(true);
     setGlobalListeners();
     broadcastManager = LocalBroadcastManager.getInstance(mContext);
   }
@@ -562,10 +562,10 @@ public class IMPlatform {
   private void setCallOptions() {
     // enabled fixed sample rate
     //boolean enableFixSampleRate = PreferenceManager.getInstance().isCallFixedVideoResolution();
-    EMClient.getInstance().callManager().getCallOptions().enableFixedVideoResolution(true);
+    //EMClient.getInstance().callManager().getCallOptions().enableFixedVideoResolution(true);
 
     // Offline call push
-    EMClient.getInstance().callManager().getCallOptions().setIsSendPushIfOffline(true);
+    //EMClient.getInstance().callManager().getCallOptions().setIsSendPushIfOffline(true);
   }
 
   /**

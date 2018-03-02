@@ -1,10 +1,11 @@
 package com.tencent.tim.impl;
 
+import com.tencent.imsdk.TIMElem;
 import com.tencent.imsdk.TIMMessage;
 import com.tencent.imsdk.TIMMessageListener;
+import com.tencent.imsdk.ext.message.TIMMessageExt;
 import java.util.List;
 import youlin.xinhua.com.youlin.utils.LogUtils;
-import youlin.xinhua.com.youlin.utils.ToastUtils;
 
 /**
  * <pre>
@@ -22,7 +23,18 @@ public class TIMMessageListenerImpl implements TIMMessageListener {
 
   @Override public boolean onNewMessages(List<TIMMessage> list) {
 
-    LogUtils.i("[TIMMessageListenerImpl] onNewMessages ! list : " + list);
+    for (int i = 0; i < list.size(); i++) {
+      TIMMessage message = list.get(i);
+      TIMMessageExt ext = new TIMMessageExt(message);
+      TIMElem element = message.getElement(0);
+      LogUtils.i(message.getSender()
+          + " , "
+          + message.getElementCount()
+          + " , "
+          + ext.hasGap()
+          + " , "
+          + element.getType());
+    }
 
     return false;
   }

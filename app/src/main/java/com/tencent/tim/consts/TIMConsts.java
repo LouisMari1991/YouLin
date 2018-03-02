@@ -26,4 +26,8 @@ public class TIMConsts {
   public static final String PHONE_173 = "17388933705";
   public static final String PHONE_181 = "18163972621";
   public static final String PHONE_186 = "18664569168";
+
+  public static final String PUBLIC_GROUP = "Public";
+  public static final String PRIVATE_GROUP = "Private";
+  public static final String CHAT_ROOM = "ChatRoom";
 }

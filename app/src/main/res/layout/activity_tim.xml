@@ -24,11 +24,29 @@
       />
 
   <Button
+      android:id="@+id/btn_get_contacts"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="获取所有好友"
+      android:visibility="visible"
+      />
+
+  <Button
       android:id="@+id/btn_group_add"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="创建群"
+      android:visibility="visible"
+      />
+
+  <Button
+      android:id="@+id/btn_get_group"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="获取所有群"
       android:visibility="visible"
       />
 
@@ -48,6 +66,14 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="发送消息"
+      android:visibility="visible"
+      />
+  <Button
+      android:id="@+id/btn_group_request"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="申请入群"
       android:visibility="visible"
       />
 

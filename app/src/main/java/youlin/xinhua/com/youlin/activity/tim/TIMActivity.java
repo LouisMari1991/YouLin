@@ -7,17 +7,27 @@ import android.content.Intent;
 import android.view.View;
 import butterknife.OnClick;
 import com.tencent.imsdk.TIMCallBack;
+import com.tencent.imsdk.TIMConversation;
+import com.tencent.imsdk.TIMConversationType;
+import com.tencent.imsdk.TIMFaceElem;
 import com.tencent.imsdk.TIMFriendAllowType;
 import com.tencent.imsdk.TIMFriendshipManager;
+import com.tencent.imsdk.TIMGroupAddOpt;
 import com.tencent.imsdk.TIMGroupManager;
 import com.tencent.imsdk.TIMManager;
+import com.tencent.imsdk.TIMMessage;
+import com.tencent.imsdk.TIMTextElem;
 import com.tencent.imsdk.TIMUserProfile;
 import com.tencent.imsdk.TIMValueCallBack;
+import com.tencent.imsdk.ext.group.TIMGroupAssistant;
+import com.tencent.imsdk.ext.group.TIMGroupCacheInfo;
+import com.tencent.imsdk.ext.group.TIMGroupDetailInfo;
 import com.tencent.imsdk.ext.group.TIMGroupManagerExt;
 import com.tencent.imsdk.ext.group.TIMGroupMemberResult;
 import com.tencent.imsdk.ext.sns.TIMAddFriendRequest;
 import com.tencent.imsdk.ext.sns.TIMFriendResult;
 import com.tencent.imsdk.ext.sns.TIMFriendshipManagerExt;
+import com.tencent.imsdk.ext.sns.TIMFriendshipProxy;
 import com.tencent.tim.consts.TIMConsts;
 import java.util.Collections;
 import java.util.List;
@@ -45,8 +55,10 @@ public class TIMActivity extends BaseActivity {
     return R.layout.activity_tim;
   }
 
-  @OnClick({ R.id.btn_login, R.id.btn_add_contacts,R.id.btn_group_add, R.id.btn_group_intevier, R.id.btn_send_msg })
-  public void click(View v) {
+  @OnClick({
+      R.id.btn_login, R.id.btn_add_contacts, R.id.btn_group_add, R.id.btn_get_group,
+      R.id.btn_group_intevier, R.id.btn_send_msg, R.id.btn_get_contacts, R.id.btn_group_request
+  }) public void click(View v) {
     switch (v.getId()) {
       case R.id.btn_login:
         showNameDialog();
@@ -55,29 +67,89 @@ public class TIMActivity extends BaseActivity {
         // 好友邀请
         addContacts();
         break;
+      case R.id.btn_get_contacts:
+        // 获取所有好友
+        getAllContracts();
+        break;
       case R.id.btn_group_add:
         // 创建群
-        addGroup();
+        createGroup();
+        break;
+      case R.id.btn_get_group:
+        // 获取所有群
+        getAllGroup();
         break;
       case R.id.btn_group_intevier:
         // 群邀请
         groupIntervite();
         break;
       case R.id.btn_send_msg:
+        // 发送消息
         sendMsg();
+        break;
+      case R.id.btn_group_request:
+        // 申请加群
+        applyJoinGroup();
         break;
     }
   }
 
-  private void addGroup() {
-    TIMGroupManager.CreateGroupParam param = new TIMGroupManager.CreateGroupParam();
+  private void applyJoinGroup() {
 
-    TIMGroupManager.getInstance().createGroup();
+    // @TGS#24NF24CFU
+    // @TGS#27PW24CFL
+
+    TIMGroupManager.getInstance()
+        .applyJoinGroup("@TGS#24NF24CFU", "some reason", new TIMCallBack() {
+          @Override public void onError(int i, String s) {
+            LogUtils.i(i + " , " + s);
+          }
+
+          @Override public void onSuccess() {
+            LogUtils.i("onSuccess");
+          }
+        });
+  }
+
+  private void getAllContracts() {
+    List<TIMUserProfile> friends = TIMFriendshipProxy.getInstance().getFriends();
+    LogUtils.i(friends);
+  }
+
+  private void getAllGroup() {
+
+    List<TIMGroupCacheInfo> groupInfos = TIMGroupAssistant.getInstance().getGroups(null);
+
+    for (TIMGroupCacheInfo item : groupInfos) {
+      TIMGroupDetailInfo groupInfo = item.getGroupInfo();
+      LogUtils.i(groupInfo.getGroupName()
+          + " , "
+          + groupInfo.getGroupId()
+          + " , "
+          + groupInfo.getGroupAddOpt());
+    }
+  }
+
+  private void createGroup() {
+    TIMGroupManager.CreateGroupParam param =
+        new TIMGroupManager.CreateGroupParam(TIMConsts.PUBLIC_GROUP, "群创建测试001");
+
+    param.setAddOption(TIMGroupAddOpt.TIM_GROUP_ADD_AUTH);
+
+    TIMGroupManager.getInstance().createGroup(param, new TIMValueCallBack<String>() {
+      @Override public void onError(int i, String s) {
+        LogUtils.i("创建群失败 onError， i ： " + i + " s : " + s);
+      }
+
+      @Override public void onSuccess(String s) {
+        LogUtils.i("创建群成功 onSuccess ");
+      }
+    });
   }
 
   private void groupIntervite() {
 
-    String groupName = "@TGS#2UW33ZBFT";
+    String groupName = "@TGS#24WC22BFX";
 
     TIMGroupManagerExt.getInstance()
         .inviteGroupMember(groupName, Collections.singletonList(TIMConsts.PHONE_186),
@@ -94,8 +166,11 @@ public class TIMActivity extends BaseActivity {
 
   private void addContacts() {
 
+    TIMAddFriendRequest request = new TIMAddFriendRequest("18664569168");
+    request.setAddrSource("AddSource_Type_搜索");
+
     TIMFriendshipManagerExt.getInstance()
-        .addFriend(Collections.singletonList(new TIMAddFriendRequest("18664569168")),
+        .addFriend(Collections.singletonList(request),
             new TIMValueCallBack<List<TIMFriendResult>>() {
               @Override public void onError(int i, String s) {
                 LogUtils.i("请求好友 onError， i ： " + i + " s : " + s);
@@ -154,121 +229,32 @@ public class TIMActivity extends BaseActivity {
 
   private void sendMsg() {
 
-    //TIMFriendAddResponse response = new TIMFriendAddResponse(TIMConsts.PHONE_173);
-    //response.setType(TIMFriendResponseType.AgreeAndAdd);
-    //TIMFriendshipManagerExt.getInstance()
-    //    .addFriendResponse(response, new TIMValueCallBack<TIMFriendResult>() {
-    //      @Override public void onError(int i, String s) {
-    //        LogUtils.i(i + " , " + s);
-    //      }
-    //
-    //      @Override public void onSuccess(TIMFriendResult timFriendResult) {
-    //        LogUtils.i(timFriendResult.getStatus() + " , " + timFriendResult.getIdentifer());
-    //      }
-    //    });
+    //获取单聊会话
+    String peer = TIMConsts.PHONE_186;  //获取与用户 "sample_user_1" 的会话
+    TIMConversation conversation =
+        TIMManager.getInstance().getConversation(TIMConversationType.C2C,    //会话类型：单聊
+            peer);                      //会话对方用户帐号//对方id
 
-    String loginUser = TIMManager.getInstance().getLoginUser();
+    TIMMessage msg = new TIMMessage();
 
-    LogUtils.i("loginUser : " + loginUser);
+    //添加文本内容
+    TIMTextElem elem = new TIMTextElem();
+    elem.setText("a new msg");
 
-    TIMFriendshipManagerExt.getInstance()
-        .getFriendList(new TIMValueCallBack<List<TIMUserProfile>>() {
-          @Override public void onError(int i, String s) {
-            LogUtils.i(i + " , " + s);
-          }
+    TIMFaceElem faceElem = new TIMFaceElem();
 
-          @Override public void onSuccess(List<TIMUserProfile> timUserProfiles) {
-            LogUtils.i("onSuccess , timUserProfiles :" + timUserProfiles);
-          }
-        });
+    int i = msg.addElement(elem);
 
-    //List<TIMUserProfile> friends = TIMFriendshipProxy.getInstance().getFriends();
-    //
-    //LogUtils.i(friends);
+    LogUtils.i("addElement , i : " + i);
 
-    //List<TIMAddFriendRequest> reqList = new ArrayList<>();
-    //TIMAddFriendRequest req = new TIMAddFriendRequest(TIMConsts.PHONE_186);
-    //req.setAddWording("test");
-    //reqList.add(req);
-    //TIMFriendshipManagerExt.getInstance()
-    //    .addFriend(reqList, new TIMValueCallBack<List<TIMFriendResult>>() {
-    //
-    //      @Override public void onError(int i, String s) {
-    //        LogUtils.i(i + " , " + s);
-    //      }
-    //
-    //      @Override public void onSuccess(List<TIMFriendResult> arg0) {
-    //        TIMFriendResult timFriendResult = arg0.get(0);
-    //        LogUtils.i(timFriendResult.getStatus() + " , " + timFriendResult.getIdentifer());
-    //      }
-    //    });
+    conversation.sendMessage(msg, new TIMValueCallBack<TIMMessage>() {
+      @Override public void onError(int i, String s) {
+        LogUtils.i("onError ! i : " + i + " , s :" + s);
+      }
 
-    //TIMFriendshipManagerExt.getInstance()
-    //    .getFriendList(new TIMValueCallBack<List<TIMUserProfile>>() {
-    //      @Override public void onError(int i, String s) {
-    //        LogUtils.i(i + " , " + s);
-    //      }
-    //
-    //      @Override public void onSuccess(List<TIMUserProfile> timUserProfiles) {
-    //        LogUtils.i("onSuccess , timUserProfiles :" + timUserProfiles);
-    //      }
-    //    });
-
-    //TIMFriendshipManager.getInstance().getUsersProfile();
-    //
-    //TIMFriendshipManager.getInstance().getSelfProfile(new TIMValueCallBack<TIMUserProfile>() {
-    //  @Override public void onError(int i, String s) {
-    //    LogUtils.i(i + " , " + s);
-    //  }
-    //
-    //  @Override public void onSuccess(TIMUserProfile timUserProfile) {
-    //    LogUtils.i(timUserProfile.getNickName()
-    //        + " , "
-    //        + timUserProfile.getFaceUrl() + " , "
-    //        + timUserProfile.getIdentifier());
-    //  }
-    //});
-
-    //TIMManager.getInstance().logout(new TIMCallBack() {
-    //  @Override public void onError(int i, String s) {
-    //    LogUtils.i("onError , i : " + i + " , s : " + s);
-    //  }
-    //
-    //  @Override public void onSuccess() {
-    //    LogUtils.i("onSuccess！");
-    //  }
-    //});
-
-    //List<TIMConversation> list = TIMManagerExt.getInstance().getConversationList();
-    //
-    //LogUtils.i(list.size() + " , " + list.toString());
-
-    //String loginUser = TIMManager.getInstance().getLoginUser();
-    //
-    //LogUtils.i(loginUser);
-
-    //TIMConversation conversation =
-    //    TIMManager.getInstance().getConversation(TIMConversationType.C2C, "18664569168");
-    //
-    //TIMMessage msg = new TIMMessage();
-    //
-    ////添加文本内容
-    //TIMTextElem elem = new TIMTextElem();
-    //elem.setText("a new msg");
-    //
-    ////将elem添加到消息
-    //if (msg.addElement(elem) != 0) {
-    //  return;
-    //}
-    //
-    //conversation.sendMessage(msg, new TIMValueCallBack<TIMMessage>() {
-    //  @Override public void onError(int i, String s) {
-    //    ToastUtils.show("onError ! i : " + i + " , s :" + s);
-    //  }
-    //
-    //  @Override public void onSuccess(TIMMessage timMessage) {
-    //    ToastUtils.show("onSuccess ! timMessage : " + timMessage);
-    //  }
-    //});
+      @Override public void onSuccess(TIMMessage timMessage) {
+        LogUtils.i("onSuccess ! timMessage : " + timMessage);
+      }
+    });
   }
 }

@@ -1,8 +1,8 @@
 package com.tencent.tim.impl;
 
 import com.tencent.imsdk.TIMConnListener;
+import com.tencent.imsdk.TIMManager;
 import youlin.xinhua.com.youlin.utils.LogUtils;
-import youlin.xinhua.com.youlin.utils.ToastUtils;
 
 /**
  * <pre>
@@ -20,18 +20,21 @@ public class TIMConnListenerImpl implements TIMConnListener {
   }
 
   @Override public void onConnected() {
-    LogUtils.i("[TIMConnListenerImpl] onConnected ! ");
+    String loginUser = TIMManager.getInstance().getLoginUser();
+    LogUtils.i("[TIMConnListenerImpl] onConnected ! " + loginUser);
   }
 
   @Override public void onDisconnected(int i, String s) {
+    String loginUser = TIMManager.getInstance().getLoginUser();
     LogUtils.i("[TIMConnListenerImpl] onDisconnected ! i : "
         + i
-        + " , TIMFriendshipProxyListenerImpl :"
-        + s);
+        + " , s :"
+        + s
+        + " , "
+        + loginUser);
   }
 
   @Override public void onWifiNeedAuth(String s) {
-    LogUtils.i(
-        "[TIMConnListenerImpl] onWifiNeedAuth ! TIMFriendshipProxyListenerImpl :" + s);
+    LogUtils.i("[TIMConnListenerImpl] onWifiNeedAuth ! TIMFriendshipProxyListenerImpl :" + s);
   }
 }

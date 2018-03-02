@@ -73,17 +73,15 @@ public class MApp extends Application {
         .setConnectionListener(new TIMConnListenerImpl())
         .setRefreshListener(new TIMRefreshListenerImpl());
 
-    TIMUserConfigSnsExt snsExt = new TIMUserConfigSnsExt(userConfig);
-    // 设置是否开启关系链本地储存
-    snsExt.enableFriendshipStorage(true)
+    userConfig = new TIMUserConfigSnsExt(userConfig)
+        // 设置是否开启关系链本地储存
+        .enableFriendshipStorage(true)
         .setFriendshipProxyListener(new TIMFriendshipProxyListenerImpl());
 
-    TIMUserConfigGroupExt timUserConfigGroupExt = new TIMUserConfigGroupExt(userConfig);
-    timUserConfigGroupExt.enableGroupStorage(true)
-        .setGroupAssistantListener(new TIMGroupAssistantListenerImpl());
+    userConfig = new TIMUserConfigGroupExt(userConfig).
+        enableGroupStorage(true).setGroupAssistantListener(new TIMGroupAssistantListenerImpl());
 
-    TIMUserConfigMsgExt timUserConfigMsgExt = new TIMUserConfigMsgExt(userConfig);
-    timUserConfigMsgExt.enableStorage(true)
+    userConfig = new TIMUserConfigMsgExt(userConfig).enableStorage(true)
         .setMessageRevokedListener(new TIMMessageRevokedListenerImpl());
 
     TIMManager.getInstance().setUserConfig(userConfig);

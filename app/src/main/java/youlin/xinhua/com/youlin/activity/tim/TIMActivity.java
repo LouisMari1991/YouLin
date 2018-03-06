@@ -9,21 +9,22 @@ import butterknife.OnClick;
 import com.tencent.imsdk.TIMCallBack;
 import com.tencent.imsdk.TIMConversation;
 import com.tencent.imsdk.TIMConversationType;
+import com.tencent.imsdk.TIMElem;
+import com.tencent.imsdk.TIMElemType;
 import com.tencent.imsdk.TIMFaceElem;
 import com.tencent.imsdk.TIMFriendAllowType;
 import com.tencent.imsdk.TIMFriendshipManager;
 import com.tencent.imsdk.TIMGroupAddOpt;
 import com.tencent.imsdk.TIMGroupManager;
+import com.tencent.imsdk.TIMGroupMemberInfo;
 import com.tencent.imsdk.TIMManager;
 import com.tencent.imsdk.TIMMessage;
 import com.tencent.imsdk.TIMTextElem;
 import com.tencent.imsdk.TIMUserProfile;
 import com.tencent.imsdk.TIMValueCallBack;
-import com.tencent.imsdk.ext.group.TIMGroupAssistant;
-import com.tencent.imsdk.ext.group.TIMGroupCacheInfo;
-import com.tencent.imsdk.ext.group.TIMGroupDetailInfo;
 import com.tencent.imsdk.ext.group.TIMGroupManagerExt;
 import com.tencent.imsdk.ext.group.TIMGroupMemberResult;
+import com.tencent.imsdk.ext.message.TIMConversationExt;
 import com.tencent.imsdk.ext.sns.TIMAddFriendRequest;
 import com.tencent.imsdk.ext.sns.TIMFriendResult;
 import com.tencent.imsdk.ext.sns.TIMFriendshipManagerExt;
@@ -33,6 +34,7 @@ import java.util.Collections;
 import java.util.List;
 import youlin.xinhua.com.youlin.BaseActivity;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.activity.ChatActivity;
 import youlin.xinhua.com.youlin.utils.LogUtils;
 
 /**
@@ -56,12 +58,16 @@ public class TIMActivity extends BaseActivity {
   }
 
   @OnClick({
-      R.id.btn_login, R.id.btn_add_contacts, R.id.btn_group_add, R.id.btn_get_group,
-      R.id.btn_group_intevier, R.id.btn_send_msg, R.id.btn_get_contacts, R.id.btn_group_request
+      R.id.btn_login, R.id.btn_chat, R.id.btn_message_list, R.id.btn_add_contacts,
+      R.id.btn_group_add, R.id.btn_get_group, R.id.btn_group_intevier, R.id.btn_send_msg,
+      R.id.btn_get_contacts, R.id.btn_group_request
   }) public void click(View v) {
     switch (v.getId()) {
       case R.id.btn_login:
         showNameDialog();
+        break;
+      case R.id.btn_chat:
+        ChatActivity.lunch(v.getContext());
         break;
       case R.id.btn_add_contacts:
         // 好友邀请
@@ -91,7 +97,40 @@ public class TIMActivity extends BaseActivity {
         // 申请加群
         applyJoinGroup();
         break;
+      case R.id.btn_message_list:
+        // 消息列表
+        messageList();
+        break;
+      default:
+        break;
     }
+  }
+
+  private void messageList() {
+
+    TIMConversation conversation =
+        TIMManager.getInstance().getConversation(TIMConversationType.C2C, TIMConsts.PHONE_181);
+
+    TIMConversationExt timConversationExt = new TIMConversationExt(conversation);
+    timConversationExt.getMessage(20, null, new TIMValueCallBack<List<TIMMessage>>() {
+      @Override public void onError(int i, String s) {
+
+      }
+
+      @Override public void onSuccess(List<TIMMessage> timMessages) {
+        for (TIMMessage message : timMessages) {
+          TIMElem element = message.getElement(0);
+          LogUtils.i(message.getSender() + " , " + element.getType());
+
+          TIMElemType type = element.getType();
+
+          if (type == TIMElemType.Text) {
+            TIMTextElem elem = (TIMTextElem) element;
+            LogUtils.i(elem.getText());
+          }
+        }
+      }
+    });
   }
 
   private void applyJoinGroup() {
@@ -113,26 +152,62 @@ public class TIMActivity extends BaseActivity {
 
   private void getAllContracts() {
     List<TIMUserProfile> friends = TIMFriendshipProxy.getInstance().getFriends();
-    LogUtils.i(friends);
+
+    StringBuilder stringBuilder = new StringBuilder();
+
+    for (int i = 0; i < friends.size(); i++) {
+      stringBuilder.append(friends.get(i).getIdentifier()).append(" , ");
+    }
+
+    LogUtils.i(stringBuilder.toString());
+
+    //String groupId = "@TGS#2WRZQCDFC";
+    //
+    //TIMGroupManagerExt.DeleteMemberParam param = new TIMGroupManagerExt.DeleteMemberParam(groupId,
+    //    Collections.singletonList(TIMConsts.PHONE_181));
+    //TIMGroupManagerExt.getInstance()
+    //    .deleteGroupMember(param, new TIMValueCallBack<List<TIMGroupMemberResult>>() {
+    //      @Override public void onError(int i, String s) {
+    //        LogUtils.i(i + " , " + s);
+    //      }
+    //
+    //      @Override public void onSuccess(List<TIMGroupMemberResult> timGroupMemberResults) {
+    //        LogUtils.i(timGroupMemberResults.get(0).getUser());
+    //      }
+    //    });
   }
 
   private void getAllGroup() {
 
-    List<TIMGroupCacheInfo> groupInfos = TIMGroupAssistant.getInstance().getGroups(null);
+    //List<TIMGroupCacheInfo> groupInfos = TIMGroupAssistant.getInstance().getGroups(null);
+    //
+    //for (TIMGroupCacheInfo item : groupInfos) {
+    //  TIMGroupDetailInfo groupInfo = item.getGroupInfo();
+    //  LogUtils.i(groupInfo.getGroupName()
+    //      + " , "
+    //      + groupInfo.getGroupId()
+    //      + " , "
+    //      + groupInfo.getGroupAddOpt());
+    //}
 
-    for (TIMGroupCacheInfo item : groupInfos) {
-      TIMGroupDetailInfo groupInfo = item.getGroupInfo();
-      LogUtils.i(groupInfo.getGroupName()
-          + " , "
-          + groupInfo.getGroupId()
-          + " , "
-          + groupInfo.getGroupAddOpt());
-    }
+    TIMGroupManagerExt.getInstance()
+        .getGroupMembers("@TGS#2WRZQCDFC", new TIMValueCallBack<List<TIMGroupMemberInfo>>() {
+          @Override public void onError(int i, String s) {
+
+          }
+
+          @Override public void onSuccess(List<TIMGroupMemberInfo> timGroupMemberInfos) {
+            for (int i = 0; i < timGroupMemberInfos.size(); i++) {
+              TIMGroupMemberInfo timGroupMemberInfo = timGroupMemberInfos.get(i);
+              LogUtils.i(timGroupMemberInfo.getUser() + " , " + timGroupMemberInfo.getRole());
+            }
+          }
+        });
   }
 
   private void createGroup() {
     TIMGroupManager.CreateGroupParam param =
-        new TIMGroupManager.CreateGroupParam(TIMConsts.PUBLIC_GROUP, "群创建测试001");
+        new TIMGroupManager.CreateGroupParam(TIMConsts.PUBLIC_GROUP, "邀请群测试");
 
     param.setAddOption(TIMGroupAddOpt.TIM_GROUP_ADD_AUTH);
 
@@ -142,31 +217,36 @@ public class TIMActivity extends BaseActivity {
       }
 
       @Override public void onSuccess(String s) {
-        LogUtils.i("创建群成功 onSuccess ");
+        LogUtils.i("创建群成功 onSuccess , " + s);
       }
     });
   }
 
   private void groupIntervite() {
 
-    String groupName = "@TGS#24WC22BFX";
+    //String groupName = "@TGS#24WC22BFX";
+    //String groupName = "@TGS#2452UYCFQ";
+    String groupName = "@TGS#2WRZQCDFC";
 
     TIMGroupManagerExt.getInstance()
-        .inviteGroupMember(groupName, Collections.singletonList(TIMConsts.PHONE_186),
+        .inviteGroupMember(groupName, Collections.singletonList(TIMConsts.PHONE_181),
             new TIMValueCallBack<List<TIMGroupMemberResult>>() {
               @Override public void onError(int i, String s) {
                 LogUtils.i("群邀请 onError， i ： " + i + " s : " + s);
               }
 
               @Override public void onSuccess(List<TIMGroupMemberResult> timGroupMemberResults) {
-                LogUtils.i("群邀请 onSuccess ");
+                LogUtils.i("群邀请 onSuccess , "
+                    + timGroupMemberResults.size()
+                    + " , "
+                    + timGroupMemberResults.get(0).getUser());
               }
             });
   }
 
   private void addContacts() {
 
-    TIMAddFriendRequest request = new TIMAddFriendRequest("18664569168");
+    TIMAddFriendRequest request = new TIMAddFriendRequest(TIMConsts.PHONE_181);
     request.setAddrSource("AddSource_Type_搜索");
 
     TIMFriendshipManagerExt.getInstance()
@@ -177,7 +257,7 @@ public class TIMActivity extends BaseActivity {
               }
 
               @Override public void onSuccess(List<TIMFriendResult> timFriendResults) {
-                LogUtils.i("请求好友 onSuccess");
+                LogUtils.i("请求好友 onSuccess , " + timFriendResults.get(0).getIdentifer());
               }
             });
   }
@@ -230,7 +310,7 @@ public class TIMActivity extends BaseActivity {
   private void sendMsg() {
 
     //获取单聊会话
-    String peer = TIMConsts.PHONE_186;  //获取与用户 "sample_user_1" 的会话
+    String peer = TIMConsts.PHONE_181;  //获取与用户 "sample_user_1" 的会话
     TIMConversation conversation =
         TIMManager.getInstance().getConversation(TIMConversationType.C2C,    //会话类型：单聊
             peer);                      //会话对方用户帐号//对方id
@@ -239,7 +319,7 @@ public class TIMActivity extends BaseActivity {
 
     //添加文本内容
     TIMTextElem elem = new TIMTextElem();
-    elem.setText("a new msg");
+    elem.setText("a new msg 66666");
 
     TIMFaceElem faceElem = new TIMFaceElem();
 

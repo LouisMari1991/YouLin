@@ -15,6 +15,24 @@
       />
 
   <Button
+      android:id="@+id/btn_chat"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="聊天"
+      android:visibility="visible"
+      />
+
+  <Button
+      android:id="@+id/btn_message_list"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="消息列表"
+      android:visibility="visible"
+      />
+
+  <Button
       android:id="@+id/btn_add_contacts"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

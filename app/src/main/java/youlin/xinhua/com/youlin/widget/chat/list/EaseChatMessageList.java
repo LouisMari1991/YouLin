@@ -17,7 +17,7 @@ public class EaseChatMessageList extends RelativeLayout {
 
   protected static final String TAG = "EaseChatMessageList";
   protected ListView           listView;
-  protected SwipeRefreshLayout swipeRefreshLayout;
+    protected SwipeRefreshLayout swipeRefreshLayout;
   protected Context            context;
   protected EMConversation     conversation;
   protected int                chatType;

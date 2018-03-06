@@ -37,21 +37,18 @@ public class BaseChatActivity extends BaseActivity {
 
   EaseChatMessageList messageList;
 
-  int    chatType       = EaseConstant.CHATTYPE_SINGLE;
+  int chatType = EaseConstant.CHATTYPE_SINGLE;
   String toChatUsername = "18664569168";
   boolean isMessageListInited;
 
   EMConversation conversation;
 
-  Handler handler = new Handler();
-
-  SwipeRefreshLayout swipeRefreshLayout;
-  ListView           listView;
+  ListView listView;
 
   boolean isloading;
 
   boolean haveMoreData = true;
-  int     pagesize     = 20;
+  int pagesize = 20;
 
   GroupListener mGroupListener;
   MessageListener mMessageListener = new MessageListener();
@@ -170,48 +167,47 @@ public class BaseChatActivity extends BaseActivity {
 
       }
     });
-
   }
 
   protected void setRefreshLayoutListener() {
-    swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-
-      @Override public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-
-          @Override public void run() {
-            if (listView.getFirstVisiblePosition() == 0 && !isloading && haveMoreData) {
-              List<EMMessage> messages;
-              try {
-                if (chatType == EaseConstant.CHATTYPE_SINGLE) {
-                  messages =
-                      conversation.loadMoreMsgFromDB(messageList.getItem(0).getMsgId(), pagesize);
-                } else {
-                  messages =
-                      conversation.loadMoreMsgFromDB(messageList.getItem(0).getMsgId(), pagesize);
-                }
-              } catch (Exception e1) {
-                swipeRefreshLayout.setRefreshing(false);
-                return;
-              }
-              if (messages.size() > 0) {
-                messageList.refreshSeekTo(messages.size() - 1);
-                if (messages.size() != pagesize) {
-                  haveMoreData = false;
-                }
-              } else {
-                haveMoreData = false;
-              }
-              isloading = false;
-            } else {
-              Toast.makeText(BaseChatActivity.this,
-                  getResources().getString(R.string.no_more_messages), Toast.LENGTH_SHORT).show();
-            }
-            swipeRefreshLayout.setRefreshing(false);
-          }
-        }, 600);
-      }
-    });
+    //swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+    //
+    //  @Override public void onRefresh() {
+    //    new Handler().postDelayed(new Runnable() {
+    //
+    //      @Override public void run() {
+    //        if (listView.getFirstVisiblePosition() == 0 && !isloading && haveMoreData) {
+    //          List<EMMessage> messages;
+    //          try {
+    //            if (chatType == EaseConstant.CHATTYPE_SINGLE) {
+    //              messages =
+    //                  conversation.loadMoreMsgFromDB(messageList.getItem(0).getMsgId(), pagesize);
+    //            } else {
+    //              messages =
+    //                  conversation.loadMoreMsgFromDB(messageList.getItem(0).getMsgId(), pagesize);
+    //            }
+    //          } catch (Exception e1) {
+    //            swipeRefreshLayout.setRefreshing(false);
+    //            return;
+    //          }
+    //          if (messages.size() > 0) {
+    //            messageList.refreshSeekTo(messages.size() - 1);
+    //            if (messages.size() != pagesize) {
+    //              haveMoreData = false;
+    //            }
+    //          } else {
+    //            haveMoreData = false;
+    //          }
+    //          isloading = false;
+    //        } else {
+    //          Toast.makeText(BaseChatActivity.this,
+    //              getResources().getString(R.string.no_more_messages), Toast.LENGTH_SHORT).show();
+    //        }
+    //        swipeRefreshLayout.setRefreshing(false);
+    //      }
+    //    }, 600);
+    //  }
+    //});
   }
 
   /**

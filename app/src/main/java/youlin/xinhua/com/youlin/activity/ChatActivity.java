@@ -70,7 +70,7 @@ public class ChatActivity extends BaseChatActivity
     messageList.init(toChatUsername, chatType);
     listView = messageList.getListView();
 
-    swipeRefreshLayout = messageList.getSwipeRefreshLayout();
+    //swipeRefreshLayout = messageList.getSwipeRefreshLayout();
 
     if (chatType != EaseConstant.CHATTYPE_CHATROOM) {
       onConversationInit();

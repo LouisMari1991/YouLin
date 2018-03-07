@@ -8,11 +8,6 @@
     android:fitsSystemWindows="true"
     >
 
-  <!--<include
-  item_rvyouitem_rvyout/layout_common_toolbar"
-      android:id="@+id/title_bar"
-      />-->
-
   <android.support.v7.widget.Toolbar
       android:id="@+id/title_bar"
       android:layout_width="match_parent"
@@ -52,11 +47,17 @@
       android:layout_below="@id/title_bar"
       >
 
-    <youlin.xinhua.com.youlin.widget.chat.list.EaseChatMessageList
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/message_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
+
+    <!--  <youlin.xinhua.com.youlin.widget.chat.list.EaseChatMessageList
+          android:id="@+id/message_list"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          />-->
 
     <RelativeLayout
         android:id="@+id/rl_add_contacts"

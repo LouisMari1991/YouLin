@@ -10,7 +10,6 @@ import com.tencent.imsdk.TIMCallBack;
 import com.tencent.imsdk.TIMConversation;
 import com.tencent.imsdk.TIMConversationType;
 import com.tencent.imsdk.TIMElem;
-import com.tencent.imsdk.TIMElemType;
 import com.tencent.imsdk.TIMFaceElem;
 import com.tencent.imsdk.TIMFriendAllowType;
 import com.tencent.imsdk.TIMFriendshipManager;
@@ -120,14 +119,14 @@ public class TIMActivity extends BaseActivity {
       @Override public void onSuccess(List<TIMMessage> timMessages) {
         for (TIMMessage message : timMessages) {
           TIMElem element = message.getElement(0);
-          LogUtils.i(message.getSender() + " , " + element.getType());
+          LogUtils.i(message.getSender() + " , " + element.getType() + " , " + message.timestamp());
 
-          TIMElemType type = element.getType();
+          //TIMElemType type = element.getType();
 
-          if (type == TIMElemType.Text) {
-            TIMTextElem elem = (TIMTextElem) element;
-            LogUtils.i(elem.getText());
-          }
+          //if (type == TIMElemType.Text) {
+          //  TIMTextElem elem = (TIMTextElem) element;
+          //  LogUtils.i(elem.getText());
+          //}
         }
       }
     });

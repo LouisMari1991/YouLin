@@ -23,6 +23,9 @@ public abstract class Message implements MultiItemEntity {
   public static final int TYPE_GROUP_TIP = 7;
   public static final int TYPE_GROUP_INVITE_SEND = 8;
   public static final int TYPE_GROUP_INVITE_RECEIVER = 9;
+  public static final int TYPE_MEETING_INVITE_SEND = 10;
+  public static final int TYPE_MEETING_INVITE_RECEIVER = 11;
+  public static final int TYPE_EVENT = 12;
 
   protected TIMMessage message;
 
@@ -80,5 +83,18 @@ public abstract class Message implements MultiItemEntity {
 
   public void setHasTime(boolean hasTime) {
     this.hasTime = hasTime;
+  }
+
+  /**
+   * 是否需要显示时间设置
+   *
+   * @param message 上一条消息
+   */
+  public void setHasTime(TIMMessage message) {
+    if (message == null) {
+      hasTime = true;
+      return;
+    }
+    hasTime = this.message.timestamp() - message.timestamp() > 300;
   }
 }

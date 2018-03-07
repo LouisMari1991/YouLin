@@ -60,6 +60,6 @@ public class GroupTipMessage extends Message {
   }
 
   @Override public int getItemType() {
-    return 0;
+    return TYPE_GROUP_TIP;
   }
 }

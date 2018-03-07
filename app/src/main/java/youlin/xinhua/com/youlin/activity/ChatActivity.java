@@ -6,26 +6,27 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AbsListView;
-import butterknife.BindView;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.util.PathUtil;
+import com.tencent.tim.consts.TIMConsts;
+import com.tencent.tim.message.ImageMessage;
+import com.tencent.tim.message.TextMessage;
+import com.tencent.tim.message.VoiceMessage;
 import java.io.File;
 import java.util.List;
-import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.constant.CacheConsts;
-import youlin.xinhua.com.youlin.constant.EaseConstant;
 import youlin.xinhua.com.youlin.listener.OnMenuClickListener;
 import youlin.xinhua.com.youlin.listener.RecordVoiceListener;
 import youlin.xinhua.com.youlin.model.FileItem;
+import youlin.xinhua.com.youlin.utils.ListUtils;
 import youlin.xinhua.com.youlin.utils.LogUtils;
-import youlin.xinhua.com.youlin.utils.ToastUtils;
 import youlin.xinhua.com.youlin.widget.MeetOperationView;
 import youlin.xinhua.com.youlin.widget.chat.ChatView;
 import youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView;
@@ -49,34 +50,20 @@ public class ChatActivity extends BaseChatActivity
 
   protected static final int REQUEST_CODE_CAMERA = 2;
 
-  @BindView(R.id.chat_view) ChatView mChatView;
-
   protected File cameraFile;
 
   private InputMethodManager mImm;
-  private Window             mWindow;
+  private Window mWindow;
 
-  private boolean isMeetGroup = true;
+  private boolean isMeetGroup = false;
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     initChatInput();
   }
 
-  @Override void initViews() {
+  @Override public void initViews() {
     super.initViews();
-    mChatView.initModule();
-    messageList = mChatView.getMessageListView();
-    messageList.init(toChatUsername, chatType);
-    listView = messageList.getListView();
-
-    //swipeRefreshLayout = messageList.getSwipeRefreshLayout();
-
-    if (chatType != EaseConstant.CHATTYPE_CHATROOM) {
-      onConversationInit();
-      onMessageListInit();
-    }
-    setRefreshLayoutListener();
   }
 
   private void initChatInput() {
@@ -92,16 +79,19 @@ public class ChatActivity extends BaseChatActivity
           return false;
         }
 
+        TextMessage message = new TextMessage(input.toString());
+
         // 发送文字消息
-        sendTextMessage(input.toString());
+        mPresenter.sendMessage(message.getMessage());
+
         return true;
       }
 
       @Override public void onSendFiles(List<FileItem> list) {
         // 发送文件
-        for (int i = 0; list != null && i < list.size(); i++) {
-          FileItem item = list.get(i);
-          sendImageMessage(item.getFilePath());
+        if (!ListUtils.isEmpty(list)) {
+          ImageMessage message = new ImageMessage(list, false);
+          mPresenter.sendMessage(message.getMessage());
         }
       }
 
@@ -130,13 +120,14 @@ public class ChatActivity extends BaseChatActivity
       @Override public void onStartRecord() {
         // 开始录音,记得设置录音文件路径
         mChatView.setRecordVoiceFile(CacheConsts.ExternalStorage.VOICE_DIR,
-            EMClient.getInstance().getCurrentUser() + System.currentTimeMillis());
+            TIMConsts.PHONE_181 + System.currentTimeMillis());
       }
 
       @Override public void onFinishRecord(File voiceFile, int duration) {
         // 结束录音
-        ToastUtils.showToast(" 结束录音 , voiceFile : " + voiceFile + ", 录音时间 : " + duration);
-        sendVoiceMessage(voiceFile.getPath(), duration);
+        //ToastUtils.showToast(" 结束录音 , voiceFile : " + voiceFile + ", 录音时间 : " + duration);
+        VoiceMessage message = new VoiceMessage(duration, voiceFile.getPath());
+        mPresenter.sendMessage(message.getMessage());
       }
 
       @Override public void onCancelRecord() {
@@ -156,20 +147,20 @@ public class ChatActivity extends BaseChatActivity
           }
         });
     mChatView.startCountDownTimer(0, System.currentTimeMillis());
-    messageList.getListView().setOnScrollListener(new AbsListView.OnScrollListener() {
-      @Override public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+    recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+      @Override public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+        super.onScrollStateChanged(recyclerView, newState);
+        mChatView.changMeetOperationViewState(newState);
+      }
+
+      @Override public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+        super.onScrolled(recyclerView, dx, dy);
         if (!isMeetGroup) {
           return;
         }
-        mChatView.changMeetOperationViewState(scrollState);
-      }
-
-      @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
-          int totalItemCount) {
-
       }
     });
-    //mChatView.setMeetOperationViewContentText(3, "152", "200");
   }
 
   @Override public boolean onTouch(View view, MotionEvent event) {
@@ -234,16 +225,16 @@ public class ChatActivity extends BaseChatActivity
     }
   }
 
-  @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
-    LogUtils.i("onActivityResult : requestCode : " + requestCode + ", resultCode :  " + resultCode);
-    if (resultCode == RESULT_OK) {
-      if (requestCode == REQUEST_CODE_CAMERA) { // capture new image
-        if (cameraFile != null && cameraFile.exists()) {
-          ToastUtils.showToast("获取照片成功 , path : " + cameraFile.getPath());
-          sendImageMessage(cameraFile.getAbsolutePath());
-        }
-      }
-    }
-  }
+  //@Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+  //  super.onActivityResult(requestCode, resultCode, data);
+  //  LogUtils.i("onActivityResult : requestCode : " + requestCode + ", resultCode :  " + resultCode);
+  //  if (resultCode == RESULT_OK) {
+  //    if (requestCode == REQUEST_CODE_CAMERA) { // capture new image
+  //      if (cameraFile != null && cameraFile.exists()) {
+  //        ToastUtils.showToast("获取照片成功 , path : " + cameraFile.getPath());
+  //        sendImageMessage(cameraFile.getAbsolutePath());
+  //      }
+  //    }
+  //  }
+  //}
 }

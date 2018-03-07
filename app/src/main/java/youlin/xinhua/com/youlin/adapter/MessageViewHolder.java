@@ -1,8 +1,10 @@
 package youlin.xinhua.com.youlin.adapter;
 
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.tencent.tim.message.Message;
+import youlin.xinhua.com.youlin.R;
 
 /**
  * <pre>
@@ -13,18 +15,20 @@ import com.tencent.tim.message.Message;
  *   version: 1.0
  * </pre>
  */
-public class MessageViewHolder<MessageImpl extends Message> extends BaseViewHolder {
+public class MessageViewHolder extends BaseViewHolder {
 
-  MessageImpl impl;
+  TextView textTimestamp;
+  TextView textName;
+  ImageView imgAvatar;
 
   public MessageViewHolder(View view) {
     super(view);
-    String avatarUrl;
-    String nickname;
-    if (impl.isSelf()) {
-
-    } else {
-
-    }
+    textTimestamp = (TextView) view.findViewById(R.id.timestamp);
+    textName = (TextView) view.findViewById(R.id.text_name);
+    imgAvatar = (ImageView) view.findViewById(R.id.avatar);
   }
+
+
+
+
 }

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:background="@color/colorPageBg"
+    >
+
+  <TextView
+      android:id="@+id/timestamp"
+      tools:text="今天 11:20"
+      style="@style/chat_timestamp"
+      />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:layout_marginTop="5dp"
+      >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        >
+
+      <RelativeLayout
+          android:id="@+id/bubble"
+          android:layout_width="250dp"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:background="@drawable/shape_chat_while"
+          >
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/text_15"
+            tools:text="我正在申请成立八方小区业主委员会，需要5名业主联名申请"
+            />
+
+        <FrameLayout
+            android:id="@+id/fl_container"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@id/text_title"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_blue_rectangle"
+            >
+
+          <TextView
+              android:id="@+id/text_content"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:singleLine="true"
+              android:textColor="@color/white"
+              android:textSize="@dimen/text_20"
+              tools:text="申请成立业委会"
+              />
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/fl_container"
+            android:layout_alignRight="@id/fl_container"
+            android:layout_below="@id/fl_container"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:text="查看详情"
+            android:textColor="@color/color_blue_text"
+            android:textSize="@dimen/text_12"
+            />
+
+
+      </RelativeLayout>
+
+      <TextView
+          android:id="@+id/percentage"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_marginLeft="5dp"
+          android:layout_toEndOf="@+id/bubble"
+          android:layout_toRightOf="@+id/bubble"
+          android:textColor="@color/color_gray_text"
+          android:textSize="@dimen/text_12"
+          android:visibility="gone"
+          tools:text="50%"
+          />
+
+      <ProgressBar
+          android:id="@+id/progress_bar"
+          android:layout_width="16dp"
+          android:layout_height="16dp"
+          android:layout_centerVertical="true"
+          android:layout_marginLeft="5dp"
+          android:layout_toRightOf="@id/percentage"
+          android:visibility="invisible"
+          tools:visibility="gone"
+          />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        style="@style/chat_avatar"
+        />
+
+
+  </RelativeLayout>
+
+
+</LinearLayout>

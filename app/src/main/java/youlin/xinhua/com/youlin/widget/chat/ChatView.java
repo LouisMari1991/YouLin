@@ -3,6 +3,7 @@ package youlin.xinhua.com.youlin.widget.chat;
 import android.content.Context;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.animation.FastOutLinearInInterpolator;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,6 @@ import youlin.xinhua.com.youlin.listener.OnMenuClickListener;
 import youlin.xinhua.com.youlin.listener.RecordVoiceListener;
 import youlin.xinhua.com.youlin.widget.MeetOperationView;
 import youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView;
-import youlin.xinhua.com.youlin.widget.chat.list.EaseChatMessageList;
 import youlin.xinhua.com.youlin.widget.chat.record.RecordVoiceButton;
 
 import static youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView.KEYBOARD_STATE_HIDE;
@@ -24,22 +24,23 @@ import static youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView.KEYBO
 
 public class ChatView extends RelativeLayout {
 
-  private EaseChatMessageList mMsgList;
-  private ChatInputView       mChatInput;
-  private LinearLayout        mMenuLl;
-  private RecordVoiceButton   mRecordVoiceBtn;
+  //private EaseChatMessageList mMsgList;
+  private RecyclerView messageList;
+  private ChatInputView mChatInput;
+  private LinearLayout mMenuLl;
+  private RecordVoiceButton mRecordVoiceBtn;
 
-  private View     addContactsContainer;
+  private View addContactsContainer;
   private TextView textAddContacts;
-  private Button   btnAddContacts;
-  private View     cancelContacts;
+  private Button btnAddContacts;
+  private View cancelContacts;
 
-  private Button            btnMeetFile;// 公示文件
+  private Button btnMeetFile;// 公示文件
   private MeetOperationView mMeetOperationView;// 会议群右下角layout
 
   private boolean mHasInit;
   private boolean mHasKeyboard;
-  private int     mHeight;
+  private int mHeight;
 
   private OnKeyboardChangedListener mKeyboardListener;
 
@@ -64,7 +65,7 @@ public class ChatView extends RelativeLayout {
     mChatInput.setMenuContainerHeight(
         getContext().getResources().getDimensionPixelSize(R.dimen.menu_container_height));
 
-    mMsgList = (EaseChatMessageList) findViewById(R.id.message_list);
+    messageList = (RecyclerView) findViewById(R.id.message_list);
 
     initAddContactContainer();
     initBtnMeetView();
@@ -173,7 +174,7 @@ public class ChatView extends RelativeLayout {
   }
 
   public void setOnTouchListener(OnTouchListener listener) {
-    mMsgList.getListView().setOnTouchListener(listener);
+    messageList.setOnTouchListener(listener);
   }
 
   public void setOnTouchEditTextListener(OnClickEditTextListener listener) {
@@ -224,8 +225,8 @@ public class ChatView extends RelativeLayout {
     return mChatInput;
   }
 
-  public EaseChatMessageList getMessageListView() {
-    return mMsgList;
+  public RecyclerView getMessageListView() {
+    return messageList;
   }
 
   public void setMenuHeight(int height) {

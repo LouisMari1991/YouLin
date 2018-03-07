@@ -1,6 +1,9 @@
 package com.tencent.tim.message;
 
+import com.tencent.imsdk.TIMImageElem;
 import com.tencent.imsdk.TIMMessage;
+import java.util.List;
+import youlin.xinhua.com.youlin.model.FileItem;
 
 /**
  * <pre>
@@ -15,6 +18,30 @@ public class ImageMessage extends Message {
 
   public ImageMessage(TIMMessage message) {
     super(message);
+  }
+
+  /**
+   * 图片消息构造函数
+   *
+   * @param path 图片路径
+   * @param isOri 是否原图发送
+   */
+  public ImageMessage(String path, boolean isOri) {
+    message = new TIMMessage();
+    TIMImageElem elem = new TIMImageElem();
+    elem.setPath(path);
+    elem.setLevel(isOri ? 0 : 1);
+    message.addElement(elem);
+  }
+
+  public ImageMessage(List<FileItem> pathList, boolean isOri) {
+    message = new TIMMessage();
+    for (int i = 0; i < pathList.size(); i++) {
+      TIMImageElem elem = new TIMImageElem();
+      elem.setPath(pathList.get(i).getFilePath());
+      elem.setLevel(isOri ? 0 : 1);
+      message.addElement(elem);
+    }
   }
 
   @Override public String getSummary() {

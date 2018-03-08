@@ -117,8 +117,6 @@ public class ImageLoader {
 
   /**
    * 加载聊天Item中的图片
-   * @param picUrl
-   * @param imageView
    */
   public static void displayChatRowPicture(String picUrl, ImageView imageView) {
     //Glide.with(imageView.getContext())
@@ -135,7 +133,6 @@ public class ImageLoader {
         .placeholder(R.drawable.aurora_picture_not_found)
         .override(400, Target.SIZE_ORIGINAL)
         .into(imageView);
-
   }
 
   public static void loadFit(Context context, String url, ImageView imageView, int defaultResId) {

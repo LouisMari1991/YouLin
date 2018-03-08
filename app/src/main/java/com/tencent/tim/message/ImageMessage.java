@@ -1,9 +1,14 @@
 package com.tencent.tim.message;
 
+import android.widget.ImageView;
+import com.tencent.imsdk.TIMImage;
 import com.tencent.imsdk.TIMImageElem;
 import com.tencent.imsdk.TIMMessage;
-import java.util.List;
-import youlin.xinhua.com.youlin.model.FileItem;
+import java.util.ArrayList;
+import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.utils.ImageLoader;
+
+import static com.tencent.imsdk.TIMImageType.Large;
 
 /**
  * <pre>
@@ -25,27 +30,43 @@ public class ImageMessage extends Message {
    *
    * @param path 图片路径
    * @param isOri 是否原图发送
+   * level - 0: 原图发送 1: 高压缩率图发送(图片较小，默认值) 2:高清图发送(图片较大)
    */
-  public ImageMessage(String path, boolean isOri) {
+  public ImageMessage(String path) {
     message = new TIMMessage();
     TIMImageElem elem = new TIMImageElem();
     elem.setPath(path);
-    elem.setLevel(isOri ? 0 : 1);
+    elem.setLevel(2);
     message.addElement(elem);
   }
 
-  public ImageMessage(List<FileItem> pathList, boolean isOri) {
-    message = new TIMMessage();
-    for (int i = 0; i < pathList.size(); i++) {
-      TIMImageElem elem = new TIMImageElem();
-      elem.setPath(pathList.get(i).getFilePath());
-      elem.setLevel(isOri ? 0 : 1);
-      message.addElement(elem);
-    }
+  @Override public String getSummary() {
+    return "[图片]";
   }
 
-  @Override public String getSummary() {
-    return "";
+  @Override protected void onBubbleClick() {
+
+  }
+
+  @Override protected void onSetUpView() {
+
+    TIMImageElem e = (TIMImageElem) message.getElement(0);
+
+    ImageView image = helper.getView(R.id.image);
+
+    if (isSelf()) {
+      ImageLoader.displayChatRowPicture(e.getPath(), image);
+    } else {
+      ArrayList<TIMImage> imageList = e.getImageList();
+      for (int i = 0; i < imageList.size(); i++) {
+        TIMImage item = imageList.get(i);
+        if (item.getType() == Large) {
+          ImageLoader.displayChatRowPicture(item.getUrl(), image);
+        }
+      }
+    }
+
+    showStatus();
   }
 
   @Override public int getItemType() {

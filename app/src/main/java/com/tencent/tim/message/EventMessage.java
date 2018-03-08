@@ -17,7 +17,13 @@ public class EventMessage extends Message {
     return null;
   }
 
+  @Override protected void onBubbleClick() {
 
+  }
+
+  @Override protected void onSetUpView() {
+
+  }
 
   @Override public int getItemType() {
     return TYPE_EVENT;

@@ -27,7 +27,6 @@ import youlin.xinhua.com.youlin.listener.RecordVoiceListener;
 import youlin.xinhua.com.youlin.model.FileItem;
 import youlin.xinhua.com.youlin.utils.ListUtils;
 import youlin.xinhua.com.youlin.utils.LogUtils;
-import youlin.xinhua.com.youlin.widget.MeetOperationView;
 import youlin.xinhua.com.youlin.widget.chat.ChatView;
 import youlin.xinhua.com.youlin.widget.chat.chatinput.ChatInputView;
 
@@ -90,8 +89,12 @@ public class ChatActivity extends BaseChatActivity
       @Override public void onSendFiles(List<FileItem> list) {
         // 发送文件
         if (!ListUtils.isEmpty(list)) {
-          ImageMessage message = new ImageMessage(list, false);
-          mPresenter.sendMessage(message.getMessage());
+
+          for (int i = 0; i < list.size(); i++) {
+            FileItem fileItem = list.get(i);
+            ImageMessage message = new ImageMessage(fileItem.getFilePath());
+            mPresenter.sendMessage(message.getMessage());
+          }
         }
       }
 
@@ -140,25 +143,25 @@ public class ChatActivity extends BaseChatActivity
         LogUtils.i("查看公示文件");
       }
     });
-    mChatView.setMeetOperationViewOnClickListener(
-        new MeetOperationView.MeetOperationViewOnClickListener() {
-          @Override public void onClick(View view) {
-            LogUtils.i("MeetOperationViewOnClickListener");
-          }
-        });
-    mChatView.startCountDownTimer(0, System.currentTimeMillis());
+    //mChatView.setMeetOperationViewOnClickListener(
+    //    new MeetOperationView.MeetOperationViewOnClickListener() {
+    //      @Override public void onClick(View view) {
+    //        LogUtils.i("MeetOperationViewOnClickListener");
+    //      }
+    //    });
+    //mChatView.startCountDownTimer(0, System.currentTimeMillis());
 
     recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
       @Override public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
         super.onScrollStateChanged(recyclerView, newState);
+        if (!isMeetGroup) {
+          return;
+        }
         mChatView.changMeetOperationViewState(newState);
       }
 
       @Override public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
-        if (!isMeetGroup) {
-          return;
-        }
       }
     });
   }

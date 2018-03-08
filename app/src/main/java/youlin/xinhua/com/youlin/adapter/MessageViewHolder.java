@@ -1,10 +1,7 @@
 package youlin.xinhua.com.youlin.adapter;
 
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import com.chad.library.adapter.base.BaseViewHolder;
-import youlin.xinhua.com.youlin.R;
 
 /**
  * <pre>
@@ -17,17 +14,9 @@ import youlin.xinhua.com.youlin.R;
  */
 public class MessageViewHolder extends BaseViewHolder {
 
-  TextView textTimestamp;
-  TextView textName;
-  ImageView imgAvatar;
-
   public MessageViewHolder(View view) {
     super(view);
-    textTimestamp = (TextView) view.findViewById(R.id.timestamp);
-    textName = (TextView) view.findViewById(R.id.text_name);
-    imgAvatar = (ImageView) view.findViewById(R.id.avatar);
   }
-
 
 
 

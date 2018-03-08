@@ -52,6 +52,14 @@ public class GroupTipMessage extends Message {
     return "";
   }
 
+  @Override protected void onBubbleClick() {
+
+  }
+
+  @Override protected void onSetUpView() {
+
+  }
+
   private String getName(TIMGroupMemberInfo info) {
     if (info.getNameCard().equals("")) {
       return info.getUser();

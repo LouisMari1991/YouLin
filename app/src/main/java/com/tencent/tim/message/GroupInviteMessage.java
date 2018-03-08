@@ -15,6 +15,14 @@ public class GroupInviteMessage extends Message {
     return null;
   }
 
+  @Override protected void onBubbleClick() {
+
+  }
+
+  @Override protected void onSetUpView() {
+
+  }
+
   @Override public int getItemType() {
 
     if (isSelf()) {

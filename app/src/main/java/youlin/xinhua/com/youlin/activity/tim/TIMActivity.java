@@ -10,12 +10,15 @@ import com.tencent.imsdk.TIMCallBack;
 import com.tencent.imsdk.TIMConversation;
 import com.tencent.imsdk.TIMConversationType;
 import com.tencent.imsdk.TIMElem;
+import com.tencent.imsdk.TIMElemType;
 import com.tencent.imsdk.TIMFaceElem;
 import com.tencent.imsdk.TIMFriendAllowType;
 import com.tencent.imsdk.TIMFriendshipManager;
 import com.tencent.imsdk.TIMGroupAddOpt;
 import com.tencent.imsdk.TIMGroupManager;
 import com.tencent.imsdk.TIMGroupMemberInfo;
+import com.tencent.imsdk.TIMImage;
+import com.tencent.imsdk.TIMImageElem;
 import com.tencent.imsdk.TIMManager;
 import com.tencent.imsdk.TIMMessage;
 import com.tencent.imsdk.TIMTextElem;
@@ -29,6 +32,7 @@ import com.tencent.imsdk.ext.sns.TIMFriendResult;
 import com.tencent.imsdk.ext.sns.TIMFriendshipManagerExt;
 import com.tencent.imsdk.ext.sns.TIMFriendshipProxy;
 import com.tencent.tim.consts.TIMConsts;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import youlin.xinhua.com.youlin.BaseActivity;
@@ -119,7 +123,26 @@ public class TIMActivity extends BaseActivity {
       @Override public void onSuccess(List<TIMMessage> timMessages) {
         for (TIMMessage message : timMessages) {
           TIMElem element = message.getElement(0);
-          LogUtils.i(message.getSender() + " , " + element.getType() + " , " + message.timestamp());
+
+          if (element.getType() == TIMElemType.Image) {
+            TIMImageElem elem = (TIMImageElem) element;
+            ArrayList<TIMImage> imageList = elem.getImageList();
+
+            for (int i = 0; i < imageList.size(); i++) {
+              TIMImage item = imageList.get(i);
+              LogUtils.i(item.getType()
+                  + " , "
+                  + item.getUrl()
+                  + " , "
+                  + item.getSize()
+                  + " , "
+                  + item.getWidth()
+                  + " , "
+                  + item.getHeight());
+            }
+          } else {
+            continue;
+          }
 
           //TIMElemType type = element.getType();
 
@@ -190,7 +213,7 @@ public class TIMActivity extends BaseActivity {
     //}
 
     TIMGroupManagerExt.getInstance()
-        .getGroupMembers("@TGS#2WRZQCDFC", new TIMValueCallBack<List<TIMGroupMemberInfo>>() {
+        .getGroupMembers("@TGS#2RLB6EDFE", new TIMValueCallBack<List<TIMGroupMemberInfo>>() {
           @Override public void onError(int i, String s) {
 
           }
@@ -209,6 +232,8 @@ public class TIMActivity extends BaseActivity {
         new TIMGroupManager.CreateGroupParam(TIMConsts.PUBLIC_GROUP, "邀请群测试");
 
     param.setAddOption(TIMGroupAddOpt.TIM_GROUP_ADD_AUTH);
+    TIMGroupMemberInfo newMember = new TIMGroupMemberInfo(TIMConsts.PHONE_181);
+    param.setMembers(Collections.singletonList(newMember));
 
     TIMGroupManager.getInstance().createGroup(param, new TIMValueCallBack<String>() {
       @Override public void onError(int i, String s) {
@@ -225,7 +250,8 @@ public class TIMActivity extends BaseActivity {
 
     //String groupName = "@TGS#24WC22BFX";
     //String groupName = "@TGS#2452UYCFQ";
-    String groupName = "@TGS#2WRZQCDFC";
+    //String groupName = "@TGS#2WRZQCDFC";
+    String groupName = "@TGS#2RLB6EDFE";
 
     TIMGroupManagerExt.getInstance()
         .inviteGroupMember(groupName, Collections.singletonList(TIMConsts.PHONE_181),

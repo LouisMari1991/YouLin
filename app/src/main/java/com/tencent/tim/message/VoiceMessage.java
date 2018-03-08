@@ -1,7 +1,13 @@
 package com.tencent.tim.message;
 
+import android.graphics.drawable.AnimationDrawable;
+import android.text.TextUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 import com.tencent.imsdk.TIMMessage;
 import com.tencent.imsdk.TIMSoundElem;
+import com.xinhua.tim.util.MediaUtil;
+import youlin.xinhua.com.youlin.R;
 
 /**
  * <pre>
@@ -33,7 +39,34 @@ public class VoiceMessage extends Message {
   }
 
   @Override public String getSummary() {
-    return null;
+    return "[语音]";
+  }
+
+  @Override protected void onBubbleClick() {
+
+  }
+
+  @Override protected void onSetUpView() {
+    ImageView voiceImageView = helper.getView(R.id.iv_voice);
+    TextView voiceLengthView = helper.getView(R.id.tv_length);
+    AnimationDrawable voiceAnimation;
+
+    message.getElement(0).getType();
+
+    TIMSoundElem elem = (TIMSoundElem) message.getElement(0);
+
+    if (MediaUtil.getInstance().isPlaying() && TextUtils.equals(elem.getUuid(),
+        MediaUtil.getInstance().getPlayId())) {
+
+    } else {
+
+      if (isSelf()) {
+        voiceImageView.setImageResource(R.drawable.voice_from_icon);
+      } else {
+        voiceImageView.setImageResource(R.drawable.voice_to_icon);
+      }
+    }
+    showStatus();
   }
 
   @Override public int getItemType() {

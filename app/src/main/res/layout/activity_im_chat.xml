@@ -135,6 +135,7 @@
         android:text="查看公示文件"
         android:textColor="@color/white"
         android:textSize="@dimen/sp_12"
+        android:visibility="gone"
         />
 
   </RelativeLayout>

@@ -1,7 +1,16 @@
 package com.tencent.tim.message;
 
+import android.content.Context;
+import android.view.View;
+import android.widget.TextView;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 import com.tencent.imsdk.TIMMessage;
+import com.tencent.imsdk.TIMUserProfile;
+import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.adapter.MessageViewHolder;
+import youlin.xinhua.com.youlin.listener.ChatItemClickListener;
+import youlin.xinhua.com.youlin.utils.DateUtil;
+import youlin.xinhua.com.youlin.utils.LogUtils;
 
 /**
  * <pre>
@@ -28,6 +37,12 @@ public abstract class Message implements MultiItemEntity {
   public static final int TYPE_EVENT = 12;
 
   protected TIMMessage message;
+
+  protected Context context;
+
+  protected MessageViewHolder helper;
+
+  protected ChatItemClickListener clickListener;
 
   public Message() {
   }
@@ -63,10 +78,12 @@ public abstract class Message implements MultiItemEntity {
    * 获取发送者
    */
   public String getSender() {
-    if (message.getSender() == null) {
-      return "";
+    if (message.isSelf()) {
+      return "我";
+    } else {
+      TIMUserProfile senderProfile = message.getSenderProfile();
+      return senderProfile.getNickName();
     }
-    return message.getSender();
   }
 
   public String getDesc() {
@@ -95,6 +112,120 @@ public abstract class Message implements MultiItemEntity {
       hasTime = true;
       return;
     }
+    LogUtils.i(this.message.timestamp() + " , " + message.timestamp());
     hasTime = this.message.timestamp() - message.timestamp() > 300;
+  }
+
+  public void setUpBaseView(Context context, MessageViewHolder helper,
+      ChatItemClickListener listener) {
+
+    this.context = context;
+    this.helper = helper;
+    this.clickListener = listener;
+
+    TextView timestamp = helper.getView(R.id.timestamp);
+
+    if (timestamp != null) {
+      if (isHasTime()) {
+        timestamp.setVisibility(View.VISIBLE);
+        timestamp.setText(DateUtil.getChatTimeStr(message.timestamp()));
+      } else {
+        timestamp.setVisibility(View.GONE);
+      }
+    }
+
+    setClickListener();
+    onSetUpView();
+  }
+
+  private void setClickListener() {
+
+    if (clickListener == null) {
+      return;
+    }
+
+    View bubble = helper.getView(R.id.bubble);
+    View msg_status = helper.getView(R.id.msg_status);
+    View img_avatar = helper.getView(R.id.avatar);
+
+    if (bubble != null) {
+      bubble.setOnClickListener(new View.OnClickListener() {
+        @Override public void onClick(View v) {
+          if (!clickListener.onBubbleClick(Message.this)) {
+            // if listener return false, we call default handling
+            onBubbleClick();
+          }
+        }
+      });
+      bubble.setOnLongClickListener(new View.OnLongClickListener() {
+        @Override public boolean onLongClick(View v) {
+          clickListener.onBubbleLongClick(Message.this);
+          return true;
+        }
+      });
+    }
+
+    if (msg_status != null) {
+      msg_status.setOnClickListener(new View.OnClickListener() {
+
+        @Override public void onClick(View v) {
+          clickListener.onResendClick(Message.this);
+        }
+      });
+    }
+
+    if (img_avatar != null) {
+      img_avatar.setOnClickListener(new View.OnClickListener() {
+        @Override public void onClick(View v) {
+          clickListener.onUserAvatarClick(getSender());
+        }
+      });
+      img_avatar.setOnLongClickListener(new View.OnLongClickListener() {
+        @Override public boolean onLongClick(View v) {
+          clickListener.onUserAvatarLongClick(getSender());
+          return true;
+        }
+      });
+    }
+  }
+
+  protected abstract void onBubbleClick();
+
+  protected abstract void onSetUpView();
+
+  /**
+   * 显示消息状态
+   */
+  public void showStatus() {
+
+    View msg_status = helper.getView(R.id.msg_status);
+    View progress_bar = helper.getView(R.id.progress_bar);
+
+    switch (message.status()) {
+      case Sending:
+        if (msg_status != null) {
+          msg_status.setVisibility(View.INVISIBLE);
+        }
+        if (progress_bar != null) {
+          progress_bar.setVisibility(View.VISIBLE);
+        }
+        break;
+      case SendSucc:
+        if (msg_status != null) {
+          msg_status.setVisibility(View.INVISIBLE);
+        }
+        if (progress_bar != null) {
+          progress_bar.setVisibility(View.INVISIBLE);
+        }
+        break;
+      case SendFail:
+        if (msg_status != null) {
+          msg_status.setVisibility(View.VISIBLE);
+        }
+        if (progress_bar != null) {
+          progress_bar.setVisibility(View.INVISIBLE);
+        }
+        break;
+    }
   }
 }

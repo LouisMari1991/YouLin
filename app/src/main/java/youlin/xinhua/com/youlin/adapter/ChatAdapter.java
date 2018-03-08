@@ -5,6 +5,7 @@ import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.tencent.tim.message.Message;
 import java.util.List;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.listener.ChatItemClickListener;
 
 import static com.tencent.tim.message.Message.TYPE_EVENT;
 import static com.tencent.tim.message.Message.TYPE_GROUP_INVITE_RECEIVER;
@@ -30,8 +31,11 @@ import static com.tencent.tim.message.Message.TYPE_VOICE_SEND;
  */
 public class ChatAdapter extends BaseMultiItemQuickAdapter<Message, MessageViewHolder> {
 
-  public ChatAdapter(@Nullable List<Message> data) {
+  ChatItemClickListener listener;
+
+  public ChatAdapter(@Nullable List<Message> data, ChatItemClickListener listener) {
     super(data);
+    this.listener = listener;
     addItemType(TYPE_TEXT_SEND, R.layout.item_chat_send_text);
     addItemType(TYPE_TEXT_RECEIVE, R.layout.item_chat_received_text);
     addItemType(TYPE_IMG_SEND, R.layout.item_chat_send_picture);
@@ -47,8 +51,15 @@ public class ChatAdapter extends BaseMultiItemQuickAdapter<Message, MessageViewH
   }
 
   @Override protected void convert(MessageViewHolder helper, Message item) {
+    item.setUpBaseView(mContext, helper, listener);
+  }
+
+  @Override public void onViewDetachedFromWindow(MessageViewHolder holder) {
+    super.onViewDetachedFromWindow(holder);
 
   }
+
+
 }
 
 

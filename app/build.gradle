@@ -13,7 +13,7 @@ android {
 
     ndk {
       //选择要添加的对应cpu类型的.so库。
-      abiFilters 'armeabi'
+      abiFilters 'armeabi','x86'
     }
 
     resConfigs "zh"

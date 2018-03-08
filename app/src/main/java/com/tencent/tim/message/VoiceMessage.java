@@ -49,7 +49,6 @@ public class VoiceMessage extends Message {
   @Override protected void onSetUpView() {
     ImageView voiceImageView = helper.getView(R.id.iv_voice);
     TextView voiceLengthView = helper.getView(R.id.tv_length);
-    AnimationDrawable voiceAnimation;
 
     message.getElement(0).getType();
 
@@ -57,9 +56,15 @@ public class VoiceMessage extends Message {
 
     if (MediaUtil.getInstance().isPlaying() && TextUtils.equals(elem.getUuid(),
         MediaUtil.getInstance().getPlayId())) {
-
+      AnimationDrawable voiceAnimation;
+      if (isSelf()) {
+        voiceImageView.setImageResource(R.drawable.voice_from_icon);
+      } else {
+        voiceImageView.setImageResource(R.drawable.voice_to_icon);
+      }
+      voiceAnimation = (AnimationDrawable) voiceImageView.getDrawable();
+      voiceAnimation.start();
     } else {
-
       if (isSelf()) {
         voiceImageView.setImageResource(R.drawable.voice_from_icon);
       } else {

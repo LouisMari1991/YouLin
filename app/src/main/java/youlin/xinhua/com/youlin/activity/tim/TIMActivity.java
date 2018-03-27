@@ -35,9 +35,8 @@ import com.tencent.tim.consts.TIMConsts;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import youlin.xinhua.com.youlin.BaseActivity;
+import youlin.xinhua.com.youlin.base.BaseActivity;
 import youlin.xinhua.com.youlin.R;
-import youlin.xinhua.com.youlin.activity.ChatActivity;
 import youlin.xinhua.com.youlin.utils.LogUtils;
 
 /**
@@ -70,7 +69,7 @@ public class TIMActivity extends BaseActivity {
         showNameDialog();
         break;
       case R.id.btn_chat:
-        ChatActivity.lunch(v.getContext());
+        //ChatActivity.lunch(v.getContext());
         break;
       case R.id.btn_add_contacts:
         // 好友邀请
@@ -212,8 +211,11 @@ public class TIMActivity extends BaseActivity {
     //      + groupInfo.getGroupAddOpt());
     //}
 
+    String id = "@TGS#2RLB6EDFE";
+    //String id = "@TGS#2O6JWGDFW";
+
     TIMGroupManagerExt.getInstance()
-        .getGroupMembers("@TGS#2RLB6EDFE", new TIMValueCallBack<List<TIMGroupMemberInfo>>() {
+        .getGroupMembers(id, new TIMValueCallBack<List<TIMGroupMemberInfo>>() {
           @Override public void onError(int i, String s) {
 
           }
@@ -251,10 +253,11 @@ public class TIMActivity extends BaseActivity {
     //String groupName = "@TGS#24WC22BFX";
     //String groupName = "@TGS#2452UYCFQ";
     //String groupName = "@TGS#2WRZQCDFC";
-    String groupName = "@TGS#2RLB6EDFE";
+    //String groupName = "@TGS#2RLB6EDFE";
+    String groupName = "@TGS#2O6JWGDFW";
 
     TIMGroupManagerExt.getInstance()
-        .inviteGroupMember(groupName, Collections.singletonList(TIMConsts.PHONE_181),
+        .inviteGroupMember(groupName, Collections.singletonList(TIMConsts.PHONE_173),
             new TIMValueCallBack<List<TIMGroupMemberResult>>() {
               @Override public void onError(int i, String s) {
                 LogUtils.i("群邀请 onError， i ： " + i + " s : " + s);

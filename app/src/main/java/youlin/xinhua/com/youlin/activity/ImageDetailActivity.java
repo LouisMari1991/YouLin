@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import youlin.xinhua.com.youlin.BaseActivity;
+import youlin.xinhua.com.youlin.base.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.utils.ToastUtils;
 import youlin.xinhua.com.youlin.widget.photoview.EasePhotoView;

@@ -11,7 +11,7 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import jp.wasabeef.glide.transformations.BlurTransformation;
-import youlin.xinhua.com.youlin.BaseActivity;
+import youlin.xinhua.com.youlin.base.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 
 /**

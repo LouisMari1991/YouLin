@@ -1,4 +1,4 @@
-package youlin.xinhua.com.youlin;
+package youlin.xinhua.com.youlin.base;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;

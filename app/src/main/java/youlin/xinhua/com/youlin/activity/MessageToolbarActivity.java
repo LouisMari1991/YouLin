@@ -9,7 +9,7 @@ import android.view.View;
 import butterknife.BindView;
 import com.flyco.animation.FadeEnter.FadeEnter;
 import com.flyco.animation.FadeExit.FadeExit;
-import youlin.xinhua.com.youlin.BaseActivity;
+import youlin.xinhua.com.youlin.base.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.utils.ToastUtils;
 import youlin.xinhua.com.youlin.widget.MessageToolbar;

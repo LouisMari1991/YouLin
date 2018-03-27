@@ -13,7 +13,6 @@
       android:layout_height="24dp"
       android:layout_gravity="center"
       android:scaleType="centerCrop"
-      android:src="@drawable/ee_1"
       />
 
 </FrameLayout>

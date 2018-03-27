@@ -8,7 +8,7 @@ import android.support.v4.content.ContextCompat;
 import butterknife.BindView;
 import java.util.ArrayList;
 import java.util.List;
-import youlin.xinhua.com.youlin.BaseActivity;
+import youlin.xinhua.com.youlin.base.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.bean.VoteItemBean;
 import youlin.xinhua.com.youlin.widget.statusbar.StatusBarHelper;

@@ -15,7 +15,7 @@ import cn.qqtheme.framework.picker.AddressPicker;
 import cn.qqtheme.framework.picker.DatePicker;
 import cn.qqtheme.framework.picker.DateTimePicker;
 import cn.qqtheme.framework.picker.OptionPicker;
-import youlin.xinhua.com.youlin.BaseActivity;
+import youlin.xinhua.com.youlin.base.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.utils.ToastUtils;
 import youlin.xinhua.com.youlin.widget.wheelpick.CommentAddressPicker;

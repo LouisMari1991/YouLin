@@ -1,10 +1,24 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+/**
+ * buildscript代码块用来配置Gradle自己的repositories和dependencies，所以不能包含modules使用的dependencies
+ **/
 buildscript {
+
+  /**
+   * repositories 代码块用来配置 Gradle 用来搜索和下载依赖的仓库
+   * Gradle 默认是支持像 JCenter，Maven Central，和 Ivy 远程仓库的，你也可以使用本地仓库或定义你自己的远程仓库
+   * 下面的代码定义了 Gradle 用于搜索下载依赖的 JCenter 仓库和 Google 的 Maven 仓库
+   */
   repositories {
     jcenter()
     google()
   }
+
+  /**
+   * dependencies 代码块用来配置 Gradle 用来构建工程的依赖，下面的代码表示添加一个
+   * Gradle 的 Android 插件作为 classpath 依赖
+   */
   dependencies {
     classpath 'com.android.tools.build:gradle:3.0.0'
 
@@ -13,6 +27,11 @@ buildscript {
   }
 }
 
+/**
+ * allprojects 代码块用来配置工程中所有 modules 都要使用的仓库和依赖
+ * 但是你应该在每个 module 级的 build 文件中配置 module 独有的依赖。
+ * 对于一个新工程，Android Studio 默认会让所有 modules 使用 JCenter 仓库和 Google 的 Maven 仓库
+ */
 allprojects {
   repositories {
     jcenter()
@@ -24,6 +43,8 @@ allprojects {
 task clean(type: Delete) {
   delete rootProject.buildDir
 }
+
+// 如让所有 modules 都使用相同的版本以避免冲突
 def supportVersion = "25.3.1"
 def leakCanaryVersion = "1.5"
 def ijkplayerVersion = "0.8.0"

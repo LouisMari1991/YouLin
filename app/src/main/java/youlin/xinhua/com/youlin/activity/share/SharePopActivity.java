@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.widget.Button;
 import butterknife.BindView;
 import butterknife.OnClick;
-import youlin.xinhua.com.youlin.BaseActivity;
+import youlin.xinhua.com.youlin.base.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.utils.ShareUtils2;
 

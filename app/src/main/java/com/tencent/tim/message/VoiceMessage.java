@@ -68,7 +68,7 @@ public class VoiceMessage extends Message {
       if (isSelf()) {
         voiceImageView.setImageResource(R.drawable.voice_from_icon);
       } else {
-        voiceImageView.setImageResource(R.drawable.voice_to_icon);
+        voiceImageView.setImageResource(R.drawable.voice_from_icon);
       }
     }
     showStatus();

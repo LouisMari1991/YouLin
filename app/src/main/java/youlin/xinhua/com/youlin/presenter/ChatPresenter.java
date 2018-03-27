@@ -21,8 +21,8 @@ import youlin.xinhua.com.youlin.utils.LogUtils;
  */
 public class ChatPresenter {
 
-  TIMConversation conversation;
   IChatView view;
+  TIMConversation conversation;
 
   private final int pageSize = 20;
 

@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion
-  buildToolsVersion rootProject.ext.buildToolsVersion
   defaultConfig {
     applicationId "youlin.xinhua.com.youlin"
     minSdkVersion rootProject.ext.minSdkVersion
@@ -24,7 +23,6 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
-  buildToolsVersion '26.0.2'
 }
 
 repositories {
@@ -34,52 +32,54 @@ repositories {
 }
 
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  compile rootProject.ext.appcompatv7
-  compile rootProject.ext.constraintlayout
-  compile rootProject.ext.design
-  compile rootProject.ext.supportv4
-  testCompile 'junit:junit:4.12'
+  implementation  rootProject.ext.appcompatv7
+  implementation  rootProject.ext.constraintlayout
+  implementation  rootProject.ext.design
+  implementation  rootProject.ext.supportv4
 
-  compile rootProject.ext.butterknifts.butterknift
+  testImplementation "org.mockito:mockito-core:2.11.0"
+  testImplementation 'junit:junit:4.12'
+
+  implementation rootProject.ext.butterknifts.butterknift
   annotationProcessor rootProject.ext.butterknifts.butterkniftcompiler
 
 //  compile(name: 'imageselect', ext: 'aar')
 //  compile(name: 'recyclerviewhelper', ext: 'aar')
 //  compile(name: 'dialoglib', ext: 'aar')
 
-  compile project(':im')
+//  implementation  project(':im')
 //  compile project(':flowlayout-lib')
 //  compile project(':xunfeiyuyin')
-  compile project(':tim')
+  implementation  project(':tim')
 
-  compile rootProject.ext.flyco.tabLayout
-  compile rootProject.ext.flyco.dialog
+  implementation  rootProject.ext.flyco.tabLayout
+  implementation  rootProject.ext.flyco.dialog
 
-  compile rootProject.ext.appcompatv7
-  compile rootProject.ext.recyclerviewv7
-  compile rootProject.ext.cardviewv7
-  compile rootProject.ext.rx.rxjava
-  compile rootProject.ext.rx.rxandroid
-  compile rootProject.ext.retrofit2.convertergson
+  implementation  rootProject.ext.appcompatv7
+  implementation  rootProject.ext.recyclerviewv7
+  implementation  rootProject.ext.cardviewv7
+  implementation  rootProject.ext.rx.rxjava
+  implementation  rootProject.ext.rx.rxandroid
+  implementation  rootProject.ext.retrofit2.convertergson
 
   //加载动画 cardviewv7
-  compile 'com.github.ybq:Android-SpinKit:1.1.0'
-  compile 'com.github.bumptech.glide:glide:3.7.0'
+  implementation  'com.github.ybq:Android-SpinKit:1.1.0'
+  implementation  'com.github.bumptech.glide:glide:3.7.0'
 
   //  compile 'com.alibaba:fastjson:1.1.55.android'
-  compile 'com.pnikosis:materialish-progress:1.0'
+  implementation  'com.pnikosis:materialish-progress:1.0'
 
   compile('cn.qqtheme.framework:WheelPicker:latest.release') {
     exclude group: 'com.android.support'
   }
 
-  compile rootProject.ext.BaseRecyclerViewAdapterHelper
-  compile rootProject.ext.SmartRefreshLayout
-  compile rootProject.ext.glide_transformations
+  implementation rootProject.ext.BaseRecyclerViewAdapterHelper
+  implementation rootProject.ext.SmartRefreshLayout
+  implementation rootProject.ext.glide_transformations
 
-  compile 'org.jetbrains:annotations-java5:15.0'
+  implementation 'org.jetbrains:annotations-java5:15.0'
 }

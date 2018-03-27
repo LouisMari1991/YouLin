@@ -3,7 +3,6 @@ package youlin.xinhua.com.youlin.utils;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
-import com.hyphenate.util.PathUtil;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -23,14 +22,6 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 public class FileUtil {
-
-  public static String getThumbnailImagePath(String thumbRemoteUrl) {
-    String thumbImageName =
-        thumbRemoteUrl.substring(thumbRemoteUrl.lastIndexOf("/") + 1, thumbRemoteUrl.length());
-    String path = PathUtil.getInstance().getImagePath() + "/" + "th" + thumbImageName;
-    LogUtils.d("thum image path:" + path);
-    return path;
-  }
 
   private static final String[][] MIME_MapTable = {
       // {后缀名， MIME类型}
@@ -477,6 +468,7 @@ public class FileUtil {
 
   /**
    * 文件是否存在
+   *
    * @param filePath 文件路径
    * @return File exists return <code>true</code> , else <code>false</code>
    */

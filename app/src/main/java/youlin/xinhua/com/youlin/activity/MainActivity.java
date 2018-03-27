@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import butterknife.OnClick;
-import youlin.xinhua.com.youlin.BaseActivity;
+import youlin.xinhua.com.youlin.base.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.activity.share.SharePopActivity;
-import youlin.xinhua.com.youlin.activity.shequyaowen.huodong.ActDetailActivity;
+//import youlin.xinhua.com.youlin.activity.shequyaowen.huodong.ActDetailActivity;
 import youlin.xinhua.com.youlin.activity.shequyaowen.vote.VoteDetailActivity;
 import youlin.xinhua.com.youlin.activity.tim.TIMActivity;
 import youlin.xinhua.com.youlin.activity.yeweihui.AddCandidateInfoActivity;
@@ -27,11 +27,11 @@ public class MainActivity extends BaseActivity {
       }
       break;
       case R.id.btn_im: {
-        ImActivity.lunch(this);
+        //ImActivity.lunch(this);
       }
       break;
       case R.id.contact: {
-        ContactListActivity.lunch(this);
+        //ContactListActivity.lunch(this);
       }
       break;
       case R.id.contact_pick: {
@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity {
       }
       break;
       case R.id.chat: {
-        ChatActivity.lunch(this);
+        //ChatActivity.lunch(this);
       }
       break;
       case R.id.btn_empty: {
@@ -55,7 +55,7 @@ public class MainActivity extends BaseActivity {
       }
       break;
       case R.id.btn_huodong: {
-        ActDetailActivity.launch(this);
+        //ActDetailActivity.launch(this);
       }
       break;
       case R.id.btn_add_candidate_info: {

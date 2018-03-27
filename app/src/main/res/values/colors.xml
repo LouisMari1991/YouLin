@@ -4,6 +4,8 @@
   <color name="black">#000000</color>
   <color name="gray">#EEEEEE</color>
 
+  <color name="transparent_white">#20ffffff</color>
+
   <!--页面背景的颜色-->
   <color name="colorPageBg">#ebf1f6</color>
   <color name="colorTransparent">#00000000</color>

@@ -2,7 +2,7 @@ package youlin.xinhua.com.youlin.activity.phonecontacts;
 
 import android.content.Context;
 import android.content.Intent;
-import youlin.xinhua.com.youlin.BaseActivity;
+import youlin.xinhua.com.youlin.base.BaseActivity;
 
 /**
  * <pre>

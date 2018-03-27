@@ -10,7 +10,7 @@ import butterknife.BindView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import youlin.xinhua.com.youlin.BaseActivity;
+import youlin.xinhua.com.youlin.base.BaseActivity;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.adapter.ContactPickAdapter;
 import youlin.xinhua.com.youlin.bean.UserInfo;

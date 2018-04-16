@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+  <include layout="@layout/layout_common_toolbar"/>
+
+  <android.support.v4.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/gauge_2"
+          android:background="@color/color_blue"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/gauge_50"
+          android:text="asdfasdfasdfasf"
+          />
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/gauge_2"
+          android:background="@color/color_blue"
+          />
+
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/rv_list"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/gauge_2"
+          android:background="@color/color_blue"
+          />
+
+    </LinearLayout>
+
+
+  </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

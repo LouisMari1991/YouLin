@@ -2,8 +2,10 @@ package youlin.xinhua.com.youlin.utils;
 
 import android.content.Context;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import youlin.xinhua.com.youlin.widget.recycler_view.ImagePickerItemDecoration;
 
 /**
  * Created by long on 2016/3/30.
@@ -48,6 +50,14 @@ public class RecyclerViewHelper {
   public static void initRecyclerViewV(Context context, RecyclerView view,
       RecyclerView.Adapter adapter) {
     initRecyclerViewV(context, view, false, adapter);
+  }
+
+  public static void initImagePicker(RecyclerView recyclerView, RecyclerView.Adapter adapter) {
+
+    GridLayoutManager gridLayoutManager = new GridLayoutManager(recyclerView.getContext(), 3);
+    recyclerView.setLayoutManager(gridLayoutManager);
+    recyclerView.addItemDecoration(new ImagePickerItemDecoration());
+    recyclerView.setAdapter(adapter);
   }
 
   //public static void initRecyclerViewV(Context context, RecyclerView view, boolean isDivided,

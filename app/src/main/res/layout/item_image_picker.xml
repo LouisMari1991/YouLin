@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+  <ImageView
+      android:id="@+id/img"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/gauge_120"
+      android:scaleType="centerCrop"
+      />
+
+
+  <ImageView
+      android:layout_width="@dimen/gauge_40"
+      android:layout_height="@dimen/gauge_40"
+      android:layout_alignParentRight="true"
+      android:layout_gravity="right"
+      android:layout_margin="@dimen/gauge_10"
+      android:src="@drawable/channel_close"
+      />
+
+
+</RelativeLayout>

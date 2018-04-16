@@ -81,5 +81,7 @@ dependencies {
   implementation rootProject.ext.SmartRefreshLayout
   implementation rootProject.ext.glide_transformations
 
+  compile 'cn.bingoogolapple:bga-swipebacklayout:1.1.8@aar'
+
   implementation 'org.jetbrains:annotations-java5:15.0'
 }

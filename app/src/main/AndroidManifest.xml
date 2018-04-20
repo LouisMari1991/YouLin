@@ -21,8 +21,10 @@
     </activity>
 
     <activity
-        android:name=".office.OfficeMainActivity"
-        android:screenOrientation="portrait"/>
+        android:name=".activity.office.OfficeMainActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme.Login"
+        />
 
     <activity
         android:name=".activity.BtnActivity"

@@ -13,6 +13,7 @@
 
 
   <ImageView
+      android:id="@+id/img_del"
       android:layout_width="@dimen/gauge_40"
       android:layout_height="@dimen/gauge_40"
       android:layout_alignParentRight="true"

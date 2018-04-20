@@ -4,14 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import butterknife.BindView;
 import java.util.ArrayList;
 import java.util.List;
-import youlin.xinhua.com.youlin.base.BaseActivity;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.base.BaseActivity;
 import youlin.xinhua.com.youlin.bean.VoteItemBean;
-import youlin.xinhua.com.youlin.widget.statusbar.StatusBarHelper;
 import youlin.xinhua.com.youlin.widget.vote.VoteView;
 
 /**
@@ -38,7 +36,7 @@ public class VoteDetailActivity extends BaseActivity {
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    StatusBarHelper.setColor(this, ContextCompat.getColor(this, R.color.white), 0);
+    //StatusBarHelper.setColor(this, ContextCompat.getColor(this, R.color.white), 0);
 
     final VoteItemBean voteItemBean = new VoteItemBean();
     voteItemBean.setVoteType(2);

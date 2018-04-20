@@ -10,7 +10,7 @@ import youlin.xinhua.com.youlin.activity.shequyaowen.vote.VoteDetailActivity;
 import youlin.xinhua.com.youlin.activity.tim.TIMActivity;
 import youlin.xinhua.com.youlin.activity.yeweihui.AddCandidateInfoActivity;
 import youlin.xinhua.com.youlin.base.BaseActivity;
-import youlin.xinhua.com.youlin.office.OfficeMainActivity;
+import youlin.xinhua.com.youlin.activity.office.OfficeMainActivity;
 
 //import youlin.xinhua.com.youlin.activity.shequyaowen.huodong.ActDetailActivity;
 
@@ -114,5 +114,9 @@ public class MainActivity extends BaseActivity {
     //    LogUtils.i("登录聊天服务器失败！, code : " + code + " , msg : " + message);
     //  }
     //});
+  }
+
+  @Override public boolean isSupportSwipeBack() {
+    return false;
   }
 }

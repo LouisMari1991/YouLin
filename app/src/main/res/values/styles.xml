@@ -10,6 +10,32 @@
     <item name="android:button">@drawable/checkbox_bg_selector</item>
   </style>
 
+  <!-- 用于开启滑动返回功能的 Activity -->
+  <style name="AppTheme.Transparent">
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowIsTranslucent">false</item>
+  </style>
+
+  <style name="AppTheme.Login" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- 设置没有标题 -->
+    <item name="android:windowNoTitle">true</item>
+    <!-- 设置activity切换动画 -->
+    <item name="android:windowAnimationStyle">@style/login_animation</item>
+    <item name="android:windowLightStatusBar">true</item>
+  </style>
+
+  <!--Activity跳转动画（设置为从左边退出，右边进入）-->
+  <style mce_bogus="1" name="login_animation" parent="@android:style/Animation.Activity">
+    <!-- A跳转到B进入动画-->
+    <item name="android:activityOpenEnterAnimation">@anim/in_from_bottom</item>
+    <!--A跳转到B退出动画 -->
+    <item name="android:activityOpenExitAnimation">@anim/anim_no</item>
+    <!--B跳转到A进入动画 -->
+    <item name="android:activityCloseEnterAnimation">@anim/anim_no</item>
+    <!--B跳转到A退出动画 -->
+    <item name="android:activityCloseExitAnimation">@anim/out_to_bottom</item>
+  </style>
+
   <style name="SwitchButtonStyle">
     <item name="android:paddingLeft">10dp</item>
     <item name="android:paddingRight">10dp</item>
@@ -64,5 +90,8 @@
     <item name="android:background">?attr/colorPrimary</item>
     <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
   </style>
+
+
+
 
 </resources>

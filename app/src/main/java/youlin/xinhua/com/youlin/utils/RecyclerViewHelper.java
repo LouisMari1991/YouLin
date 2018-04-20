@@ -5,6 +5,8 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import youlin.xinhua.com.youlin.widget.recycler_view.ImagePickerItemDecoration;
 
 /**
@@ -52,12 +54,16 @@ public class RecyclerViewHelper {
     initRecyclerViewV(context, view, false, adapter);
   }
 
-  public static void initImagePicker(RecyclerView recyclerView, RecyclerView.Adapter adapter) {
-
+  public static void initImagePicker(RecyclerView recyclerView, BaseQuickAdapter adapter) {
     GridLayoutManager gridLayoutManager = new GridLayoutManager(recyclerView.getContext(), 3);
     recyclerView.setLayoutManager(gridLayoutManager);
     recyclerView.addItemDecoration(new ImagePickerItemDecoration());
     recyclerView.setAdapter(adapter);
+    adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+      @Override public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+        adapter.remove(position);
+      }
+    });
   }
 
   //public static void initRecyclerViewV(Context context, RecyclerView view, boolean isDivided,

@@ -1,18 +1,23 @@
-package youlin.xinhua.com.youlin.office;
+package youlin.xinhua.com.youlin.activity.office;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import butterknife.BindView;
+import butterknife.OnClick;
+import com.flyco.animation.FadeEnter.FadeEnter;
+import com.flyco.animation.FadeExit.FadeExit;
 import java.util.ArrayList;
 import java.util.List;
 import youlin.xinhua.com.youlin.R;
 import youlin.xinhua.com.youlin.adapter.ImagesAdapter;
 import youlin.xinhua.com.youlin.base.BaseActivity;
-import youlin.xinhua.com.youlin.utils.AppUtils;
+import youlin.xinhua.com.youlin.utils.MeasureUtils;
 import youlin.xinhua.com.youlin.utils.RecyclerViewHelper;
+import youlin.xinhua.com.youlin.widget.dialog.OfficePublishDialog;
 
 /**
  * <pre>
@@ -24,6 +29,10 @@ import youlin.xinhua.com.youlin.utils.RecyclerViewHelper;
  * </pre>
  */
 public class OfficeMainActivity extends BaseActivity {
+
+  static Handler handler = new Handler();
+
+  ImagesAdapter adapter;
 
   public static void start(Context context) {
     Intent starter = new Intent(context, OfficeMainActivity.class);
@@ -38,11 +47,12 @@ public class OfficeMainActivity extends BaseActivity {
 
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    ImagesAdapter adapter = new ImagesAdapter(this, R.layout.item_image_picker);
+
+    adapter = new ImagesAdapter(this);
 
     RecyclerViewHelper.initImagePicker(recyclerView, adapter);
 
-    List<String> strings = new ArrayList<>();
+    final List<String> strings = new ArrayList<>();
 
     strings.add("http://www.taopic.com/uploads/allimg/140320/235013-14032020515270.jpg");
     strings.add("http://f0.topitme.com/0/7a/63/113144393585b637a0o.jpg");
@@ -52,14 +62,25 @@ public class OfficeMainActivity extends BaseActivity {
     strings.add("http://pic17.nipic.com/20111021/8289149_105725398120_2.jpg");
     strings.add("http://pic.qiantucdn.com/58pic/14/35/64/56t58PIC2wJ_1024.jpg");
     strings.add("http://pic23.nipic.com/20120906/5395930_103351439195_2.jpg");
+    strings.add("http://pic23.nipic.com/20120906/5395930_103351439195_2.jpg");
 
-    Context context = this;
+    handler.postDelayed(new Runnable() {
+      @Override public void run() {
+        adapter.addData(strings);
+      }
+    }, 3000);
+  }
 
-    String plusPath = context.getString(R.string.glide_plus_icon_string) + AppUtils.getPackageInfo(
-        context).packageName + "/mipmap/" + R.mipmap.icon_yewubanli_add;
+  @Override public boolean isSupportSwipeBack() {
+    return true;
+  }
 
-    strings.add(plusPath);
-
-    adapter.setNewData(strings);
+  @OnClick(R.id.show_dialog) public void click() {
+    OfficePublishDialog dialog = new OfficePublishDialog(this);
+    dialog.showAnim(new FadeEnter())
+        .dismissAnim(new FadeExit())
+        .dimEnabled(false)
+        .padding(0, 0, 0, MeasureUtils.dp2px(54))
+        .show();
   }
 }

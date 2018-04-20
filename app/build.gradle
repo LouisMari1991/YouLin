@@ -65,6 +65,8 @@ dependencies {
   implementation  rootProject.ext.rx.rxjava
   implementation  rootProject.ext.rx.rxandroid
   implementation  rootProject.ext.retrofit2.convertergson
+  implementation  rootProject.ext.swipebacklayout
+  implementation  rootProject.ext.statusbarutil
 
   //加载动画 cardviewv7
   implementation  'com.github.ybq:Android-SpinKit:1.1.0'
@@ -80,8 +82,6 @@ dependencies {
   implementation rootProject.ext.BaseRecyclerViewAdapterHelper
   implementation rootProject.ext.SmartRefreshLayout
   implementation rootProject.ext.glide_transformations
-
-  compile 'cn.bingoogolapple:bga-swipebacklayout:1.1.8@aar'
 
   implementation 'org.jetbrains:annotations-java5:15.0'
 }

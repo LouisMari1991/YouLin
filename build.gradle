@@ -18,7 +18,7 @@ buildscript {
    * dependencies 代码块用来配置 Gradle 用来构建工程的依赖，下面的代码表示添加一个
    * Gradle 的 Android 插件作为 classpath 依赖*/
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.0.0'
+    classpath 'com.android.tools.build:gradle:3.0.1'
 
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files

@@ -49,7 +49,7 @@ dependencies {
 
 //  compile(name: 'imageselect', ext: 'aar')
 //  compile(name: 'recyclerviewhelper', ext: 'aar')
-//  compile(name: 'dialoglib', ext: 'aar')
+//  compile(name: 'dialoglib', ext: 'aar') 
 
 //  implementation  project(':im')
 //  compile project(':flowlayout-lib')

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_container"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#000000"
     android:orientation="horizontal"
     android:paddingBottom="20dp"
     android:paddingLeft="15dp"
@@ -30,9 +31,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:text="工作站"
         android:textColor="@color/color_blue_text"
         android:textSize="@dimen/sp_15"
-        android:text="工作站"
         />
 
 
@@ -52,10 +53,10 @@
         />
 
     <TextView
-        android:text="工作站"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:text="工作站"
         android:textColor="@color/color_blue_text"
         android:textSize="@dimen/sp_15"
         />
@@ -74,10 +75,11 @@
         android:src="@drawable/wanggezhanicon"
         />
 
-    <TextView android:text="工作站"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:text="工作站"
         android:textColor="@color/color_blue_text"
         android:textSize="@dimen/sp_15"
         />
@@ -99,9 +101,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:text="工作站"
         android:textColor="@color/color_blue_text"
         android:textSize="@dimen/sp_15"
-        android:text="工作站"
         />
   </LinearLayout>
 

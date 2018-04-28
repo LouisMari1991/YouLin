@@ -55,6 +55,7 @@ dependencies {
 //  compile project(':flowlayout-lib')
 //  compile project(':xunfeiyuyin')
   implementation  project(':tim')
+  implementation  project(':filelib')
 
   implementation  rootProject.ext.flyco.tabLayout
   implementation  rootProject.ext.flyco.dialog

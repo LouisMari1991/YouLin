@@ -1,6 +1,13 @@
 package sample.mari.com.filelib;
 
 import android.net.Uri;
+import android.provider.MediaStore;
+import android.support.annotation.IntDef;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+import static java.lang.annotation.ElementType.PARAMETER;
 
 /**
  * <pre>
@@ -21,29 +28,41 @@ public class FileCategoryHelper {
 
   public static final int COLUMN_DATE = 3;
 
-  //private Uri getContentUriByCategory(FileCategory cat) {
-  //  Uri uri;
-  //  String volumeName = "external";
-  //  switch(cat) {
-  //    case Theme:
-  //    case Doc:
-  //    case Zip:
-  //    case Apk:
-  //      uri = Files.getContentUri(volumeName);
-  //      break;
-  //    case Music:
-  //      uri = Audio.Media.getContentUri(volumeName);
-  //      break;
-  //    case Video:
-  //      uri = Video.Media.getContentUri(volumeName);
-  //      break;
-  //    case Picture:
-  //      uri = Images.Media.getContentUri(volumeName);
-  //      break;
-  //    default:
-  //      uri = null;
-  //  }
-  //  return uri;
-  //}
+  final public static int ALL = 0x010;
+  final public static int Music = 0x011;
+  final public static int Video = 0x012;
+  final public static int Picture = 0x013;
+  final public static int Doc = 0x014;
+  final public static int Zip = 0x015;
+  final public static int Apk = 0x016;
+  final public static int Other = 0x017;
 
+  @Retention(RetentionPolicy.SOURCE) @Target(PARAMETER)
+  @IntDef({ ALL, Music, Video, Picture, Doc, Zip, Apk, Other }) public @interface FileCategory {
+
+  }
+
+  private Uri getContentUriByCategory(@FileCategory int fileCategory) {
+    Uri uri;
+    String volumeName = "external";
+    switch (fileCategory) {
+      case Doc:
+      case Zip:
+      case Apk:
+        uri = MediaStore.Files.getContentUri(volumeName);
+        break;
+      case Music:
+        uri = MediaStore.Audio.Media.getContentUri(volumeName);
+        break;
+      case Video:
+        uri = MediaStore.Video.Media.getContentUri(volumeName);
+        break;
+      case Picture:
+        uri = MediaStore.Images.Media.getContentUri(volumeName);
+        break;
+      default:
+        uri = null;
+    }
+    return uri;
+  }
 }

@@ -52,7 +52,7 @@ def videocacheVersion = "2.7.0"
 ext {
 
   compileSdkVersion = 26
-  minSdkVersion = 16
+  minSdkVersion = 17
   targetSdkVersion = 26
 
   versionCode = 12

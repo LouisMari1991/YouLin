@@ -5,13 +5,14 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import butterknife.OnClick;
 import youlin.xinhua.com.youlin.R;
+import youlin.xinhua.com.youlin.activity.office.CanlActivity;
 import youlin.xinhua.com.youlin.activity.office.FileListActivity;
+import youlin.xinhua.com.youlin.activity.office.OfficeMainActivity;
 import youlin.xinhua.com.youlin.activity.share.SharePopActivity;
 import youlin.xinhua.com.youlin.activity.shequyaowen.vote.VoteDetailActivity;
 import youlin.xinhua.com.youlin.activity.tim.TIMActivity;
 import youlin.xinhua.com.youlin.activity.yeweihui.AddCandidateInfoActivity;
 import youlin.xinhua.com.youlin.base.BaseActivity;
-import youlin.xinhua.com.youlin.activity.office.OfficeMainActivity;
 
 //import youlin.xinhua.com.youlin.activity.shequyaowen.huodong.ActDetailActivity;
 
@@ -23,7 +24,7 @@ public class MainActivity extends BaseActivity {
       R.id.btn_share_pop, R.id.btn_vote_detail_test, R.id.btn_vote_detail, R.id.btn_dialog,
       R.id.btn_banner, R.id.btn_camera, R.id.btn_huodong, R.id.btn_add_candidate_info,
       R.id.btn_message_toolbar, R.id.btn_mohu, R.id.btn_rv, R.id.btn_tim, R.id.btn_image_picker,
-      R.id.btn_file_manager
+      R.id.btn_file_manager, R.id.btn_canl
   }) public void click(View view) {
     switch (view.getId()) {
       case R.id.btn_color: {
@@ -80,6 +81,10 @@ public class MainActivity extends BaseActivity {
       }
       case R.id.btn_file_manager: {
         FileListActivity.start(view.getContext());
+        break;
+      }
+      case R.id.btn_canl: {
+        CanlActivity.start(view.getContext());
         break;
       }
       default:

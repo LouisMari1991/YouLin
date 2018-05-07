@@ -161,6 +161,11 @@
       </intent-filter>-->
     </activity>
 
+    <!--日历-->
+    <activity
+        android:name=".activity.office.CanlActivity"
+        android:screenOrientation="portrait"/>
+
   </application>
 
 </manifest>

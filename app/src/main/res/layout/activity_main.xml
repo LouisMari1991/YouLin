@@ -60,7 +60,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="contact_pick"
-      android:visibility="visible"
+      android:visibility="gone"
       />
 
   <Button
@@ -168,7 +168,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="自荐、推荐"
-      android:visibility="visible"
+      android:visibility="gone"
       />
 
   <Button
@@ -186,7 +186,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="高斯模糊"
-      android:visibility="visible"
+      android:visibility="gone"
       />
 
   <Button
@@ -195,7 +195,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="RV"
-      android:visibility="visible"
+      android:visibility="gone"
       />
 
   <Button
@@ -204,7 +204,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="TIM"
-      android:visibility="visible"
+      android:visibility="gone"
       />
 
   <Button
@@ -213,7 +213,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="图片选择"
-      android:visibility="visible"
+      android:visibility="gone"
       />
 
   <Button
@@ -222,6 +222,15 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="文件管理"
+      android:visibility="visible"
+      />
+
+  <Button
+      android:id="@+id/btn_canl"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:text="钉钉日历"
       android:visibility="visible"
       />
 

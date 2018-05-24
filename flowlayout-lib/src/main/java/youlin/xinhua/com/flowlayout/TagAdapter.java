@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class TagAdapter<T> {
-  private List<T>               mTagDatas;
+  private List<T> mTagDatas;
   private OnDataChangedListener mOnDataChangedListener;
   private HashSet<Integer> mCheckedPosList = new HashSet<Integer>();
 
@@ -64,7 +64,10 @@ public abstract class TagAdapter<T> {
 
   public void setSelectedList(Set<Integer> set) {
     mCheckedPosList.clear();
-    if (set != null) mCheckedPosList.addAll(set);
+    if (set != null) {
+      mCheckedPosList.addAll(set);
+    }
+
     notifyDataChanged();
   }
 
@@ -77,7 +80,9 @@ public abstract class TagAdapter<T> {
   }
 
   public void notifyDataChanged() {
-    if (mOnDataChangedListener != null) mOnDataChangedListener.onChanged();
+    if (mOnDataChangedListener != null) {
+      mOnDataChangedListener.onChanged();
+    }
   }
 
   public T getItem(int position) {

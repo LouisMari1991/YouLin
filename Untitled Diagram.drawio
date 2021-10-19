@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-19T07:30:55.667Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" etag="06JGP7ZTTz6fwwsk9wY6" version="15.5.5" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-19T09:12:03.631Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" etag="EZd6CKURxW3WIT40-Nhm" version="15.5.5" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="2062" dy="1057" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -7,20 +7,22 @@
         <mxCell id="AtIrh-nUYwbHB2k4pF5v-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="AtIrh-nUYwbHB2k4pF5v-2" target="AtIrh-nUYwbHB2k4pF5v-7">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="390" y="170" />
-              <mxPoint x="390" y="170" />
+              <mxPoint x="400" y="200" />
+              <mxPoint x="400" y="200" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="AtIrh-nUYwbHB2k4pF5v-2" value="TunProcessor" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="360" y="100" width="120" height="60" as="geometry" />
+        <mxCell id="AtIrh-nUYwbHB2k4pF5v-46" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;entryX=0.667;entryY=1.033;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.661;exitY=-0.078;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="AtIrh-nUYwbHB2k4pF5v-2" target="AtIrh-nUYwbHB2k4pF5v-43">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="AtIrh-nUYwbHB2k4pF5v-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="AtIrh-nUYwbHB2k4pF5v-7" target="AtIrh-nUYwbHB2k4pF5v-2">
+        <mxCell id="AtIrh-nUYwbHB2k4pF5v-2" value="TunProcessor" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="360" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AtIrh-nUYwbHB2k4pF5v-48" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="440" y="180" />
-              <mxPoint x="440" y="180" />
-            </Array>
+            <mxPoint x="440" y="240" as="sourcePoint" />
+            <mxPoint x="440" y="180" as="targetPoint" />
+            <Array as="points" />
           </mxGeometry>
         </mxCell>
         <mxCell id="AtIrh-nUYwbHB2k4pF5v-7" value="AdapterProcessor" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
@@ -103,6 +105,30 @@
         </mxCell>
         <mxCell id="AtIrh-nUYwbHB2k4pF5v-36" value="VpnDnsExecution" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="450" y="640" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AtIrh-nUYwbHB2k4pF5v-37" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.439;entryY=1.033;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="AtIrh-nUYwbHB2k4pF5v-35" target="AtIrh-nUYwbHB2k4pF5v-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="440" as="sourcePoint" />
+            <mxPoint x="440" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AtIrh-nUYwbHB2k4pF5v-38" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.633;entryY=1.022;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="AtIrh-nUYwbHB2k4pF5v-36" target="AtIrh-nUYwbHB2k4pF5v-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="440" as="sourcePoint" />
+            <mxPoint x="440" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AtIrh-nUYwbHB2k4pF5v-44" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;entryX=0.322;entryY=-0.056;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="AtIrh-nUYwbHB2k4pF5v-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="70" as="sourcePoint" />
+            <mxPoint x="400" y="110" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="400" y="80" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AtIrh-nUYwbHB2k4pF5v-43" value="虚拟网卡fd" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="360" y="10" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

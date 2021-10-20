@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-20T03:38:48.953Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" etag="Ixc9SWKoVVsiAl4HHZIB" version="15.5.5" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-20T10:45:54.199Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" etag="4YFETUeZyRKYhp9pfGB_" version="15.5.5" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="2062" dy="1125" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -53,14 +53,26 @@
         <mxCell id="Kaxea-nG7eRX7VTgsSni-21" value="&lt;span style=&quot;font-size: 11px&quot;&gt;1. 选蓝牙就跳转蓝牙认证界面&lt;/span&gt;&lt;br style=&quot;font-size: 11px&quot;&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;2. 选择手机盾就发起手机盾签名，认证流程&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="520" y="430" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="Kaxea-nG7eRX7VTgsSni-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;endArrow=block;endFill=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Kaxea-nG7eRX7VTgsSni-26" target="Kaxea-nG7eRX7VTgsSni-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="Kaxea-nG7eRX7VTgsSni-26" value="从XML匹配到域名对应的VPN服务器地址，发起选路" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="360" y="550" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Kaxea-nG7eRX7VTgsSni-28" value="说明：这个流程是21年1月份修改的，目前最新的版本流程有变化，去掉了弹窗选择认证。" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Kaxea-nG7eRX7VTgsSni-28" value="说明：这个流程是21年1月份修改的，目前最新的版本流程有变化，去掉了弹窗选择认证。&lt;br&gt;如果读不到TF卡证书信息，直接去蓝牙认证界面&lt;br&gt;蓝牙认证界面包含两种认证方式: 蓝牙，手机盾" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="40" y="100" width="270" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Kaxea-nG7eRX7VTgsSni-29" value="2021年1月份流程" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="80" y="40" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Kaxea-nG7eRX7VTgsSni-34" value="进入认证界面" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="360" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Kaxea-nG7eRX7VTgsSni-36" value="说明：此时读公钥不需要PIN码，认证时才需要PIN码，因为要使用私钥签名" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="500" y="215" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Kaxea-nG7eRX7VTgsSni-37" value="&lt;span style=&quot;font-size: 12px&quot;&gt;选路成功后进入认证界面，此时可以选择：蓝牙，手机盾，TF卡认证&lt;/span&gt;&lt;br style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;font-size: 12px&quot;&gt;默认是TF卡认证tab&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="120" y="705" width="190" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

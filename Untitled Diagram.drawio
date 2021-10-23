@@ -1,1 +1,37 @@
-<mxfile host="app.diagrams.net" modified="2021-10-23T03:40:17.824Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" version="15.5.6" etag="sjSKYLV5_q9YXWlc67dY" type="github"><diagram id="tYKrpxqt9ERmh5H2VO-v">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-10-23T06:21:53.803Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" etag="D-40xQd1myhTlAjpjba9" version="15.5.6" type="github">
+  <diagram id="tYKrpxqt9ERmh5H2VO-v" name="Page-1">
+    <mxGraphModel dx="2062" dy="1125" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4DiwlEdnasp-hlOm3P4C-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4DiwlEdnasp-hlOm3P4C-1" target="4DiwlEdnasp-hlOm3P4C-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4DiwlEdnasp-hlOm3P4C-1" value="智慧营维登录VPN" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4DiwlEdnasp-hlOm3P4C-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4DiwlEdnasp-hlOm3P4C-2" target="4DiwlEdnasp-hlOm3P4C-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4DiwlEdnasp-hlOm3P4C-2" value="跳转其他APP&lt;br&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4DiwlEdnasp-hlOm3P4C-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4DiwlEdnasp-hlOm3P4C-4" target="4DiwlEdnasp-hlOm3P4C-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4DiwlEdnasp-hlOm3P4C-4" value="其他APP进行VPN session登录" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4DiwlEdnasp-hlOm3P4C-6" value="SDK提供获取加密后 VPN session接口" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="55" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4DiwlEdnasp-hlOm3P4C-7" value="携带加密后的VPN Session" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="170" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4DiwlEdnasp-hlOm3P4C-8" value="正常访问VPN 资源" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
